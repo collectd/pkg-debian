@@ -1,3 +1,9 @@
+collectd (3.9.3-1) unstable; urgency=low
+
+  * New upstream release (closes: #373008).
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon,  5 Jun 2006 00:38:22 +0200
+
 collectd (3.9.2-1) unstable; urgency=low
 
   * Initial Release.
@@ -7,4 +13,5 @@ collectd (3.9.2-1) unstable; urgency=low
     AMD64.
 
  -- Sebastian Harl <sh@tokkee.org>  Fri,  2 Jun 2006 15:58:51 +0200
+
 

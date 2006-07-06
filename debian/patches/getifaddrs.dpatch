@@ -7,9 +7,9 @@
 
 @DPATCH@
 
-diff -urN collectd-3.9.2/src/traffic.c collectd-3.9.2.patched/src/traffic.c
---- collectd-3.9.2/src/traffic.c	2006-05-09 11:10:34.000000000 +0200
-+++ collectd-3.9.2.patched/src/traffic.c	2006-06-02 16:12:28.000000000 +0200
+diff -urN collectd-3.9.2.orig/src/traffic.c collectd-3.9.2/src/traffic.c
+--- collectd-3.9.2.orig/src/traffic.c	2006-05-09 11:10:34.000000000 +0200
++++ collectd-3.9.2/src/traffic.c	2006-06-02 16:12:28.000000000 +0200
 @@ -143,41 +143,7 @@
  
  static void traffic_read (void)
