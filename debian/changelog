@@ -1,0 +1,10 @@
+collectd (3.9.2-1) unstable; urgency=low
+
+  * Initial Release.
+  * Removed upstream's debian/ directory from .orig.tar.gz.
+  * getifaddrs.dpatch: Patching src/traffic.c to read data from /proc instead
+    of using getifaddrs(). getifaddrs() does not seem to work correctly on 
+    AMD64.
+
+ -- Sebastian Harl <sh@tokkee.org>  Fri,  2 Jun 2006 15:58:51 +0200
+
