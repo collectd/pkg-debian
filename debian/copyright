@@ -5,6 +5,10 @@ It was downloaded from http://collectd.org/files/.
 
 Copyright Holder: Florian Forster <octo@verplant.org>
 
+The source package contains libltdl which is copyright by the Free Software
+Foundation Inc. (originally Thomas Tanner <tanner@ffii.org>) released under
+the terms of the GNU Lesser General Public License 2.1.
+
 License:
 
    This package is free software; you can redistribute it and/or modify
