@@ -1,10 +1,10 @@
-collectd (3.9.3-1) unstable; urgency=low
+collectd (3.9.3+debian-1) unstable; urgency=low
 
   * New upstream release (closes: #373008).
 
  -- Sebastian Harl <sh@tokkee.org>  Mon,  5 Jun 2006 00:38:22 +0200
 
-collectd (3.9.2-1) unstable; urgency=low
+collectd (3.9.2+debian-1) unstable; urgency=low
 
   * Initial Release.
   * Removed upstream's debian/ directory from .orig.tar.gz.
