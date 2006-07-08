@@ -1,6 +1,6 @@
 collectd (3.9.4+debian-1) unstable; urgency=low
 
-  * Initial Release (closes: #373008).
+  * Initial release (Closes: #373008).
   * Removed upstream's debian/ directory from .orig.tar.gz.
   * getifaddrs.dpatch: Patching src/traffic.c to read data from /proc instead
     of using getifaddrs(). getifaddrs() does not seem to work correctly on 
