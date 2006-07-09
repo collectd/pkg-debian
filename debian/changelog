@@ -1,6 +1,9 @@
 collectd (3.10.0-1) unstable; urgency=low
 
   * New upstream release.
+    New plugins:
+    - APC UPS's charge, load, input/output/battery voltage, etc.: apcups
+    - NTP daemon's local clock drift, offset to peers, etc.: ntpd
   * Upstream no longer provides a debian/ directory. Thus no repackaging is
     required any longer.
   * Not using getifaddrs() is now the default in upstream. getifaddrs.dpatch

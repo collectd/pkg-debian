@@ -20,6 +20,7 @@ Description: statistics collection daemon
  grained since the files are updated every 10 seconds.
  .
  This package contains the main program file and the following plugins:
+   * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Apple computer's sensors information: apple_sensors (server mode only)
    * battery status: battery
    * CPU utilization: cpu
@@ -29,6 +30,7 @@ Description: statistics collection daemon
    * system load averages: load
    * memory usage: memory
    * NFS utilization: nfs
+   * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * network latency: ping
    * number of processes: processes
    * serial port traffic: serial
