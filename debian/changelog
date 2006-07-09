@@ -10,7 +10,7 @@ collectd (3.10.0-1) unstable; urgency=low
     no longer needed.
   * Added collectd-hddtemp as a suggestion to the collectd package.
 
- -- Sebastian Harl <tokkee@alba>  Sun,  9 Jul 2006 19:01:49 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun,  9 Jul 2006 21:52:13 +0200
 
 collectd (3.9.4+debian-1) unstable; urgency=low
 
