@@ -67,11 +67,10 @@ install-arch: build
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/collectd
 	
 	rm -f $(CURDIR)/debian/collectd/usr/lib/collectd/*.la
-	rm -f $(CURDIR)/debian/collectd/etc/collectd.conf
 	
 	doc_dir=$(CURDIR)/debian/collectd/usr/share/doc/collectd/examples \
 		&& mkdir -p $$doc_dir \
-		&& cp src/collectd.conf $$doc_dir
+		&& mv $(CURDIR)/debian/collectd/etc/collectd.conf $$doc_dir
 	
 	for PLUGIN in apache hddtemp mysql sensors; do \
 		plugin_dir=$(CURDIR)/debian/collectd-$$PLUGIN/usr/lib/collectd/; \
