@@ -70,7 +70,7 @@ install-arch: build
 	
 	doc_dir=$(CURDIR)/debian/collectd/usr/share/doc/collectd/examples \
 		&& mkdir -p $$doc_dir \
-		&& cp contrib/collectd.conf $$doc_dir
+		&& cp src/collectd.conf $$doc_dir
 	
 	for PLUGIN in apache hddtemp mysql sensors; do \
 		plugin_dir=$(CURDIR)/debian/collectd-$$PLUGIN/usr/lib/collectd/; \
