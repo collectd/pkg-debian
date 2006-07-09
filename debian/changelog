@@ -3,6 +3,8 @@ collectd (3.10.0-1) unstable; urgency=low
   * New upstream release.
   * Upstream no longer provides a debian/ directory. Thus no repackaging is
     required any longer.
+  * Not using getifaddrs() is now the default in upstream. getifaddrs.dpatch
+    no longer needed.
   * Added collectd-hddtemp as a suggestion to the collectd package.
 
  -- Sebastian Harl <tokkee@alba>  Sun,  9 Jul 2006 19:01:49 +0200
