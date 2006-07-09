@@ -11,7 +11,7 @@ Package: collectd
 Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
- librrds-perl
+ collectd-hddtemp, librrds-perl
 Description: statistics collection daemon
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
