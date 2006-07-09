@@ -1,9 +1,21 @@
 This package was debianized by Sebastian Harl <sh@tokkee.org> on
 Wed, 10 May 2006 09:20:39 +0200.
 
-It was downloaded from http://collectd.org/files/.
+It was downloaded from <http://collectd.org/files/>.
 
-Copyright Holder: Florian Forster <octo@verplant.org>
+Copyright Holders:
+	Florian Forster <octo@verplant.org>
+	Anthony Gialluca <tonyabg@charter.net>
+	Kern Sibbald
+	Andre M. Hedrick <andre at suse.com>
+	Peter Holik <peter@holik.at>
+	Vincent Stehlé <vincent.stehle@free.fr>
+	Jason Pepas <cell@ices.utexas.edu>
+	Lyonel Vincent <lyonel@ezix.org>
+	David Bacher <drbacher@gmail.com>
+	Scott Garrett <sgarrett@technomancer.com>
+	Sebastian Harl <sh@tokkee.org>
+	Niki W. Waibel <niki.waibel@newlogic.com>
 
 License:
 
