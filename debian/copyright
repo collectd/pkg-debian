@@ -140,3 +140,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+The Debian packaging is (C) 2006, Sebastian Harl <sh@tokkee.org> and
+is licensed under the GPL, see above.
+
