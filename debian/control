@@ -3,8 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
 Build-Depends: debhelper (>= 4.0.0), autotools-dev, libcurl3-dev,
- libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev,
- libsensors-dev
+ libmysqlclient14-dev, librrd2-dev, libsensors-dev
 Standards-Version: 3.7.2
 
 Package: collectd
