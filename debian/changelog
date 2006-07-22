@@ -1,3 +1,12 @@
+collectd (3.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Dynamically link against external liboping.
+    - New binary package collectd-ping.
+    - Added collectd-ping to suggested packages.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 22 Jul 2006 21:43:37 +0200
+
 collectd (3.10.0-1) unstable; urgency=low
 
   * New upstream release.
