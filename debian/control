@@ -4,14 +4,14 @@ Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
 Build-Depends: debhelper (>= 4.0.0), autotools-dev, libcurl3-dev,
  libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev,
- libsensors-dev
+ libsensors-dev, liboping-dev (> 0.3.3)
 Standards-Version: 3.7.2
 
 Package: collectd
 Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
- collectd-hddtemp, librrds-perl
+ collectd-hddtemp, collectd-ping, librrds-perl
 Description: statistics collection daemon
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -31,7 +31,6 @@ Description: statistics collection daemon
    * memory usage: memory
    * NFS utilization: nfs
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
-   * network latency: ping
    * number of processes: processes
    * serial port traffic: serial
    * swap usage: swap
@@ -79,6 +78,19 @@ Description: statistics collection daemon (MySQL plugin)
  .
  This package contains the MySQL plugin which collects MySQL statistics
  provided by MySQL's "show status" command.
+
+Package: collectd-ping
+Architecture: any
+Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Description: statistics collection daemon (MySQL plugin)
+ collectd is a small daemon written in C for performance. It reads various
+ system statistics and updates RRD files, creating them if necessary. Since
+ the daemon doesn't need to startup every time it wants to update the files
+ it's very fast and easy on the system. Also, the statistics are very fine
+ grained since the files are updated every 10 seconds.
+ .
+ This package contains the ping plugin which collects network latency
+ statistics.
 
 Package: collectd-sensors
 Architecture: any
