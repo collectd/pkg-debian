@@ -68,7 +68,7 @@ install-arch: build
 		&& mkdir -p $$doc_dir \
 		&& mv $(CURDIR)/debian/collectd/etc/collectd.conf $$doc_dir
 	
-	for PLUGIN in apache hddtemp mysql sensors; do \
+	for PLUGIN in apache hddtemp mysql ping sensors; do \
 		plugin_dir=$(CURDIR)/debian/collectd-$$PLUGIN/usr/lib/collectd/; \
 		mkdir -p $$plugin_dir; \
 		mv $(CURDIR)/debian/collectd/usr/lib/collectd/$$PLUGIN.so \
