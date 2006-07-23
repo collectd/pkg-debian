@@ -1,3 +1,9 @@
+collectd (3.10.1-2) unstable; urgency=low
+
+  * Added collectd-dbg package.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 23 Jul 2006 23:39:42 +0200
+
 collectd (3.10.1-1) unstable; urgency=low
 
   * New upstream release.
