@@ -4,6 +4,8 @@ collectd (3.10.1-1) unstable; urgency=low
   * Dynamically link against external liboping.
     - New binary package collectd-ping.
     - Added collectd-ping to suggested packages.
+  * Moved config file from /usr/share/doc/collectd/examples/ to
+    /etc/collectd/.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat, 22 Jul 2006 21:43:37 +0200
 
