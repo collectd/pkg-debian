@@ -42,7 +42,9 @@ Description: statistics collection daemon
 
 Package: collectd-dbg
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
+ collectd-hddtemp (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
+ collectd-ping (= ${Source-Version}), collectd-sensors (= ${Source-Version})
 Description: statistics collection daemon
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
