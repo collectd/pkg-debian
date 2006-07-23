@@ -45,14 +45,14 @@ Architecture: any
 Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
  collectd-hddtemp (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
  collectd-ping (= ${Source-Version}), collectd-sensors (= ${Source-Version})
-Description: statistics collection daemon
+Description: statistics collection daemon (debugging symbols)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
  the daemon doesn't need to startup every time it wants to update the files
  it's very fast and easy on the system. Also, the statistics are very fine
  grained since the files are updated every 10 seconds.
  .
- This package contains the debugable main program file.
+ This package contains the debugging symbols.
 
 Package: collectd-apache
 Architecture: any
