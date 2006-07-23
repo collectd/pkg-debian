@@ -17,9 +17,6 @@ Configuring collectd:
 
 - See collectd.conf(5) for details about configuring collectd.
 
-- You can use /usr/share/doc/collectd/examples/collectd.conf as a starting
-  point for writing your own configuration file(s).
-  
 Building your own plugins:
 --------------------------
 
