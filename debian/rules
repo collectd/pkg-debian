@@ -97,7 +97,7 @@ binary-arch: build install-arch
 	dh_installinit -a
 	dh_installman -a src/collectd.1 src/collectd.conf.5
 	dh_link -a
-	dh_strip -a
+	dh_strip -a --debug-pkg=collectd-dbg
 	dh_compress -a
 	dh_fixperms -a
 	dh_installdeb -a
