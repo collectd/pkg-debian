@@ -96,7 +96,7 @@ Description: statistics collection daemon (MySQL plugin)
 Package: collectd-ping
 Architecture: any
 Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Description: statistics collection daemon (MySQL plugin)
+Description: statistics collection daemon (ping plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
  the daemon doesn't need to startup every time it wants to update the files
