@@ -83,7 +83,7 @@ d_start() {
 #	Function that stops the daemon/service.
 #
 d_stop() {
-	start-stop-daemon --stop --quiet --exec $DAEMON
+	start-stop-daemon --stop --quiet --oknodo --exec $DAEMON
 }
 
 case "$1" in
