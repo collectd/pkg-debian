@@ -41,7 +41,9 @@ Description: statistics collection daemon
    * wireless network stats: wireless
 
 Package: collectd-dbg
+Section: devel
 Architecture: any
+Priority: extra
 Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
  collectd-hddtemp (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
  collectd-ping (= ${Source-Version}), collectd-sensors (= ${Source-Version})
