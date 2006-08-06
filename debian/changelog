@@ -1,3 +1,10 @@
+collectd (3.10.1-2bpo1) sarge-backports; urgency=low
+
+  * Rebuild for Sarge.
+  * Forcing the use of libmysqlclient14 and librrd2.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun,  6 Aug 2006 14:17:57 +0200
+
 collectd (3.10.1-3) unstable; urgency=low
 
   * Added --oknodo to start-stop-daemon in the init script (Closes: #379703).
