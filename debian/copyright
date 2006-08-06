@@ -3,21 +3,76 @@ Wed, 10 May 2006 09:20:39 +0200.
 
 It was downloaded from <http://collectd.org/files/>.
 
-Copyright Holders:
+Upstream Authors:
+	Core Developer:
 	Florian Forster <octo@verplant.org>
-	Anthony Gialluca <tonyabg@charter.net>
-	Kern Sibbald
+
+	For individual credits, see AUTHORS.
+
+Copyright Holders (in alphabetical order):
 	Andre M. Hedrick <andre@suse.com>
-	Peter Holik <peter@holik.at>
-	Vincent Stehlé <vincent.stehle@free.fr>
-	Jason Pepas <cell@ices.utexas.edu>
-	Lyonel Vincent <lyonel@ezix.org>
+	Anthony Gialluca <tonyabg@charter.net>
 	David Bacher <drbacher@gmail.com>
+	Florian Forster <octo@verplant.org>
+	Free Software Foundation, Inc.
+	Jason Pepas <cell@ices.utexas.edu>
+	Kern Sibbald
+	Lyonel Vincent <lyonel@ezix.org>
+	Niki W. Waibel <niki.waibel@newlogic.com>
+	Peter Holik <peter@holik.at>
+	Roy Keene, Keene Enterprises <libconfig@rkeene.org>
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
-	Niki W. Waibel <niki.waibel@newlogic.com>
+	Vincent Stehlé <vincent.stehle@free.fr>
 
 License:
+
+	Files src/apache.c
+	      src/apple_sensors.c
+	      src/mysql.c
+	      src/ntpd.c
+	      src/battery.c
+	      src/wireless.c
+	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+
+	File src/apcups.c
+	Copyright (C) 2006 Anthony Gialluca <tonyabg@charter.net>
+	Copyright (C) 2000-2004 Kern Sibbald
+	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
+
+	File src/cpufreq.c
+	Copyright (C) 2005, 2006 Peter Holik <peter@holik.at>
+
+	File src/hddtemp.c
+	Copyright (C) 2005, 2006 Vincent Stehlé <vincent.stehle@free.fr>
+
+	File src/nfs.c
+	Copyright (C) 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
+
+	File src/processes.c
+	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
+	Copyright (C) 2006 Florian Forster <octo@verplant.org> (Mach code)
+
+	File src/serial.c
+	Copyright (C) 2005, 2006 David Bacher <drbacher@gmail.com>
+
+	File src/tape.c
+	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
+
+	File src/users.c
+	Copyright (C) 2005, 2006 Sebastian Harl <sh@tokkee.org>
+
+	Files src/utils_debug.c
+	      src/utils_debug.h
+	      src/utils_mount.c
+	      src/utils_mount.h
+	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
+
+	File src/vserver.c
+	Copyright (C) 2006 Sebastian Harl <sh@tokkee.org>
+
+	All other files (except libltdl/* and src/libconfig/*):
+	Copyright (C) 2005, 2006 Florian Forster <octo@verplant.org>
 
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -37,15 +92,14 @@ License:
 On Debian systems, the complete text of the GNU General Public License 
 can be found in `/usr/share/common-licenses/GPL'.
 
+	File libltdl/ltdl.c
+	Copyright (C) 1998-2000, 2004, 2005 Free Software Foundation, Inc.
+	Originally by Thomas Tanner <tanner@ffii.org>
 
-collectd uses and redistributes the following libraries:
-
-libltdl:
-
-Copyright Holder: Free Software Foundation, Inc.
-
-License:
-
+	File libltdl/ltdl.h
+	Copyright (C) 1998-2000 Free Software Foundation, Inc.
+	Originally by Thomas Tanner <tanner@ffii.org>
+	
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
 	License as published by the Free Software Foundation; either
@@ -64,11 +118,8 @@ License:
 On Debian systems, the complete text of the GNU Lesser General Public License 
 can be found in `/usr/share/common-licenses/LGPL'.
 
-libconfig:
-
-Copyright Holder: Roy Keene, Keene Enterprises
-
-License:
+	Files src/libconfig/*
+	Copyright (C) Roy Keene <libconfig@rkeene.org>
 
 	Permission is hereby granted, free of charge, to any person
 	obtaining a copy of this software and associated documentation 
@@ -88,4 +139,7 @@ License:
 	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
 	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+The Debian packaging is (C) 2006, Sebastian Harl <sh@tokkee.org> and
+is licensed under the GPL, see above.
 
