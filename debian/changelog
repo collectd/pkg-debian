@@ -1,3 +1,9 @@
+collectd (3.10.1-4~bpo.1) sarge-backports; urgency=low
+
+  * Rebuild for Sarge.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Oct 2006 10:50:22 +0000
+
 collectd (3.10.1-4) unstable; urgency=low
 
   * Changed collectd-dbg's section and priority to "devel" and "extra"
