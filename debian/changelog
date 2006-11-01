@@ -1,3 +1,11 @@
+collectd (3.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Retry connecting to remote host and database in ping and mysql plugins
+      respectively (Closes: #393742).
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed,  1 Nov 2006 15:53:07 +0000
+
 collectd (3.10.1-4) unstable; urgency=low
 
   * Changed collectd-dbg's section and priority to "devel" and "extra"
