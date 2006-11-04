@@ -1,3 +1,9 @@
+collectd (3.10.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sat,  4 Nov 2006 22:16:22 +0000
+
 collectd (3.10.2-1) unstable; urgency=low
 
   * New upstream release.
