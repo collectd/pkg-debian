@@ -123,7 +123,7 @@ Description: statistics collection daemon (sensors plugin)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${Source-Version}), collectd (<< 3.11)
+Depends: collectd (>= ${Source-Version}), collectd (<< 3.11~)
 Description: statistics collection daemon (development files)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
