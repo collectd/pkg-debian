@@ -6,6 +6,15 @@
 #		Sebastian Harl <sh@tokkee.org>
 #
 
+### BEGIN INIT INFO
+# Provides:          collectd
+# Required-Start:    $local_fs $remote_fs
+# Should-Start:      $network $named $syslog $time
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start the statistics collection daemon
+### END INIT INFO
+
 set -e
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
