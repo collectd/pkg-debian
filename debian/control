@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
 Build-Depends: debhelper (>= 5), autotools-dev, libcurl3-gnutls-dev,
  libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev,
- libsensors-dev, liboping-dev (> 0.3.3)
+ libsensors-dev, liboping-dev (>= 0.3.3)
 Standards-Version: 3.7.2
 
 Package: collectd
@@ -123,7 +123,7 @@ Description: statistics collection daemon (sensors plugin)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (= ${Source-Version})
+Depends: collectd (>= ${Source-Version}), collectd (<< 3.11)
 Description: statistics collection daemon (development files)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
