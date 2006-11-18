@@ -25,7 +25,7 @@ Copyright Holders (in alphabetical order):
 	Sebastian Harl <sh@tokkee.org>
 	Vincent Stehlé <vincent.stehle@free.fr>
 
-License:
+Licenses:
 
 	Files src/apache.c
 	      src/apple_sensors.c
@@ -34,45 +34,57 @@ License:
 	      src/battery.c
 	      src/wireless.c
 	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
 
 	File src/apcups.c
 	Copyright (C) 2006 Anthony Gialluca <tonyabg@charter.net>
 	Copyright (C) 2000-2004 Kern Sibbald
 	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
+	License: GNU General Public License
 
 	File src/cpufreq.c
 	Copyright (C) 2005, 2006 Peter Holik <peter@holik.at>
+	License: GNU General Public License
 
 	File src/hddtemp.c
 	Copyright (C) 2005, 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	License: GNU General Public License
 
 	File src/nfs.c
 	Copyright (C) 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
+	License: GNU General Public License
 
 	File src/processes.c
 	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
 	Copyright (C) 2006 Florian Forster <octo@verplant.org> (Mach code)
+	License: GNU General Public License
 
 	File src/serial.c
 	Copyright (C) 2005, 2006 David Bacher <drbacher@gmail.com>
+	License: GNU General Public License
 
 	File src/tape.c
 	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
+	License: GNU General Public License
 
 	File src/users.c
 	Copyright (C) 2005, 2006 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
 
 	Files src/utils_debug.c
 	      src/utils_debug.h
 	      src/utils_mount.c
 	      src/utils_mount.h
 	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
+	License: GNU General Public License
 
 	File src/vserver.c
 	Copyright (C) 2006 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
 
 	All other files (except libltdl/* and src/libconfig/*):
 	Copyright (C) 2005, 2006 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -95,10 +107,12 @@ can be found in `/usr/share/common-licenses/GPL'.
 	File libltdl/ltdl.c
 	Copyright (C) 1998-2000, 2004, 2005 Free Software Foundation, Inc.
 	Originally by Thomas Tanner <tanner@ffii.org>
+	License: GNU Lesser General Public License
 
 	File libltdl/ltdl.h
 	Copyright (C) 1998-2000 Free Software Foundation, Inc.
 	Originally by Thomas Tanner <tanner@ffii.org>
+	License: GNU Lesser General Public License
 	
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public

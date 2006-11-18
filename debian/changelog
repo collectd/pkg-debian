@@ -1,3 +1,22 @@
+collectd (3.10.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Made package binNMUable:
+    - Upstream assures API backward compatibility only between patch releases.
+  * LSBized init script.
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon,  6 Nov 2006 13:09:28 +0000
+
+collectd (3.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Retry connecting to remote host and database in ping and mysql plugins
+      respectively (Closes: #393742).
+  * Replaced libcurl3-dev build dependency with libcurl3-gnutls-dev to prevent
+    linking against libssl.
+
+ -- Sebastian Harl <sh@tokkee.org>  Fri,  3 Nov 2006 15:18:17 +0000
+
 collectd (3.10.1-4~bpo.1) sarge-backports; urgency=low
 
   * Rebuild for Sarge.
