@@ -10,13 +10,16 @@ Upstream Authors:
 	For individual credits, see AUTHORS.
 
 Copyright Holders (in alphabetical order):
+	Alexander Wirt <formorer@formorer.de>
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
 	David Bacher <drbacher@gmail.com>
+	Flavio Stanchina <flavio@stanchina.net>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
 	Jason Pepas <cell@ices.utexas.edu>
 	Kern Sibbald
+	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	Peter Holik <peter@holik.at>
@@ -29,6 +32,7 @@ Licenses:
 
 	Files src/apache.c
 	      src/apple_sensors.c
+	      src/dns.c
 	      src/mysql.c
 	      src/ntpd.c
 	      src/battery.c
@@ -48,6 +52,14 @@ Licenses:
 
 	File src/hddtemp.c
 	Copyright (C) 2005, 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	License: GNU General Public License
+
+	File src/mbmon.c
+	Copyright (C) 2006 Flavio Stanchina
+	License: GNU General Public License
+
+	File src/multimeter.c
+	Copyright (C) 2005, 2006 Peter Holik
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -78,11 +90,18 @@ Licenses:
 	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
 	License: GNU General Public License
 
-	File src/vserver.c
+	Files src/utils_ignorelist.c
+	      src/utils_ignorelist.h
+	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
+	License: GNU General Public License
+
+	Files src/vserver.c
+	      src/email.c
 	Copyright (C) 2006 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
-	All other files (except libltdl/* and src/libconfig/*):
+	All other files (except libltdl/*, src/libconfig/*, src/utils_dns.* and
+		contrib/SpamAssassin/*):
 	Copyright (C) 2005, 2006 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
@@ -131,6 +150,53 @@ can be found in `/usr/share/common-licenses/GPL'.
 
 On Debian systems, the complete text of the GNU Lesser General Public License 
 can be found in `/usr/share/common-licenses/LGPL'.
+
+	File src/utils_dns.c
+	Copyright (C) 2002 The Measurement Factory, Inc.
+	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	License: BSD License
+
+	File src/utils_dns.h
+	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	License: BSD License
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	   this list of conditions and the following disclaimer.
+	2. Redistributions in binary form must reproduce the above copyright
+	   notice, this list of conditions and the following disclaimer in the 
+	   documentation and/or other materials provided with the distribution.
+	3. Neither the name of The Measurement Factory nor the names of its
+	   contributors may be used to endorse or promote products derived from
+	   this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+	ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+	LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+	CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+	SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+	INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+	CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+	POSSIBILITY OF SUCH DAMAGE.
+
+	Files contrib/SpamAssassin/*
+	Copyright (C) 2006 Alexander Wirt <formorer@formorer.de>
+
+	This program is free software; you can redistribute it and/or modify it
+	under the the terms of either:
+
+	a) the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+	or
+
+	b) the GPL (http://www.gnu.org/copyleft/gpl.html)
+
+	Use whatever you like more.
 
 	Files src/libconfig/*
 	Copyright (C) Roy Keene <libconfig@rkeene.org>
