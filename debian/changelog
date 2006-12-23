@@ -1,3 +1,15 @@
+collectd (3.11.0-1) experimental; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - DNS traffic (query types, response codes, opcodes and traffic): dns
+    - E-Mail statistics (count, traffic, spam scores and checks): email
+    - Motherboard monitor: mbmon
+    - Multimeter statistics: multimeter (beta version)
+  * Upload to experimental because of Etch freeze.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 23 Dec 2006 00:22:39 +0000
+
 collectd (3.10.4-1) unstable; urgency=low
 
   * New upstream release.
