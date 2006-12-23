@@ -7,6 +7,8 @@ collectd (3.11.0-1) experimental; urgency=low
     - Motherboard monitor: mbmon
     - Multimeter statistics: multimeter (beta version)
   * Upload to experimental because of Etch freeze.
+  * New binary package collectd-dns.
+    - Added collectd-dns to suggested packages.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat, 23 Dec 2006 00:22:39 +0000
 
