@@ -19,6 +19,8 @@ else
 	CFLAGS += -O2
 endif
 
+include /usr/share/dpatch/dpatch.make
+
 config.status: configure
 	dh_testdir
 	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) \
@@ -28,14 +30,14 @@ config.status: configure
 
 build: build-stamp
 
-build-stamp: config.status
+build-stamp: config.status patch
 	dh_testdir
 	
 	$(MAKE)
 	
 	touch build-stamp
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp

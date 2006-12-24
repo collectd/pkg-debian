@@ -1,0 +1,37 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## email-ignore-size-le-0.dpatch by Sebastian Harl <sh@tokkee.org>
+##
+## DP: email plugin: Ignore size if it less than or equal to zero.
+
+@DPATCH@
+
+diff -uN a/src/collectd.1 b/src/collectd.1
+--- a/src/collectd.1
++++ b/src/collectd.1
+@@ -271,6 +271,8 @@
+ \&  e:<type>:<size>
+ .Ve
+ .PP
++If \f(CW\*(C`size\*(C'\fR is less than or equal to zero, \f(CW\*(C`size\*(C'\fR is ignored.
++.PP
+ Spam score:
+ .PP
+ .Vb 1
+diff -uN a/src/email.c b/src/email.c
+--- a/src/email.c
++++ b/src/email.c
+@@ -486,9 +486,11 @@
+ 				type_list_incr (&count, type, 1);
+ 				pthread_mutex_unlock (&count_mutex);
+ 
+-				pthread_mutex_lock (&size_mutex);
+-				type_list_incr (&size, type, bytes);
+-				pthread_mutex_unlock (&size_mutex);
++				if (bytes > 0) {
++					pthread_mutex_lock (&size_mutex);
++					type_list_incr (&size, type, bytes);
++					pthread_mutex_unlock (&size_mutex);
++				}
+ 			}
+ 			else if ('s' == line[0]) { /* s:<value> */
+ 				pthread_mutex_lock (&score_mutex);

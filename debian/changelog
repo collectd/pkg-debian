@@ -12,8 +12,12 @@ collectd (3.11.0-1) experimental; urgency=low
   * Do not split off packages introducing new recommendations or suggestions.
     - Merge collectd-hddtemp into collectd.
     - Add hddtemp and mbmon to suggested packages.
+  * Added sensors-ignorelist.dpatch: Avoid assertion in ignorelist_match ()
+    when sensors plugin is not configured.
+  * Added email-ignore-size-le-0.dpatch: Ignore the size of an email if it is
+    less than or equal to zero.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 23 Dec 2006 10:26:04 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 24 Dec 2006 14:09:39 +0000
 
 collectd (3.10.4-1) unstable; urgency=low
 
