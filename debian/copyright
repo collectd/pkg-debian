@@ -30,6 +30,10 @@ Copyright Holders (in alphabetical order):
 
 Licenses:
 
+	File contrib/collectd2html.pl
+	Copyright 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	License: GNU General Public License
+
 	Files src/apache.c
 	      src/apple_sensors.c
 	      src/dns.c
