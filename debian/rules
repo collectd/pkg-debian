@@ -95,7 +95,8 @@ binary-arch: build install-arch
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
-	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi
+	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
+		contrib/SpamAssassin/
 	dh_installinit -a -- defaults 95
 	dh_installman -a src/collectd.1 src/collectd.conf.5
 	dh_link -a
