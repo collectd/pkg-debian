@@ -1,0 +1,3 @@
+version=3
+http://collectd.org/files/ collectd-(.*)\.tar\.gz
+
