@@ -44,6 +44,8 @@ Description: statistics collection daemon
    * number of users logged into the system: users
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
+ .
+  Homepage: http://collectd.org/
 
 Package: collectd-dbg
 Section: devel
