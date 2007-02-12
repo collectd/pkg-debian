@@ -76,7 +76,7 @@ static void my_read(void)
                 (unsigned int)curtime, data) >= BUFSIZE)
         return;
 
-    plugin_submit(MODULE_NAME, NULL, buf);
+    plugin_submit(MODULE_NAME, "-", buf);
     return;
 }
 #undef BUFSIZE
