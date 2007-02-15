@@ -4,8 +4,9 @@ collectd (3.11.2-1) experimental; urgency=low
   * Removed sensors-ignorelist.dpatch - has been merged upstream.
   * Removed email-ignore-size-le-0.dpatch - has been merged upstream.
   * Added watch file.
+  * examples/myplugin.c: Pass "-" instead of NULL to plugin_submit().
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 12 Feb 2007 16:25:36 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 15 Feb 2007 09:19:15 +0000
 
 collectd (3.11.0-1) experimental; urgency=low
 
