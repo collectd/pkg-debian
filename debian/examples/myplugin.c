@@ -1,107 +1,164 @@
 /*
- * /usr/share/doc/collectd/examples/sample_plugin.c
+ * /usr/share/doc/collectd/examples/myplugin.c
  *
- * A sample plugin for collectd.
+ * A plugin template for collectd.
  *
  * Written by Sebastian Harl <sh@tokkee.org>
  *
  * This is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free 
- * Software Foundation; either version 2 of the License, or (at your 
- * option) any later version.
+ * the terms of the GNU General Public License as published by the Free
+ * Software Foundation; only version 2 of the License is applicable.
+ */
+
+/*
+ * Notes:
+ * - plugins are executed in parallel, thus, thread-safe
+ *   functions need to be used
+ * - each of the functions below (except module_register)
+ *   is optional
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <collectd/common.h>    /* rrd_update_file */
-#include <collectd/plugin.h>    /* plugin_* */
+#include <collectd/collectd.h>
+#include <collectd/common.h>
+#include <collectd/plugin.h>
 
-/* Optional config file support */
-/* #include <collectd/configfile.h> */
-
-/* Optional debugging support 
- * (only available if collectd was compiled with debugging support) */
-/* #include <collectd/utils_debug.h> */
-
-#define MODULE_NAME "myplugin"
-
-/* Name of the rrd file under DataDir (/var/lib/collectd by default)
- *
- * The name may contain slashes to create subdirectories. */
-static char *my_rrd = "myplugin.rrd";
-
-/* DS definitions for the rrd file
- *
- * See the rrdcreate(1) manpage for details. The heartbeat is configurable in
- * collectd. It defaults to 25. */
-static char *ds_def[] =
+/*
+ * data source definition:
+ * - name of the data source
+ * - type of the data source (DS_TYPE_GAUGE, DS_TYPE_COUNTER)
+ * - minimum allowed value
+ * - maximum allowed value
+ */
+static data_source_t dsrc[1] =
 {
-    "DS:my_ds:GAUGE:25:0:U",
-    NULL
+	{ "my_ds", DS_TYPE_GAUGE, 0, NAN }
 };
 
-/* DS count */
-static int ds_num = 1;
-
-/* Time at which the read function is called */
-extern time_t curtime;
-
-/* Initialize the plugin
- *
- * This function is called to set up a plugin before using it. */
-static void my_init(void)
+/*
+ * data set definition:
+ * - name of the data set
+ * - number of data sources
+ * - list of data sources
+ */
+static data_set_t ds =
 {
-    /* we have nothing to do here :-) */
-    return;
-}
+	"myplugin", STATIC_ARRAY_SIZE (dsrc), dsrc
+};
 
-/* Get the data
- *
- * This function implements the magic used to get the desired values that
- * should be stored in the rrd file. It uses plugin_submit to transfer the
- * data to whatever place is configured in the config file. If there are more
- * than one instances you should pass a uniq identifier as seconds argument to
- * the plugin_submit function. */
-#define BUFSIZE 256
-static void my_read(void)
+/*
+ * This function is called once upon startup to initialize the plugin.
+ */
+static int my_init (void)
 {
-    long int data = 0;
-    char buf[BUFSIZE] = "";
+	/* open sockets, initialize data structures, ... */
 
-    /* magic ;-) */
-    data = random();
+	/* A return value != 0 indicates an error and causes the plugin to be
+	   disabled. */
+    return 0;
+} /* static int my_init (void) */
 
-    if (snprintf(buf, BUFSIZE, "%u:%li", 
-                (unsigned int)curtime, data) >= BUFSIZE)
-        return;
-
-    plugin_submit(MODULE_NAME, "-", buf);
-    return;
-}
-#undef BUFSIZE
-
-/* Save the data
- *
- * This function saves the data to the appropriate location by calling
- * rrd_update_file. It is used to "calculate" the filename and DS definition
- * appropriate for the given instance. */
-static void my_write(host, inst, val)
-    char *host;
-    char *inst;
-    char *val;
+/*
+ * This function is called in regular intervalls to collect the data.
+ */
+static int my_read (void)
 {
-    rrd_update_file(host, my_rrd, val, ds_def, ds_num);
-    return;
-}
+	value_t values[1]; /* the size of this list should equal the number of
+						  data sources */
+	value_list_t vl = VALUE_LIST_INIT;
 
-/* Register the plugin
- *
- * This function registers the plugin with collectd. It has to be named
- * "module_register". */
-void module_register(void)
+	/* do the magic to read the data */
+	values[0].gauge = random ();
+
+	vl.values     = values;
+	vl.values_len = 1;
+	vl.time       = time (NULL);
+	strcpy (vl.host, hostname_g);
+	strcpy (vl.plugin, "myplugin");
+	/* optionally set vl.plugin_instance and vl.type_instance to reasonable
+	 * values (default: "") */
+
+	/* dispatch the values to collectd which passes them on to all registered
+	 * write functions - the first argument is used to lookup the data set
+	 * definition */
+	plugin_dispatch_values ("myplugin", &vl);
+
+	/* A return value != 0 indicates an error and the plugin will be skipped
+	 * for an increasing amount of time. */
+    return 0;
+} /* static int my_read (void) */
+
+/*
+ * This function is called after values have been dispatched to collectd.
+ */
+static int my_write (const data_set_t *ds, const value_list_t *vl)
 {
-    plugin_register(MODULE_NAME, my_init, my_read, my_write);
+	char name[1024] = "";
+	int i = 0;
+
+	if (ds->ds_num != vl->values_len) {
+		plugin_log (LOG_WARNING, "DS number does not match values length");
+		return -1;
+	}
+
+	/* get the default base filename for the output file - depending on the
+	 * provided values this will be something like
+	 * <host>/<plugin>[-<plugin_type>]/<instance>[-<instance_type>] */
+	if (0 != format_name (name, 1024, vl->host, vl->plugin,
+			vl->plugin_instance, ds->type, vl->type_instance))
+		return -1;
+
+	for (i = 0; i < ds->ds_num; ++i) {
+		/* do the magic to output the data */
+		printf ("%s (%s) at %i: ", name,
+				(ds->ds->type == DS_TYPE_GAUGE) ? "GAUGE" : "COUNTER",
+				(int)vl->time);
+
+		if (ds->ds->type == DS_TYPE_GAUGE)
+			printf ("%f\n", vl->values[i].gauge);
+		else
+			printf ("%lld\n", vl->values[i].counter);
+	}
+	return 0;
+} /* static int my_write (data_set_t *, value_list_t *) */
+
+/*
+ * This function is called when plugin_log () has been used.
+ */
+static void my_log (int severity, const char *msg)
+{
+	printf ("LOG: %i - %s\n", severity, msg);
+	return;
+} /* static void my_log (int, const char *) */
+
+/*
+ * This function is called before shutting down collectd.
+ */
+static int my_shutdown (void)
+{
+	/* close sockets, free data structures, ... */
+	return 0;
+} /* static int my_shutdown (void) */
+
+/*
+ * This function is called after loading the plugin to register it with
+ * collectd.
+ */
+void module_register (modreg_e load)
+{
+	plugin_register_log ("myplugin", my_log);
+
+	if (load & MR_DATASETS)
+		plugin_register_data_set (&ds);
+
+	if (load & MR_READ)
+		plugin_register_read ("myplugin", my_read);
+
+	plugin_register_init ("myplugin", my_init);
+	plugin_register_write ("myplugin", my_write);
+	plugin_register_shutdown ("myplugin", my_shutdown);
     return;
-}
+} /* void module_register (modreg_e) */
 
