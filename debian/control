@@ -2,7 +2,7 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
-Build-Depends: debhelper (>= 5), autotools-dev, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap-dev
+Build-Depends: debhelper (>= 5), autotools-dev, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap-dev, iptables-dev [!amd64 !ia64 !ppc64], nut-dev [!amd64 !ia64 !ppc64], libperl-dev
 Build-Conflicts: libpthread-dev
 Standards-Version: 3.7.2
 
@@ -10,7 +10,7 @@ Package: collectd
 Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
- collectd-ping, collectd-dns, librrds-perl, hddtemp, mbmon
+ collectd-ping, collectd-dns, collectd-perl,librrds-perl, hddtemp, mbmon
 Provides: collectd-hddtemp
 Replaces: collectd-hddtemp
 Description: statistics collection daemon
@@ -108,6 +108,19 @@ Description: statistics collection daemon (MySQL plugin)
  This package contains the MySQL plugin which collects MySQL statistics
  provided by MySQL's "show status" command.
 
+Package: collectd-perl
+Architecture: any
+Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Description: statistics collection daemon (perl plugin)
+ collectd is a small daemon written in C for performance. It reads various
+ system statistics and updates RRD files, creating them if necessary. Since
+ the daemon doesn't need to startup every time it wants to update the files
+ it's very fast and easy on the system. Also, the statistics are very fine
+ grained since the files are updated every 10 seconds.
+ .
+ This package contains the perl plugin which embeds a Perl interpreter adding
+ the possibility to write collectd plugins in Perl.
+
 Package: collectd-ping
 Architecture: any
 Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
@@ -136,7 +149,7 @@ Description: statistics collection daemon (sensors plugin)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${Source-Version}), collectd (<< 3.12~)
+Depends: collectd (>= ${Source-Version}), collectd (<< 4.1~)
 Description: statistics collection daemon (development files)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since

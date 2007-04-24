@@ -9,6 +9,7 @@
 # These are used for cross-compiling and for saving the configure script
 # from having to guess our platform (since we know it already)
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 CFLAGS = -Wall -g
@@ -19,12 +20,21 @@ else
 	CFLAGS += -O2
 endif
 
-config.status: configure
-	dh_testdir
-	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) \
+confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
-			--localstatedir=/var --sysconfdir=/etc
+			--localstatedir=/var --sysconfdir=/etc \
+			--enable-debug
+
+# The static libraries iptc and upsclient cannot be used on 64bit systems
+# (see bugs #358637 and #419684 for more details).
+ifneq (,$(findstring $(DEB_BUILD_ARCH),amd64 ia64 ppc64))
+	confflags += --disable-iptables --disable-nut
+endif
+
+config.status: configure
+	dh_testdir
+	CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp
 
@@ -68,7 +78,7 @@ install-arch: build
 	install -D -m 0644 $(CURDIR)/debian/collectd.conf \
 		$(CURDIR)/debian/collectd/etc/collectd/collectd.conf
 	
-	for PLUGIN in apache dns mysql ping sensors; do \
+	for PLUGIN in apache dns mysql perl ping sensors; do \
 		plugin_dir=$(CURDIR)/debian/collectd-$$PLUGIN/usr/lib/collectd/; \
 		mkdir -p $$plugin_dir; \
 		mv $(CURDIR)/debian/collectd/usr/lib/collectd/$$PLUGIN.so \
@@ -94,7 +104,8 @@ binary-arch: build install-arch
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
-		contrib/SpamAssassin/
+		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/ \
+		contrib/extractDS.px contrib/migrate-3-4.px
 	dh_installinit -a -- defaults 95
 	dh_installman -a src/collectd.1 src/collectd.conf.5
 	dh_link -a

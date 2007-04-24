@@ -1,3 +1,29 @@
+collectd (4.0.0~rc6-1) experimental; urgency=low
+
+  * New upstream release.
+    - Rewrite of the plugin system to allow more flexibility by using
+      different types of plugins.
+    - Added Nagios plugin to query collectd from Nagios.
+    New plugins:
+    - Output to "comma separated values" (CSV) files: csv
+    - Output to RRD files: rrdtool
+    - IO via the network: network
+    - External runtime interface: unixsock
+    - Embedding a Perl interpreter: perl
+    - Logging to files, STDOUT or STDERR: logfile
+    - Logging to syslog: syslog
+    - Amount of available entropy: entropy
+    - Execution of external programs: exec
+    - Iptables statistics: iptables (32bit systems only)
+    - IRQ counters: irq
+    - UPS information: nut (32bit systems only)
+  * New binary package collectd-perl (linking against libperl).
+    - Added collectd-perl to suggested packages.
+  * examples/myplugin.c: Converted to the new plugin interface.
+  * Enabled debugging as this is an experimental release candidate.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 24 Apr 2007 10:44:26 +0200
+
 collectd (3.11.2-1) experimental; urgency=low
 
   * New upstream release.
