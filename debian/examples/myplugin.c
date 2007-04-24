@@ -21,6 +21,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <string.h>
+
+#ifndef __USE_ISOC99 /* required for NAN */
+# define DISABLE_ISOC99 1
+# define __USE_ISOC99 1
+#endif /* !defined(__USE_ISOC99) */
+#include <math.h>
+#if DISABLE_ISOC99
+# undef DISABLE_ISOC99
+# undef __USE_ISOC99
+#endif /* DISABLE_ISOC99 */
+
 #include <collectd/collectd.h>
 #include <collectd/common.h>
 #include <collectd/plugin.h>
