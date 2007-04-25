@@ -83,7 +83,12 @@ install-arch: build
 		mkdir -p $$plugin_dir; \
 		mv $(CURDIR)/debian/collectd/usr/lib/collectd/$$PLUGIN.so \
 			$$plugin_dir; \
-	done	
+	done
+	
+	mkdir -p debian/collectd/usr/lib/collectd/utils/
+	for UTIL in extractDS.px migrate-3-4.px; do \
+		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
+	done
 
 binary-indep: install-indep
 	dh_testdir
@@ -104,8 +109,7 @@ binary-arch: build install-arch
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
-		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/ \
-		contrib/extractDS.px contrib/migrate-3-4.px
+		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/
 	dh_installinit -a -- defaults 95
 	dh_installman -a src/collectd.1 src/collectd.conf.5
 	dh_link -a
