@@ -1,0 +1,19 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+## extractDS_path.dpatch by Sebastian Harl <sh@tokkee.org>
+##
+## DP: Set the path of extractDS.px to /usr/lib/collectd/utils/.
+
+@DPATCH@
+
+diff a/contrib/migrate-3-4.px b/contrib/migrate-3-4.px
+--- a/contrib/migrate-3-4.px
++++ b/contrib/migrate-3-4.px
+@@ -166,7 +166,7 @@ for (@Files)
+ 			my $src_ds = $src_dses->[$i];
+ 			$dest->{'type_instance'} = $type_instances->[$i];
+ 			$dest_filename = get_filename ($dest);
+-			print "./extractDS.px -i '$InDir/$orig_filename' -s '$src_ds' -o '$OutDir/$dest_filename' -d '$dst_ds'\n";
++			print "/usr/lib/collectd/utils/extractDS.px -i '$InDir/$orig_filename' -s '$src_ds' -o '$OutDir/$dest_filename' -d '$dst_ds'\n";
+ 		}
+ 	}
+ 	elsif (exists ($TypeRename{$orig->{'type'}}))

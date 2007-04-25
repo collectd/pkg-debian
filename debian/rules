@@ -20,6 +20,8 @@ else
 	CFLAGS += -O2
 endif
 
+include /usr/share/dpatch/dpatch.make
+
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
@@ -32,7 +34,7 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),amd64 ia64 ppc64))
 	confflags += --disable-iptables --disable-nut
 endif
 
-config.status: configure
+config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
 	CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
@@ -45,7 +47,7 @@ build-stamp: config.status
 	
 	touch build-stamp
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
