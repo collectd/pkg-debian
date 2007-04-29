@@ -8,7 +8,7 @@ Description: Automatically try to migrate your RRD files?
  can be done automatically. In this case a backup of /var/lib/collectd/ is
  made in /var/backups/.
  .
- See /usr/share/doc/collectd/README.Debian for details.
+ See /usr/share/doc/collectd/NEWS.Debian for details.
  .
  This script is still experimental. Do not expect it to work in all cases.
 

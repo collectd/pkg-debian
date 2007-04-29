@@ -1,0 +1,18 @@
+collectd (4.0.0~rc6-1) experimental; urgency=low
+
+  This version introduces significant changes to the layout of the RRD files
+  created by collectd. In order to keep your old data you have to migrate it.
+  This can be done by using /usr/lib/collectd/utils/migrate-3-4.px. This
+  script will output a series of shell commands that should do all the work
+  automatically. However, depending on your setup, a couple of minor changes
+  might be necessary to migrate all of your data. In this case, please file a
+  bug report so that the necessary changes can be added to the script. The
+  script creates the new RRD files in /tmp/collectd-4/ which can be moved to
+  /var/lib/collectd/ if everything went right.
+
+  Additionally, the syntax of the configuration file has changed slightly. All
+  strings need to be surrounded by double quotes. See collectd.conf(5) for
+  details.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 24 Apr 2007 10:44:26 +0200
+
