@@ -113,6 +113,8 @@ binary-arch: build install-arch
 		AUTHORS README TODO
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/
+	sed -i -e 's/#\/bin\/bash/#!\/bin\/bash/' \
+		debian/collectd/usr/share/doc/collectd/examples/iptables/accounting.sh
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_installman -a src/collectd.1 src/collectd.conf.5
