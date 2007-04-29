@@ -26,21 +26,32 @@ Description: statistics collection daemon
    * battery status: battery
    * CPU utilization: cpu
    * CPU frequency: cpufreq
+   * output to comma separated values (CSV) files: csv
    * disk space usage: df
    * disk and partition throughput: disk
    * E-Mail statistics (count, traffic, spam scores and checks): email
+   * amount of available entropy: entropy
+   * execution of external programs: exec
    * harddisk temperature: hddtemp
+   * network traffic: interface
+   * iptables statistics: iptables
+   * IRQ counters: irq
    * system load averages: load
+   * logging to files, STDOUT and STDERR: logfile
    * motherboard monitor: mbmon
    * memory usage: memory
    * multimeter statistics: multimeter
+   * IO via the network: network
    * NFS utilization: nfs
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
+   * UPS information: nut
    * number of processes: processes
+   * output to RRD files: rrdtool
    * serial port traffic: serial
    * swap usage: swap
+   * logging to syslog: syslog
    * tape drive usage: tape (server mode only)
-   * network traffic: traffic
+   * external runtime interface: unixsock
    * number of users logged into the system: users
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
@@ -73,8 +84,8 @@ Description: statistics collection daemon (Apache plugin)
  it's very fast and easy on the system. Also, the statistics are very fine
  grained since the files are updated every 10 seconds.
  .
- This package contains the Apache plugin which collects Apache statistics
- provided by Apache's mod_status.
+ This package contains the Apache plugin which collects Apache and lighttpd
+ statistics provided by mod_status.
 
 Package: collectd-dns
 Architecture: any
