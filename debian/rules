@@ -109,7 +109,8 @@ binary-arch: build install-arch
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
-	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -a debian/README.Debian debian/NEWS.Debian \
+		AUTHORS README TODO
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/
 	dh_installdebconf -a
