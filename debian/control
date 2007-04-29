@@ -8,7 +8,7 @@ Standards-Version: 3.7.2
 
 Package: collectd
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
  collectd-ping, collectd-dns, collectd-perl,librrds-perl, hddtemp, mbmon
 Provides: collectd-hddtemp
