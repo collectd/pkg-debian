@@ -15,6 +15,7 @@ Copyright Holders (in alphabetical order):
 	Anthony Gialluca <tonyabg@charter.net>
 	David Bacher <drbacher@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
+	Florent Monbillard <eppo@darox.net>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
 	Jason Pepas <cell@ices.utexas.edu>
@@ -23,25 +24,21 @@ Copyright Holders (in alphabetical order):
 	Lyonel Vincent <lyonel@ezix.org>
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	Peter Holik <peter@holik.at>
-	Roy Keene, Keene Enterprises <libconfig@rkeene.org>
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
+	Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	Vincent Stehlé <vincent.stehle@free.fr>
 
 Licenses:
 
-	File contrib/collectd2html.pl
+	Files contrib/collectd2html.pl
+	      src/hddtemp.c
 	Copyright 2006 Vincent Stehlé <vincent.stehle@free.fr>
 	License: GNU General Public License
 
-	Files src/apache.c
-	      src/apple_sensors.c
-	      src/dns.c
-	      src/mysql.c
-	      src/ntpd.c
-	      src/battery.c
-	      src/wireless.c
+	File src/apache.c
 	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	Copyright (C) 2007 Florent Monbillard <eppo@darox.net>
 	License: GNU General Public License
 
 	File src/apcups.c
@@ -50,20 +47,26 @@ Licenses:
 	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
 	License: GNU General Public License
 
-	File src/cpufreq.c
-	Copyright (C) 2005, 2006 Peter Holik <peter@holik.at>
+	Files src/cpufreq.c
+	      src/irq.c
+	      src/multimeter.c
+	Copyright (C) 2005-2007 Peter Holik <peter@holik.at>
 	License: GNU General Public License
 
-	File src/hddtemp.c
-	Copyright (C) 2005, 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	Files src/email.c
+	      src/logfile.c
+	      src/perl.c
+	      src/users.c
+	      src/vserver.c
+	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	File src/iptables.c
+	Copyright (C) 2007 Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	License: GNU General Public License
 
 	File src/mbmon.c
 	Copyright (C) 2006 Flavio Stanchina
-	License: GNU General Public License
-
-	File src/multimeter.c
-	Copyright (C) 2005, 2006 Peter Holik
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -72,7 +75,7 @@ Licenses:
 
 	File src/processes.c
 	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
-	Copyright (C) 2006 Florian Forster <octo@verplant.org> (Mach code)
+	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org> (Mach code)
 	License: GNU General Public License
 
 	File src/serial.c
@@ -83,13 +86,7 @@ Licenses:
 	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
 	License: GNU General Public License
 
-	File src/users.c
-	Copyright (C) 2005, 2006 Sebastian Harl <sh@tokkee.org>
-	License: GNU General Public License
-
-	Files src/utils_debug.c
-	      src/utils_debug.h
-	      src/utils_mount.c
+	Files src/utils_mount.c
 	      src/utils_mount.h
 	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
 	License: GNU General Public License
@@ -99,14 +96,9 @@ Licenses:
 	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
 	License: GNU General Public License
 
-	Files src/vserver.c
-	      src/email.c
-	Copyright (C) 2006 Sebastian Harl <sh@tokkee.org>
-	License: GNU General Public License
-
 	All other files (except libltdl/*, src/libconfig/*, src/utils_dns.* and
 		contrib/SpamAssassin/*):
-	Copyright (C) 2005, 2006 Florian Forster <octo@verplant.org>
+	Copyright (C) 2005-2007 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
@@ -201,28 +193,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	b) the GPL (http://www.gnu.org/copyleft/gpl.html)
 
 	Use whatever you like more.
-
-	Files src/libconfig/*
-	Copyright (C) Roy Keene <libconfig@rkeene.org>
-
-	Permission is hereby granted, free of charge, to any person
-	obtaining a copy of this software and associated documentation 
-	files (the "Software"), to deal in the Software without restriction, 
-	including without limitation the rights to use, copy, modify, merge, 
-	publish, distribute, sublicense, and/or sell copies of the Software, 
-	and to permit persons to whom the Software is furnished to do so, 
-	subject to the following conditions:
-
-	The above copyright notice and this permission notice shall be 
-	included in all copies or substantial portions of the Software.
-
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
-	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
-	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 The Debian packaging is (C) 2006, Sebastian Harl <sh@tokkee.org> and
 is licensed under the GPL, see above.
