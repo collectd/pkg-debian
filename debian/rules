@@ -55,6 +55,7 @@ clean: unpatch
 	-$(MAKE) distclean
 	
 	dh_clean 
+	debconf-updatepo
 
 install-indep:
 	dh_testdir
