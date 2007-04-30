@@ -2,7 +2,7 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
-Build-Depends: debhelper (>= 5), dpatch, autotools-dev, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap-dev, iptables-dev [!amd64 !ia64 !ppc64], nut-dev [!amd64 !ia64 !ppc64], libperl-dev
+Build-Depends: debhelper (>= 5), po-debconf, dpatch, autotools-dev, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap-dev, iptables-dev [!amd64 !ia64 !ppc64], nut-dev [!amd64 !ia64 !ppc64], libperl-dev
 Build-Conflicts: libpthread-dev
 Standards-Version: 3.7.2
 
