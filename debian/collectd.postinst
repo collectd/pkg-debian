@@ -35,6 +35,7 @@ case "$1" in
             rm -rf /var/lib/collectd/
             mkdir /var/lib/collectd/
             mv $tmpdir /var/lib/collectd/rrd
+            chmod 0755 /var/lib/collectd/rrd
         fi
     ;;
 
