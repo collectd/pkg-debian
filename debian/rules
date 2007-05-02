@@ -63,7 +63,7 @@ install-indep:
 	dh_clean -k
 	dh_installdirs -i
 	
-	include_dir=$(CURDIR)/debian/collectd-dev/usr/include/collectd/ \
+	include_dir=debian/collectd-dev/usr/include/collectd/ \
 		&& mkdir -p $$include_dir \
 		&& cp src/*.h $$include_dir
 
@@ -75,17 +75,16 @@ install-arch: build
 	
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/collectd
 	
-	rm -f $(CURDIR)/debian/collectd/usr/lib/collectd/*.la
+	rm -f debian/collectd/usr/lib/collectd/*.la
 	
-	rm -f $(CURDIR)/debian/collectd/etc/collectd.conf
-	install -D -m 0644 $(CURDIR)/debian/collectd.conf \
-		$(CURDIR)/debian/collectd/etc/collectd/collectd.conf
+	rm -f debian/collectd/etc/collectd.conf
+	install -D -m 0644 debian/collectd.conf \
+		debian/collectd/etc/collectd/collectd.conf
 	
 	for PLUGIN in apache dns mysql perl ping sensors; do \
-		plugin_dir=$(CURDIR)/debian/collectd-$$PLUGIN/usr/lib/collectd/; \
+		plugin_dir=debian/collectd-$$PLUGIN/usr/lib/collectd/; \
 		mkdir -p $$plugin_dir; \
-		mv $(CURDIR)/debian/collectd/usr/lib/collectd/$$PLUGIN.so \
-			$$plugin_dir; \
+		mv debian/collectd/usr/lib/collectd/$$PLUGIN.so $$plugin_dir; \
 	done
 	
 	mkdir -p debian/collectd/usr/lib/collectd/utils/
