@@ -64,7 +64,8 @@ Section: devel
 Architecture: any
 Priority: extra
 Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
- collectd-mysql (= ${Source-Version}), collectd-ping (= ${Source-Version}), 
+ collectd-dns (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
+ collectd-perl (= ${Source-Version}), collectd-ping (= ${Source-Version}), 
  collectd-sensors (= ${Source-Version})
 Description: statistics collection daemon (debugging symbols)
  collectd is a small daemon written in C for performance. It reads various
