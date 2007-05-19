@@ -1,4 +1,4 @@
-collectd (4.0.0~rc6-1) experimental; urgency=low
+collectd (4.0.0~rc10-1) experimental; urgency=low
 
   This version introduces significant changes to the layout of the RRD files
   created by collectd. In order to keep your old data you have to migrate it.
@@ -29,5 +29,5 @@ collectd (4.0.0~rc6-1) experimental; urgency=low
   strings need to be surrounded by double quotes. See collectd.conf(5) for
   details.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 24 Apr 2007 10:44:26 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 19 May 2007 20:44:39 +0200
 
