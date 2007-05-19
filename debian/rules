@@ -85,8 +85,16 @@ install-arch: build
 	
 	for PLUGIN in apache dns mysql perl ping sensors; do \
 		plugin_dir=debian/collectd-$$PLUGIN/usr/lib/collectd/; \
+		manpage=debian/collectd/usr/share/man/man5/collectd-$$PLUGIN.5; \
+		man_dir=debian/collectd-$$PLUGIN/usr/share/man/man5/; \
+		\
 		mkdir -p $$plugin_dir; \
 		mv debian/collectd/usr/lib/collectd/$$PLUGIN.so $$plugin_dir; \
+		\
+		if [ -e $$manpage ]; then \
+			mkdir -p $$man_dir; \
+			mv $$manpage $$man_dir; \
+		fi \
 	done
 	
 	mkdir -p debian/collectd/usr/lib/collectd/utils/
