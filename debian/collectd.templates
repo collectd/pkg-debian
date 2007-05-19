@@ -5,8 +5,8 @@ _Description: Layout of RRD files has changed
  since version 3.x. In order to keep your old data you have to migrate it.
  This can be done by using /usr/lib/collectd/utils/migrate-3-4.px.
  .
- This step requires the XML::Simple Perl module (libxml-simple-perl) which you
- do not currently have installed. You need to perform the migration manually.
+ This step requires the perl and rrdtool packages which you do not currently
+ have installed. You need to perform the migration manually.
  .
  See /usr/share/doc/collectd/NEWS.Debian for details.
 

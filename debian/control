@@ -9,7 +9,7 @@ Standards-Version: 3.7.2
 Package: collectd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: libxml-simple-perl
+Recommends: perl, rrdtool
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
  collectd-ping, collectd-dns, collectd-perl,librrds-perl, hddtemp, mbmon
 Provides: collectd-hddtemp
