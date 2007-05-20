@@ -24,7 +24,7 @@ Building your own plugins:
 - If you want to contribute plugins to the official distribution you should
   read http://collectd.org/dev-info.shtml.
 
-- If you want to build plugins for your personal use only simply install the
+- If you want to build C plugins for your personal use only simply install the
   collectd-dev package and use /usr/share/doc/collectd-dev/examples/myplugin.c
   as a starting point (Note: This is already a working example, though it does
   not collect any useful data).
@@ -37,6 +37,24 @@ Building your own plugins:
   collectd config file:
 
     LoadPlugin myplugin
+
+  Restart collectd and you're done.
+
+- The collectd-dev package also provides an example Perl plugin that can be
+  used as a starting point for your own development. It can be found in
+  /usr/share/doc/collectd-dev/examples/MyPlugin.pm (Note: This is already a
+  working example, though it does not collect any usefull data).
+
+  To enable the plugin, copy it to a place where Perl can find it (i.e. a
+  subdirectory named "Collectd/Plugin" of a directory listed in @INC) and add
+  the following line to the perl plugin section in your config file:
+
+    LoadPlugin "Collectd::Plugin::MyPlugin"
+
+  or
+
+    BaseName "Collectd::Plugin"
+	LoadPlugin MyPlugin
 
   Restart collectd and you're done.
 
