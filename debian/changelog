@@ -26,6 +26,7 @@ collectd (4.0.0~rc10-1) experimental; urgency=low
     - Added extractDS_path.dpatch to set an absolute path in migrate-3-4.px.
     - Using po-debconf to make translations of debconf templates possible.
   * Added NEWS.Debian with notes regarding the upgrade to collectd-4.
+  * Updated init script to only start a single collectd process.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat, 19 May 2007 20:44:39 +0200
 
