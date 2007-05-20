@@ -158,16 +158,11 @@ static int my_shutdown (void)
  * This function is called after loading the plugin to register it with
  * collectd.
  */
-void module_register (modreg_e load)
+void module_register (void)
 {
 	plugin_register_log ("myplugin", my_log);
-
-	if (load & MR_DATASETS)
-		plugin_register_data_set (&ds);
-
-	if (load & MR_READ)
-		plugin_register_read ("myplugin", my_read);
-
+	plugin_register_data_set (&ds);
+	plugin_register_read ("myplugin", my_read);
 	plugin_register_init ("myplugin", my_init);
 	plugin_register_write ("myplugin", my_write);
 	plugin_register_shutdown ("myplugin", my_shutdown);
