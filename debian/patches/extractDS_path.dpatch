@@ -8,7 +8,7 @@
 diff a/contrib/migrate-3-4.px b/contrib/migrate-3-4.px
 --- a/contrib/migrate-3-4.px
 +++ b/contrib/migrate-3-4.px
-@@ -166,7 +166,7 @@ for (@Files)
+@@ -165,7 +165,7 @@ for (@Files)
  			my $src_ds = $src_dses->[$i];
  			$dest->{'type_instance'} = $type_instances->[$i];
  			$dest_filename = get_filename ($dest);
@@ -17,3 +17,25 @@ diff a/contrib/migrate-3-4.px b/contrib/migrate-3-4.px
  		}
  	}
  	elsif (exists ($TypeRename{$orig->{'type'}}))
+@@ -360,17 +360,17 @@ sub special_disk
+ 		$OutDirs{$dest_directory} = 1;
+ 	}
+ 
+-	print "./extractDS.px -i '$InDir/$orig_filename' -s 'rmerged' -s 'wmerged' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
++	print "/usr/lib/collectd/utils/extractDS.px -i '$InDir/$orig_filename' -s 'rmerged' -s 'wmerged' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
+ 
+ 	$dest->{'type'} = 'disk_octets';
+ 	$dest_filename = get_filename ($dest);
+-	print "./extractDS.px -i '$InDir/$orig_filename' -s 'rbytes' -s 'wbytes' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
++	print "/usr/lib/collectd/utils/extractDS.px -i '$InDir/$orig_filename' -s 'rbytes' -s 'wbytes' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
+ 
+ 	$dest->{'type'} = 'disk_ops';
+ 	$dest_filename = get_filename ($dest);
+-	print "./extractDS.px -i '$InDir/$orig_filename' -s 'rcount' -s 'wcount' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
++	print "/usr/lib/collectd/utils/extractDS.px -i '$InDir/$orig_filename' -s 'rcount' -s 'wcount' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
+ 
+ 	$dest->{'type'} = 'disk_time';
+ 	$dest_filename = get_filename ($dest);
+-	print "./extractDS.px -i '$InDir/$orig_filename' -s 'rtime' -s 'wtime' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
++	print "/usr/lib/collectd/utils/extractDS.px -i '$InDir/$orig_filename' -s 'rtime' -s 'wtime' -o '$OutDir/$dest_filename' -d 'read' -d 'write'\n";
+ }
