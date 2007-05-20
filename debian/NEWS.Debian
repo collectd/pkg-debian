@@ -25,6 +25,10 @@ collectd (4.0.0~rc10-1) experimental; urgency=low
   "rrdtool" and "syslog" plugins (enabled by default) and enable and configure
   the network plugin. See collectd.conf(5) for details.
 
+  This also means that a single configuration file is sufficient. The init
+  script does no longer start one collectd process for each config file found
+  in /etc/collectd/ but only for collectd.conf.
+
   Additionally, the syntax of the configuration file has changed slightly. All
   strings need to be surrounded by double quotes. See collectd.conf(5) for
   details.

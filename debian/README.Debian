@@ -11,10 +11,6 @@ General notes:
 Configuring collectd:
 ---------------------
 
-- collectd uses a similar configuration layout as openvpn does. That is to
-  say that one daemon process is started for each configuration file found in
-  /etc/collectd/.
-
 - See collectd.conf(5) for details about configuring collectd.
 
 Building your own plugins:
