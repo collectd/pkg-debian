@@ -1,6 +1,7 @@
-collectd (4.0.0~rc10-1) experimental; urgency=low
+collectd (4.0.0-1) experimental; urgency=low
 
   * New upstream release.
+    - Added large file support (Closes: #422212).
     - Rewrite of the plugin system to allow more flexibility by using
       different types of plugins.
     - Added Nagios plugin to query collectd from Nagios.
@@ -28,7 +29,7 @@ collectd (4.0.0~rc10-1) experimental; urgency=low
   * Added NEWS.Debian with notes regarding the upgrade to collectd-4.
   * Updated init script to only start a single collectd process.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 19 May 2007 20:44:39 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon,  4 Jun 2007 00:41:32 +0200
 
 collectd (3.11.2-1) experimental; urgency=low
 
