@@ -28,6 +28,7 @@ collectd (4.0.0-1) experimental; urgency=low
     - Using po-debconf to make translations of debconf templates possible.
   * Added NEWS.Debian with notes regarding the upgrade to collectd-4.
   * Updated init script to only start a single collectd process.
+  * Added examples/MyPlugin.pm.
 
  -- Sebastian Harl <sh@tokkee.org>  Mon,  4 Jun 2007 00:41:32 +0200
 
