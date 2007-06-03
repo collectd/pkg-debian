@@ -34,5 +34,10 @@ collectd (4.0.0-1) experimental; urgency=low
   strings need to be surrounded by double quotes. See collectd.conf(5) for
   details.
 
+  Please note that there is no longer the need to load any plugins on the
+  server side just to be able to save values submitted by clients. All
+  required information are automatically loaded by collectd. You only need to
+  load plugins which are supposed to collect data locally.
+
  -- Sebastian Harl <sh@tokkee.org>  Mon,  4 Jun 2007 00:41:32 +0200
 
