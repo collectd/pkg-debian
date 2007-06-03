@@ -20,7 +20,7 @@
 set -e
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
-DESC="Statistics collection daemon"
+DESC="statistics collection daemon"
 NAME=collectd
 DAEMON=/usr/sbin/$NAME
 SCRIPTNAME=/etc/init.d/$NAME
