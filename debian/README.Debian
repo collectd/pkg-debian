@@ -54,7 +54,7 @@ Building your own plugins:
   or
 
     BaseName "Collectd::Plugin"
-	LoadPlugin MyPlugin
+    LoadPlugin MyPlugin
 
   Restart collectd and you're done.
 
