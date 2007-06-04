@@ -21,7 +21,7 @@ collectd (4.0.0-1) experimental; urgency=low
   * New binary package collectd-perl (linking against libperl).
     - Added collectd-perl to suggested packages.
   * examples/myplugin.c: Converted to the new plugin interface.
-  * Enabled debugging as this is an experimental release candidate.
+  * Enabled debugging.
   * Added possibility to automatically migrate RRD files to collectd-4 using
     migrate-3-4.px and extractDS.px provided by upstream.
     - Added extractDS_path.dpatch to set an absolute path in migrate-3-4.px.
