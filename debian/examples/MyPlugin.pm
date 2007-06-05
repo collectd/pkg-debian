@@ -25,7 +25,7 @@ my $dataset =
 		name => 'my_ds',
 		type => Collectd::DS_TYPE_GAUGE,
 		min  => 0,
-		max  => undef,
+		max  => 65535,
 	},
 ];
 
