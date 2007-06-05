@@ -39,5 +39,7 @@ collectd (4.0.0-1) experimental; urgency=low
   required information are automatically loaded by collectd. You only need to
   load plugins which are supposed to collect data locally.
 
+  See also: http://collectd.org/migrate-v3-v4.shtml
+
  -- Sebastian Harl <sh@tokkee.org>  Mon,  4 Jun 2007 00:41:32 +0200
 
