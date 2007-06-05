@@ -11,7 +11,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: perl, rrdtool
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
- collectd-ping, collectd-dns, collectd-perl,librrds-perl, hddtemp, mbmon
+ collectd-ping, collectd-dns, collectd-perl, librrds-perl, liburi-perl,
+ libhtml-parser-perl, hddtemp, mbmon
 Provides: collectd-hddtemp
 Replaces: collectd-hddtemp
 Description: statistics collection daemon
