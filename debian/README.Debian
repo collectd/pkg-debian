@@ -43,7 +43,7 @@ Building your own plugins:
 - The collectd-dev package also provides an example Perl plugin that can be
   used as a starting point for your own development. It can be found in
   /usr/share/doc/collectd-dev/examples/MyPlugin.pm (Note: This is already a
-  working example, though it does not collect any usefull data).
+  working example, though it does not collect any useful data).
 
   To enable the plugin, copy it to a place where Perl can find it (i.e. a
   subdirectory named "Collectd/Plugin" of a directory listed in @INC) and add
