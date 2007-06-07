@@ -1,4 +1,4 @@
-collectd (4.0.0-1) experimental; urgency=low
+collectd (4.0.1-1) experimental; urgency=low
 
   This version introduces significant changes to the layout of the RRD files
   created by collectd. In order to keep your old data you have to migrate it.
@@ -41,5 +41,5 @@ collectd (4.0.0-1) experimental; urgency=low
 
   See also: http://collectd.org/migrate-v3-v4.shtml
 
- -- Sebastian Harl <sh@tokkee.org>  Mon,  4 Jun 2007 00:41:32 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu,  7 Jun 2007 17:36:58 +0200
 
