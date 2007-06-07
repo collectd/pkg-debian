@@ -103,8 +103,7 @@ Licenses:
 
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation; either version 2 of the License, or
-	(at your option) any later version.
+	the Free Software Foundation.
 
 	This package is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -115,6 +114,9 @@ Licenses:
 	along with this package; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
 	USA.
+
+	Some files are licensed under version 2 only, while any others allow to
+	use version 2 or (at your option) any later version.
 
 On Debian systems, the complete text of the GNU General Public License 
 can be found in `/usr/share/common-licenses/GPL'.
