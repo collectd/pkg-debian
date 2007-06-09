@@ -1,6 +1,6 @@
 collectd (4.0.1-1) experimental; urgency=low
 
-  * New upstream release.
+  * New upstream release (Closes: #428114).
     - Added large file support (Closes: #422212).
     - Rewrite of the plugin system to allow more flexibility by using
       different types of plugins.
