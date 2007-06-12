@@ -1,4 +1,4 @@
-collectd (4.0.1-1) experimental; urgency=low
+collectd (4.0.2-1) experimental; urgency=low
 
   * New upstream release (Closes: #428114).
     - Added large file support (Closes: #422212).
@@ -30,7 +30,7 @@ collectd (4.0.1-1) experimental; urgency=low
   * Updated init script to only start a single collectd process.
   * Added examples/MyPlugin.pm.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu,  7 Jun 2007 17:36:58 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 12 Jun 2007 14:47:35 +0200
 
 collectd (3.11.2-1) experimental; urgency=low
 
