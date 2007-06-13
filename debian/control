@@ -66,10 +66,10 @@ Package: collectd-dbg
 Section: devel
 Architecture: any
 Priority: extra
-Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
- collectd-dns (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
- collectd-perl (= ${Source-Version}), collectd-ping (= ${Source-Version}), 
- collectd-sensors (= ${Source-Version})
+Depends: collectd (= ${binary:Version}), collectd-apache (= ${binary:Version}),
+ collectd-dns (= ${binary:Version}), collectd-mysql (= ${binary:Version}),
+ collectd-perl (= ${binary:Version}), collectd-ping (= ${binary:Version}), 
+ collectd-sensors (= ${binary:Version})
 Description: statistics collection daemon (debugging symbols)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -81,7 +81,7 @@ Description: statistics collection daemon (debugging symbols)
 
 Package: collectd-apache
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), ${shlibs:Depends}
 Description: statistics collection daemon (Apache plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -94,7 +94,7 @@ Description: statistics collection daemon (Apache plugin)
 
 Package: collectd-dns
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), ${shlibs:Depends}
 Description: statistics collection daemon (DNS plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -107,13 +107,13 @@ Description: statistics collection daemon (DNS plugin)
 
 Package: collectd-hddtemp
 Architecture: any
-Depends: collectd (= ${Source-Version})
+Depends: collectd (= ${binary:Version})
 Description: statistics collection daemon (hddtemp plugin transitional package)
  Empty package to facilitate upgrades. It can be safely removed.
 
 Package: collectd-mysql
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), ${shlibs:Depends}
 Description: statistics collection daemon (MySQL plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -126,7 +126,7 @@ Description: statistics collection daemon (MySQL plugin)
 
 Package: collectd-perl
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), ${shlibs:Depends}
 Description: statistics collection daemon (perl plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -139,7 +139,7 @@ Description: statistics collection daemon (perl plugin)
 
 Package: collectd-ping
 Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), ${shlibs:Depends}
 Description: statistics collection daemon (ping plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -152,7 +152,7 @@ Description: statistics collection daemon (ping plugin)
 
 Package: collectd-sensors
 Architecture: any
-Depends: collectd (= ${Source-Version}), lm-sensors, ${shlibs:Depends}
+Depends: collectd (= ${binary:Version}), lm-sensors, ${shlibs:Depends}
 Description: statistics collection daemon (sensors plugin)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
@@ -165,7 +165,7 @@ Description: statistics collection daemon (sensors plugin)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${Source-Version}), collectd (<< 4.1~)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.1~)
 Description: statistics collection daemon (development files)
  collectd is a small daemon written in C for performance. It reads various
  system statistics and updates RRD files, creating them if necessary. Since
