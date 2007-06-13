@@ -30,6 +30,7 @@ collectd (4.0.2-1) experimental; urgency=low
   * Updated init script to only start a single collectd process.
   * Added examples/MyPlugin.pm.
   * Added XS-Vcs-{Git,Browser} tags.
+  * Added check_plugins.pl to check the build result of all plugins.
 
  -- Sebastian Harl <sh@tokkee.org>  Wed, 13 Jun 2007 11:11:22 +0100
 

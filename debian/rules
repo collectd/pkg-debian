@@ -44,6 +44,7 @@ build-stamp: config.status
 	dh_testdir
 	
 	$(MAKE)
+	perl ./debian/check_plugins.pl
 	
 	touch build-stamp
 
