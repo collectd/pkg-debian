@@ -31,8 +31,10 @@ collectd (4.0.2-1) experimental; urgency=low
   * Added examples/MyPlugin.pm.
   * Added XS-Vcs-{Git,Browser} tags.
   * Added check_plugins.pl to check the build result of all plugins.
+  * Do not build apple_sensors and tape plugins as they do not provide any
+    functionality any longer.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 13 Jun 2007 11:11:22 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 13 Jun 2007 18:58:34 +0100
 
 collectd (3.11.2-1) experimental; urgency=low
 

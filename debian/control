@@ -27,7 +27,6 @@ Description: statistics collection daemon
  .
  This package contains the main program file and the following plugins:
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
-   * Apple computer's sensors information: apple_sensors (server mode only)
    * battery status: battery
    * CPU utilization: cpu
    * CPU frequency: cpufreq
@@ -55,7 +54,6 @@ Description: statistics collection daemon
    * serial port traffic: serial
    * swap usage: swap
    * logging to syslog: syslog
-   * tape drive usage: tape (server mode only)
    * external runtime interface: unixsock
    * number of users logged into the system: users
    * system resources used by Linux-VServers: vserver
