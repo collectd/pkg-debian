@@ -1,8 +1,10 @@
 collectd (4.0.4-1) experimental; urgency=low
 
   * New upstream release.
+  * Disable iptables and nut plugins on hppa as well to work around a FTBFS
+    caused by #358637 and presumably #419684 (Closes: #430933).
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 25 Jun 2007 09:24:59 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 30 Jun 2007 00:12:12 +0200
 
 collectd (4.0.3-1) experimental; urgency=low
 
