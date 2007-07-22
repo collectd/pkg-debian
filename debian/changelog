@@ -4,6 +4,7 @@ collectd (4.0.5-1) experimental; urgency=low
   * Disable iptables and nut plugins on hppa as well to work around a FTBFS
     caused by #358637 and presumably #419684 (Closes: #430933).
   * Changed collectd-dbg's section to "utils".
+  * Added httpd-cgi to suggested packages.
 
  -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Jul 2007 13:34:15 +0200
 
