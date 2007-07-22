@@ -62,7 +62,7 @@ Description: statistics collection daemon
   Homepage: http://collectd.org/
 
 Package: collectd-dbg
-Section: devel
+Section: utils
 Architecture: any
 Priority: extra
 Depends: collectd (= ${binary:Version}), collectd-apache (= ${binary:Version}),
