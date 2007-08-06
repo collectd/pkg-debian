@@ -1,4 +1,4 @@
-collectd (4.0.5-1) experimental; urgency=low
+collectd (4.0.6-1) experimental; urgency=low
 
   * New upstream release.
   * Disable iptables and nut plugins on hppa as well to work around a FTBFS
@@ -6,7 +6,7 @@ collectd (4.0.5-1) experimental; urgency=low
   * Changed collectd-dbg's section to "utils".
   * Added httpd-cgi to suggested packages.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Jul 2007 13:34:15 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon,  6 Aug 2007 19:05:12 +0200
 
 collectd (4.0.3-1) experimental; urgency=low
 
