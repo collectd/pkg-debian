@@ -13,6 +13,33 @@ Configuring collectd:
 
 - See collectd.conf(5) for details about configuring collectd.
 
+Access the collected data:
+--------------------------
+
+collectd is able to write data to CSV (comma separated list) and RRD (round
+robin database - see http://oss.oetiker.ch/rrdtool/) files. However it does
+not create graphs from these files. This package contains two sample scripts
+in /usr/share/doc/collectd/examples/ which can be used for this purpose. They
+are meant to be a starting point for your own experiments - more sophisticated
+solutions are welcome.
+
+- collectd2html.pl: This script by Vincent Stehlé will search for RRD files in
+  "/var/lib/collectd/" and generate a static HTML file and a directory
+  containing several PNG files which are graphs of the RRD files found.
+
+- collection.cgi: Sample CGI script that creates graphs on the fly. The Perl
+  modules "RRDs" (package librrds-perl), "URI:Escape" (package liburi-perl),
+  "HTML::Entities" (package libhtml-parser-perl) and a CGI capable web server
+  (e.g. apache2 or boa) are required for this script to run. Simply install
+  the (gunzip'ed) script to a place where the webserver will treat it as a CGI
+  script (/usr/lib/cgi-bin/ by default) and visit that page in a browser
+  (http://localhost/cgi-bin/collection.cgi by default). Please refer to your
+  webserver's documentation for more details.
+
+  Starting with version 4, collection.cgi requires a small config file, which
+  is installed to /etc/collectd/collection.conf. You should not need to change
+  anything there.
+
 Building your own plugins:
 --------------------------
 
@@ -57,4 +84,19 @@ Building your own plugins:
     LoadPlugin MyPlugin
 
   Restart collectd and you're done.
+
+Additional helper scripts:
+--------------------------
+
+- The directory /usr/share/doc/collectd/examples/PerlLib/ contains Perl
+  modules which can be used in conjunction with collectd. See the perldoc
+  documentation of the .pm-files to find out what they're good for.
+
+- add_rra.sh: Before version 3.9.0 collectd used to create a different set of
+  RRAs. The most detailed of these old RRAs had a one minute resolution. This
+  script can be used to add three more RRAs: minimum, maximum and average with
+  a ten second resolution and 2200 rows (~6 hours). This will make hourly
+  statistics much more interesting. Please note that no sanity-checking
+  whatsoever is performed. You can seriously screw up your RRD files if you
+  don't know what you're doing.
 

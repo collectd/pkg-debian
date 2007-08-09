@@ -5,8 +5,10 @@ collectd (4.0.6-1) experimental; urgency=low
     caused by #358637 and presumably #419684 (Closes: #430933).
   * Changed collectd-dbg's section to "utils".
   * Added httpd-cgi to suggested packages.
+  * Added documentation of the provided examples to README.Debian, thanks to
+    Eduard Bloch for his proposal (Closes: #434182).
 
- -- Sebastian Harl <sh@tokkee.org>  Mon,  6 Aug 2007 19:05:12 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu,  9 Aug 2007 22:05:16 +0200
 
 collectd (4.0.3-1) experimental; urgency=low
 
