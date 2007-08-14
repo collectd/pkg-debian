@@ -27,13 +27,13 @@ Copyright Holders (in alphabetical order):
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
-	Vincent Stehlé <vincent.stehle@free.fr>
+	Vincent StehlÃ© <vincent.stehle@free.fr>
 
 Licenses:
 
 	Files contrib/collectd2html.pl
 	      src/hddtemp.c
-	Copyright 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	Copyright 2006 Vincent StehlÃ© <vincent.stehle@free.fr>
 	License: GNU General Public License
 
 	File src/apache.c

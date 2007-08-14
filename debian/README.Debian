@@ -23,7 +23,7 @@ in /usr/share/doc/collectd/examples/ which can be used for this purpose. They
 are meant to be a starting point for your own experiments - more sophisticated
 solutions are welcome.
 
-- collectd2html.pl: This script by Vincent Stehlé will search for RRD files in
+- collectd2html.pl: This script by Vincent StehlÃ© will search for RRD files in
   "/var/lib/collectd/" and generate a static HTML file and a directory
   containing several PNG files which are graphs of the RRD files found.
 
