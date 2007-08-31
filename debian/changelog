@@ -1,4 +1,4 @@
-collectd (4.0.6-1) experimental; urgency=low
+collectd (4.0.7-1) experimental; urgency=low
 
   * New upstream release.
   * Disable iptables and nut plugins on hppa as well to work around a FTBFS
@@ -8,7 +8,7 @@ collectd (4.0.6-1) experimental; urgency=low
   * Added documentation of the provided examples to README.Debian, thanks to
     Eduard Bloch for his proposal (Closes: #434182).
 
- -- Sebastian Harl <sh@tokkee.org>  Thu,  9 Aug 2007 22:05:16 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 31 Aug 2007 10:04:41 +0200
 
 collectd (4.0.3-1) experimental; urgency=low
 
