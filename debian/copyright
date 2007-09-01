@@ -33,15 +33,25 @@ Licenses:
 
 	Files contrib/collectd2html.pl
 	      src/hddtemp.c
-	Copyright 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	Copyright (C) 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	License: GNU General Public License
+
+	Files contrib/cussh.pl
+	      src/email.c
+	      src/logfile.c
+	      src/perl.c
+	      src/users.c
+	      src/vserver.c
+	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
 	File src/apache.c
-	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org>
 	Copyright (C) 2007 Florent Monbillard <eppo@darox.net>
 	License: GNU General Public License
 
 	File src/apcups.c
+	Copyright (C) 2007 Florian Forster <octo@verplant.org>
 	Copyright (C) 2006 Anthony Gialluca <tonyabg@charter.net>
 	Copyright (C) 2000-2004 Kern Sibbald
 	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
@@ -51,14 +61,6 @@ Licenses:
 	      src/irq.c
 	      src/multimeter.c
 	Copyright (C) 2005-2007 Peter Holik <peter@holik.at>
-	License: GNU General Public License
-
-	Files src/email.c
-	      src/logfile.c
-	      src/perl.c
-	      src/users.c
-	      src/vserver.c
-	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
 	File src/iptables.c
@@ -196,6 +198,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	Use whatever you like more.
 
-The Debian packaging is (C) 2006, Sebastian Harl <sh@tokkee.org> and
+The Debian packaging is (C) 2006-2007, Sebastian Harl <sh@tokkee.org> and
 is licensed under the GPL, see above.
 
