@@ -1,9 +1,10 @@
 #!/bin/bash
 #
-# collectd	Initscript for collectd
-#		http://collectd.org/
-# Authors:	Florian Forster <octo@verplant.org>
-#		Sebastian Harl <sh@tokkee.org>
+# collectd - start and stop the statistics collection daemon
+# http://collectd.org/
+#
+# Copyright (C) 2005-2006 Florian Forster <octo@verplant.org>
+# Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
 #
 
 ### BEGIN INIT INFO
@@ -20,13 +21,17 @@
 set -e
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+DISABLE=0
+
 DESC="statistics collection daemon"
 NAME=collectd
-DAEMON=/usr/sbin/$NAME
-SCRIPTNAME=/etc/init.d/$NAME
-ARGS=""
+DAEMON=/usr/sbin/collectd
 
 CONFIGFILE=/etc/collectd/collectd.conf
+PIDFILE=/var/run/collectd.pid
+
+MAXWAIT=30
 
 # Gracefully exit if the package has been removed.
 test -x $DAEMON || exit 0
@@ -35,21 +40,42 @@ if [ -r /etc/default/$NAME ]; then
 	. /etc/default/$NAME
 fi
 
+if test "$DISABLE" != 0; then
+	echo "$NAME has been disabled - see /etc/default/$NAME."
+	exit 0
+fi
+
 d_start() {
-	if [ -f "$CONFIGFILE" ]; then
-		$DAEMON -C $CONFIGFILE 2> /dev/null
-	else
-		echo ""
-		echo "This package is not configured yet. Please refer"
-		echo "to /usr/share/doc/collectd/README.Debian for"
-		echo "details."
-		echo ""
-		exit 0
-	fi
+	start-stop-daemon --start --quiet --pidfile "$PIDFILE" \
+		--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE" 2> /dev/null
 }
 
+still_running_warning="
+WARNING: $NAME might still be running.
+In large setups it might take some time to write all pending data to
+the disk. You can adjust the waiting time in /etc/default/collectd."
+
 d_stop() {
-	start-stop-daemon --stop --quiet --oknodo --exec $DAEMON
+	PID=$( cat "$PIDFILE" 2> /dev/null ) || true
+
+	start-stop-daemon --stop --quiet --oknodo --pidfile "$PIDFILE"
+
+	sleep 1
+	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
+		i=0
+		while kill -0 $PID 2> /dev/null; do
+			i=$(( $i + 2 ))
+			echo -n " ."
+
+			if test $i -gt $MAXWAIT; then
+				echo "$still_running_warning"
+				return 1
+			fi
+
+			sleep 2
+		done
+		return 0
+	fi
 }
 
 case "$1" in
@@ -71,7 +97,7 @@ case "$1" in
 		echo "."
 		;;
 	*)
-		echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+		echo "Usage: $0 {start|stop|restart|force-reload}" >&2
 		exit 1
 		;;
 esac
@@ -79,3 +105,4 @@ esac
 exit 0
 
 # vim: syntax=sh noexpandtab sw=4 ts=4 :
+

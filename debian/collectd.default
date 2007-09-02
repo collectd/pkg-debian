@@ -1,0 +1,10 @@
+# /etc/default/collectd
+
+# 0: start collectd on boot, 1: do not start collectd on boot
+# default: 0
+DISABLE=0
+
+# number of seconds to wait for collectd to shut down
+# default: 30
+MAXWAIT=30
+
