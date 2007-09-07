@@ -11,11 +11,11 @@
  * option) any later version.
  */
 
-#include <collectd/common.h>    /* rrd_update_file */
-#include <collectd/plugin.h>    /* plugin_* */
-
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <collectd/common.h>    /* rrd_update_file */
+#include <collectd/plugin.h>    /* plugin_* */
 
 /* Optional config file support */
 /* #include <collectd/configfile.h> */

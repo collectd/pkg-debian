@@ -30,7 +30,7 @@ Building your own plugins:
   
   The resulting file can be compiled as follows:
 
-    gcc -shared -o myplugin.so myplugin.c
+    gcc -shared -fPIC -o myplugin.so myplugin.c
 
   Copy myplugin.so to /usr/lib/collectd and add the following line to your
   collectd config file:
