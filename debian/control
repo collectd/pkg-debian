@@ -11,7 +11,7 @@ XS-Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
 Package: collectd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: perl, rrdtool
+Recommends: perl, rrdtool, ${shlibs:Recommends}
 Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
  collectd-ping, collectd-dns, collectd-perl, librrds-perl, liburi-perl,
  libhtml-parser-perl, httpd-cgi, hddtemp, mbmon
