@@ -51,6 +51,7 @@ Description: statistics collection daemon
    * memory usage: memory
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
+   * detailed Linux network interface and routing statistics: netlink
    * IO via the network: network
    * NFS utilization: nfs
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
@@ -61,12 +62,14 @@ Description: statistics collection daemon
    * network latency statistics: ping
    * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
+   * values from SNMP enabled network devices: snmp
    * swap usage: swap
    * logging to syslog: syslog
    * external runtime interface: unixsock
    * number of users logged into the system: users
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
+   * bitrate and frequency of music played with XMMS: xmms
  .
   Homepage: http://collectd.org/
 
