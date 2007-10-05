@@ -32,9 +32,9 @@ my $libdir = 'src/.libs';
 
 my $plugins = {};
 
-opendir(my $srcs, $srcdir);
+my ($srcs, $libs) = (undef, undef);
 
-if (! $srcs) {
+if (! opendir($srcs, $srcdir)) {
 	print STDERR "Could not open directory '$srcdir': $!\n"
 		. "Make sure you are in the toplevel source directory.\n";
 	exit 1;
@@ -46,10 +46,9 @@ while (my $dirent = readdir($srcs)) {
 	}
 
 	my $name = $1;
+	my $src  = undef;
 
-	open(my $src, "<", "$srcdir/$dirent");
-
-	if (! $src) {
+	if (! open($src, "<", "$srcdir/$dirent")) {
 		print STDERR "Unable to open '$srcdir/$dirent': $!\n";
 		next;
 	}
@@ -67,9 +66,7 @@ while (my $dirent = readdir($srcs)) {
 
 closedir($srcs);
 
-opendir(my $libs, $libdir);
-
-if (! $libs) {
+if (! opendir($libs, $libdir)) {
 	print STDERR "Could not open directory '$libdir': $!\n"
 		. "Make sure you ran 'make'.\n";
 	exit 1;
@@ -81,15 +78,14 @@ while (my $dirent = readdir($libs)) {
 	}
 
 	my $name = $1;
+	my $nm   = undef;
 
 	if (! defined $plugins->{$name}) {
 		print STDERR "No information available for plugin '$name'!\n";
 		next;
 	}
 
-	open(my $nm, "-|", "nm $libdir/$dirent");
-
-	if (! $nm) {
+	if (! open($nm, "-|", "nm $libdir/$dirent")) {
 		print STDERR "Unable to open pipe from nm(1): $!\n";
 		next;
 	}
