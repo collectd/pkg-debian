@@ -47,7 +47,7 @@ fi
 
 d_start() {
 	start-stop-daemon --start --quiet --pidfile "$PIDFILE" \
-		--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE" 2> /dev/null
+		--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE"
 }
 
 still_running_warning="
