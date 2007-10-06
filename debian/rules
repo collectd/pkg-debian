@@ -47,7 +47,7 @@ build-stamp: config.status
 	dh_testdir
 	
 	$(MAKE)
-	perl ./debian/check_plugins.pl
+	perl ./debian/bin/check_plugins.pl
 	
 	touch build-stamp
 
@@ -94,7 +94,7 @@ install-arch: build
 		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
 	done
 	
-	perl ./debian/gen_plugin_deps.pl
+	perl ./debian/bin/gen_plugin_deps.pl
 
 binary-indep: install-indep
 	dh_testdir
