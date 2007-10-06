@@ -1,4 +1,4 @@
-collectd (4.1.0-1) experimental; urgency=low
+collectd (4.1.2-1) experimental; urgency=low
 
   * New upstream release.
     - Added options to collectd2html.pl to specify host and data directory
@@ -9,7 +9,7 @@ collectd (4.1.0-1) experimental; urgency=low
     - Bitrate and frequency of music played with XMMS: xmms
   * Updated init script to wait for collectd to shut down (Closes: #422208).
 
- -- Sebastian Harl <sh@tokkee.org>  Sun,  2 Sep 2007 15:24:40 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sat,  6 Oct 2007 21:49:39 +0200
 
 collectd (4.0.7-1) experimental; urgency=low
 
