@@ -58,6 +58,8 @@ clean: unpatch
 	
 	-$(MAKE) distclean
 	
+	rm -f debian/README.Debian.plugins
+	
 	dh_clean 
 	debconf-updatepo
 
@@ -91,6 +93,8 @@ install-arch: build
 	for UTIL in extractDS.px migrate-3-4.px; do \
 		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
 	done
+	
+	perl ./debian/gen_plugin_deps.pl
 
 binary-indep: install-indep
 	dh_testdir
@@ -111,7 +115,7 @@ binary-arch: build install-arch
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
-	dh_installdocs -a debian/NEWS.Debian
+	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/
 	dh_installdebconf -a

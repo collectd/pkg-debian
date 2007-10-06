@@ -4,9 +4,10 @@ collectd on Debian
 General notes:
 --------------
 
-- This package is split up into several packages to prevent you from having to
-  install dependencies that you don't actually need. Any plugin that has 
-  dependencies other than libc gets its own package.
+- Some plugins require additional libraries. To prevent you from having to
+  install dependencies that you don't actually need those libraries are
+  recommendations rather than dependencies. See README.Debian.plugins in the
+  "collectd" package for details.
 
 Configuring collectd:
 ---------------------
