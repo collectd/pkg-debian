@@ -8,6 +8,9 @@ collectd (4.1.2-1) experimental; urgency=low
     - Values from SNMP enabled network devices: snmp
     - Bitrate and frequency of music played with XMMS: xmms
   * Updated init script to wait for collectd to shut down (Closes: #422208).
+  * Merged all plugin packages into the collectd binary package.
+  * Added README.Debian.plugins and gen_plugin_deps.pl to document the plugin
+    dependencies.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat,  6 Oct 2007 21:49:39 +0200
 
