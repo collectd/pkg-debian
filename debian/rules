@@ -95,6 +95,10 @@ install-arch: build
 	done
 	
 	perl ./debian/bin/gen_plugin_deps.pl
+	
+	mkdir -p debian/collectd/usr/share/lintian/overrides/
+	cp debian/collectd.overrides \
+		debian/collectd/usr/share/lintian/overrides/collectd
 
 binary-indep: install-indep
 	dh_testdir

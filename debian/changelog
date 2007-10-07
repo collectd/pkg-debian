@@ -11,6 +11,9 @@ collectd (4.1.2-1) experimental; urgency=low
   * Merged all plugin packages into the collectd binary package.
   * Added README.Debian.plugins and gen_plugin_deps.pl to document the plugin
     dependencies.
+  * Added collectd.overrides to override shlib-with-non-pic-code errors of
+    plugins liked against static libraries which have not been linked with
+    -fPIC.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat,  6 Oct 2007 21:49:39 +0200
 
