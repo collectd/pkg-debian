@@ -31,10 +31,10 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static libraries iptc and upsclient cannot be used on 64bit systems
-# (see bugs #358637 and #419684 for more details).
+# The static libraries iptc, netstat and upsclient cannot be used on
+# 64bit systems (see bugs #358637 and #419684 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
-	confflags += --disable-iptables --disable-nut
+	confflags += --disable-iptables --disable-netlink --disable-nut
 endif
 
 config.status: configure $(DPATCH_STAMPFN)
