@@ -105,8 +105,8 @@ binary-indep: install-indep
 	dh_testroot
 	dh_installchangelogs -i ChangeLog
 	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
-	dh_installexamples -i debian/examples/myplugin.c \
-		debian/examples/MyPlugin.pm
+	dh_installexamples -i contrib/examples/myplugin.c \
+		contrib/examples/MyPlugin.pm
 	dh_compress -i -Xexamples/myplugin.c -Xexamples/MyPlugin.c
 	dh_fixperms -i
 	dh_installdeb -i
