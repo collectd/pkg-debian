@@ -1,13 +1,17 @@
-collectd (4.1.3-1) experimental; urgency=low
+collectd (4.2.0-1) experimental; urgency=low
 
   * New upstream release.
     - Added options to collectd2html.pl to specify host and data directory
       (Closes: #438499).
     - Link against a thread-safe version of librrd.
     New plugins:
+    - IPVS connection statistics: ipvs
+    - Statistic of the memcached distributed caching system: memcached
     - Detailed Linux network interface and routing statistics: netlink (32bit
       systems only)
+    - Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
     - Values from SNMP enabled network devices: snmp
+    - Number of TCP connections to specific ports: tcpconns
     - Bitrate and frequency of music played with XMMS: xmms
   * Updated init script to wait for collectd to shut down (Closes: #422208).
   * Merged all plugin packages into the collectd binary package.
@@ -18,8 +22,10 @@ collectd (4.1.3-1) experimental; urgency=low
     -fPIC.
   * Removed debian/examples/myplugin.c and debian/examples/MyPlugin.pm - they
     are included in the upstream sources now.
+  * Added libcurl4-gnutls-dev as option to the libcurl3-gnutls-dev build
+    dependency.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 25 Oct 2007 00:54:13 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 28 Oct 2007 13:38:21 +0100
 
 collectd (4.0.7-1) experimental; urgency=low
 

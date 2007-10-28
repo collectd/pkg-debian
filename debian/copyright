@@ -13,6 +13,7 @@ Copyright Holders (in alphabetical order):
 	Alexander Wirt <formorer@formorer.de>
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
+	Antony Dovgal <tony@daylessday.org>
 	David Bacher <drbacher@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
@@ -24,10 +25,13 @@ Copyright Holders (in alphabetical order):
 	Lyonel Vincent <lyonel@ezix.org>
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	Peter Holik <peter@holik.at>
+	Peter Kese <peter.kese@ijs.si>
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
+	Steven Clarke <steven@monmouth.demon.co.uk>
 	Vincent Stehlé <vincent.stehle@free.fr>
+	Wensong Zhang <wensong@linuxvirtualserver.org>
 
 Licenses:
 
@@ -65,6 +69,18 @@ Licenses:
 
 	File src/iptables.c
 	Copyright (C) 2007 Sjoerd van der Berg <harekiet@users.sourceforge.net>
+	License: GNU General Public License
+
+	File src/ipvs.c
+	Copyright (C) 1997 Steven Clarke <steven@monmouth.demon.co.uk>
+	Copyright (C) 1998-2004 Wensong Zhang <wensong@linuxvirtualserver.org>
+	Copyright (C) 2003-2004 Peter Kese <peter.kese@ijs.si>
+	Copyright (C) 2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	File src/memcached.c
+	Copyright (C) 2005,2006 Vincent Stehlé
+	Copyright (C) 2007 Antony Dovgal
 	License: GNU General Public License
 
 	File src/mbmon.c
