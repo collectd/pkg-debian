@@ -1,4 +1,4 @@
-collectd (4.1.2-1) experimental; urgency=low
+collectd (4.2.0-1) experimental; urgency=low
 
   Prior to this version any plugin that has dependencies other than libc6 got
   its own binary package. As the number of such packages was getting quite big
@@ -6,7 +6,7 @@ collectd (4.1.2-1) experimental; urgency=low
   dependencies were added as recommendations. See
   /usr/share/doc/collectd/README.Debian.plugins for details.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat,  6 Oct 2007 21:49:39 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 28 Oct 2007 13:38:21 +0100
 
 collectd (4.0.2-1) experimental; urgency=low
 
