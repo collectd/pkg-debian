@@ -20,6 +20,8 @@ Copyright Holders (in alphabetical order):
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
 	Jason Pepas <cell@ices.utexas.edu>
+	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
+	Julian Anastasov <ja@ssi.bg>
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
@@ -32,6 +34,7 @@ Copyright Holders (in alphabetical order):
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
+	Wouter Gadeyne
 
 Licenses:
 
@@ -47,6 +50,14 @@ Licenses:
 	      src/users.c
 	      src/vserver.c
 	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	File debian/include/net/ip_vs.h
+	Copyright (C) Wensong Zhang <wensong@linuxvirtualserver.org>
+	Copyright (C) Julian Anastasov <ja@ssi.bg>
+	Copyright (C) Peter Kese <peter.kese@ijs.si>
+	Copyright (C) Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
+	Copyright (C) Wouter Gadeyne
 	License: GNU General Public License
 
 	File src/apache.c
