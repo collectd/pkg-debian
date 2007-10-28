@@ -90,7 +90,7 @@ Description: statistics collection daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.2~)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.3~)
 Description: statistics collection daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanismns to store the values in a variety of ways. It is written
