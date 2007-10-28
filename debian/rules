@@ -26,6 +26,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
+			--with-perl-bindings="INSTALLDIRS=vendor" \
 			--enable-debug
 
 # These plugins do not provide any functionality under Linux.
@@ -121,8 +122,7 @@ binary-arch: build install-arch
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
-		contrib/PerlLib/ contrib/SpamAssassin/ contrib/iptables/ \
-		contrib/cussh.pl
+		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_installman -a src/collectd.1 src/collectd.conf.5
