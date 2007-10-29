@@ -125,7 +125,7 @@ Licenses:
 	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
 	License: GNU General Public License
 
-	All other files (except libltdl/*, src/libconfig/*, src/utils_dns.* and
+	All other files (except libltdl/*, src/utils_dns.* and
 		contrib/SpamAssassin/*):
 	Copyright (C) 2005-2007 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
