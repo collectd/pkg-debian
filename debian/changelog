@@ -3,8 +3,10 @@ collectd (4.2.1-1) experimental; urgency=low
   * New upstream release.
   * Changed XS-Vcs-* to Vcs-*.
   * Marked advanced rrdtool configuration options as such in collectd.conf.
+  * Added exec-munin.px, exec-munin.conf, exec-smartctl and snmp-data.conf to
+    /usr/share/doc/collectd/examples/.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 19 Nov 2007 13:14:36 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 19 Nov 2007 16:26:06 +0000
 
 collectd (4.2.0-1) experimental; urgency=low
 
