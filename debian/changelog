@@ -1,3 +1,11 @@
+collectd (4.2.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Changed XS-Vcs-* to Vcs-*.
+  * Marked advanced rrdtool configuration options as such in collectd.conf.
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 19 Nov 2007 13:14:36 +0000
+
 collectd (4.2.0-1) experimental; urgency=low
 
   * New upstream release.
@@ -24,9 +32,8 @@ collectd (4.2.0-1) experimental; urgency=low
     are included in the upstream sources now.
   * Added libcurl4-gnutls-dev as option to the libcurl3-gnutls-dev build
     dependency.
-  * Changed XS-Vcs-* to Vcs-*.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 29 Oct 2007 23:17:48 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 28 Oct 2007 13:38:21 +0100
 
 collectd (4.0.7-1) experimental; urgency=low
 
