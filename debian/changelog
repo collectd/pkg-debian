@@ -5,8 +5,9 @@ collectd (4.2.1-1) experimental; urgency=low
   * Marked advanced rrdtool configuration options as such in collectd.conf.
   * Added exec-munin.px, exec-munin.conf, exec-smartctl and snmp-data.conf to
     /usr/share/doc/collectd/examples/.
+  * Moved "Homepage" field from package description to the source stanza.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 19 Nov 2007 16:26:06 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 21 Nov 2007 09:50:46 +0000
 
 collectd (4.2.0-1) experimental; urgency=low
 
