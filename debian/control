@@ -14,7 +14,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: perl, rrdtool, ${shlibs:Recommends}
 Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
- httpd-cgi, hddtemp, mbmon
+ libregexp-common-perl, httpd-cgi, hddtemp, mbmon
 Conflicts: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
  collectd-perl, collectd-ping, collectd-sensors
 Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
