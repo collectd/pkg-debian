@@ -78,6 +78,24 @@ d_stop() {
 	fi
 }
 
+d_status() {
+	PID=$( cat "$PIDFILE" 2> /dev/null ) || true
+
+	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
+		echo "collectd ($PID) is running."
+		exit 0
+	else
+		PID=$( pidof collectd ) || true
+
+		if test -n "$PID"; then
+			echo "collectd ($PID) is running."
+			exit 0
+		else
+			echo "collectd is stopped."
+		fi
+	fi
+}
+
 case "$1" in
 	start)
 		echo -n "Starting $DESC: $NAME"
@@ -88,6 +106,9 @@ case "$1" in
 		echo -n "Stopping $DESC: $NAME"
 		d_stop
 		echo "."
+		;;
+	status)
+		d_status
 		;;
 	restart|force-reload)
 		echo -n "Restarting $DESC: $NAME"
