@@ -84,6 +84,7 @@ install-arch: build
 	
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/collectd
 	
+	rm -rf debian/collectd/usr/include/
 	rm -f debian/collectd/usr/lib/collectd/*.la
 	
 	rm -f debian/collectd/etc/collectd.conf
