@@ -9,8 +9,10 @@ collectd (4.2.4-1) experimental; urgency=low
   * Updated standards-version to 3.7.3 (no changes).
   * Added --without-libstatgrab to the configure options to prevent collectd
     from being linked against this library if it's available.
+  * Disabled xmms plugin - xmms will be removed from unstable
+    (Closes: #459707).
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Jan 2008 17:59:59 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Jan 2008 18:34:23 +0100
 
 collectd (4.2.1-1) experimental; urgency=low
 
