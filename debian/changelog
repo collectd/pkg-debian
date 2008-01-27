@@ -1,4 +1,4 @@
-collectd (4.2.3-1) experimental; urgency=low
+collectd (4.2.4-1) experimental; urgency=low
 
   * New upstream release.
   * Added versioned build-dependency on dpkg-dev (>= 1.14.10); collectd FTBFS
@@ -6,8 +6,11 @@ collectd (4.2.3-1) experimental; urgency=low
   * Added libregexp-common-perl (required by Collectd::Unixsock) to the
     suggested packages.
   * Added support for the "status" command to the init script.
+  * Updated standards-version to 3.7.3 (no changes).
+  * Added --without-libstatgrab to the configure options to prevent collectd
+    from being linked against this library if it's available.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 09 Jan 2008 16:29:34 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Jan 2008 17:59:59 +0100
 
 collectd (4.2.1-1) experimental; urgency=low
 
