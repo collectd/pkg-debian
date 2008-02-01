@@ -4,6 +4,10 @@
 # default: 0
 DISABLE=0
 
+# 0: start collectd in stand-alone mode, 1: monitor collectd using collectdmon
+# default: 1
+USE_COLLECTDMON=1
+
 # number of seconds to wait for collectd to shut down
 # default: 30
 MAXWAIT=30

@@ -4,7 +4,7 @@
 # http://collectd.org/
 #
 # Copyright (C) 2005-2006 Florian Forster <octo@verplant.org>
-# Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+# Copyright (C) 2006-2008 Sebastian Harl <sh@tokkee.org>
 #
 
 ### BEGIN INIT INFO
@@ -31,6 +31,10 @@ DAEMON=/usr/sbin/collectd
 CONFIGFILE=/etc/collectd/collectd.conf
 PIDFILE=/var/run/collectd.pid
 
+USE_COLLECTDMON=1
+COLLECTDMON_DAEMON=/usr/sbin/collectdmon
+COLLECTDMON_PIDFILE=/var/run/collectdmon.pid
+
 MAXWAIT=30
 
 # Gracefully exit if the package has been removed.
@@ -45,9 +49,23 @@ if test "$DISABLE" != 0; then
 	exit 0
 fi
 
+get_pid() {
+	if test "$USE_COLLECTDMON" == 1; then
+		cat "$COLLECTDMON_PIDFILE"
+	else
+		cat "$PIDFILE"
+	fi
+}
+
 d_start() {
-	start-stop-daemon --start --quiet --pidfile "$PIDFILE" \
-		--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE"
+	if test "$USE_COLLECTDMON" == 1; then
+		start-stop-daemon --start --quiet --pidfile "$COLLECTDMON_PIDFILE" \
+			--exec $COLLECTDMON_DAEMON -- -P "$COLLECTDMON_PIDFILE" -- \
+			-C "$CONFIGFILE"
+	else
+		start-stop-daemon --start --quiet --pidfile "$PIDFILE" \
+			--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE"
+	fi
 }
 
 still_running_warning="
@@ -56,7 +74,7 @@ In large setups it might take some time to write all pending data to
 the disk. You can adjust the waiting time in /etc/default/collectd."
 
 d_stop() {
-	PID=$( cat "$PIDFILE" 2> /dev/null ) || true
+	PID=$( get_pid 2> /dev/null ) || true
 
 	start-stop-daemon --stop --quiet --oknodo --pidfile "$PIDFILE"
 
@@ -79,7 +97,7 @@ d_stop() {
 }
 
 d_status() {
-	PID=$( cat "$PIDFILE" 2> /dev/null ) || true
+	PID=$( get_pid 2> /dev/null ) || true
 
 	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
 		echo "collectd ($PID) is running."
