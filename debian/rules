@@ -73,8 +73,9 @@ install-indep:
 	dh_installdirs -i
 	
 	include_dir=debian/collectd-dev/usr/include/collectd/ \
-		&& mkdir -p $$include_dir \
-		&& cp src/*.h $$include_dir
+		&& mkdir -p $$include_dir/liboconfig \
+		&& cp src/*.h $$include_dir \
+		&& cp src/liboconfig/oconfig.h $$include_dir/liboconfig
 
 install-arch: build
 	dh_testdir
