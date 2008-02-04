@@ -5,9 +5,12 @@ collectd (4.3.0~beta0-1) UNRELEASED; urgency=low
       threshold checking.
     - Reverse lookups can be disabled using the "ReverseLookups" option of the
       ntpd plugin (Closes: #455162).
+    New plugins:
+    - Set the hostname to an unique identifier: uuid
+    - CPU, dist, network statistics of guest systems: libvirt
   * Install liboping/oping.h to collectd-dev as well.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 04 Feb 2008 22:53:42 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 04 Feb 2008 23:35:51 +0100
 
 collectd (4.2.4-1) experimental; urgency=low
 
