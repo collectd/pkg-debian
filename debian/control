@@ -21,13 +21,13 @@ Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
  collectd-perl, collectd-ping, collectd-sensors
 Replaces: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
  collectd-perl, collectd-ping, collectd-sensors
-Description: statistics collection daemon
+Description: statistics collection and monitoring daemon
  collectd is a small daemon which collects system information periodically and
- provides mechanismns to store the values in a variety of ways. It is written
- in C for performance. Since the daemon doesn't need to startup every time it
- wants to update the files it's very fast and easy on the system. Also, the
- statistics are very fine grained since the files are updated every 10
- seconds.
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
  This package contains the main program file and the following plugins:
    * Apache and lighttpd statistics provided by mod_status: apache
@@ -80,26 +80,26 @@ Section: utils
 Architecture: any
 Priority: extra
 Depends: collectd (= ${binary:Version})
-Description: statistics collection daemon (debugging symbols)
+Description: statistics collection and monitoring daemon (debugging symbols)
  collectd is a small daemon which collects system information periodically and
- provides mechanismns to store the values in a variety of ways. It is written
- in C for performance. Since the daemon doesn't need to startup every time it
- wants to update the files it's very fast and easy on the system. Also, the
- statistics are very fine grained since the files are updated every 10
- seconds.
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
  This package contains the debugging symbols.
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.3~)
-Description: statistics collection daemon (development files)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.4~)
+Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
- provides mechanismns to store the values in a variety of ways. It is written
- in C for performance. Since the daemon doesn't need to startup every time it
- wants to update the files it's very fast and easy on the system. Also, the
- statistics are very fine grained since the files are updated every 10
- seconds.
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
  This package contains the development files needed to create your own
  plugins.

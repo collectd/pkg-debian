@@ -24,7 +24,7 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
 DISABLE=0
 
-DESC="statistics collection daemon"
+DESC="statistics collection and monitoring daemon"
 NAME=collectd
 DAEMON=/usr/sbin/collectd
 
