@@ -131,7 +131,6 @@ binary-arch: build install-arch
 		contrib/snmp-data.conf
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
-	dh_installman -a src/collectd.1 src/collectd.conf.5
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
 	dh_compress -a
