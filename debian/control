@@ -47,6 +47,7 @@ Description: statistics collection and monitoring daemon
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
+   * CPU, dist, network statistics of guest systems: libvirt
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
    * motherboard monitor: mbmon
@@ -72,6 +73,7 @@ Description: statistics collection and monitoring daemon
    * number of TCP connections to specific ports: tcpconns
    * external runtime interface: unixsock
    * number of users logged into the system: users
+   * set the hostname to an unique identifier: uuid
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
 
