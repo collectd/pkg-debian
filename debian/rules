@@ -34,8 +34,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
 			--disable-xmms \
-			--without-libstatgrab \
-			--enable-debug
+			--without-libstatgrab
 
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
