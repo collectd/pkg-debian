@@ -8,9 +8,21 @@ collectd (4.3.0~beta0-1) UNRELEASED; urgency=low
     New plugins:
     - Set the hostname to an unique identifier: uuid
     - CPU, dist, network statistics of guest systems: libvirt
+  * Added libvirt-dev and libhal-dev to the build dependencies.
+  * Updated package description to mention the monitoring support.
   * Install liboping/oping.h to collectd-dev as well.
+  * collectd.init.d: Optionally start collectdmon to monitor collectd. This
+    can be configured using the USE_COLLECTDMON variable - enabled by default.
+  * collectd.init.d: Added ENABLE_COREFILES option - if enabled the core file
+    limit will be set to unlimited - disabled by default.
+  * Compile collectd with -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL' to force
+    lt_dlopen() to use the RTLD_GLOBAL flag which is required by the perl
+    plugin (which would otherwise be unable to find symbols defined in libperl
+    when loading perl modules that require such symbols).
+  * Disable debugging support.
+  * watch file: Added uversionmangle for "beta" and "-rc".
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 04 Feb 2008 23:35:51 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 06 Feb 2008 00:00:04 +0100
 
 collectd (4.2.4-1) experimental; urgency=low
 
