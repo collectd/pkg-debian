@@ -12,3 +12,7 @@ USE_COLLECTDMON=1
 # default: 30
 MAXWAIT=30
 
+# 0: do not enable core-files, 1: enable core-files ... if collectd crashes
+# default: 0
+ENABLE_COREFILES=0
+

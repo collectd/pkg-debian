@@ -49,6 +49,10 @@ if test "$DISABLE" != 0; then
 	exit 0
 fi
 
+if test "$ENABLE_COREFILES" == 1; then
+	ulimit -c unlimited
+fi
+
 if test "$USE_COLLECTDMON" == 1; then
 	_PIDFILE="$COLLECTDMON_PIDFILE"
 else
