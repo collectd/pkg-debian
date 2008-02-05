@@ -49,22 +49,19 @@ if test "$DISABLE" != 0; then
 	exit 0
 fi
 
-get_pid() {
-	if test "$USE_COLLECTDMON" == 1; then
-		cat "$COLLECTDMON_PIDFILE"
-	else
-		cat "$PIDFILE"
-	fi
-}
+if test "$USE_COLLECTDMON" == 1; then
+	_PIDFILE="$COLLECTDMON_PIDFILE"
+else
+	_PIDFILE="$PIDFILE"
+fi
 
 d_start() {
 	if test "$USE_COLLECTDMON" == 1; then
-		start-stop-daemon --start --quiet --pidfile "$COLLECTDMON_PIDFILE" \
-			--exec $COLLECTDMON_DAEMON -- -P "$COLLECTDMON_PIDFILE" -- \
-			-C "$CONFIGFILE"
+		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+			--exec $COLLECTDMON_DAEMON -- -P "$_PIDFILE" -- -C "$CONFIGFILE"
 	else
-		start-stop-daemon --start --quiet --pidfile "$PIDFILE" \
-			--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE"
+		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+			--exec $DAEMON -- -C "$CONFIGFILE" -P "$_PIDFILE"
 	fi
 }
 
@@ -74,9 +71,9 @@ In large setups it might take some time to write all pending data to
 the disk. You can adjust the waiting time in /etc/default/collectd."
 
 d_stop() {
-	PID=$( get_pid 2> /dev/null ) || true
+	PID=$( cat "$_PIDFILE" 2> /dev/null ) || true
 
-	start-stop-daemon --stop --quiet --oknodo --pidfile "$PIDFILE"
+	start-stop-daemon --stop --quiet --oknodo --pidfile "$_PIDFILE"
 
 	sleep 1
 	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
@@ -97,7 +94,7 @@ d_stop() {
 }
 
 d_status() {
-	PID=$( get_pid 2> /dev/null ) || true
+	PID=$( cat "$_PIDFILE" 2> /dev/null ) || true
 
 	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
 		echo "collectd ($PID) is running."
