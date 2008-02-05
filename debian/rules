@@ -14,6 +14,12 @@ DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 CFLAGS = -Wall -g -I$(CURDIR)/debian/include
 
+# There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
+# however required by the perl plugin (which would otherwise be unable to find
+# symbols defined in libperl when loading perl modules that require such
+# symbols). This is a workaround for this issue.
+CFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
+
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else
