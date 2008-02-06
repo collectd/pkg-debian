@@ -133,7 +133,7 @@ binary-arch: build install-arch
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
-		contrib/snmp-data.conf
+		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_link -a
