@@ -86,6 +86,41 @@ Building your own plugins:
 
   Restart collectd and you're done.
 
+Examples:
+---------
+
+- SpamAssassin/: This directory contains a SpamAssassin plugin which passes
+  statistics to collectd using the email plugin. See the embedded POD
+  documentation for information about setup and configuration: perldoc
+  Collectd.pm.
+
+- iptables/: This directory contains a script which will setup iptables to do
+  global logging of all traffic going in and out of an interface. This
+  information can then be collected by collectd's iptables plugin.
+
+- cussh.pl: "Collectd Unix Socket SHell" is a small, interactive front-end for
+  the unixsock plugin. See the embedded POD documentation for details: perldoc
+  cussh.pl.
+
+- exec-munin.px: Script to be used with the exec-plugin (see collectd-exec(5)
+  for details) which executes munin plugins, parses the output and translates
+  it to a format the exec-plugin understands. The features are limited -
+  changing the munin plugins to use the output format understood by the
+  exec-plugin is recommended. See the embedded POD documentation for more
+  details: perldoc exec-munin.px
+
+- exec-smartctl: Sample script for the exec plugin. Please refer to the
+  documentation in the file - you will have to adapt it to your needs anyway.
+
+- network-proxy.py: A simple unicast proxy for collectd traffic.
+
+- snmp-data.conf: Sample configuration for the SNMP plugin. This config
+  includes a few standard <Data ..> definitions that you can include in your
+  own config using the `Include' statement (available since version 4.2.0).
+  The config includes some data that is defined in the IF-MIB, e. g. octet or
+  packet counters, UPS-MIB and whatever people have send in. If you have some
+  more definitions please send them in, so others can profit from it.
+
 Additional helper scripts:
 --------------------------
 
