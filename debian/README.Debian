@@ -89,10 +89,6 @@ Building your own plugins:
 Additional helper scripts:
 --------------------------
 
-- The directory /usr/share/doc/collectd/examples/PerlLib/ contains Perl
-  modules which can be used in conjunction with collectd. See the perldoc
-  documentation of the .pm-files to find out what they're good for.
-
 - add_rra.sh: Before version 3.9.0 collectd used to create a different set of
   RRAs. The most detailed of these old RRAs had a one minute resolution. This
   script can be used to add three more RRAs: minimum, maximum and average with
