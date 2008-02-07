@@ -60,6 +60,11 @@ else
 fi
 
 d_start() {
+	if ! $DAEMON -t -C "$CONFIGFILE" > /dev/null 2>&1; then
+		$DAEMON -t -C "$CONFIGFILE"
+		exit 1
+	fi
+
 	if test "$USE_COLLECTDMON" == 1; then
 		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
 			--exec $COLLECTDMON_DAEMON -- -P "$_PIDFILE" -- -C "$CONFIGFILE"
@@ -87,7 +92,7 @@ d_stop() {
 			echo -n " ."
 
 			if test $i -gt $MAXWAIT; then
-				echo "$still_running_warning"
+				echo "$still_running_warning" >&2
 				return 1
 			fi
 
