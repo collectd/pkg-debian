@@ -26,8 +26,10 @@ Copyright Holders (in alphabetical order):
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Niki W. Waibel <niki.waibel@newlogic.com>
+	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
+	Red Hat Inc.
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
@@ -38,18 +40,27 @@ Copyright Holders (in alphabetical order):
 
 Licenses:
 
+	Files bindings/perl/Collectd.pm
+	      contrib/examples/MyPlugin.pm
+	      contrib/examples/myplugin.c
+	      contrib/cussh.pl
+	      src/collectdmon.c
+	      src/collectdmon.pod
+	      src/email.c
+	      src/perl.c
+	      src/types.db.pod
+	      src/users.c
+	      src/vserver.c
+	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
 	Files contrib/collectd2html.pl
 	      src/hddtemp.c
 	Copyright (C) 2006 Vincent Stehlé <vincent.stehle@free.fr>
 	License: GNU General Public License
 
-	Files contrib/cussh.pl
-	      src/email.c
-	      src/logfile.c
-	      src/perl.c
-	      src/users.c
-	      src/vserver.c
-	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	File contrib/network-proxy.py
+	Copyright (C) 2007 Pavel Shramov <shramov@mexmat.net>
 	License: GNU General Public License
 
 	File debian/include/net/ip_vs.h
@@ -61,7 +72,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/apache.c
-	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org>
+	Copyright (C) 2006-2008 Florian Forster <octo@verplant.org>
 	Copyright (C) 2007 Florent Monbillard <eppo@darox.net>
 	License: GNU General Public License
 
@@ -71,6 +82,11 @@ Licenses:
 	Copyright (C) 2000-2004 Kern Sibbald
 	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
 	License: GNU General Public License
+
+	Files src/collectd-perl.pod
+	      src/logfile.c
+	Copyright (C) 2007 Sebastian Harl
+	Copyright (C) 2007, 2008 Florian Forster
 
 	Files src/cpufreq.c
 	      src/irq.c
@@ -89,13 +105,18 @@ Licenses:
 	Copyright (C) 2007 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
-	File src/memcached.c
-	Copyright (C) 2005,2006 Vincent Stehlé
-	Copyright (C) 2007 Antony Dovgal
+	Files src/libvirt.c
+	      src/uuid.c
+	Copyright (C) 2006-2008 Red Hat Inc.
 	License: GNU General Public License
 
 	File src/mbmon.c
 	Copyright (C) 2006 Flavio Stanchina
+	License: GNU General Public License
+
+	File src/memcached.c
+	Copyright (C) 2005,2006 Vincent Stehlé
+	Copyright (C) 2007 Antony Dovgal
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -115,19 +136,19 @@ Licenses:
 	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
 	License: GNU General Public License
 
-	Files src/utils_mount.c
-	      src/utils_mount.h
-	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
-	License: GNU General Public License
-
 	Files src/utils_ignorelist.c
 	      src/utils_ignorelist.h
 	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
 	License: GNU General Public License
 
+	Files src/utils_mount.c
+	      src/utils_mount.h
+	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
+	License: GNU General Public License
+
 	All other files (except libltdl/*, src/utils_dns.* and
 		contrib/SpamAssassin/*):
-	Copyright (C) 2005-2007 Florian Forster <octo@verplant.org>
+	Copyright (C) 2005-2008 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
@@ -225,6 +246,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	Use whatever you like more.
 
-The Debian packaging is (C) 2006-2007, Sebastian Harl <sh@tokkee.org> and
+The Debian packaging is (C) 2006-2008, Sebastian Harl <sh@tokkee.org> and
 is licensed under the GPL, see above.
 
