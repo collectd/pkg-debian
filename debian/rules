@@ -98,6 +98,8 @@ install-arch: build
 		debian/collectd/etc/collectd/collectd.conf
 	install -m 0644 debian/collection.conf \
 		debian/collectd/etc/collectd/collection.conf
+	install -m 0644 debian/thresholds.conf \
+		debian/collectd/etc/collectd/thresholds.conf
 	
 	mkdir -p debian/collectd/usr/lib/collectd/utils/
 	for UTIL in extractDS.px migrate-3-4.px; do \
