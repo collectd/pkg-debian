@@ -134,6 +134,7 @@ binary-arch: build install-arch
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
+		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
 	dh_installdebconf -a
