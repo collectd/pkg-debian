@@ -172,7 +172,7 @@ On Debian systems, the complete text of the GNU General Public License
 can be found in `/usr/share/common-licenses/GPL'.
 
 	File libltdl/ltdl.c
-	Copyright (C) 1998-2000, 2004, 2005 Free Software Foundation, Inc.
+	Copyright (C) 1998-2001, 2003-2007 Free Software Foundation, Inc.
 	Originally by Thomas Tanner <tanner@ffii.org>
 	License: GNU Lesser General Public License
 
