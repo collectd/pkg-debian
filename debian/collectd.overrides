@@ -1,4 +1,5 @@
 collectd: shlib-with-non-pic-code usr/lib/collectd/nut.so
 collectd: shlib-with-non-pic-code usr/lib/collectd/iptables.so
 collectd: shlib-with-non-pic-code usr/lib/collectd/netlink.so
+collectd: spelling-error-in-description mysql MySQL
 

@@ -21,8 +21,10 @@ collectd (4.3.0-1) UNRELEASED; urgency=low
     when loading perl modules that require such symbols).
   * Disable debugging support.
   * watch file: Added uversionmangle for "beta" and "-rc".
+  * Override "spelling-error-in-description" for the mysql plugin name - all
+    plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 18 Feb 2008 22:22:16 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 19 Feb 2008 12:50:49 +0000
 
 collectd (4.2.4-1) experimental; urgency=low
 
