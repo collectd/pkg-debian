@@ -146,6 +146,7 @@ binary-arch: build install-arch
 	dh_installdeb -a
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
 		-dDepends debian/collectd/usr/bin/* debian/collectd/usr/sbin/* \
+			debian/collectd/usr/lib/collectd/rrdtool.so \
 		-dRecommends debian/collectd/usr/lib/collectd/*.so
 	dh_gencontrol -a
 	dh_md5sums -a
