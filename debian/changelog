@@ -8,6 +8,8 @@ collectd (4.3.0-1) unstable; urgency=low
     New plugins:
     - Set the hostname to an unique identifier: uuid
     - CPU, dist, network statistics of guest systems: libvirt
+  * Upload to unstable: With the latest changes to the perl plugin, all parts
+    of collectd are suitable for a release.
   * Added libvirt-dev, libxml2-dev and libhal-dev to the build dependencies.
   * Updated package description to mention the monitoring support.
   * Install liboping/oping.h to collectd-dev as well.
@@ -24,7 +26,7 @@ collectd (4.3.0-1) unstable; urgency=low
   * Override "spelling-error-in-description" for the mysql plugin name - all
     plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 19 Feb 2008 12:50:49 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 19 Feb 2008 21:44:42 +0100
 
 collectd (4.2.4-1) experimental; urgency=low
 
