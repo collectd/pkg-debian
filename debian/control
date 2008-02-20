@@ -29,7 +29,10 @@ Description: statistics collection and monitoring daemon
  system. Also, the statistics are very fine grained since the files are updated
  every 10 seconds.
  .
- This package contains the main program file and the following plugins:
+ This package contains the main program file and the following plugins (some
+ of those plugins require additional libraries - for more details see
+ /usr/share/doc/collectd/README.Debian.plugins):
+ .
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * battery status: battery
