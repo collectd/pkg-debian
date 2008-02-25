@@ -22,6 +22,10 @@
 use strict;
 use warnings;
 
+my $extra_deps = {
+	sensors => [ 'lm-sensors' ],
+};
+
 my $infile  = "debian/README.Debian.plugins.in";
 my $outfile = "debian/README.Debian.plugins";
 
@@ -84,6 +88,11 @@ sub print_plugin_deps
 			++$i;
 
 			print $fh "$name:\n";
+
+			if (defined $extra_deps->{$name}) {
+				unshift @deps, @{$extra_deps->{$name}};
+			}
+
 			foreach my $dep (@deps) {
 				print $fh " * $dep\n";
 			}
