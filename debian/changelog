@@ -1,3 +1,12 @@
+collectd (4.3.0-2) unstable; urgency=low
+
+  * Added "lm-sensors" to the recommended packages and README.Debian.plugins
+    (this is required by the sensors plugin).
+  * Restrict the libvirt-dev build dependency and the libvirt plugin to amd64,
+    i386 and powerpc (libvirt is only available on those architectures).
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 05 Mar 2008 21:07:21 +0100
+
 collectd (4.3.0-1) unstable; urgency=low
 
   * New upstream release.
