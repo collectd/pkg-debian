@@ -45,6 +45,11 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
 	confflags += --disable-iptables --disable-netlink --disable-nut
 endif
 
+# libvirt is only available on amd64, i386 and powerpc.
+ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
+	confflags += --disable-libvirt
+endif
+
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
 	CFLAGS="$(CFLAGS)" ./configure $(confflags)
