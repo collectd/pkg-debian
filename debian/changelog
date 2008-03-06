@@ -4,8 +4,11 @@ collectd (4.3.0-2) unstable; urgency=low
     (this is required by the sensors plugin).
   * Restrict the libvirt-dev build dependency and the libvirt plugin to amd64,
     i386 and powerpc (libvirt is only available on those architectures).
+  * Restrict the libvirt-dev build dependency to versions >= 0.4.0-6 to make
+    sure Xen is supported and to fix some strange FTBFS complaining about a
+    missing symbol "virDomainBlockStats".
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 05 Mar 2008 21:07:21 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 06 Mar 2008 23:37:44 +0100
 
 collectd (4.3.0-1) unstable; urgency=low
 
