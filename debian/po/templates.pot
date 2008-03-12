@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: sh@tokkee.org\n"
-"POT-Creation-Date: 2007-05-19 21:14+0200\n"
+"Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
+"POT-Creation-Date: 2008-03-12 17:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,8 +37,8 @@ msgstr ""
 #. Description
 #: ../collectd.templates:1001
 msgid ""
-"This step requires the perl and rrdtool packages which you do not currently "
-"have installed. You need to perform the migration manually."
+"This step requires both the perl and the rrdtool packages to be installed, "
+"which is currently not the case. You need to perform the migration manually."
 msgstr ""
 
 #. Type: note

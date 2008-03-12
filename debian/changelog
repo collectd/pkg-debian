@@ -1,8 +1,10 @@
 collectd (4.3.1-1) unstable; urgency=low
 
   * New upstream release.
+  * Clarified debconf template in respect to packages required for the data
+    migration (Closes: #469336).
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 12 Mar 2008 10:39:41 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 12 Mar 2008 17:44:13 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
