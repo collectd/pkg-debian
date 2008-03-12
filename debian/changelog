@@ -1,3 +1,9 @@
+collectd (4.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 12 Mar 2008 10:39:41 +0100
+
 collectd (4.3.0-2) unstable; urgency=low
 
   * Added "lm-sensors" to the recommended packages and README.Debian.plugins
