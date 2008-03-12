@@ -107,7 +107,7 @@ install-arch: build
 		debian/collectd/etc/collectd/thresholds.conf
 	
 	mkdir -p debian/collectd/usr/lib/collectd/utils/
-	for UTIL in extractDS.px migrate-3-4.px; do \
+	for UTIL in rrd_filter.px migrate-3-4.px; do \
 		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
 	done
 	
