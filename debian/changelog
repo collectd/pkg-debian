@@ -3,8 +3,10 @@ collectd (4.3.1-1) unstable; urgency=low
   * New upstream release.
   * Clarified debconf template in respect to packages required for the data
     migration (Closes: #469336).
+  * New debconf template translations:
+    - de.po, thanks to Kai Wasserbäch (Closes: #469334).
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 12 Mar 2008 17:44:13 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 12 Mar 2008 23:55:28 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
