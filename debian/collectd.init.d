@@ -44,11 +44,6 @@ if [ -r /etc/default/$NAME ]; then
 	. /etc/default/$NAME
 fi
 
-if test "$DISABLE" != 0; then
-	echo "$NAME has been disabled - see /etc/default/$NAME."
-	exit 0
-fi
-
 if test "$ENABLE_COREFILES" == 1; then
 	ulimit -c unlimited
 fi
@@ -60,6 +55,11 @@ else
 fi
 
 d_start() {
+	if test "$DISABLE" != 0; then
+		echo "$NAME has been disabled - see /etc/default/$NAME."
+		exit 0
+	fi
+
 	if ! $DAEMON -t -C "$CONFIGFILE" > /dev/null 2>&1; then
 		$DAEMON -t -C "$CONFIGFILE"
 		exit 1
