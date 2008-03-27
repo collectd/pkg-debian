@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: sh@tokkee.org\n"
+"POT-Creation-Date: 2007-05-19 21:14+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: note
+#. Description
+#: ../collectd.templates:1001
+msgid "Layout of RRD files has changed"
+msgstr ""
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd.templates:1001 ../collectd.templates:2001
+msgid ""
+"The layout of the RRD files created by collectd has changed significantly "
+"since version 3.x. In order to keep your old data you have to migrate it. "
+"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../collectd.templates:1001
+msgid ""
+"This step requires the perl and rrdtool packages which you do not currently "
+"have installed. You need to perform the migration manually."
+msgstr ""
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd.templates:1001 ../collectd.templates:2001
+msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd.templates:2001
+msgid "Automatically try to migrate your RRD files?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd.templates:2001
+msgid ""
+"This step can be done automatically. In this case a backup of /var/lib/"
+"collectd/ is made in /var/backups/. This script is still experimental, "
+"though. Do not expect it to work in all cases."
+msgstr ""

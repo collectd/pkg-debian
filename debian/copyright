@@ -10,44 +10,113 @@ Upstream Authors:
 	For individual credits, see AUTHORS.
 
 Copyright Holders (in alphabetical order):
+	Alexander Wirt <formorer@formorer.de>
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
+	Antony Dovgal <tony@daylessday.org>
 	David Bacher <drbacher@gmail.com>
+	Flavio Stanchina <flavio@stanchina.net>
+	Florent Monbillard <eppo@darox.net>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
 	Jason Pepas <cell@ices.utexas.edu>
+	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
+	Julian Anastasov <ja@ssi.bg>
 	Kern Sibbald
+	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Niki W. Waibel <niki.waibel@newlogic.com>
+	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
-	Roy Keene, Keene Enterprises <libconfig@rkeene.org>
+	Peter Kese <peter.kese@ijs.si>
+	Red Hat Inc.
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
-	Vincent StehlÈ <vincent.stehle@free.fr>
+	Sjoerd van der Berg <harekiet@users.sourceforge.net>
+	Steven Clarke <steven@monmouth.demon.co.uk>
+	Vincent Stehl√© <vincent.stehle@free.fr>
+	Wensong Zhang <wensong@linuxvirtualserver.org>
+	Wouter Gadeyne
 
 Licenses:
 
-	Files src/apache.c
-	      src/apple_sensors.c
-	      src/mysql.c
-	      src/ntpd.c
-	      src/battery.c
-	      src/wireless.c
-	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	Files bindings/perl/Collectd.pm
+	      contrib/examples/MyPlugin.pm
+	      contrib/examples/myplugin.c
+	      contrib/cussh.pl
+	      src/collectdmon.c
+	      src/collectdmon.pod
+	      src/email.c
+	      src/perl.c
+	      src/types.db.pod
+	      src/users.c
+	      src/vserver.c
+	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	Files contrib/collectd2html.pl
+	      src/hddtemp.c
+	Copyright (C) 2006 Vincent Stehl√© <vincent.stehle@free.fr>
+	License: GNU General Public License
+
+	File contrib/network-proxy.py
+	Copyright (C) 2007 Pavel Shramov <shramov@mexmat.net>
+	License: GNU General Public License
+
+	File debian/include/net/ip_vs.h
+	Copyright (C) Wensong Zhang <wensong@linuxvirtualserver.org>
+	Copyright (C) Julian Anastasov <ja@ssi.bg>
+	Copyright (C) Peter Kese <peter.kese@ijs.si>
+	Copyright (C) Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
+	Copyright (C) Wouter Gadeyne
+	License: GNU General Public License
+
+	File src/apache.c
+	Copyright (C) 2006-2008 Florian Forster <octo@verplant.org>
+	Copyright (C) 2007 Florent Monbillard <eppo@darox.net>
 	License: GNU General Public License
 
 	File src/apcups.c
+	Copyright (C) 2007 Florian Forster <octo@verplant.org>
 	Copyright (C) 2006 Anthony Gialluca <tonyabg@charter.net>
 	Copyright (C) 2000-2004 Kern Sibbald
 	Copyright (C) 1996-99 Andre M. Hedrick <andre@suse.com>
 	License: GNU General Public License
 
-	File src/cpufreq.c
-	Copyright (C) 2005, 2006 Peter Holik <peter@holik.at>
+	Files src/collectd-perl.pod
+	      src/logfile.c
+	Copyright (C) 2007 Sebastian Harl
+	Copyright (C) 2007, 2008 Florian Forster
+
+	Files src/cpufreq.c
+	      src/irq.c
+	      src/multimeter.c
+	Copyright (C) 2005-2007 Peter Holik <peter@holik.at>
 	License: GNU General Public License
 
-	File src/hddtemp.c
-	Copyright (C) 2005, 2006 Vincent StehlÈ <vincent.stehle@free.fr>
+	File src/iptables.c
+	Copyright (C) 2007 Sjoerd van der Berg <harekiet@users.sourceforge.net>
+	License: GNU General Public License
+
+	File src/ipvs.c
+	Copyright (C) 1997 Steven Clarke <steven@monmouth.demon.co.uk>
+	Copyright (C) 1998-2004 Wensong Zhang <wensong@linuxvirtualserver.org>
+	Copyright (C) 2003-2004 Peter Kese <peter.kese@ijs.si>
+	Copyright (C) 2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	Files src/libvirt.c
+	      src/uuid.c
+	Copyright (C) 2006-2008 Red Hat Inc.
+	License: GNU General Public License
+
+	File src/mbmon.c
+	Copyright (C) 2006 Flavio Stanchina
+	License: GNU General Public License
+
+	File src/memcached.c
+	Copyright (C) 2005,2006 Vincent Stehl√©
+	Copyright (C) 2007 Antony Dovgal
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -56,7 +125,7 @@ Licenses:
 
 	File src/processes.c
 	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
-	Copyright (C) 2006 Florian Forster <octo@verplant.org> (Mach code)
+	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org> (Mach code)
 	License: GNU General Public License
 
 	File src/serial.c
@@ -67,29 +136,24 @@ Licenses:
 	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
 	License: GNU General Public License
 
-	File src/users.c
-	Copyright (C) 2005, 2006 Sebastian Harl <sh@tokkee.org>
+	Files src/utils_ignorelist.c
+	      src/utils_ignorelist.h
+	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
 	License: GNU General Public License
 
-	Files src/utils_debug.c
-	      src/utils_debug.h
-	      src/utils_mount.c
+	Files src/utils_mount.c
 	      src/utils_mount.h
 	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
 	License: GNU General Public License
 
-	File src/vserver.c
-	Copyright (C) 2006 Sebastian Harl <sh@tokkee.org>
-	License: GNU General Public License
-
-	All other files (except libltdl/* and src/libconfig/*):
-	Copyright (C) 2005, 2006 Florian Forster <octo@verplant.org>
+	All other files (except libltdl/*, src/utils_dns.* and
+		contrib/SpamAssassin/*):
+	Copyright (C) 2005-2008 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation; either version 2 of the License, or
-	(at your option) any later version.
+	the Free Software Foundation.
 
 	This package is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -101,11 +165,14 @@ Licenses:
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
 	USA.
 
+	Some files are licensed under version 2 only, while any others allow to
+	use version 2 or (at your option) any later version.
+
 On Debian systems, the complete text of the GNU General Public License 
 can be found in `/usr/share/common-licenses/GPL'.
 
 	File libltdl/ltdl.c
-	Copyright (C) 1998-2000, 2004, 2005 Free Software Foundation, Inc.
+	Copyright (C) 1998-2001, 2003-2007 Free Software Foundation, Inc.
 	Originally by Thomas Tanner <tanner@ffii.org>
 	License: GNU Lesser General Public License
 
@@ -132,28 +199,53 @@ can be found in `/usr/share/common-licenses/GPL'.
 On Debian systems, the complete text of the GNU Lesser General Public License 
 can be found in `/usr/share/common-licenses/LGPL'.
 
-	Files src/libconfig/*
-	Copyright (C) Roy Keene <libconfig@rkeene.org>
+	File src/utils_dns.c
+	Copyright (C) 2002 The Measurement Factory, Inc.
+	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	License: BSD License
 
-	Permission is hereby granted, free of charge, to any person
-	obtaining a copy of this software and associated documentation 
-	files (the "Software"), to deal in the Software without restriction, 
-	including without limitation the rights to use, copy, modify, merge, 
-	publish, distribute, sublicense, and/or sell copies of the Software, 
-	and to permit persons to whom the Software is furnished to do so, 
-	subject to the following conditions:
+	File src/utils_dns.h
+	Copyright (C) 2006 Florian Forster <octo@verplant.org>
+	License: BSD License
 
-	The above copyright notice and this permission notice shall be 
-	included in all copies or substantial portions of the Software.
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
-	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
-	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	1. Redistributions of source code must retain the above copyright notice,
+	   this list of conditions and the following disclaimer.
+	2. Redistributions in binary form must reproduce the above copyright
+	   notice, this list of conditions and the following disclaimer in the 
+	   documentation and/or other materials provided with the distribution.
+	3. Neither the name of The Measurement Factory nor the names of its
+	   contributors may be used to endorse or promote products derived from
+	   this software without specific prior written permission.
 
-The Debian packaging is (C) 2006, Sebastian Harl <sh@tokkee.org> and
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+	ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+	LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+	CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+	SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+	INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+	CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+	POSSIBILITY OF SUCH DAMAGE.
+
+	Files contrib/SpamAssassin/*
+	Copyright (C) 2006 Alexander Wirt <formorer@formorer.de>
+
+	This program is free software; you can redistribute it and/or modify it
+	under the the terms of either:
+
+	a) the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+	or
+
+	b) the GPL (http://www.gnu.org/copyleft/gpl.html)
+
+	Use whatever you like more.
+
+The Debian packaging is (C) 2006-2008, Sebastian Harl <sh@tokkee.org> and
 is licensed under the GPL, see above.
 

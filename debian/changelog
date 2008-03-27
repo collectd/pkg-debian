@@ -1,3 +1,188 @@
+collectd (4.3.0-2) unstable; urgency=low
+
+  * Added "lm-sensors" to the recommended packages and README.Debian.plugins
+    (this is required by the sensors plugin).
+  * Restrict the libvirt-dev build dependency and the libvirt plugin to amd64,
+    i386 and powerpc (libvirt is only available on those architectures).
+  * Restrict the libvirt-dev build dependency to versions >= 0.4.0-6 to make
+    sure Xen is supported and to fix some strange FTBFS complaining about a
+    missing symbol "virDomainBlockStats".
+
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 06 Mar 2008 23:37:44 +0100
+
+collectd (4.3.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Added basic support for monitoring by introducing notifications and
+      threshold checking.
+    - Reverse lookups can be disabled using the "ReverseLookups" option of the
+      ntpd plugin (Closes: #455162).
+    New plugins:
+    - Set the hostname to an unique identifier: uuid
+    - CPU, dist, network statistics of guest systems: libvirt
+  * Upload to unstable: With the latest changes to the perl plugin, all parts
+    of collectd are suitable for a release.
+  * Added libvirt-dev, libxml2-dev and libhal-dev to the build dependencies.
+  * Updated package description to mention the monitoring support.
+  * Install liboping/oping.h to collectd-dev as well.
+  * collectd.init.d: Optionally start collectdmon to monitor collectd. This
+    can be configured using the USE_COLLECTDMON variable - enabled by default.
+  * collectd.init.d: Added ENABLE_COREFILES option - if enabled the core file
+    limit will be set to unlimited - disabled by default.
+  * Compile collectd with -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL' to force
+    lt_dlopen() to use the RTLD_GLOBAL flag which is required by the perl
+    plugin (which would otherwise be unable to find symbols defined in libperl
+    when loading perl modules that require such symbols).
+  * Disable debugging support.
+  * watch file: Added uversionmangle for "beta" and "-rc".
+  * Override "spelling-error-in-description" for the mysql plugin name - all
+    plugins are spelled lowercase.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 19 Feb 2008 21:44:42 +0100
+
+collectd (4.2.4-1) experimental; urgency=low
+
+  * New upstream release.
+  * Added versioned build-dependency on dpkg-dev (>= 1.14.10); collectd FTBFS
+    with earlier versions because of #452262.
+  * Added libregexp-common-perl (required by Collectd::Unixsock) to the
+    suggested packages.
+  * Added support for the "status" command to the init script.
+  * Updated standards-version to 3.7.3 (no changes).
+  * Added --without-libstatgrab to the configure options to prevent collectd
+    from being linked against this library if it's available.
+  * Disabled xmms plugin - xmms will be removed from unstable
+    (Closes: #459707).
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Jan 2008 18:34:23 +0100
+
+collectd (4.2.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Changed XS-Vcs-* to Vcs-*.
+  * Marked advanced rrdtool configuration options as such in collectd.conf.
+  * Added exec-munin.px, exec-munin.conf, exec-smartctl and snmp-data.conf to
+    /usr/share/doc/collectd/examples/.
+  * Moved "Homepage" field from package description to the source stanza.
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 21 Nov 2007 09:50:46 +0000
+
+collectd (4.2.0-1) experimental; urgency=low
+
+  * New upstream release.
+    - Added options to collectd2html.pl to specify host and data directory
+      (Closes: #438499).
+    - Link against a thread-safe version of librrd.
+    New plugins:
+    - IPVS connection statistics: ipvs
+    - Statistic of the memcached distributed caching system: memcached
+    - Detailed Linux network interface and routing statistics: netlink (32bit
+      systems only)
+    - Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
+    - Values from SNMP enabled network devices: snmp
+    - Number of TCP connections to specific ports: tcpconns
+    - Bitrate and frequency of music played with XMMS: xmms
+  * Updated init script to wait for collectd to shut down (Closes: #422208).
+  * Merged all plugin packages into the collectd binary package.
+  * Added README.Debian.plugins and gen_plugin_deps.pl to document the plugin
+    dependencies.
+  * Added collectd.overrides to override shlib-with-non-pic-code errors of
+    plugins liked against static libraries which have not been linked with
+    -fPIC.
+  * Removed debian/examples/myplugin.c and debian/examples/MyPlugin.pm - they
+    are included in the upstream sources now.
+  * Added libcurl4-gnutls-dev as option to the libcurl3-gnutls-dev build
+    dependency.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 28 Oct 2007 13:38:21 +0100
+
+collectd (4.0.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * Disable iptables and nut plugins on hppa as well to work around a FTBFS
+    caused by #358637 and presumably #419684 (Closes: #430933).
+  * Changed collectd-dbg's section to "utils".
+  * Added httpd-cgi to suggested packages.
+  * Added documentation of the provided examples to README.Debian, thanks to
+    Eduard Bloch for his proposal (Closes: #434182).
+
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 31 Aug 2007 10:04:41 +0200
+
+collectd (4.0.3-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 19 Jun 2007 21:41:21 +0100
+
+collectd (4.0.2-1) experimental; urgency=low
+
+  * New upstream release (Closes: #428114).
+    - Added large file support (Closes: #422212).
+    - Rewrite of the plugin system to allow more flexibility by using
+      different types of plugins.
+    - Added Nagios plugin to query collectd from Nagios.
+    New plugins:
+    - Output to "comma separated values" (CSV) files: csv
+    - Output to RRD files: rrdtool
+    - IO via the network: network
+    - External runtime interface: unixsock
+    - Embedding a Perl interpreter: perl
+    - Logging to files, STDOUT or STDERR: logfile
+    - Logging to syslog: syslog
+    - Amount of available entropy: entropy
+    - Execution of external programs: exec
+    - Iptables statistics: iptables (32bit systems only)
+    - IRQ counters: irq
+    - UPS information: nut (32bit systems only)
+  * New binary package collectd-perl (linking against libperl).
+    - Added collectd-perl to suggested packages.
+  * examples/myplugin.c: Converted to the new plugin interface.
+  * Enabled debugging.
+  * Added possibility to automatically migrate RRD files to collectd-4 using
+    migrate-3-4.px and extractDS.px provided by upstream.
+    - Added extractDS_path.dpatch to set an absolute path in migrate-3-4.px.
+    - Using po-debconf to make translations of debconf templates possible.
+  * Added NEWS.Debian with notes regarding the upgrade to collectd-4.
+  * Updated init script to only start a single collectd process.
+  * Added examples/MyPlugin.pm.
+  * Added XS-Vcs-{Git,Browser} tags.
+  * Added check_plugins.pl to check the build result of all plugins.
+  * Do not build apple_sensors and tape plugins as they do not provide any
+    functionality any longer.
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 13 Jun 2007 18:58:34 +0100
+
+collectd (3.11.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Removed sensors-ignorelist.dpatch - has been merged upstream.
+  * Removed email-ignore-size-le-0.dpatch - has been merged upstream.
+  * Added watch file.
+  * examples/myplugin.c: Pass "-" instead of NULL to plugin_submit().
+
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 15 Feb 2007 09:19:15 +0000
+
+collectd (3.11.0-1) experimental; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - DNS traffic (query types, response codes, opcodes and traffic): dns
+    - E-Mail statistics (count, traffic, spam scores and checks): email
+    - Motherboard monitor: mbmon
+    - Multimeter statistics: multimeter (beta version)
+  * Upload to experimental because of Etch freeze.
+  * New binary package collectd-dns (linking against libpcap).
+    - Added collectd-dns to suggested packages.
+  * Do not split off packages introducing new recommendations or suggestions.
+    - Merge collectd-hddtemp into collectd.
+    - Add hddtemp and mbmon to suggested packages.
+  * Added sensors-ignorelist.dpatch: Avoid assertion in ignorelist_match ()
+    when sensors plugin is not configured.
+  * Added email-ignore-size-le-0.dpatch: Ignore the size of an email if it is
+    less than or equal to zero.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 24 Dec 2006 14:09:39 +0000
+
 collectd (3.10.4-1) unstable; urgency=low
 
   * New upstream release.

@@ -2,133 +2,109 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
-Build-Depends: debhelper (>= 5), autotools-dev, libcurl3-dev,
- libmysqlclient14-dev, librrd2-dev, libsensors-dev, liboping-dev (>= 0.3.3)
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch, bison | byacc, flex, autotools-dev, libcurl4-gnutls-dev | libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, iptables-dev [!alpha !amd64 !hppa !ia64 !ppc64], nut-dev [!alpha !amd64 !hppa !ia64 !ppc64], libperl-dev, iproute-dev, libsnmp-dev | libsnmp9-dev, libvirt-dev (>= 0.4.0-6) [amd64 i386 powerpc], libxml2-dev, libhal-dev
+Build-Conflicts: libpthread-dev
+Standards-Version: 3.7.3
+Homepage: http://collectd.org/
+Vcs-Git: git://git.tokkee.org/pkg-collectd.git
+Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
 
 Package: collectd
 Architecture: any
-Depends: ${shlibs:Depends}
-Suggests: collectd-apache, collectd-mysql, collectd-sensors, collectd-dev,
- collectd-hddtemp, collectd-ping, librrds-perl
-Description: statistics collection daemon
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: perl, rrdtool, lm-sensors, ${shlibs:Recommends}
+Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
+ libregexp-common-perl, httpd-cgi, hddtemp, mbmon
+Conflicts: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
+ collectd-perl, collectd-ping, collectd-sensors
+Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
+ collectd-perl, collectd-ping, collectd-sensors
+Replaces: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
+ collectd-perl, collectd-ping, collectd-sensors
+Description: statistics collection and monitoring daemon
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
- This package contains the main program file and the following plugins:
+ This package contains the main program file and the following plugins (some
+ of those plugins require additional libraries - for more details see
+ /usr/share/doc/collectd/README.Debian.plugins):
+ .
+   * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
-   * Apple computer's sensors information: apple_sensors (server mode only)
    * battery status: battery
    * CPU utilization: cpu
    * CPU frequency: cpufreq
+   * output to comma separated values (CSV) files: csv
    * disk space usage: df
    * disk and partition throughput: disk
+   * DNS traffic information: dns
+   * E-Mail statistics (count, traffic, spam scores and checks): email
+   * amount of available entropy: entropy
+   * execution of external programs: exec
+   * harddisk temperature: hddtemp
+   * network traffic: interface
+   * iptables statistics: iptables
+   * IPVS connection statistics: ipvs
+   * IRQ counters: irq
+   * CPU, dist, network statistics of guest systems: libvirt
    * system load averages: load
+   * logging to files, STDOUT and STDERR: logfile
+   * motherboard monitor: mbmon
+   * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * multimeter statistics: multimeter
+   * MySQL statistics provided by MySQL's "show status" command: mysql
+   * detailed Linux network interface and routing statistics: netlink
+   * IO via the network: network
    * NFS utilization: nfs
+   * Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
+   * UPS information: nut
    * number of processes: processes
+   * output to RRD files: rrdtool
+   * embedded Perl interpreter: perl
+   * network latency statistics: ping
+   * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
+   * values from SNMP enabled network devices: snmp
    * swap usage: swap
-   * tape drive usage: tape (server mode only)
-   * network traffic: traffic
+   * logging to syslog: syslog
+   * number of TCP connections to specific ports: tcpconns
+   * external runtime interface: unixsock
    * number of users logged into the system: users
-   * system ressources used by Linux-VServers: vserver
+   * set the hostname to an unique identifier: uuid
+   * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
 
 Package: collectd-dbg
-Section: devel
+Section: utils
 Architecture: any
 Priority: extra
-Depends: collectd (= ${Source-Version}), collectd-apache (= ${Source-Version}),
- collectd-hddtemp (= ${Source-Version}), collectd-mysql (= ${Source-Version}),
- collectd-ping (= ${Source-Version}), collectd-sensors (= ${Source-Version})
-Description: statistics collection daemon (debugging symbols)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
+Depends: collectd (= ${binary:Version})
+Description: statistics collection and monitoring daemon (debugging symbols)
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
  This package contains the debugging symbols.
 
-Package: collectd-apache
-Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Description: statistics collection daemon (Apache plugin)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
- .
- This package contains the Apache plugin which collects Apache statistics
- provided by Apache's mod_status.
-
-Package: collectd-hddtemp
-Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Recommends: hddtemp
-Description: statistics collection daemon (hddtemp plugin)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
- .
- This package contains the hddtemp plugin which collects harddisk temperatures.
-
-Package: collectd-mysql
-Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Description: statistics collection daemon (MySQL plugin)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
- .
- This package contains the MySQL plugin which collects MySQL statistics
- provided by MySQL's "show status" command.
-
-Package: collectd-ping
-Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Description: statistics collection daemon (ping plugin)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
- .
- This package contains the ping plugin which collects network latency
- statistics.
-
-Package: collectd-sensors
-Architecture: any
-Depends: collectd (= ${Source-Version}), ${shlibs:Depends}
-Description: statistics collection daemon (sensors plugin)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
- .
- This package contains the sensors plugin which collects lm_sensors
- information (e.g. CPU temperature, fan speeds).
-
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${Source-Version}), collectd (<< 3.11~)
-Description: statistics collection daemon (development files)
- collectd is a small daemon written in C for performance. It reads various
- system statistics and updates RRD files, creating them if necessary. Since
- the daemon doesn't need to startup every time it wants to update the files
- it's very fast and easy on the system. Also, the statistics are very fine
- grained since the files are updated every 10 seconds.
+Depends: collectd (>= ${source:Version}), collectd (<< 4.4~)
+Description: statistics collection and monitoring daemon (development files)
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways. It
+ is written in C for performance. Since the daemon doesn't need to startup
+ every time it wants to update the values it's very fast and easy on the
+ system. Also, the statistics are very fine grained since the files are updated
+ every 10 seconds.
  .
  This package contains the development files needed to create your own
  plugins.
