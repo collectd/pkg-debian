@@ -1,3 +1,13 @@
+collectd (4.3.0-2~bpo40+1) etch-backports; urgency=low
+
+  * Rebuild for Etch.
+  * Removed dpkg-dev build-dependency - we don't care about Vcs-* and Homepage
+    fields in backports.org.
+  * Removed optional build-dependencies libcurl4-gnutls-dev and libsnmp-dev -
+    they are not available in Etch and might confuse buildds.
+
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 27 Mar 2008 13:04:01 +0100
+
 collectd (4.3.0-2) unstable; urgency=low
 
   * Added "lm-sensors" to the recommended packages and README.Debian.plugins
