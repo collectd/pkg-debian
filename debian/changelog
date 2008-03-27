@@ -5,8 +5,10 @@ collectd (4.3.0-2~bpo40+1) etch-backports; urgency=low
     fields in backports.org.
   * Removed optional build-dependencies libcurl4-gnutls-dev and libsnmp-dev -
     they are not available in Etch and might confuse buildds.
+  * Removed version from libvirt-dev build-dependency - a version with Xen
+    support is currently not available on backports.org.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 27 Mar 2008 13:04:01 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 27 Mar 2008 13:13:13 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
