@@ -6,6 +6,7 @@ collectd (4.3.2-1) unstable; urgency=low
   * Adopted patches and script to extractDS.px being renamed to rrd_filter.px.
   * Clarified debconf template in respect to packages required for the data
     migration (Closes: #469336).
+  * collectd.conf: Moved logging plugins to the top of the file.
   * New debconf template translations:
     - de.po, thanks to Kai Wasserbäch (Closes: #469334).
     - fr.po, thanks to Florent Usseil (Closes: #468813).
@@ -13,7 +14,7 @@ collectd (4.3.2-1) unstable; urgency=low
   * collectd.init.d: Consider the DISABLE option only when starting collectd.
   * Disabled iptables plugin - libiptc is no longer available on Debian.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 12:23:12 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 13:38:22 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
