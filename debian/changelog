@@ -6,9 +6,9 @@ collectd (4.3.1-1) unstable; urgency=low
     migration (Closes: #469336).
   * New debconf template translations:
     - de.po, thanks to Kai Wasserbäch (Closes: #469334).
-  * collectd.init.d: Consider the DISABLE option in d_start() only.
+  * collectd.init.d: Consider the DISABLE option only when starting collectd.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 13 Mar 2008 11:56:38 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 11:39:32 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
