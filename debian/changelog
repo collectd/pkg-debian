@@ -1,6 +1,8 @@
-collectd (4.3.1-1) unstable; urgency=low
+collectd (4.3.2-1) unstable; urgency=low
 
   * New upstream release.
+    - Fixed handling of ignored sensors instances (Closes: #468143).
+    - Fixed reading of wireless noise values (Closes: #471788).
   * Adopted patches and script to extractDS.px being renamed to rrd_filter.px.
   * Clarified debconf template in respect to packages required for the data
     migration (Closes: #469336).
@@ -8,7 +10,7 @@ collectd (4.3.1-1) unstable; urgency=low
     - de.po, thanks to Kai Wasserbäch (Closes: #469334).
   * collectd.init.d: Consider the DISABLE option only when starting collectd.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 11:39:32 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 11:55:07 +0100
 
 collectd (4.3.0-2) unstable; urgency=low
 
