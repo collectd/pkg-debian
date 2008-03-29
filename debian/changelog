@@ -11,7 +11,6 @@ collectd (4.3.2-1) unstable; urgency=low
     - fr.po, thanks to Florent Usseil (Closes: #468813).
     - pt.po, thanks to Américo Monteiro (Closes: #469745, #472183).
   * collectd.init.d: Consider the DISABLE option only when starting collectd.
-  * Added libsensors4-dev as option to the libsensors-dev build dependency.
   * Disabled iptables plugin - libiptc is no longer available on Debian.
 
  -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 12:23:12 +0100
