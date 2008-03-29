@@ -11,17 +11,20 @@ Upstream Authors:
 
 Copyright Holders (in alphabetical order):
 	Alexander Wirt <formorer@formorer.de>
+	Américo Monteiro
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
 	David Bacher <drbacher@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
+	Florent Usseil <swiip81@free.fr>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
 	Jason Pepas <cell@ices.utexas.edu>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
 	Julian Anastasov <ja@ssi.bg>
+	Kai Wasserbäch <debian@carbon-project.org>
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
@@ -51,7 +54,7 @@ Licenses:
 	      src/types.db.pod
 	      src/users.c
 	      src/vserver.c
-	Copyright (C) 2006-2007 Sebastian Harl <sh@tokkee.org>
+	Copyright (C) 2006-2008 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
 	Files contrib/collectd2html.pl
@@ -247,5 +250,16 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Use whatever you like more.
 
 The Debian packaging is (C) 2006-2008, Sebastian Harl <sh@tokkee.org> and
-is licensed under the GPL, see above.
+is licensed under the GPL, see above. The debconf template translations are
+distributed under the same license as the package itself.
+
+	de.po:
+	Copyright (C) 2008 Kai Wasserbäch <debian@carbon-project.org>
+	Copyright (C) 2008 Sebastian Harl <sh@tokkee.org>
+
+	fr.po:
+	Copyright (C) 2008 Florent Usseil <swiip81@free.fr>
+
+	pt.po:
+	Copyright (C) 2008 Américo Monteiro
 
