@@ -47,7 +47,6 @@ Description: statistics collection and monitoring daemon
    * execution of external programs: exec
    * harddisk temperature: hddtemp
    * network traffic: interface
-   * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
    * CPU, dist, network statistics of guest systems: libvirt

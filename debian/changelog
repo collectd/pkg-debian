@@ -12,9 +12,11 @@ collectd (4.3.2-1) unstable; urgency=low
     - fr.po, thanks to Florent Usseil (Closes: #468813).
     - pt.po, thanks to Américo Monteiro (Closes: #469745, #472183).
   * collectd.init.d: Consider the DISABLE option only when starting collectd.
-  * Disabled iptables plugin - libiptc is no longer available on Debian.
+  * Disabled iptables plugin - libiptc is no longer available in Debian.
+    - Removed the plugin from collectd.conf.
+    - Removed /usr/share/doc/collectd/examples/iptables/.
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 29 Mar 2008 13:38:22 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 31 Mar 2008 12:13:18 +0200
 
 collectd (4.3.0-2) unstable; urgency=low
 
