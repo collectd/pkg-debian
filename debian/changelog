@@ -7,8 +7,9 @@ collectd (4.3.2-1~bpo40+1) etch-backports; urgency=low
     they are not available in Etch and might confuse buildds.
   * Removed version from libvirt-dev build-dependency - a version with Xen
     support is currently not available on backports.org.
+  * Reenabled the "iptables" plugin - libiptc is available in Etch.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Apr 2008 15:32:40 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 27 Apr 2008 16:48:59 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
