@@ -36,13 +36,16 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
+# libiptc is no longer available on Debian (see #472655).
+confflags += --disable-iptables
+
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
 # The static libraries iptc, netstat and upsclient cannot be used on
 # 64bit systems (see bugs #358637 and #419684 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
-	confflags += --disable-iptables --disable-netlink --disable-nut
+	confflags += --disable-netlink --disable-nut
 endif
 
 # libvirt is only available on amd64, i386 and powerpc.
@@ -107,7 +110,7 @@ install-arch: build
 		debian/collectd/etc/collectd/thresholds.conf
 	
 	mkdir -p debian/collectd/usr/lib/collectd/utils/
-	for UTIL in extractDS.px migrate-3-4.px; do \
+	for UTIL in rrd_filter.px migrate-3-4.px; do \
 		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
 	done
 	
@@ -140,7 +143,7 @@ binary-arch: build install-arch
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
-		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
+		contrib/SpamAssassin/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95

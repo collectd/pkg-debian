@@ -1,26 +1,26 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of collectd debconf templates to French
+# Copyright (C) 2008 Florent USSEIL <swiip81@free.fr>
+# This file is distributed under the same license as the collectd package.
 #
-#, fuzzy
+# Florent USSEIL <swiip81@free.fr>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: collectd\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2008-03-12 17:35+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2008-03-14 01:00+0100\n"
+"Last-Translator: Florent USSEIL <swiip81@free.fr>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Type: note
 #. Description
 #: ../collectd.templates:1001
 msgid "Layout of RRD files has changed"
-msgstr ""
+msgstr "Changement du format des fichiers RRD"
 
 #. Type: note
 #. Description
@@ -32,6 +32,11 @@ msgid ""
 "since version 3.x. In order to keep your old data you have to migrate it. "
 "This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgstr ""
+"Le format des fichiers RRD créés par collectd a changé de façon "
+"significative depuis la version 3.x. Afin de conserver les "
+"données, il est nécessaire de les convertir."
+"Cette opération peut être réalisée avec la commande "
+"« /usr/lib/collectd/utils/migrate-3-4.px »."
 
 #. Type: note
 #. Description
@@ -40,6 +45,8 @@ msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
+"Cette étape a besoin des paquets perl et rrdtool qui ne sont pas "
+"actuellement installés. La conversion doit donc être effectuée manuellement."
 
 #. Type: note
 #. Description
@@ -48,12 +55,13 @@ msgstr ""
 #: ../collectd.templates:1001 ../collectd.templates:2001
 msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
 msgstr ""
+"Veuillez lire le fichier /usr/share/doc/collectd/NEWS.Debian pour plus d'informations."
 
 #. Type: boolean
 #. Description
 #: ../collectd.templates:2001
 msgid "Automatically try to migrate your RRD files?"
-msgstr ""
+msgstr "Faut-il tenter de convertir automatiquement les fichiers RRD ?"
 
 #. Type: boolean
 #. Description
@@ -63,3 +71,9 @@ msgid ""
 "collectd/ is made in /var/backups/. This script is still experimental, "
 "though. Do not expect it to work in all cases."
 msgstr ""
+"La conversion des fichiers RRD peut être effectuée automatiquement. Pour cela, "
+"une sauvegarde de /var/lib/collectd/ aura lieu "
+"dans /var/backups/. Veuillez noter que cette "
+"conversion est expérimentale : il est recommandé de "
+"contrôler sa bonne exécution."
+

@@ -44,7 +44,7 @@ if [ -r /etc/default/$NAME ]; then
 	. /etc/default/$NAME
 fi
 
-if test "$DISABLE" != 0; then
+if test "$DISABLE" != 0 -a "$1" == "start"; then
 	echo "$NAME has been disabled - see /etc/default/$NAME."
 	exit 0
 fi
@@ -60,6 +60,12 @@ else
 fi
 
 d_start() {
+	if test "$DISABLE" != 0; then
+		# we get here during restart
+		echo -n " - disabled by /etc/default/$NAME"
+		return 0
+	fi
+
 	if ! $DAEMON -t -C "$CONFIGFILE" > /dev/null 2>&1; then
 		$DAEMON -t -C "$CONFIGFILE"
 		exit 1

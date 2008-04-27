@@ -1,3 +1,23 @@
+collectd (4.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed handling of ignored sensors instances (Closes: #468143).
+    - Fixed reading of wireless noise values (Closes: #471788).
+  * Adopted patches and script to extractDS.px being renamed to rrd_filter.px.
+  * Clarified debconf template in respect to packages required for the data
+    migration (Closes: #469336).
+  * collectd.conf: Moved logging plugins to the top of the file.
+  * New debconf template translations:
+    - de.po, thanks to Kai Wasserbäch (Closes: #469334).
+    - fr.po, thanks to Florent Usseil (Closes: #468813).
+    - pt.po, thanks to Américo Monteiro (Closes: #469745, #472183).
+  * collectd.init.d: Consider the DISABLE option only when starting collectd.
+  * Disabled iptables plugin - libiptc is no longer available in Debian.
+    - Removed the plugin from collectd.conf.
+    - Removed /usr/share/doc/collectd/examples/iptables/.
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 31 Mar 2008 12:13:18 +0200
+
 collectd (4.3.0-2~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for Etch.

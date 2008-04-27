@@ -1,5 +1,5 @@
 #!/bin/sh /usr/share/dpatch/dpatch-run
-## extractDS_path.dpatch by Sebastian Harl <sh@tokkee.org>
+## collection_conf_path.dpatch by Sebastian Harl <sh@tokkee.org>
 ##
 ## DP: Set the path of collection.conf to /etc/collectd/.
 
