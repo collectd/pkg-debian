@@ -16,8 +16,10 @@ collectd (4.4.0-1) unstable; urgency=low
   * Reenabled iptables plugin (Closes: #473435).
     - Added the plugin to collectd.conf.
     - Added /usr/share/doc/collectd/examples/iptables/.
+  * New debconf template translations:
+    - gl.po, thanks to Jacobo Tarrio (Closes: #482667).
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 26 May 2008 15:13:55 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 26 May 2008 18:17:39 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
