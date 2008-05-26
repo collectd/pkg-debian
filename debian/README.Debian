@@ -94,6 +94,10 @@ Examples:
   documentation for information about setup and configuration: perldoc
   Collectd.pm.
 
+- iptables/: This directory contains a script which will setup iptables to do
+  global logging of all traffic going in and out of an interface. This
+  information can then be collected by collectd's iptables plugin.
+
 - cussh.pl: "Collectd Unix Socket SHell" is a small, interactive front-end for
   the unixsock plugin. See the embedded POD documentation for details: perldoc
   cussh.pl.

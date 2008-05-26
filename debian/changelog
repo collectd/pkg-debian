@@ -4,6 +4,7 @@ collectd (4.4.0-1) unstable; urgency=low
     - Fixed another issue of the sensors plugin affecting some chip types
       (Closes: #468143).
     - Fixed creation of "vserver" graphs in collection.cgi (Closes: #475120).
+    - collectd now ships libiptc itself.
     New plugins:
     - Ascent server statistics: ascent
     - IPMI sensors information: ipmi
@@ -12,8 +13,11 @@ collectd (4.4.0-1) unstable; urgency=low
     - TeamSpeak2 server statistics: teamspeak2
     - detailed virtual memory statistics: vmem
   * Disable "tcpconns" plugin by default (Closes: #478759).
+  * Reenabled iptables plugin (Closes: #473435).
+    - Added the plugin to collectd.conf.
+    - Added /usr/share/doc/collectd/examples/iptables/.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 26 May 2008 13:32:52 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 26 May 2008 15:13:55 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 

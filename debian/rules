@@ -36,9 +36,6 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
-# libiptc is no longer available on Debian (see #472655).
-confflags += --disable-iptables
-
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
@@ -143,7 +140,7 @@ binary-arch: build install-arch
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
-		contrib/SpamAssassin/ contrib/cussh.pl \
+		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95

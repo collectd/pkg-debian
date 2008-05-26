@@ -49,6 +49,7 @@ Description: statistics collection and monitoring daemon
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
+   * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
    * CPU, dist, network statistics of guest systems: libvirt
