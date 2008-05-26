@@ -1,8 +1,19 @@
-collectd (4.3.X-Y) UNRELEASED; urgency=low
+collectd (4.4.0-1) unstable; urgency=low
 
+  * New upstream release.
+    - Fixed another issue of the sensors plugin affecting some chip types
+      (Closes: #468143).
+    - Fixed creation of "vserver" graphs in collection.cgi (Closes: #475120).
+    New plugins:
+    - Ascent server statistics: ascent
+    - IPMI sensors information: ipmi
+    - PowerDNS name server statistics: powerdns
+    - incremental parsing of logfiles: tail
+    - TeamSpeak2 server statistics: teamspeak2
+    - detailed virtual memory statistics: vmem
   * Disable "tcpconns" plugin by default (Closes: #478759).
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 01 May 2008 08:08:17 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 26 May 2008 13:32:52 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
