@@ -53,7 +53,7 @@ endif
 
 # Force the inclusion of the ipmi plugin and manually specify its
 # dependencies to work around #474087 (broken openipmi .pc files).
-BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread -lOpenIPMIutils -lOpenIPMI
+BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread
 confflags += --enable-ipmi
 
 config.status: configure $(DPATCH_STAMPFN)
