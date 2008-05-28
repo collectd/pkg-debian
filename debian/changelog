@@ -13,7 +13,7 @@ collectd (4.4.0-1) unstable; urgency=low
     - TeamSpeak2 server statistics: teamspeak2
     - detailed virtual memory statistics: vmem
   * Disable "tcpconns" plugin by default (Closes: #478759).
-  * Reenabled iptables plugin (Closes: #473435).
+  * Reenabled iptables plugin on all architectures (Closes: #473435).
     - Added the plugin to collectd.conf.
     - Added /usr/share/doc/collectd/examples/iptables/.
     - Added build dependency on linux-libc-dev (>= 2.6.25-4).
