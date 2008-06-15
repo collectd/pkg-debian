@@ -1,4 +1,4 @@
-collectd (4.4.0-1) unstable; urgency=low
+collectd (4.4.1-1) unstable; urgency=low
 
   * New upstream release.
     - Fixed another issue of the sensors plugin affecting some chip types
@@ -22,7 +22,7 @@ collectd (4.4.0-1) unstable; urgency=low
   * Added a work around for #474087 (broken openipmi .pc files) by forcing the
     inclusion of the ipmi plugin and manually specifying the dependencies.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 28 May 2008 18:17:46 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Jun 2008 19:35:04 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
