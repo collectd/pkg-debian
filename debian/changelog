@@ -21,8 +21,9 @@ collectd (4.4.1-1) unstable; urgency=low
     - gl.po, thanks to Jacobo Tarrio (Closes: #482667).
   * Added a work around for #474087 (broken openipmi .pc files) by forcing the
     inclusion of the ipmi plugin and manually specifying the dependencies.
+  * Updated standards-version to 3.8.0 (no changes).
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Jun 2008 19:35:04 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Jun 2008 20:08:36 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
