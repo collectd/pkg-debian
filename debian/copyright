@@ -22,6 +22,7 @@ Copyright Holders (in alphabetical order):
 	Florent Usseil <swiip81@free.fr>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
+	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
 	Julian Anastasov <ja@ssi.bg>
@@ -289,6 +290,9 @@ distributed under the same license as the package itself.
 
 	fr.po:
 	Copyright (C) 2008 Florent Usseil <swiip81@free.fr>
+
+	gl.po:
+	Copyright (C) 2008 Jacobo Tarrio <jtarrio@debian.org>
 
 	pt.po:
 	Copyright (C) 2008 Américo Monteiro
