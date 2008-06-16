@@ -4,6 +4,7 @@ collectd (4.4.1-1) unstable; urgency=low
     - Fixed another issue of the sensors plugin affecting some chip types
       (Closes: #468143).
     - Fixed creation of "vserver" graphs in collection.cgi (Closes: #475120).
+    - Fixed a segfault when using libperl 5.10.
     - collectd now ships libiptc itself.
     New plugins:
     - Ascent server statistics: ascent
@@ -23,7 +24,7 @@ collectd (4.4.1-1) unstable; urgency=low
     inclusion of the ipmi plugin and manually specifying the dependencies.
   * Updated standards-version to 3.8.0 (no changes).
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Jun 2008 20:08:36 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 16 Jun 2008 19:05:50 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
