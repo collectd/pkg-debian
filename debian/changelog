@@ -17,14 +17,15 @@ collectd (4.4.1-1) unstable; urgency=low
   * Reenabled iptables plugin on all architectures (Closes: #473435).
     - Added the plugin to collectd.conf.
     - Added /usr/share/doc/collectd/examples/iptables/.
-    - Added build dependency on linux-libc-dev (>= 2.6.25-4).
+    - Added build dependency on linux-libc-dev (>= 2.6.25-4) - that version is
+      required because of #479899.
   * New debconf template translations:
     - gl.po, thanks to Jacobo Tarrio (Closes: #482667).
   * Added a work around for #474087 (broken openipmi .pc files) by forcing the
     inclusion of the ipmi plugin and manually specifying the dependencies.
   * Updated standards-version to 3.8.0 (no changes).
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 16 Jun 2008 19:05:50 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 17 Jun 2008 10:35:51 +0200
 
 collectd (4.3.2-1) unstable; urgency=low
 
