@@ -1,4 +1,4 @@
-collectd (4.4.1-2) UNRELEASED; urgency=low
+collectd (4.4.1-2) unstable; urgency=low
 
   * Restrict libcurl4-gnutls-dev build dependency to versions which are not
     affected by #488701 (Closes: #489091).
@@ -14,7 +14,7 @@ collectd (4.4.1-2) UNRELEASED; urgency=low
   * Replaced nut-dev build dependency with libupsclient1-dev:
     Reenabled the "nut" plugin on all architectures.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 07 Jul 2008 20:36:55 +0000
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 07 Jul 2008 20:45:53 +0000
 
 collectd (4.4.1-1) unstable; urgency=low
 
