@@ -44,11 +44,10 @@ confflags += --with-libupsclient=$(CURDIR)/debian/bin/libupsclient-config.sh
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static libraries netstat and upsclient cannot be linked into shared
-# objects on some architectures (see bugs #358637 and #419684 for more
-# details).
+# The static library netstat cannot be linked into shared objects on some
+# architectures (see bugs #358637 and #419684 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
-	confflags += --disable-netlink --disable-nut
+	confflags += --disable-netlink
 endif
 
 # libvirt is only available on amd64, i386 and powerpc.
