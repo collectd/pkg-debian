@@ -37,6 +37,10 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
+# libupsclient-config is no longer available - this is a temporary
+# workaround until upstream has switched to pkg-config.
+confflags += --with-libupsclient=$(CURDIR)/debian/bin/libupsclient-config.sh
+
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
@@ -59,6 +63,7 @@ confflags += --enable-ipmi
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
+	chmod 755 debian/bin/libupsclient-config.sh
 	BUILD_WITH_OPENIPMI_LIBS="$(BUILD_WITH_OPENIPMI_LIBS)" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
