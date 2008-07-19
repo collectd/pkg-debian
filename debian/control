@@ -2,9 +2,9 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
-Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison | byacc, flex, autotools-dev, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, iptables-dev [!alpha !amd64 !hppa !ia64 !ppc64], nut-dev [!alpha !amd64 !hppa !ia64 !ppc64], libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64], libsnmp9-dev, libvirt-dev [amd64 i386 powerpc], libxml2-dev, libhal-dev
+Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison | byacc, flex, autotools-dev, pkg-config, linux-libc-dev (>= 2.6.25-4) | linux-libc-dev (<< 2.6.25-1), libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, libupsclient1-dev, libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64], libsnmp9-dev, libvirt-dev [amd64 i386 powerpc], libxml2-dev, libhal-dev, libopenipmi-dev
 Build-Conflicts: libpthread-dev
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
@@ -35,6 +35,7 @@ Description: statistics collection and monitoring daemon
  .
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
+   * Ascent server statistics: ascent
    * battery status: battery
    * CPU utilization: cpu
    * CPU frequency: cpufreq
@@ -47,6 +48,7 @@ Description: statistics collection and monitoring daemon
    * execution of external programs: exec
    * harddisk temperature: hddtemp
    * network traffic: interface
+   * IPMI sensors information: ipmi
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
@@ -64,6 +66,7 @@ Description: statistics collection and monitoring daemon
    * Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
+   * PowerDNS name server statistics: powerdns
    * number of processes: processes
    * output to RRD files: rrdtool
    * embedded Perl interpreter: perl
@@ -73,10 +76,13 @@ Description: statistics collection and monitoring daemon
    * values from SNMP enabled network devices: snmp
    * swap usage: swap
    * logging to syslog: syslog
+   * incremental parsing of logfiles: tail
    * number of TCP connections to specific ports: tcpconns
+   * TeamSpeak2 server statistics: teamspeak2
    * external runtime interface: unixsock
    * number of users logged into the system: users
    * set the hostname to an unique identifier: uuid
+   * detailed virtual memory statistics: vmem
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
 
@@ -97,7 +103,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.4~)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.5~)
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways. It

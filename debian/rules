@@ -12,13 +12,14 @@ DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
-CFLAGS = -Wall -g -I$(CURDIR)/debian/include
+CPPFLAGS = -I$(CURDIR)/debian/include
+CFLAGS = -Wall -g
 
 # There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
 # however required by the perl plugin (which would otherwise be unable to find
 # symbols defined in libperl when loading perl modules that require such
 # symbols). This is a workaround for this issue.
-CFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
+CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
@@ -36,13 +37,17 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
+# libupsclient-config is no longer available - this is a temporary
+# workaround until upstream has switched to pkg-config.
+confflags += --with-libupsclient=$(CURDIR)/debian/bin/libupsclient-config.sh
+
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static libraries iptc, netstat and upsclient cannot be used on
-# 64bit systems (see bugs #358637 and #419684 for more details).
+# The static library netstat cannot be linked into shared objects on some
+# architectures (see bugs #358637 and #419684 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
-	confflags += --disable-iptables --disable-netlink --disable-nut
+	confflags += --disable-netlink
 endif
 
 # libvirt is only available on amd64, i386 and powerpc.
@@ -50,9 +55,16 @@ ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
 	confflags += --disable-libvirt
 endif
 
+# Force the inclusion of the ipmi plugin and manually specify its
+# dependencies to work around #474087 (broken openipmi .pc files).
+BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread
+confflags += --enable-ipmi
+
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	CFLAGS="$(CFLAGS)" ./configure $(confflags)
+	chmod 755 debian/bin/libupsclient-config.sh
+	BUILD_WITH_OPENIPMI_LIBS="$(BUILD_WITH_OPENIPMI_LIBS)" \
+	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp
 
@@ -124,7 +136,7 @@ binary-indep: install-indep
 	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
-	dh_compress -i -Xexamples/myplugin.c -Xexamples/MyPlugin.c
+	dh_compress -i -Xexamples/myplugin.c -Xexamples/MyPlugin.pm
 	dh_fixperms -i
 	dh_installdeb -i
 	dh_gencontrol -i

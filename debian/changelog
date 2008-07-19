@@ -1,3 +1,50 @@
+collectd (4.4.1-2) unstable; urgency=low
+
+  * Restrict libcurl4-gnutls-dev build dependency to versions which are not
+    affected by #488701 (Closes: #489091).
+  * Added linux-libc-dev (<< 2.6.25-1) as an option to the linux-libc-dev
+    (>= 2.6.25-4) build dependency - those versions are not affected by
+    #479899.
+  * Added build dependency on pkg-config - this is used by collectd's
+    configure script to check for a couple of libraries.
+  * Added libupsclient-config.sh to imitate libupsclient-config which is no
+    longer available. libupsclient-config.sh is a simple wrapper around
+    pkg-config. This is a workaround until upstream supports pkg-config for
+    libupsclient.
+  * Replaced nut-dev build dependency with libupsclient1-dev:
+    Reenabled the "nut" plugin on all architectures.
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 07 Jul 2008 20:45:53 +0000
+
+collectd (4.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed another issue of the sensors plugin affecting some chip types
+      (Closes: #468143).
+    - Fixed creation of "vserver" graphs in collection.cgi (Closes: #475120).
+    - Fixed a segfault when using libperl 5.10.
+    - collectd now ships libiptc itself.
+    New plugins:
+    - Ascent server statistics: ascent
+    - IPMI sensors information: ipmi
+    - PowerDNS name server statistics: powerdns
+    - incremental parsing of logfiles: tail
+    - TeamSpeak2 server statistics: teamspeak2
+    - detailed virtual memory statistics: vmem
+  * Disable "tcpconns" plugin by default (Closes: #478759).
+  * Reenabled iptables plugin on all architectures (Closes: #473435).
+    - Added the plugin to collectd.conf.
+    - Added /usr/share/doc/collectd/examples/iptables/.
+    - Added build dependency on linux-libc-dev (>= 2.6.25-4) - that version is
+      required because of #479899.
+  * New debconf template translations:
+    - gl.po, thanks to Jacobo Tarrio (Closes: #482667).
+  * Added a work around for #474087 (broken openipmi .pc files) by forcing the
+    inclusion of the ipmi plugin and manually specifying the dependencies.
+  * Updated standards-version to 3.8.0 (no changes).
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 17 Jun 2008 10:35:51 +0200
+
 collectd (4.3.2-1~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for Etch.

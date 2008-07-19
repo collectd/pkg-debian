@@ -15,12 +15,14 @@ Copyright Holders (in alphabetical order):
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
+	C-Ware, Inc.
 	David Bacher <drbacher@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
 	Florent Usseil <swiip81@free.fr>
 	Florian Forster <octo@verplant.org>
 	Free Software Foundation, Inc.
+	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
 	Julian Anastasov <ja@ssi.bg>
@@ -28,6 +30,7 @@ Copyright Holders (in alphabetical order):
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
+	Netfilter Core Team
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
@@ -36,6 +39,7 @@ Copyright Holders (in alphabetical order):
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
+	Stefan Hacker <d0t@dbclan.de>
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
@@ -53,6 +57,7 @@ Licenses:
 	      src/perl.c
 	      src/types.db.pod
 	      src/users.c
+	      src/utils_cmd_flush.h
 	      src/vserver.c
 	Copyright (C) 2006-2008 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
@@ -88,8 +93,9 @@ Licenses:
 
 	Files src/collectd-perl.pod
 	      src/logfile.c
-	Copyright (C) 2007 Sebastian Harl
-	Copyright (C) 2007, 2008 Florian Forster
+	      src/utils_cmd_flush.c
+	Copyright (C) 2007-2008 Sebastian Harl
+	Copyright (C) 2007-2008 Florian Forster
 
 	Files src/cpufreq.c
 	      src/irq.c
@@ -106,6 +112,10 @@ Licenses:
 	Copyright (C) 1998-2004 Wensong Zhang <wensong@linuxvirtualserver.org>
 	Copyright (C) 2003-2004 Peter Kese <peter.kese@ijs.si>
 	Copyright (C) 2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	Files src/libiptc/*
+	Copyright (C) 1999-2008 Netfilter Core Team
 	License: GNU General Public License
 
 	Files src/libvirt.c
@@ -126,6 +136,14 @@ Licenses:
 	Copyright (C) 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
 	License: GNU General Public License
 
+	Files src/powerdns.c
+	      src/utils_tail.c
+	      src/utils_tail_match.c
+	      src/utils_tail_match.h
+	Copyright (C) 2007-2008 C-Ware, Inc.
+	Copyright (C) 2008 Florian Forster
+	License: GNU General Public License
+
 	File src/processes.c
 	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
 	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org> (Mach code)
@@ -139,14 +157,27 @@ Licenses:
 	Copyright (C) 2005, 2006 Scott Garrett <sgarrett@technomancer.com>
 	License: GNU General Public License
 
-	Files src/utils_ignorelist.c
-	      src/utils_ignorelist.h
+	File src/teamspeak2.c
+	Copyright (C) 2008 Stefan Hacker
+	Copyright (C) 2008 Florian Forster
+	License: GNU General Public License
+
+	File src/utils_ignorelist.c
+	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
+	Copyright (C) 2008 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
+	File src/utils_ignorelist.h
 	Copyright (C) 2006 Lubos Stanek <lubek@users.sourceforge.net>
 	License: GNU General Public License
 
 	Files src/utils_mount.c
 	      src/utils_mount.h
 	Copyright (C) 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
+	License: GNU General Public License
+
+	File src/utils_tail.h
+	Copyright (C) 2007-2008 C-Ware, Inc.
 	License: GNU General Public License
 
 	All other files (except libltdl/*, src/utils_dns.* and
@@ -259,6 +290,9 @@ distributed under the same license as the package itself.
 
 	fr.po:
 	Copyright (C) 2008 Florent Usseil <swiip81@free.fr>
+
+	gl.po:
+	Copyright (C) 2008 Jacobo Tarrio <jtarrio@debian.org>
 
 	pt.po:
 	Copyright (C) 2008 Américo Monteiro
