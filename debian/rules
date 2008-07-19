@@ -37,17 +37,14 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
-# libupsclient-config is no longer available - this is a temporary
-# workaround until upstream has switched to pkg-config.
-confflags += --with-libupsclient=$(CURDIR)/debian/bin/libupsclient-config.sh
-
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static library netstat cannot be linked into shared objects on some
-# architectures (see bugs #358637 and #419684 for more details).
+# The static libraries netstat and upsclient cannot be linked into shared
+# objects on some architectures (see bugs #358637 and #419684 for more
+# details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
-	confflags += --disable-netlink
+	confflags += --disable-netlink --disable-nut
 endif
 
 # libvirt is only available on amd64, i386 and powerpc.
@@ -62,7 +59,6 @@ confflags += --enable-ipmi
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	chmod 755 debian/bin/libupsclient-config.sh
 	BUILD_WITH_OPENIPMI_LIBS="$(BUILD_WITH_OPENIPMI_LIBS)" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 

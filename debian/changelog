@@ -7,8 +7,11 @@ collectd (4.4.1-2~bpo40+1) etch-backports; urgency=low
     they are not available in Etch and might confuse buildds.
   * Removed version from libvirt-dev build-dependency - a version with Xen
     support is currently not available on backports.org.
+  * Switch back to build-depend on nut-dev - libupsclient1-dev is not
+    available in Etch:
+    - Limit the "nut" plugin to [!alpha !amd64 !hppa !ia64 !ppc64].
 
- -- Sebastian Harl <sh@tokkee.org>  Sat, 19 Jul 2008 13:34:41 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 19 Jul 2008 13:49:24 +0200
 
 collectd (4.4.1-2) unstable; urgency=low
 
