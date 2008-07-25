@@ -28,6 +28,17 @@ solutions are welcome.
   "/var/lib/collectd/" and generate a static HTML file and a directory
   containing several PNG files which are graphs of the RRD files found.
 
+  This script was intended to be used with version 3 of collectd but still
+  seems to be in use by some people. To get it working with version 4, you
+  have to call it once for each subdirectory containing RRD files. A sample
+  wrapper might look like this:
+
+    for dir in /var/lib/collectd/rrd/$hostname/*; do
+        out_dir=`basename "$dir"`
+        mkdir -p $out_dir
+        ( cd $out_dir && collectd2html.pl --data-dir="$dir" )
+    done
+
 - collection.cgi: Sample CGI script that creates graphs on the fly. The Perl
   modules "RRDs" (package librrds-perl), "URI:Escape" (package liburi-perl),
   "HTML::Entities" (package libhtml-parser-perl) and a CGI capable web server
