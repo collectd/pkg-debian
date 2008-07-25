@@ -41,6 +41,10 @@ solutions are welcome.
   is installed to /etc/collectd/collection.conf. You should not need to change
   anything there.
 
+- collection3: A graphing front-end for the RRD files created by and filled
+  with collectd. See /usr/share/doc/collectd/examples/collection3/README for
+  details. This is a successor for collection.cgi.
+
 Building your own plugins:
 --------------------------
 
@@ -56,7 +60,7 @@ Building your own plugins:
   collectd-dev package and use /usr/share/doc/collectd-dev/examples/myplugin.c
   as a starting point (Note: This is already a working example, though it does
   not collect any useful data).
-  
+
   The resulting file can be compiled as follows:
 
     gcc -shared -fPIC -o myplugin.so myplugin.c

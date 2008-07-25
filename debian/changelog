@@ -6,8 +6,11 @@ collectd (4.4.2-1) unstable; urgency=low
   * Removed byacc from the build-dependencies - collectd now requires bison.
   * Removed libupsclient-config.sh - upstream now supports pkg-config for
     libupsclient.
+  * Include collection3 in /usr/share/doc/collectd/examples/:
+    - Updated README.Debian to point the collection3's README.
+    - Added libconfig-general-perl to the suggested packages.
 
- -- Sebastian Harl <sh@tokkee.org>  Fri, 25 Jul 2008 13:28:33 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 25 Jul 2008 15:27:56 +0200
 
 collectd (4.4.1-2) unstable; urgency=low
 
