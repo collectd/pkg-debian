@@ -131,7 +131,7 @@ binary-indep: install-indep
 	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
-	dh_compress -i -Xexamples/myplugin.c -Xexamples/MyPlugin.pm
+	dh_compress -i -Xexamples/
 	dh_fixperms -i
 	dh_installdeb -i
 	dh_gencontrol -i
@@ -154,7 +154,7 @@ binary-arch: build install-arch
 	dh_installinit -a -- defaults 95
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
-	dh_compress -a
+	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_installdeb -a
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
