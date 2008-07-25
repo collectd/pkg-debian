@@ -4,8 +4,10 @@ collectd (4.4.2-1) unstable; urgency=low
   * Removed librrd0-dev and libmysqlclient14-dev from the build-dependencies -
     those package are no longer available since Etch.
   * Removed byacc from the build-dependencies - collectd now requires bison.
+  * Removed libupsclient-config.sh - upstream now supports pkg-config for
+    libupsclient.
 
- -- Sebastian Harl <sh@tokkee.org>  Fri, 25 Jul 2008 13:26:19 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 25 Jul 2008 13:28:33 +0200
 
 collectd (4.4.1-2) unstable; urgency=low
 
