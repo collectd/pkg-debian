@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
 Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison | byacc, flex, autotools-dev, pkg-config, linux-kernel-headers, libcurl3-gnutls-dev, libmysqlclient15-dev | libmysqlclient14-dev, librrd2-dev | librrd0-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, nut-dev [!alpha !amd64 !hppa !ia64 !ppc64], libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64], libsnmp9-dev, libvirt-dev (>= 0.4.0-6) [amd64 i386 powerpc], libxml2-dev, libhal-dev, libopenipmi-dev
-Build-Conflicts: libpthread-dev
+Build-Conflicts: libpthread-dev, iptables-dev
 Standards-Version: 3.8.0
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git

@@ -11,8 +11,9 @@ collectd (4.4.1-2~bpo40+1) etch-backports; urgency=low
   * No longer remove version from libvirt-dev build-dependency - a version
     with Xen support is now available on backports.org.
   * Replaced linux-libc-dev build-dependency with linux-kernel-headers.
+  * Build-conflict with iptables-dev to force the use of the shipped libiptc.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 14 Aug 2008 17:08:06 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 20 Aug 2008 10:52:14 +0200
 
 collectd (4.4.1-2) unstable; urgency=low
 
