@@ -124,6 +124,7 @@ d_status() {
 			echo "collectd is stopped."
 		fi
 	fi
+	exit 1
 }
 
 case "$1" in
