@@ -8,8 +8,10 @@ collectd (4.4.2-2) unstable; urgency=low
     fix a typo in the libstatgrab code of the memory plugin.
   * Added debian/patches/collectd_memleak.dpatch - trivial upstream patch to
     fix a possible memory leak.
+  * Added debian/patches/snmp_memleak.dpatch - trivial upstream patch to fix a
+    possible memory leak in the snmp plugin.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 10:28:36 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 19:17:55 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
