@@ -4,8 +4,10 @@ collectd (4.4.2-2) unstable; urgency=low
     in 4.4.1-1 and instead build depend on libopenipmi-dev (>= 2.0.14-1~)
     which includes fixed .pc files. This fixes an undefined symbol error when
     loading the ipmi plugin caused by that work around (Closes: #494665).
+  * Added debian/patches/memory_libstatgrab.dpatch - trivial upstream patch to
+    fix a typo in the libstatgrab code of the memory plugin.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 11 Aug 2008 16:45:22 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 10:19:47 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
