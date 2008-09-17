@@ -2,7 +2,8 @@
 ## memcached_fdleak.dpatch by Sebastian Harl <sh@tokkee.org>
 ##
 ## DP: Fixed a possible file descriptor leak in the memcached plugin.
-## DP: This has been reported as upstream bug #26.
+## DP: This has been reported as upstream bug #26:
+## DP: http://collectd.org/mantis/view.php?id=26
 ## DP: (This is based on upstream Git commit
 ## DP: e7929dac268957cbbd9082717759c3917ac1b51e)
 
