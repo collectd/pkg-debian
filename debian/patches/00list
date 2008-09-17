@@ -2,4 +2,5 @@ rrd_filter_path.dpatch
 collection_conf_path.dpatch
 myplugin_strcpy.dpatch
 memory_libstatgrab.dpatch
+collectd_memleak.dpatch
 

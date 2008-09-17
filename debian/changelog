@@ -6,8 +6,10 @@ collectd (4.4.2-2) unstable; urgency=low
     loading the ipmi plugin caused by that work around (Closes: #494665).
   * Added debian/patches/memory_libstatgrab.dpatch - trivial upstream patch to
     fix a typo in the libstatgrab code of the memory plugin.
+  * Added debian/patches/collectd_memleak.dpatch - trivial upstream patch to
+    fix a possible memory leak.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 10:19:47 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 10:28:36 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
