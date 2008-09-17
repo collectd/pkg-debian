@@ -1,0 +1,22 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## memcached_timeout.dpatch by Florian Forster <octo@verplant.org>
+##
+## DP: memcached plugin: Wait for a *little* longer for memcached to answer:
+## DP: poll(2) takes a timeout in milliseconds, not seconds. Also, use the
+## DP: global interval instead of some random number as timeout.
+## DP: (This is upstream Git commit 801067164e6eb068f5b5b2c45638fd207d5084ff)
+
+@DPATCH@
+
+diff a/src/memcached.c b/src/memcached.c
+--- a/src/memcached.c
++++ b/src/memcached.c
+@@ -134,7 +134,7 @@ static int memcached_query_daemon (char *buffer, int buffer_size) /* {{{ */
+ 		p.events = POLLIN|POLLERR|POLLHUP;
+ 		p.revents = 0;
+ 
+-		n = poll(&p, 1, 3);
++		n = poll(&p, 1, 1000 * interval_g);
+ 
+ 		if (n <= 0) {
+ 			ERROR ("memcached: poll() failed or timed out");

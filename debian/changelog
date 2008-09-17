@@ -12,8 +12,10 @@ collectd (4.4.2-2) unstable; urgency=low
     possible memory leak in the snmp plugin.
   * Added debian/patches/memcached_fdleak.dpatch - trivial upstream patch to
     fix a possible file descriptor leak in the memcached plugin.
+  * Added debian/patches/memcached_timeout.dpatch - trivial upstream patch to
+    fix the timeout passed to poll(2).
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 19:29:55 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 17 Sep 2008 20:08:55 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
