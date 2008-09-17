@@ -4,4 +4,5 @@ myplugin_strcpy.dpatch
 memory_libstatgrab.dpatch
 collectd_memleak.dpatch
 snmp_memleak.dpatch
+memcached_fdleak.dpatch
 
