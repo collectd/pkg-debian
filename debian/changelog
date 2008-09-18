@@ -4,6 +4,11 @@ collectd (4.4.2-2) unstable; urgency=low
     in 4.4.1-1 and instead build depend on libopenipmi-dev (>= 2.0.14-1~)
     which includes fixed .pc files. This fixes an undefined symbol error when
     loading the ipmi plugin caused by that work around (Closes: #494665).
+  * debian/collectd.init.d:
+    - The "status" command now exits with 1 if collectd is not running.
+    - Do not suppress output when checking the configuration with the -t
+      command line option. This will also show errors that don't cause
+      collectd to abort, e.g. failure to load plugins (Closes: #499232).
   * Added debian/patches/perl_deadlock.dpatch - upstream patch to fix a
     possible deadlock in the perl plugin (Closes: #499179).
   * Added debian/patches/memory_libstatgrab.dpatch - trivial upstream patch to
@@ -17,7 +22,7 @@ collectd (4.4.2-2) unstable; urgency=low
   * Added debian/patches/memcached_timeout.dpatch - trivial upstream patch to
     fix the timeout passed to poll(2).
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Sep 2008 11:03:50 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Sep 2008 18:49:22 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
