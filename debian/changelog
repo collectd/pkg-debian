@@ -9,6 +9,9 @@ collectd (4.4.2-2) unstable; urgency=low
     - Do not suppress output when checking the configuration with the -t
       command line option. This will also show errors that don't cause
       collectd to abort, e.g. failure to load plugins (Closes: #499232).
+  * debian/control:
+    - Added librrd-dev as the preferred option to the librrd2-dev build
+      dependency - the latter one is a virtual package since rrdtool 1.3.
   * Added debian/patches/perl_deadlock.dpatch - upstream patch to fix a
     possible deadlock in the perl plugin (Closes: #499179).
   * Added debian/patches/memory_libstatgrab.dpatch - trivial upstream patch to
@@ -22,7 +25,7 @@ collectd (4.4.2-2) unstable; urgency=low
   * Added debian/patches/memcached_timeout.dpatch - trivial upstream patch to
     fix the timeout passed to poll(2).
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Sep 2008 18:49:22 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Sep 2008 19:12:54 +0200
 
 collectd (4.4.2-1) unstable; urgency=low
 
