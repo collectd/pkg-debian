@@ -46,6 +46,7 @@ Description: statistics collection and monitoring daemon
    * E-Mail statistics (count, traffic, spam scores and checks): email
    * amount of available entropy: entropy
    * execution of external programs: exec
+   * count the number of files in directories: filecount
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
@@ -64,8 +65,11 @@ Description: statistics collection and monitoring daemon
    * IO via the network: network
    * NFS utilization: nfs
    * Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
+   * send desktop notifications to a notification daemon: notify_desktop
+   * send notification E-mails: notify_email
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
+   * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
    * output to RRD files: rrdtool
@@ -78,6 +82,7 @@ Description: statistics collection and monitoring daemon
    * logging to syslog: syslog
    * incremental parsing of logfiles: tail
    * number of TCP connections to specific ports: tcpconns
+   * Linux ACPI thermal zone information: thermal
    * TeamSpeak2 server statistics: teamspeak2
    * external runtime interface: unixsock
    * number of users logged into the system: users
@@ -103,7 +108,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.5~)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.6~)
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways. It

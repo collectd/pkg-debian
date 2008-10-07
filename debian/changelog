@@ -1,3 +1,17 @@
+collectd (4.5.0-1) experimental; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - Count the number of files in directories: filecount
+    - Send desktop notifications to a notification daemon: notify_desktop
+    - Send notification E-mails: notify_email
+    - One-wire sensors information: onewire (experimental)
+    - PostgreSQL database statistics: postgresql
+    - Linux ACPI thermal zone information: thermal
+  * Uploading to experimental because of the Lenny freeze.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 07 Oct 2008 09:38:39 +0200
+
 collectd (4.4.2-2) unstable; urgency=low
 
   * Removed the work around for #474087 (broken openipmi .pc files) introduced
