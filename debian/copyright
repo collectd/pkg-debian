@@ -10,6 +10,7 @@ Upstream Authors:
 	For individual credits, see AUTHORS.
 
 Copyright Holders (in alphabetical order):
+	Alessandro Iurlano <alessandro.iurlano@gmail.com>
 	Alexander Wirt <formorer@formorer.de>
 	Américo Monteiro
 	Andre M. Hedrick <andre@suse.com>
@@ -30,8 +31,10 @@ Copyright Holders (in alphabetical order):
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
+	Michał Mirosław <mirq-linux@rere.qmqm.pl>
 	Netfilter Core Team
 	Niki W. Waibel <niki.waibel@newlogic.com>
+	Oleg King <king2@kaluga.ru>
 	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
@@ -41,6 +44,7 @@ Copyright Holders (in alphabetical order):
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	Stefan Hacker <d0t@dbclan.de>
 	Steven Clarke <steven@monmouth.demon.co.uk>
+	The Regents of the University of California
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
 	Wouter Gadeyne
@@ -54,7 +58,9 @@ Licenses:
 	      src/collectdmon.c
 	      src/collectdmon.pod
 	      src/email.c
+	      src/notify_desktop.c
 	      src/perl.c
+	      src/postgresql.c
 	      src/types.db.pod
 	      src/users.c
 	      src/utils_cmd_flush.h
@@ -93,14 +99,27 @@ Licenses:
 
 	Files src/collectd-perl.pod
 	      src/logfile.c
+	      src/scanner.l
 	      src/utils_cmd_flush.c
+	      src/utils_complain.c
+	      src/utils_complain.h
+	Copyright (C) 2006-2008 Florian Forster
 	Copyright (C) 2007-2008 Sebastian Harl
-	Copyright (C) 2007-2008 Florian Forster
 
 	Files src/cpufreq.c
 	      src/irq.c
 	      src/multimeter.c
 	Copyright (C) 2005-2007 Peter Holik <peter@holik.at>
+	License: GNU General Public License
+
+	File src/filecount.c
+	Copyright (C) 2008 Alessandro Iurlano <alessandro.iurlano@gmail.com>
+	Copyright (C) 2008 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
+	File src/ipmi.c
+	Copyright (C) 2008 Florian Forster <octo@verplant.org>
+	Copyright (C) 2008 Peter Holik <peter@holik.at>
 	License: GNU General Public License
 
 	File src/iptables.c
@@ -136,6 +155,10 @@ Licenses:
 	Copyright (C) 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
 	License: GNU General Public License
 
+	File src/notify_email.c
+	Copyright (C) 2008 Oleg King <king2@kaluga.ru>
+	License: GNU General Public License
+
 	Files src/powerdns.c
 	      src/utils_tail.c
 	      src/utils_tail_match.c
@@ -146,7 +169,8 @@ Licenses:
 
 	File src/processes.c
 	Copyright (C) 2005 Lyonel Vincent <lyonel@ezix.org>
-	Copyright (C) 2006-2007 Florian Forster <octo@verplant.org> (Mach code)
+	Copyright (C) 2006-2008 Florian Forster <octo@verplant.org> (Mach code)
+	Copyright (C) 2008 Oleg King <king2@kaluga.ru>
 	License: GNU General Public License
 
 	File src/serial.c
@@ -160,6 +184,10 @@ Licenses:
 	File src/teamspeak2.c
 	Copyright (C) 2008 Stefan Hacker
 	Copyright (C) 2008 Florian Forster
+	License: GNU General Public License
+
+	File src/thermal.c
+	Copyright (C) 2008 Michał Mirosław <mirq-linux@rere.qmqm.pl>
 	License: GNU General Public License
 
 	File src/utils_ignorelist.c
@@ -232,6 +260,10 @@ can be found in `/usr/share/common-licenses/GPL'.
 
 On Debian systems, the complete text of the GNU Lesser General Public License 
 can be found in `/usr/share/common-licenses/LGPL'.
+
+	Parts of the file src/tcpconns.c
+	Copyright (C) 1983, 1988, 1993 The Regents of the University of California
+	License: BSD License
 
 	File src/utils_dns.c
 	Copyright (C) 2002 The Measurement Factory, Inc.
