@@ -14,6 +14,7 @@ collectd (4.5.0-1) experimental; urgency=low
       the notify_desktop plugin.
     - Added build dependency on libesmtp-dev required by the notify_email
       plugin.
+    - Added build dependency on libpq-dev required by the postgresql plugin.
   * debian/rules:
     - Disabled onewire plugin - owfs is not yet available in Debian.
   * debian/patches:
