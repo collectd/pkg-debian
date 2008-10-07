@@ -34,6 +34,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
+			--disable-onewire \
 			--disable-xmms \
 			--without-libstatgrab
 
