@@ -11,6 +11,14 @@ collectd (4.5.0-1) experimental; urgency=low
   * Uploading to experimental because of the Lenny freeze.
   * debian/rules:
     - Disabled onewire plugin - owfs is not yet available in Debian.
+  * debian/patches:
+    - Removed myplugin_strcpy.dpatch - applied upstream.
+    - Removed perl_deadlock.dpatch - included upstream.
+    - Removed memory_libstatgrab.dpatch - included upstream.
+    - Removed collectd_memleak.dpatch - included upstream.
+    - Removed snmp_memleak.dpatch - included upstream.
+    - Removed memcached_fdleak.dpatch - included upstream.
+    - Removed memcached_timeout.dpatch - included upstream.
 
  -- Sebastian Harl <sh@tokkee.org>  Tue, 07 Oct 2008 09:53:19 +0200
 
