@@ -7,7 +7,7 @@ collectd (4.5.0-1) experimental; urgency=low
     - Send notification E-mails: notify_email
     - One-wire sensors information: onewire (experimental, disabled in Debian)
     - PostgreSQL database statistics: postgresql
-    - Linux ACPI thermal zone information: thermal
+    - Linux ACPI thermal zone information: thermal (Closes: #492580)
   * Uploading to experimental because of the Lenny freeze.
   * debian/control:
     - Added build dependency on libglib2.0-dev and libnotify-dev required by
@@ -26,7 +26,7 @@ collectd (4.5.0-1) experimental; urgency=low
     - Removed memcached_fdleak.dpatch - included upstream.
     - Removed memcached_timeout.dpatch - included upstream.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 07 Oct 2008 09:53:19 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 07 Oct 2008 11:05:39 +0200
 
 collectd (4.4.2-2) unstable; urgency=low
 
