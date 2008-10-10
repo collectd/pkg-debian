@@ -144,7 +144,8 @@ binary-arch: build install-arch
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
-		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
+		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
+		contrib/snmp-probe-host.px
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_link -a
