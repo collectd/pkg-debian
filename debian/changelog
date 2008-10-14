@@ -1,3 +1,10 @@
+collectd (4.4.2-3) unstable; urgency=low
+
+  * New debconf template translation:
+    - nl.po, thanks to Eric Spreen (Closes: #502204).
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 14 Oct 2008 19:08:27 +0200
+
 collectd (4.4.2-2) unstable; urgency=low
 
   * Removed the work around for #474087 (broken openipmi .pc files) introduced
