@@ -7,4 +7,5 @@ snmp_memleak.dpatch
 memcached_fdleak.dpatch
 memcached_timeout.dpatch
 perl_deadlock.dpatch
+pod-errors.dpatch
 

@@ -3,8 +3,10 @@ collectd (4.4.2-3) unstable; urgency=low
   * New debconf template translation:
     - nl.po, thanks to Eric Spreen (Closes: #502204).
     - sv.po, thanks to Martin Bagge (Closes: #504248).
+  * debian/patches:
+    - Added pod-errors.dpatch to fix some minor POD errors.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 02 Nov 2008 10:48:24 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 02 Nov 2008 13:30:32 +0100
 
 collectd (4.4.2-2) unstable; urgency=low
 
