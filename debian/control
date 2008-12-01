@@ -95,7 +95,7 @@ Package: collectd-dbg
 Section: utils
 Architecture: any
 Priority: extra
-Depends: collectd (= ${binary:Version})
+Depends: collectd (= ${binary:Version}), ${misc:Depends}
 Description: statistics collection and monitoring daemon (debugging symbols)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways. It
@@ -108,7 +108,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.6~)
+Depends: collectd (>= ${source:Version}), collectd (<< 4.6~), ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways. It
