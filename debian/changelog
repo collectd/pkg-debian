@@ -1,4 +1,4 @@
-collectd (4.5.0-1) experimental; urgency=low
+collectd (4.5.1-1) experimental; urgency=low
 
   * New upstream release.
     New plugins:
@@ -27,7 +27,7 @@ collectd (4.5.0-1) experimental; urgency=low
     - Removed memcached_fdleak.dpatch - included upstream.
     - Removed memcached_timeout.dpatch - included upstream.
 
- -- Sebastian Harl <sh@tokkee.org>  Fri, 10 Oct 2008 07:55:57 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 21:11:59 +0100
 
 collectd (4.4.2-2) unstable; urgency=low
 
