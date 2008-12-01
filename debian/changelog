@@ -19,6 +19,8 @@ collectd (4.5.1-1) experimental; urgency=low
     - Disabled onewire plugin - owfs is not yet available in Debian.
     - Install contrib/snmp-probe-host.px to /usr/share/doc/collectd/examples/.
   * debian/patches:
+    - Added perl-uninitialized-var.dpatch - upstream patch to fix an
+      uninitialized variable warning causing a FTBFS because of -Werror.
     - Removed myplugin_strcpy.dpatch - applied upstream.
     - Removed perl_deadlock.dpatch - included upstream.
     - Removed memory_libstatgrab.dpatch - included upstream.
@@ -27,7 +29,7 @@ collectd (4.5.1-1) experimental; urgency=low
     - Removed memcached_fdleak.dpatch - included upstream.
     - Removed memcached_timeout.dpatch - included upstream.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 21:11:59 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 21:25:58 +0100
 
 collectd (4.4.2-2) unstable; urgency=low
 
