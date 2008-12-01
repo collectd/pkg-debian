@@ -5,8 +5,11 @@ collectd (4.4.2-3) unstable; urgency=low
     - sv.po, thanks to Martin Bagge (Closes: #504248).
   * debian/patches:
     - Added pod-errors.dpatch to fix some minor POD errors.
+  * debian/rules:
+    - Remove generated manpages in the clean target to avoid cluttering the
+      source diff with the rebuilt manpages.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 02 Nov 2008 13:30:32 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 19:28:41 +0100
 
 collectd (4.4.2-2) unstable; urgency=low
 

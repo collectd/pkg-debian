@@ -73,6 +73,7 @@ clean: unpatch
 	[ ! -f Makefile ] || $(MAKE) distclean
 	
 	rm -f debian/README.Debian.plugins
+	rm -f src/*.1 src/*.5
 	
 	dh_clean 
 	debconf-updatepo
