@@ -8,8 +8,10 @@ collectd (4.4.2-3) unstable; urgency=low
   * debian/rules:
     - Remove generated manpages in the clean target to avoid cluttering the
       source diff with the rebuilt manpages.
+  * debian/collectd.conf:
+    - Fixed a wrong type used in the "tail" plugin example.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 19:28:41 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 06 Dec 2008 16:53:25 +0100
 
 collectd (4.4.2-2) unstable; urgency=low
 
