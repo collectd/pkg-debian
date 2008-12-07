@@ -36,6 +36,21 @@ collectd (4.5.1-1) experimental; urgency=low
 
  -- Sebastian Harl <sh@tokkee.org>  Mon, 01 Dec 2008 21:41:12 +0100
 
+collectd (4.4.2-3) unstable; urgency=low
+
+  * New debconf template translation:
+    - nl.po, thanks to Eric Spreen (Closes: #502204).
+    - sv.po, thanks to Martin Bagge (Closes: #504248).
+  * debian/patches:
+    - Added pod-errors.dpatch to fix some minor POD errors.
+  * debian/rules:
+    - Remove generated manpages in the clean target to avoid cluttering the
+      source diff with the rebuilt manpages.
+  * debian/collectd.conf:
+    - Fixed a wrong type used in the "tail" plugin example.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 06 Dec 2008 16:53:25 +0100
+
 collectd (4.4.2-2) unstable; urgency=low
 
   * Removed the work around for #474087 (broken openipmi .pc files) introduced
