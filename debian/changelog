@@ -34,8 +34,10 @@ collectd (4.5.1-1) experimental; urgency=low
   * debian/collectd.overrides:
     - Override "spelling-error-in-description" for the postgresql plugin name
       - all plugins are spelled lowercase.
+  * debian/collectd.init.d:
+    - Do not restart collectd if the configuration test fails.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 07 Dec 2008 18:20:41 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 07 Dec 2008 18:50:32 +0100
 
 collectd (4.4.2-3) unstable; urgency=low
 

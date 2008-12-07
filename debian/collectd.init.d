@@ -59,6 +59,15 @@ else
 	_PIDFILE="$PIDFILE"
 fi
 
+check_config() {
+	if ! $DAEMON -t -C "$CONFIGFILE"; then
+		if test -n "$1"; then
+			echo "$1" >&2
+		fi
+		exit 1
+	fi
+}
+
 d_start() {
 	if test "$DISABLE" != 0; then
 		# we get here during restart
@@ -66,9 +75,7 @@ d_start() {
 		return 0
 	fi
 
-	if ! $DAEMON -t -C "$CONFIGFILE"; then
-		exit 1
-	fi
+	check_config
 
 	if test "$USE_COLLECTDMON" == 1; then
 		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
@@ -142,6 +149,7 @@ case "$1" in
 		;;
 	restart|force-reload)
 		echo -n "Restarting $DESC: $NAME"
+		check_config "Not restarting collectd."
 		d_stop
 		sleep 1
 		d_start
