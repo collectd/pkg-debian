@@ -1,5 +1,4 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
 perl-uninitialized-var.dpatch
-pod-errors.dpatch
 
