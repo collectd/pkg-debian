@@ -1,4 +1,4 @@
-#!/usr/bin/make -f
+#! /usr/bin/make -f
 # debian/rules for collectd
 #
 # Written by Sebastian Harl <sh@tokkee.org>.

@@ -1,4 +1,4 @@
-#!/usr/bin/perl --
+#! /usr/bin/perl --
 #
 # collectd - check_plugins.pl
 # Copyright (C) 2006, 2007 Sebastian Harl

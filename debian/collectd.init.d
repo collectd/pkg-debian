@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 #
 # collectd - start and stop the statistics collection daemon
 # http://collectd.org/
