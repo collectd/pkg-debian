@@ -33,7 +33,7 @@ collectd (4.5.1-1) experimental; urgency=low
     - Removed pod-errors.dpatch - included upstream.
   * debian/collectd.overrides:
     - Override "spelling-error-in-description" for the postgresql plugin name
-      all plugins are spelled lowercase.
+      - all plugins are spelled lowercase.
 
  -- Sebastian Harl <sh@tokkee.org>  Sun, 07 Dec 2008 18:20:41 +0100
 
