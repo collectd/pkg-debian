@@ -20,6 +20,7 @@ collectd (4.5.1-1) experimental; urgency=low
   * debian/rules:
     - Disabled onewire plugin - owfs is not yet available in Debian.
     - Install contrib/snmp-probe-host.px to /usr/share/doc/collectd/examples/.
+    - Set CONFIGFILE to /etc/collectd/collectd.conf.
   * debian/patches:
     - Added perl-uninitialized-var.dpatch - upstream patch to fix an
       uninitialized variable warning causing a FTBFS because of -Werror.
@@ -37,7 +38,7 @@ collectd (4.5.1-1) experimental; urgency=low
   * debian/collectd.init.d:
     - Do not restart collectd if the configuration test fails.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 07 Dec 2008 18:50:32 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 12 Dec 2008 10:09:48 +0100
 
 collectd (4.4.2-3) unstable; urgency=low
 

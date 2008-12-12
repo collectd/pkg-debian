@@ -21,6 +21,11 @@ CFLAGS = -Wall -g
 # symbols). This is a workaround for this issue.
 CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 
+# Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
+# /etc/collectd would be wrong though.
+CPPFLAGS += -UCONFIGFILE
+CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
+
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else
