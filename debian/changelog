@@ -3,8 +3,8 @@ collectd (4.4.2-3~bpo40+1) etch-backports; urgency=low
   * Rebuild for etch-backports.
   * Removed dpkg-dev build-dependency - we don't care about Vcs-* and Homepage
     fields in backports.org.
-  * Removed optional build-dependencies libcurl4-gnutls-dev and libsnmp-dev -
-    they are not available in Etch and might confuse buildds.
+  * Removed optional build-dependencies libcurl4-gnutls-dev, librrd-dev and
+    libsnmp-dev - they are not available in Etch and might confuse buildds.
   * Switch back to build-depend on nut-dev - libupsclient1-dev is not
     available in Etch:
     - Limit the "nut" plugin to [!alpha !amd64 !hppa !ia64 !ppc64].
@@ -12,7 +12,7 @@ collectd (4.4.2-3~bpo40+1) etch-backports; urgency=low
   * Build-conflict with iptables-dev to force the use of the shipped libiptc
     (this allows building the iptables plugin on all architectures).
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Dec 2008 10:19:47 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 18 Dec 2008 10:24:53 +0100
 
 collectd (4.4.2-3) unstable; urgency=low
 
