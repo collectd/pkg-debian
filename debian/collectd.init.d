@@ -66,8 +66,7 @@ d_start() {
 		return 0
 	fi
 
-	if ! $DAEMON -t -C "$CONFIGFILE" > /dev/null 2>&1; then
-		$DAEMON -t -C "$CONFIGFILE"
+	if ! $DAEMON -t -C "$CONFIGFILE"; then
 		exit 1
 	fi
 
@@ -124,6 +123,7 @@ d_status() {
 			echo "collectd is stopped."
 		fi
 	fi
+	exit 1
 }
 
 case "$1" in

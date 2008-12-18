@@ -17,6 +17,7 @@ Copyright Holders (in alphabetical order):
 	Antony Dovgal <tony@daylessday.org>
 	C-Ware, Inc.
 	David Bacher <drbacher@gmail.com>
+	Eric Spreen <erispre@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
 	Florent Usseil <swiip81@free.fr>
@@ -30,6 +31,7 @@ Copyright Holders (in alphabetical order):
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
+	Martin Bagge <brother@bsnet.se>
 	Netfilter Core Team
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	Pavel Shramov <shramov@mexmat.net>
@@ -294,6 +296,12 @@ distributed under the same license as the package itself.
 	gl.po:
 	Copyright (C) 2008 Jacobo Tarrio <jtarrio@debian.org>
 
+	nl.po:
+	Copyright (C) 2008 Eric Spreen <erispre@gmail.com>
+
 	pt.po:
 	Copyright (C) 2008 Américo Monteiro
+
+	sv.po:
+	Copyright (C) 2008 Martin Bagge <brother@bsnet.se>
 

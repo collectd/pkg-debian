@@ -28,6 +28,17 @@ solutions are welcome.
   "/var/lib/collectd/" and generate a static HTML file and a directory
   containing several PNG files which are graphs of the RRD files found.
 
+  This script was intended to be used with version 3 of collectd but still
+  seems to be in use by some people. To get it working with version 4, you
+  have to call it once for each subdirectory containing RRD files. A sample
+  wrapper might look like this:
+
+    for dir in /var/lib/collectd/rrd/$hostname/*; do
+        out_dir=`basename "$dir"`
+        mkdir -p $out_dir
+        ( cd $out_dir && collectd2html.pl --data-dir="$dir" )
+    done
+
 - collection.cgi: Sample CGI script that creates graphs on the fly. The Perl
   modules "RRDs" (package librrds-perl), "URI:Escape" (package liburi-perl),
   "HTML::Entities" (package libhtml-parser-perl) and a CGI capable web server
@@ -40,6 +51,10 @@ solutions are welcome.
   Starting with version 4, collection.cgi requires a small config file, which
   is installed to /etc/collectd/collection.conf. You should not need to change
   anything there.
+
+- collection3: A graphing front-end for the RRD files created by and filled
+  with collectd. See /usr/share/doc/collectd/examples/collection3/README for
+  details. This is a successor for collection.cgi.
 
 Building your own plugins:
 --------------------------
@@ -56,10 +71,10 @@ Building your own plugins:
   collectd-dev package and use /usr/share/doc/collectd-dev/examples/myplugin.c
   as a starting point (Note: This is already a working example, though it does
   not collect any useful data).
-  
+
   The resulting file can be compiled as follows:
 
-    gcc -shared -fPIC -o myplugin.so myplugin.c
+    gcc -DHAVE_CONFIG_H -shared -fPIC -o myplugin.so myplugin.c
 
   Copy myplugin.so to /usr/lib/collectd and add the following line to your
   collectd config file:

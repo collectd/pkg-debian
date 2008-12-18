@@ -1,0 +1,21 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## memory_libstatgrab.dpatch by Michael Stapelberg <michael+git@stapelberg.de>
+##
+## DP: Fix a typo in the libstatgrab code of the memory plugin. This is
+## DP: relevant for e.g. GNU/kfreebsd.
+## DP: (This is upstream Git commit 59f405559485a04c30b88c2f68fa9e112bdab6a6)
+
+@DPATCH@
+
+diff a/src/memory.c b/src/memory.c
+--- a/src/memory.c
++++ b/src/memory.c
+@@ -319,7 +319,7 @@ static int memory_read (void)
+ 	if ((ios = sg_get_mem_stats ()) != NULL)
+ 	{
+ 		memory_submit ("used",   ios->used);
+-		memory_submit ("cached", ios->cached);
++		memory_submit ("cached", ios->cache);
+ 		memory_submit ("free",   ios->free);
+ 	}
+ #endif /* HAVE_LIBSTATGRAB */

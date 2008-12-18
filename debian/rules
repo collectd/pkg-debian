@@ -52,14 +52,8 @@ ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
 	confflags += --disable-libvirt
 endif
 
-# Force the inclusion of the ipmi plugin and manually specify its
-# dependencies to work around #474087 (broken openipmi .pc files).
-BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread
-confflags += --enable-ipmi
-
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	BUILD_WITH_OPENIPMI_LIBS="$(BUILD_WITH_OPENIPMI_LIBS)" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp
@@ -80,6 +74,7 @@ clean: unpatch
 	[ ! -f Makefile ] || $(MAKE) distclean
 	
 	rm -f debian/README.Debian.plugins
+	rm -f src/*.1 src/*.5
 	
 	dh_clean 
 	debconf-updatepo
@@ -132,7 +127,7 @@ binary-indep: install-indep
 	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
-	dh_compress -i -Xexamples/myplugin.c -Xexamples/MyPlugin.pm
+	dh_compress -i -Xexamples/
 	dh_fixperms -i
 	dh_installdeb -i
 	dh_gencontrol -i
@@ -146,6 +141,7 @@ binary-arch: build install-arch
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
+		contrib/collection3/ \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
@@ -154,7 +150,7 @@ binary-arch: build install-arch
 	dh_installinit -a -- defaults 95
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
-	dh_compress -a
+	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_installdeb -a
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
