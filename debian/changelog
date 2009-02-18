@@ -1,3 +1,27 @@
+collectd (4.6.0-1) experimental; urgency=low
+
+  * New upstream release.
+    - Added a filter infrastructure based on "matches" and "targets".
+    New plugins:
+    - bind9 name-server and zone statistics: bind
+    - Parse statistics from websites: curl
+    - Query data from a relational database: dbi
+    - OpenVPN traffic and compression statistics: openvpn
+    - Query data from an Oracle database: oracle (disabled in Debian,
+      libclntsh is not available)
+    - Write data via the RRD accelerator daemon: rrdcached (disabled in
+      Debian, rrdclient support is not yet available)
+    New matches:
+    - Match values by their identifier based on regular expressions: regex
+    - Match values with an invalid timestamp: timediff
+    - Select values by their data sources' values: value
+    New targets:
+    - Create and dispatch a notification: notification
+    - Replace parts of an identifier using regular expressions: replace
+    - Set (overwrite) entire parts of an identifier: set
+
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 18 Feb 2009 11:09:30 +0100
+
 collectd (4.5.1-1) experimental; urgency=low
 
   * New upstream release.
