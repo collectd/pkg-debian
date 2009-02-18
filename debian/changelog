@@ -20,8 +20,10 @@ collectd (4.6.0-1) unstable; urgency=low
     - Replace parts of an identifier using regular expressions: replace
     - Set (overwrite) entire parts of an identifier: set
   * Uploading to unstable, since Lenny has been released.
+  * New debconf template translations:
+    - vi.po, thanks to Clytie Siddall (Closes: #515872).
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 18 Feb 2009 11:44:11 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Wed, 18 Feb 2009 11:55:49 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
