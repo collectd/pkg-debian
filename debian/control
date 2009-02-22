@@ -26,7 +26,10 @@ Description: statistics collection and monitoring daemon
  provides mechanisms to monitor and store the values in a variety of ways.
  Since the daemon doesn't need to startup every time it wants to update the
  values it's very fast and easy on the system. Also, the statistics are very
- fine grained since the files are updated every 10 seconds.
+ fine grained since the files are updated every 10 seconds by default.
+ .
+ The collected information can be used to find current performance bottlenecks
+ (performance analysis) and predict future system load (capacity planning).
  .
  This package contains the main program file and the following plugins (some
  of those plugins require additional libraries - for more details see
@@ -99,7 +102,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
  provides mechanisms to monitor and store the values in a variety of ways.
  Since the daemon doesn't need to startup every time it wants to update the
  values it's very fast and easy on the system. Also, the statistics are very
- fine grained since the files are updated every 10 seconds.
+ fine grained since the files are updated every 10 seconds by default.
  .
  This package contains the debugging symbols.
 
@@ -111,7 +114,7 @@ Description: statistics collection and monitoring daemon (development files)
  provides mechanisms to monitor and store the values in a variety of ways.
  Since the daemon doesn't need to startup every time it wants to update the
  values it's very fast and easy on the system. Also, the statistics are very
- fine grained since the files are updated every 10 seconds.
+ fine grained since the files are updated every 10 seconds by default.
  .
  This package contains the development files needed to create your own
  plugins.
