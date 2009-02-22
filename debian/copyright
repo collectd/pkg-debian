@@ -16,8 +16,10 @@ Copyright Holders (in alphabetical order):
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
+	Bruno Prémont <bonbons@linux-vserver.org>
 	C-Ware, Inc.
 	David Bacher <drbacher@gmail.com>
+	Doug MacEachern <dougm@hyperic.com>
 	Eric Spreen <erispre@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
@@ -57,15 +59,18 @@ Licenses:
 	      contrib/examples/MyPlugin.pm
 	      contrib/examples/myplugin.c
 	      contrib/cussh.pl
+	      src/libcollectdclient/lcc_features.h
+	      src/libcollectdclient/lcc_features.h.in
 	      src/collectdmon.c
 	      src/collectdmon.pod
 	      src/email.c
 	      src/notify_desktop.c
 	      src/perl.c
-	      src/postgresql.c
 	      src/types.db.pod
 	      src/users.c
 	      src/utils_cmd_flush.h
+	      src/utils_subst.c
+	      src/utils_subst.h
 	      src/vserver.c
 	Copyright © 2006-2008 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
@@ -77,6 +82,10 @@ Licenses:
 
 	File contrib/network-proxy.py
 	Copyright © 2007 Pavel Shramov <shramov@mexmat.net>
+	License: GNU General Public License
+
+	Files contrib/php-collection/*
+	Copyright © 2009 Bruno Prémont <bonbons@linux-vserver.org>
 	License: GNU General Public License
 
 	File debian/include/net/ip_vs.h
@@ -99,14 +108,21 @@ Licenses:
 	Copyright © 1996-99 Andre M. Hedrick <andre@suse.com>
 	License: GNU General Public License
 
+	File src/bind.c
+	Copyright © 2009 Bruno Prémont <bonbons@linux-vserver.org>
+	Copyright © 2009 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
 	Files src/collectd-perl.pod
 	      src/logfile.c
+	      src/match_regex.c
+	      src/postgresql.c
 	      src/scanner.l
 	      src/utils_cmd_flush.c
 	      src/utils_complain.c
 	      src/utils_complain.h
-	Copyright © 2006-2008 Florian Forster
-	Copyright © 2007-2008 Sebastian Harl
+	Copyright © 2006-2009 Florian Forster
+	Copyright © 2007-2009 Sebastian Harl
 
 	Files src/cpufreq.c
 	      src/irq.c
@@ -161,6 +177,11 @@ Licenses:
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
 	License: GNU General Public License
 
+	File src/openvpn.c
+	Copyright © 2008 Doug MacEachern <dougm@hyperic.com>
+	Copyright © 2008 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
 	Files src/powerdns.c
 	      src/utils_tail.c
 	      src/utils_tail_match.c
@@ -212,7 +233,7 @@ Licenses:
 
 	All other files (except libltdl/*, src/utils_dns.* and
 		contrib/SpamAssassin/*):
-	Copyright © 2005-2008 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
