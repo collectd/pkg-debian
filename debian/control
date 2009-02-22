@@ -39,9 +39,12 @@ Description: statistics collection and monitoring daemon
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Ascent server statistics: ascent
    * battery status: battery
+   * bind9 name-server and zone statistics: bind
    * CPU utilization: cpu
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
+   * parse statistics from websites: curl
+   * query data from a relational database: dbi
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
@@ -71,6 +74,7 @@ Description: statistics collection and monitoring daemon
    * send notification E-mails: notify_email
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
+   * OpenVPN traffic and compression statistics: openvpn
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
