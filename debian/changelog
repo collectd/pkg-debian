@@ -31,8 +31,11 @@ collectd (4.6.0-1) unstable; urgency=low
       belongs to.
   * debian/libcollectdclient0.symbols:
     - Added symbols file for libcollectdclient.
+  * debian/collectd.overrides:
+    - Override "spelling-error-in-description" for the apache plugin name -
+      all plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 16:14:01 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 17:10:11 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
