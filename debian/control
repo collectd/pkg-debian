@@ -92,7 +92,6 @@ Description: statistics collection and monitoring daemon
    * wireless network stats: wireless
 
 Package: collectd-dbg
-Section: utils
 Architecture: any
 Priority: extra
 Depends: collectd (= ${binary:Version}), ${misc:Depends}
