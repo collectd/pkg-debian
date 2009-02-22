@@ -1,0 +1,11 @@
+../../contrib/migrate-3-4.px usr/lib/collectd/utils
+../../contrib/rrd_filter.px usr/lib/collectd/utils
+../collectd.conf ../collection.conf ../thresholds.conf etc/collectd/
+usr/bin
+usr/lib/collectd/*.so
+usr/sbin
+usr/share/collectd
+usr/share/man
+usr/share/perl5
+var
+

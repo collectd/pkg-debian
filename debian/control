@@ -119,3 +119,30 @@ Description: statistics collection and monitoring daemon (development files)
  This package contains the development files needed to create your own
  plugins.
 
+Package: libcollectdclient-dev
+Section: libdevel
+Architecture: any
+Depends: libcollectdclient0 (>= ${source:Version}), ${misc:Depends}
+Description: client library for collectd's control interface (development files)
+ libcollectdclient provides an API to access the control interface provided by
+ the unixsock plugin of collectd, a statistics collection and monitoring
+ daemon. It can be used to access values collected by collectd or dispatch new
+ values and notifications to the daemon. This allows for integration with
+ other applications such as monitoring solutions.
+ .
+ This package contains the header files and the static library.
+
+Package: libcollectdclient0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: collectd
+Description: client library for collectd's control interface
+ libcollectdclient provides an API to access the control interface provided by
+ the unixsock plugin of collectd, a statistics collection and monitoring
+ daemon. It can be used to access values collected by collectd or dispatch new
+ values and notifications to the daemon. This allows for integration with
+ other applications such as monitoring solutions.
+ .
+ This package contains the shared library.
+
