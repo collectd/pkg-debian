@@ -24,8 +24,13 @@ collectd (4.6.0-1) unstable; urgency=low
     - vi.po, thanks to Clytie Siddall (Closes: #515872).
   * debian/patches:
     - Removed perl-uninitialized-var.dpatch - included upstream.
+  * debian/control:
+    - Added new binary packages libcollectdclient0 and libcollectdclient-dev.
+  * debian/rules:
+    - Use dh_install and *.install files to specify which package some file
+      belongs to.
 
- -- Sebastian Harl <sh@tokkee.org>  Wed, 18 Feb 2009 12:13:59 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 15:52:29 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
