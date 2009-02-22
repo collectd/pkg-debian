@@ -93,6 +93,22 @@ Description: statistics collection and monitoring daemon
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
 
+Package: collectd-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: collectd
+Suggests: nagios3 | nagios2
+Description: statistics collection and monitoring daemon (utilities)
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways.
+ Since the daemon doesn't need to startup every time it wants to update the
+ values it's very fast and easy on the system. Also, the statistics are very
+ fine grained since the files are updated every 10 seconds by default.
+ .
+ This package contains the following utility:
+ .
+   * collectd-nagios: Nagios plugin for querying collectd
+
 Package: collectd-dbg
 Architecture: any
 Priority: extra
