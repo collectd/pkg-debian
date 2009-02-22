@@ -29,8 +29,10 @@ collectd (4.6.0-1) unstable; urgency=low
   * debian/rules:
     - Use dh_install and *.install files to specify which package some file
       belongs to.
+  * debian/libcollectdclient0.symbols:
+    - Added symbols file for libcollectdclient.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 15:52:29 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 16:14:01 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
