@@ -1,4 +1,4 @@
-collectd (4.6.0-1) unstable; urgency=low
+collectd (4.6.1-1) unstable; urgency=low
 
   * New upstream release.
     - Added a filter infrastructure based on "matches" and "targets".
@@ -36,7 +36,7 @@ collectd (4.6.0-1) unstable; urgency=low
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 17:59:43 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 20:45:44 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
