@@ -30,6 +30,8 @@ collectd (4.6.1-1) unstable; urgency=low
     - Added new binary package collectd-utils for optional utilities that pull
       in additional dependencies. Currently, this only includes
       collectd-nagios.
+    - Added libdbi0-dev to the build dependencies - this is required by the
+      dbi plugin.
   * debian/rules:
     - Use dh_install and *.install files to specify which package some file
       belongs to.
@@ -39,7 +41,7 @@ collectd (4.6.1-1) unstable; urgency=low
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 03 Mar 2009 18:26:43 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 03 Mar 2009 18:32:27 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
