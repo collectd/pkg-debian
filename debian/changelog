@@ -25,8 +25,11 @@ collectd (4.6.1-1) unstable; urgency=low
   * debian/patches:
     - Removed perl-uninitialized-var.dpatch - included upstream.
   * debian/control:
-    - Added new binary packages libcollectdclient0 and libcollectdclient-dev.
-    - Added new binary package collectd-utils.
+    - Added new binary packages libcollectdclient0 and libcollectdclient-dev
+      for the newly added client library.
+    - Added new binary package collectd-utils for optional utilities that pull
+      in additional dependencies. Currently, this only includes
+      collectd-nagios.
   * debian/rules:
     - Use dh_install and *.install files to specify which package some file
       belongs to.
@@ -36,7 +39,7 @@ collectd (4.6.1-1) unstable; urgency=low
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Feb 2009 20:45:44 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 03 Mar 2009 18:26:43 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
