@@ -40,8 +40,11 @@ collectd (4.6.1-1) unstable; urgency=low
   * debian/collectd.overrides:
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
+  * debian/patches/:
+    - Added postgresql_conf_fix.dpatch - upstream patch to fix the use of
+      deprecated configuration options.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 03 Mar 2009 18:32:27 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sat, 07 Mar 2009 17:29:39 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
