@@ -24,6 +24,9 @@ collectd (4.6.1-1) unstable; urgency=low
     - vi.po, thanks to Clytie Siddall (Closes: #515872).
   * debian/patches:
     - Removed perl-uninitialized-var.dpatch - included upstream.
+    - Added postgresql_conf_fix.dpatch - upstream patch to fix the use of
+      deprecated configuration options and to make sure the "disk_io" query
+      does not return NULLs.
   * debian/control:
     - Added new binary packages libcollectdclient0 and libcollectdclient-dev
       for the newly added client library.
@@ -40,12 +43,8 @@ collectd (4.6.1-1) unstable; urgency=low
   * debian/collectd.overrides:
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
-  * debian/patches/:
-    - Added postgresql_conf_fix.dpatch - upstream patch to fix the use of
-      deprecated configuration options and to make sure the "disk_io" query
-      does not return NULLs.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 09 Mar 2009 17:42:01 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 09 Mar 2009 17:46:35 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
