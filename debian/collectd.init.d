@@ -78,10 +78,10 @@ d_start() {
 	check_config
 
 	if test "$USE_COLLECTDMON" == 1; then
-		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
 			--exec $COLLECTDMON_DAEMON -- -P "$_PIDFILE" -- -C "$CONFIGFILE"
 	else
-		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
 			--exec $DAEMON -- -C "$CONFIGFILE" -P "$_PIDFILE"
 	fi
 }

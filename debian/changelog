@@ -46,8 +46,12 @@ collectd (4.6.1-1) unstable; urgency=low
   * debian/collectd.overrides:
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
+  * debian/collectd.init.d:
+    - Start the daemon using start-stop-daemon's --oknodo option to exit
+      successfully if the daemon is already running as requested by section
+      9.3.2 of the Debian Policy 3.8.1.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Mar 2009 21:12:01 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Mar 2009 21:24:21 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 
