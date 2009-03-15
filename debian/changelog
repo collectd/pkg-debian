@@ -37,6 +37,7 @@ collectd (4.6.1-1) unstable; urgency=low
       collectd-nagios.
     - Added libdbi0-dev to the build dependencies - this is required by the
       dbi plugin.
+    - Moved collectd-dbg from section "utils" to the newly added "debug".
   * debian/rules:
     - Use dh_install and *.install files to specify which package some file
       belongs to.
@@ -46,7 +47,7 @@ collectd (4.6.1-1) unstable; urgency=low
     - Override "spelling-error-in-description" for the apache plugin name -
       all plugins are spelled lowercase.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 10 Mar 2009 21:11:38 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Mar 2009 21:12:01 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 

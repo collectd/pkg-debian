@@ -114,6 +114,7 @@ Description: statistics collection and monitoring daemon (utilities)
    * collectd-nagios: Nagios plugin for querying collectd
 
 Package: collectd-dbg
+Section: debug
 Architecture: any
 Priority: extra
 Depends: collectd (= ${binary:Version}), ${misc:Depends}
