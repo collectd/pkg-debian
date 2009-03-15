@@ -156,7 +156,7 @@ case "$1" in
 		echo "."
 		;;
 	*)
-		echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+		echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
 		exit 1
 		;;
 esac
