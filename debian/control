@@ -145,7 +145,7 @@ Description: statistics collection and monitoring daemon (development files)
 Package: libcollectdclient-dev
 Section: libdevel
 Architecture: any
-Depends: libcollectdclient0 (>= ${source:Version}), ${misc:Depends}
+Depends: libcollectdclient0 (= ${binary:Version}), ${misc:Depends}
 Description: client library for collectd's control interface (development files)
  libcollectdclient provides an API to access the control interface provided by
  the unixsock plugin of collectd, a statistics collection and monitoring
