@@ -51,8 +51,11 @@ collectd (4.6.1-1) unstable; urgency=low
     - Start the daemon using start-stop-daemon's --oknodo option to exit
       successfully if the daemon is already running as requested by section
       9.3.2 of the Debian Policy 3.8.1.
+  * debian/copyright:
+    - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
+      used by some files.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 15 Mar 2009 21:27:49 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Mar 2009 23:20:48 +0100
 
 collectd (4.5.1-1) experimental; urgency=low
 

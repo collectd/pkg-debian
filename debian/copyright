@@ -247,14 +247,15 @@ Licenses:
 
 	You should have received a copy of the GNU General Public License
 	along with this package; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 	USA.
 
 	Some files are licensed under version 2 only, while any others allow to
 	use version 2 or (at your option) any later version.
 
-On Debian systems, the complete text of the GNU General Public License 
-can be found in `/usr/share/common-licenses/GPL'.
+On Debian systems, the complete text of the GNU General Public License,
+version 2, can be found in `/usr/share/common-licenses/GPL-2'. The complete
+text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 
 	File libltdl/ltdl.c
 	Copyright © 1998-2001, 2003-2007 Free Software Foundation, Inc.
@@ -278,10 +279,10 @@ can be found in `/usr/share/common-licenses/GPL'.
 
 	You should have received a copy of the GNU Lesser General Public
 	License along with this library; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 	USA.
 
-On Debian systems, the complete text of the GNU Lesser General Public License 
+On Debian systems, the complete text of the GNU Lesser General Public License
 can be found in `/usr/share/common-licenses/LGPL'.
 
 	Parts of the file src/tcpconns.c
@@ -303,7 +304,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
 	2. Redistributions in binary form must reproduce the above copyright
-	   notice, this list of conditions and the following disclaimer in the 
+	   notice, this list of conditions and the following disclaimer in the
 	   documentation and/or other materials provided with the distribution.
 	3. Neither the name of The Measurement Factory nor the names of its
 	   contributors may be used to endorse or promote products derived from
