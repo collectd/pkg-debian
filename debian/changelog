@@ -1,4 +1,4 @@
-collectd (4.6.1-1) unstable; urgency=low
+collectd (4.6.2-1) unstable; urgency=low
 
   * New upstream release.
     - Added a filter infrastructure based on "matches" and "targets".
@@ -24,11 +24,6 @@ collectd (4.6.1-1) unstable; urgency=low
     - vi.po, thanks to Clytie Siddall (Closes: #515872).
   * debian/patches:
     - Removed perl-uninitialized-var.dpatch - included upstream.
-    - Added postgresql_conf_fix.dpatch - upstream patch to fix the use of
-      deprecated configuration options and to make sure the "disk_io" query
-      does not return NULLs.
-    - Added types_list.dpatch - upstream patch to improved error messages when
-      handling "TypesDB".
   * debian/control:
     - Added new binary packages libcollectdclient0 and libcollectdclient-dev
       for the newly added client library.
@@ -56,7 +51,7 @@ collectd (4.6.1-1) unstable; urgency=low
     - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
       used by some files.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:00:16 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:04:35 +0200
 
 collectd (4.5.1-1) experimental; urgency=low
 

@@ -1,5 +1,3 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
-postgresql_conf_fix.dpatch
-types_list.dpatch
 
