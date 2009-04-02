@@ -1,0 +1,84 @@
+# collectd po-debconf translation to spanish
+# Copyright (C) 2008, 2009 Software in the Public Interest
+# This file is distributed under the same license as the collectd package.
+#
+# Changes:
+#   - Initial translation
+#       Erika Chacón Vivas <miss.herickbeth@gmail.com>, 2008
+#
+#   - Updates
+#       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2009
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/coordinacion
+#     especialmente las notas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: collectd 4.4.2-3\n"
+"Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
+"POT-Creation-Date: 2008-03-12 17:35+0100\n"
+"PO-Revision-Date: 2009-03-21 23:09+0100\n"
+"Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: note
+#. Description
+#: ../collectd.templates:1001
+msgid "Layout of RRD files has changed"
+msgstr "Ha cambiado la distribución de los archivos RRD"
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd.templates:1001
+#: ../collectd.templates:2001
+msgid "The layout of the RRD files created by collectd has changed significantly since version 3.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
+msgstr "La distribución de los archivos RRD creados por collectd ha cambiado significativamente desde la versión 3.x. Los datos antiguos se deben migrar para que se puedan seguir utilizando. Puede hacer esto utilizando el programa «/usr/lib/collectd/utils/migrate-3-4.px». "
+
+#. Type: note
+#. Description
+#: ../collectd.templates:1001
+msgid "This step requires both the perl and the rrdtool packages to be installed, which is currently not the case. You need to perform the migration manually."
+msgstr "Actualmente no tiene instalados los paquetes perl y rrdtool, que son necesarios para poder llevar a cabo este paso. Tendrá que realizar la migración manualmente."
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd.templates:1001
+#: ../collectd.templates:2001
+msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
+msgstr "Vea el archivo «/usr/share/doc/collectd/NEWS.Debian» para más detalles."
+
+#. Type: boolean
+#. Description
+#: ../collectd.templates:2001
+msgid "Automatically try to migrate your RRD files?"
+msgstr "¿Desea migrar automáticamente los archivos RRD?"
+
+#. Type: boolean
+#. Description
+#: ../collectd.templates:2001
+msgid "This step can be done automatically. In this case a backup of /var/lib/collectd/ is made in /var/backups/. This script is still experimental, though. Do not expect it to work in all cases."
+msgstr "Este paso se puede realizar automáticamente. En este caso se genera una copia de seguridad de «/var/lib/collectd/» en «/var/backups/». El script que hace esto es aún experimental. No se espera que funcione en todos los casos."
+

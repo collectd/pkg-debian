@@ -24,6 +24,8 @@ collectd (4.6.2-1) unstable; urgency=low
   * Uploading to unstable, since Lenny has been released.
   * New debconf template translations:
     - vi.po, thanks to Clytie Siddall (Closes: #515872).
+    - es.po, thanks to Francisco Javier Cuadrado and Erika Chacón Vivas
+      (Closes: #520988).
   * debian/patches:
     - Removed perl-uninitialized-var.dpatch - included upstream.
   * debian/control:
@@ -53,7 +55,7 @@ collectd (4.6.2-1) unstable; urgency=low
     - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
       used by some files.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:32:46 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:38:57 +0200
 
 collectd (4.5.1-1) experimental; urgency=low
 
