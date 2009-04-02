@@ -34,7 +34,8 @@ collectd (4.6.1-1) unstable; urgency=low
       for the newly added client library.
     - Added new binary package collectd-utils for optional utilities that pull
       in additional dependencies. Currently, this only includes
-      collectd-nagios.
+      collectd-nagios. The new package replaces collectd (<< 4.6.1-1~),
+      because it overwrites /usr/bin/collectd-nagios.
     - Added libdbi0-dev to the build dependencies - this is required by the
       dbi plugin.
     - Moved collectd-dbg from section "utils" to the newly added "debug".
@@ -55,7 +56,7 @@ collectd (4.6.1-1) unstable; urgency=low
     - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
       used by some files.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 22 Mar 2009 23:20:48 +0100
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:00:16 +0200
 
 collectd (4.5.1-1) experimental; urgency=low
 
