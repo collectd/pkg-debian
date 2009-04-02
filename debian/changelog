@@ -3,6 +3,7 @@ collectd (4.6.2-1) unstable; urgency=low
   * New upstream release.
     - Fixed the use of struct in6_addr (Closes: #521748).
     - Added a filter infrastructure based on "matches" and "targets".
+    - Added support for vmem graphs to collection.cgi (Closes: #521993).
     New plugins:
     - bind9 name-server and zone statistics: bind
     - Parse statistics from websites: curl
@@ -52,7 +53,7 @@ collectd (4.6.2-1) unstable; urgency=low
     - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
       used by some files.
 
- -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:21:56 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:32:46 +0200
 
 collectd (4.5.1-1) experimental; urgency=low
 
