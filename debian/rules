@@ -146,7 +146,7 @@ binary-arch: build install-arch
 	dh_makeshlibs -a
 	dh_installdeb -a
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
-		-dDepends debian/collectd/usr/bin/* debian/collectd/usr/sbin/* \
+		-dDepends debian/collectd/usr/sbin/* \
 			debian/collectd/usr/lib/collectd/rrdtool.so \
 		-dRecommends debian/collectd/usr/lib/collectd/*.so
 	dh_shlibdeps -a -Ncollectd
