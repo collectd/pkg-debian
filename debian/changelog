@@ -11,13 +11,13 @@ collectd (4.6.2-1~bpo40+1) etch-backports; urgency=low
   * Replaced linux-libc-dev build-dependency with linux-kernel-headers.
   * Build-conflict with iptables-dev to force the use of the shipped libiptc
     (this allows building the iptables plugin on all architectures).
-  * Reenabled and fixed the work around for #474087 (broken openipmi .pc
-    files) and removed the version from the libopenipmi-dev build dependency -
-    Etch does not include a fixed version of openipmi.
+  * Disabled the "openipmi" plugin - the work around for #474087 (broken
+    openipmi .pc files) no longer works because of the strict dependency
+    checking introduced in 4.5.1. Removed libopenipmi-dev build-dependency.
   * Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
     libdbi is not available on Etch.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 21:45:04 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 22:51:56 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 

@@ -61,14 +61,11 @@ endif
 # libdbi is not available on Etch
 confflags += --disable-dbi
 
-# Force the inclusion of the ipmi plugin and manually specify its
-# dependencies to work around #474087 (broken openipmi .pc files).
-BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread -lOpenIPMIutils -lOpenIPMI
-confflags += --enable-ipmi
+# OpenIPMI's .pc files are broken on Etch (see #474087)
+confflags += --disable-ipmi
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	BUILD_WITH_OPENIPMI_LIBS="$(BUILD_WITH_OPENIPMI_LIBS)" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp

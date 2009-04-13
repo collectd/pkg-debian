@@ -2,7 +2,7 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <sh@tokkee.org>
-Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison, flex, autotools-dev, pkg-config, linux-kernel-headers, libcurl3-gnutls-dev, libmysqlclient15-dev, librrd2-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, nut-dev [!alpha !amd64 !hppa !ia64 !ppc64], libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64], libsnmp9-dev, libvirt-dev (>= 0.4.0-6) [amd64 i386 powerpc], libxml2-dev, libhal-dev, libopenipmi-dev, libglib2.0-dev, libnotify-dev, libesmtp-dev, libpq-dev
+Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison, flex, autotools-dev, pkg-config, linux-kernel-headers, libcurl3-gnutls-dev, libmysqlclient15-dev, librrd2-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, nut-dev [!alpha !amd64 !hppa !ia64 !ppc64], libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64], libsnmp9-dev, libvirt-dev (>= 0.4.0-6) [amd64 i386 powerpc], libxml2-dev, libhal-dev, libglib2.0-dev, libnotify-dev, libesmtp-dev, libpq-dev
 Build-Conflicts: libpthread-dev, iptables-dev
 Standards-Version: 3.8.1
 Homepage: http://collectd.org/
