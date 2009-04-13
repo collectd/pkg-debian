@@ -1,3 +1,22 @@
+collectd (4.6.2-1~bpo40+1) etch-backports; urgency=low
+
+  * Rebuild for etch-backports.
+  * Removed dpkg-dev build-dependency - we don't care about Vcs-* and Homepage
+    fields in backports.org.
+  * Removed optional build-dependencies libcurl4-gnutls-dev, librrd-dev and
+    libsnmp-dev - they are not available in Etch and might confuse buildds.
+  * Switch back to build-depend on nut-dev - libupsclient1-dev is not
+    available in Etch:
+    - Limit the "nut" plugin to [!alpha !amd64 !hppa !ia64 !ppc64].
+  * Replaced linux-libc-dev build-dependency with linux-kernel-headers.
+  * Build-conflict with iptables-dev to force the use of the shipped libiptc
+    (this allows building the iptables plugin on all architectures).
+  * Reenabled and fixed the work around for #474087 (broken openipmi .pc
+    files) and removed the version from the libopenipmi-dev build dependency -
+    Etch does not include a fixed version of openipmi.
+
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 21:40:09 +0200
+
 collectd (4.6.2-1) unstable; urgency=low
 
   * New upstream release.
