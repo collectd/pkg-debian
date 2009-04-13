@@ -58,6 +58,9 @@ ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
 	confflags += --disable-libvirt
 endif
 
+# libdbi is not available on Etch
+confflags += --disable-dbi
+
 # Force the inclusion of the ipmi plugin and manually specify its
 # dependencies to work around #474087 (broken openipmi .pc files).
 BUILD_WITH_OPENIPMI_LIBS = -lOpenIPMIpthread -lOpenIPMIutils -lOpenIPMI

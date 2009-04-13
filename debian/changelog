@@ -14,8 +14,10 @@ collectd (4.6.2-1~bpo40+1) etch-backports; urgency=low
   * Reenabled and fixed the work around for #474087 (broken openipmi .pc
     files) and removed the version from the libopenipmi-dev build dependency -
     Etch does not include a fixed version of openipmi.
+  * Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
+    libdbi is not available on Etch.
 
- -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 21:40:09 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 21:45:04 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 
