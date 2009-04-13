@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 #
 # collectd - start and stop the statistics collection daemon
 # http://collectd.org/
@@ -59,6 +59,15 @@ else
 	_PIDFILE="$PIDFILE"
 fi
 
+check_config() {
+	if ! $DAEMON -t -C "$CONFIGFILE"; then
+		if test -n "$1"; then
+			echo "$1" >&2
+		fi
+		exit 1
+	fi
+}
+
 d_start() {
 	if test "$DISABLE" != 0; then
 		# we get here during restart
@@ -66,15 +75,13 @@ d_start() {
 		return 0
 	fi
 
-	if ! $DAEMON -t -C "$CONFIGFILE"; then
-		exit 1
-	fi
+	check_config
 
 	if test "$USE_COLLECTDMON" == 1; then
-		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
 			--exec $COLLECTDMON_DAEMON -- -P "$_PIDFILE" -- -C "$CONFIGFILE"
 	else
-		start-stop-daemon --start --quiet --pidfile "$_PIDFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
 			--exec $DAEMON -- -C "$CONFIGFILE" -P "$_PIDFILE"
 	fi
 }
@@ -142,13 +149,14 @@ case "$1" in
 		;;
 	restart|force-reload)
 		echo -n "Restarting $DESC: $NAME"
+		check_config "Not restarting collectd."
 		d_stop
 		sleep 1
 		d_start
 		echo "."
 		;;
 	*)
-		echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+		echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
 		exit 1
 		;;
 esac

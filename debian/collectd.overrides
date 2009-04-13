@@ -1,4 +1,6 @@
 collectd: shlib-with-non-pic-code usr/lib/collectd/nut.so
 collectd: shlib-with-non-pic-code usr/lib/collectd/netlink.so
+collectd: spelling-error-in-description apache Apache
 collectd: spelling-error-in-description mysql MySQL
+collectd: spelling-error-in-description postgresql PostgreSQL
 

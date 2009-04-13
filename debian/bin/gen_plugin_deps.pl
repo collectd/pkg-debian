@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#! /usr/bin/perl
 #
 # collectd - gen_plugin_deps.pl
 # Copyright (C) 2007 Sebastian Harl

@@ -1,3 +1,104 @@
+collectd (4.6.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed the use of struct in6_addr (Closes: #521748).
+    - Added a filter infrastructure based on "matches" and "targets".
+    - Added support for vmem graphs to collection.cgi (Closes: #521993).
+    New plugins:
+    - bind9 name-server and zone statistics: bind
+    - Parse statistics from websites: curl
+    - Query data from a relational database: dbi
+    - OpenVPN traffic and compression statistics: openvpn
+    - Query data from an Oracle database: oracle (disabled in Debian,
+      libclntsh is not available)
+    - Write data via the RRD accelerator daemon: rrdcached (disabled in
+      Debian, rrdclient support is not yet available)
+    New matches:
+    - Match values by their identifier based on regular expressions: regex
+    - Match values with an invalid timestamp: timediff
+    - Select values by their data sources' values: value
+    New targets:
+    - Create and dispatch a notification: notification
+    - Replace parts of an identifier using regular expressions: replace
+    - Set (overwrite) entire parts of an identifier: set
+  * Uploading to unstable, since Lenny has been released.
+  * New debconf template translations:
+    - vi.po, thanks to Clytie Siddall (Closes: #515872).
+    - es.po, thanks to Francisco Javier Cuadrado and Erika Chacón Vivas
+      (Closes: #520988).
+  * debian/patches:
+    - Removed perl-uninitialized-var.dpatch - included upstream.
+  * debian/control:
+    - Added new binary packages libcollectdclient0 and libcollectdclient-dev
+      for the newly added client library.
+    - Added new binary package collectd-utils for optional utilities that pull
+      in additional dependencies. Currently, this only includes
+      collectd-nagios. The new package replaces collectd (<< 4.6.1-1~),
+      because it overwrites /usr/bin/collectd-nagios.
+    - Added libdbi0-dev to the build dependencies - this is required by the
+      dbi plugin.
+    - Moved collectd-dbg from section "utils" to the newly added "debug".
+    - Updated Standards-Version to 3.8.1.
+  * debian/rules:
+    - Use dh_install and *.install files to specify which package some file
+      belongs to.
+  * debian/libcollectdclient0.symbols:
+    - Added symbols file for libcollectdclient.
+  * debian/collectd.overrides:
+    - Override "spelling-error-in-description" for the apache plugin name -
+      all plugins are spelled lowercase.
+  * debian/collectd.init.d:
+    - Start the daemon using start-stop-daemon's --oknodo option to exit
+      successfully if the daemon is already running as requested by section
+      9.3.2 of the Debian Policy 3.8.1.
+  * debian/copyright:
+    - Reference GPL-2 in addition to GPL (latest version), since GPL2-only is
+      used by some files.
+
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 02 Apr 2009 16:38:57 +0200
+
+collectd (4.5.1-1) experimental; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - Count the number of files in directories: filecount
+    - Send desktop notifications to a notification daemon: notify_desktop
+    - Send notification E-mails: notify_email
+    - One-wire sensors information: onewire (experimental, disabled in Debian)
+    - PostgreSQL database statistics: postgresql
+    - Linux ACPI thermal zone information: thermal (Closes: #492580)
+  * Uploading to experimental because of the Lenny freeze.
+  * debian/control:
+    - Added build dependency on libglib2.0-dev and libnotify-dev required by
+      the notify_desktop plugin.
+    - Added build dependency on libesmtp-dev required by the notify_email
+      plugin.
+    - Added build dependency on libpq-dev required by the postgresql plugin.
+    - Let collectd-dbg and collectd-dev depend on ${misc:Depends} - this is
+      required when using debhelper.
+  * debian/rules:
+    - Disabled onewire plugin - owfs is not yet available in Debian.
+    - Install contrib/snmp-probe-host.px to /usr/share/doc/collectd/examples/.
+    - Set CONFIGFILE to /etc/collectd/collectd.conf.
+  * debian/patches:
+    - Added perl-uninitialized-var.dpatch - upstream patch to fix an
+      uninitialized variable warning causing a FTBFS because of -Werror.
+    - Removed myplugin_strcpy.dpatch - applied upstream.
+    - Removed perl_deadlock.dpatch - included upstream.
+    - Removed memory_libstatgrab.dpatch - included upstream.
+    - Removed collectd_memleak.dpatch - included upstream.
+    - Removed snmp_memleak.dpatch - included upstream.
+    - Removed memcached_fdleak.dpatch - included upstream.
+    - Removed memcached_timeout.dpatch - included upstream.
+    - Removed pod-errors.dpatch - included upstream.
+  * debian/collectd.overrides:
+    - Override "spelling-error-in-description" for the postgresql plugin name
+      - all plugins are spelled lowercase.
+  * debian/collectd.init.d:
+    - Do not restart collectd if the configuration test fails.
+
+ -- Sebastian Harl <sh@tokkee.org>  Fri, 12 Dec 2008 10:09:48 +0100
+
 collectd (4.4.2-3~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for etch-backports.

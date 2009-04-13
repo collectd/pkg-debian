@@ -1,4 +1,4 @@
-#!/usr/bin/make -f
+#! /usr/bin/make -f
 # debian/rules for collectd
 #
 # Written by Sebastian Harl <sh@tokkee.org>.
@@ -21,6 +21,11 @@ CFLAGS = -Wall -g
 # symbols). This is a workaround for this issue.
 CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 
+# Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
+# /etc/collectd would be wrong though.
+CPPFLAGS += -UCONFIGFILE
+CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
+
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else
@@ -34,6 +39,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
+			--disable-onewire \
 			--disable-xmms \
 			--without-libstatgrab
 
@@ -82,7 +88,7 @@ clean: unpatch
 	rm -f debian/README.Debian.plugins
 	rm -f src/*.1 src/*.5
 	
-	dh_clean 
+	dh_clean
 	debconf-updatepo
 
 install-indep:
@@ -90,35 +96,20 @@ install-indep:
 	dh_testroot
 	dh_clean -k
 	dh_installdirs -i
-	
-	include_dir=debian/collectd-dev/usr/include/collectd/ \
-		&& mkdir -p $$include_dir/liboconfig \
-		&& cp src/*.h $$include_dir \
-		&& cp src/liboconfig/oconfig.h $$include_dir/liboconfig
+	dh_install -i
 
 install-arch: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs -a
 	
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/collectd
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	
-	rm -rf debian/collectd/usr/include/
-	rm -f debian/collectd/usr/lib/collectd/*.la
+	rm -f debian/tmp/usr/lib/collectd/*.la
+	rm -f debian/tmp/etc/collectd.conf
 	
-	rm -f debian/collectd/etc/collectd.conf
-	install -D -m 0644 debian/collectd.conf \
-		debian/collectd/etc/collectd/collectd.conf
-	install -m 0644 debian/collection.conf \
-		debian/collectd/etc/collectd/collection.conf
-	install -m 0644 debian/thresholds.conf \
-		debian/collectd/etc/collectd/thresholds.conf
-	
-	mkdir -p debian/collectd/usr/lib/collectd/utils/
-	for UTIL in rrd_filter.px migrate-3-4.px; do \
-		cp contrib/$$UTIL debian/collectd/usr/lib/collectd/utils/; \
-	done
+	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
 	perl ./debian/bin/gen_plugin_deps.pl
 	
@@ -151,18 +142,21 @@ binary-arch: build install-arch
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
-		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py
+		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
+		contrib/snmp-probe-host.px
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
+	dh_makeshlibs -a
 	dh_installdeb -a
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
 		-dDepends debian/collectd/usr/bin/* debian/collectd/usr/sbin/* \
 			debian/collectd/usr/lib/collectd/rrdtool.so \
 		-dRecommends debian/collectd/usr/lib/collectd/*.so
+	dh_shlibdeps -a -Ncollectd
 	dh_gencontrol -a
 	dh_md5sums -a
 	dh_builddeb -a
