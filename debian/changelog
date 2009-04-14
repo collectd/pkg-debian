@@ -1,3 +1,12 @@
+collectd (4.6.2-2) unstable; urgency=low
+
+  * debian/patches:
+    - Added battery_acpi_complain.dpatch - upstream patch to fix excessive
+      error messages in the battery plugin in case /proc/acpi/battery is not
+      available.
+
+ -- Sebastian Harl <sh@tokkee.org>  Tue, 14 Apr 2009 15:30:35 +0200
+
 collectd (4.6.2-1) unstable; urgency=low
 
   * New upstream release.
