@@ -48,7 +48,7 @@ confflags += --disable-apple_sensors --disable-tape
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637 and #419684 for more details).
-ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
+ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink
 endif
 

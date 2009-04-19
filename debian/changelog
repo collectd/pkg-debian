@@ -8,8 +8,10 @@ collectd (4.6.2-2) unstable; urgency=low
     - Added a sample filter chain configuration.
   * debian/rules:
     - Added contrib/php-collection/ to /usr/share/doc/collectd/.
+    - Disabled "netlink" plugin on mips and mipsel - those architectures do
+      not allow to link non-PIC code into shared objects (Closes: #524593).
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 19 Apr 2009 18:01:40 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 19 Apr 2009 19:29:20 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 
