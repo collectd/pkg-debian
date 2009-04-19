@@ -4,8 +4,10 @@ collectd (4.6.2-2) unstable; urgency=low
     - Added battery_acpi_complain.dpatch - upstream patch to fix excessive
       error messages in the battery plugin in case /proc/acpi/battery is not
       available.
+  * debian/collectd.conf, debian/filters.conf:
+    - Added a sample filter chain configuration.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 14 Apr 2009 15:30:35 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 19 Apr 2009 17:55:58 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 
