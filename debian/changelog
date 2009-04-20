@@ -11,11 +11,11 @@ collectd (4.6.2-2) unstable; urgency=low
     - Disabled "netlink" plugin on mips and mipsel - those architectures do
       not allow to link non-PIC code into shared objects (Closes: #524593).
   * debian/control:
-    - Build-depend on iptables-dev (>= 1.4.3.1-1) and iptables to link against
-      the packaged libiptc. libiptc is available as shared library since
-      iptables 1.4.3. Depend on iptables as well to work around #524766.
+    - Build-depend on iptables-dev (>= 1.4.3.2-2) to link against the packaged
+      libiptc which is available as shared library since iptables 1.4.3.
+      Depend on versions >= 1.4.3.2-2 because of #524766.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 19 Apr 2009 21:26:51 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Mon, 20 Apr 2009 22:52:56 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 
