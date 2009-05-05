@@ -12,7 +12,8 @@ collectd (4.6.2-2) unstable; urgency=low
   * debian/rules:
     - Added contrib/php-collection/ to /usr/share/doc/collectd/.
     - Disabled "netlink" plugin on mips and mipsel - those architectures do
-      not allow to link non-PIC code into shared objects (Closes: #524593).
+      not allow to link non-PIC code into shared objects, thanks to Peter De
+      Schrijver for reporting this (Closes: #524593).
   * debian/control:
     - Build-depend on iptables-dev (>= 1.4.3.2-2) to link against the packaged
       libiptc which is available as shared library since iptables 1.4.3.
