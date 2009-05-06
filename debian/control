@@ -58,7 +58,7 @@ Description: statistics collection and monitoring daemon
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
-   * CPU, dist, network statistics of guest systems: libvirt
+   * CPU, disk, network statistics of guest systems: libvirt
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
    * motherboard monitor: mbmon
