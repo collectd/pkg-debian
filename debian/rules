@@ -43,6 +43,9 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-xmms \
 			--without-libstatgrab
 
+# libganglia >= 3 is required for the gmond plugin.
+confflags += --disable-gmond
+
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
