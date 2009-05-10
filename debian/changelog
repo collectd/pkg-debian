@@ -1,3 +1,19 @@
+collectd (4.7.0-1) unstable; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - Connection tracking table size: conntrack
+    - Linux file-system based caching framework statistics: fscache
+    - Receive and interpret Ganglia multicast traffic: gmond
+    - Embedded Java Virtual Machine: java
+    - Query and parse data from a memcache daemon: memcachec
+    - Information about network protocols: protocols
+    - Parse table-like structured files: table
+    - Power consumption measurements from "The Energy Detective" (TED): ted
+    - System uptime: uptime
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 10 May 2009 13:12:16 +0200
+
 collectd (4.6.2-2) unstable; urgency=low
 
   * debian/patches:
