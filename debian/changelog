@@ -16,11 +16,13 @@ collectd (4.7.0-1) unstable; urgency=low
   * debian/rules:
     - Install collectd-{network,unixsock}.py to /usr/share/doc/collectd/
       examples/.
+    - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
+      them in the environment - this is the recommended way.
   * debian/patches:
     - Removed battery_acpi_complain.dpatch - included upstream.
     - Removed ntpd_type_pun_fix.dpatch - included upstream.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 10 May 2009 17:22:47 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 10 May 2009 19:57:25 +0200
 
 collectd (4.6.2-2) unstable; urgency=low
 

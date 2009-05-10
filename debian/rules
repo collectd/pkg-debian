@@ -75,7 +75,7 @@ endif
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)"
 
 build: build-stamp
 
