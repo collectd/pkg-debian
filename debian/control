@@ -132,7 +132,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.7~), ${misc:Depends}
+Depends: collectd (>= ${source:Version}), collectd (<< 4.8~), ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
