@@ -46,6 +46,9 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # libganglia >= 3 is required for the gmond plugin.
 confflags += --disable-gmond
 
+# libmemcached is required for the memcachec plugin.
+confflags += --disable-memcachec
+
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 

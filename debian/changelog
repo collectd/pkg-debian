@@ -7,7 +7,8 @@ collectd (4.7.0-1) unstable; urgency=low
     - Receive and interpret Ganglia multicast traffic: gmond (disabled in
       Debian, libganglia >= 3 is required)
     - Embedded Java Virtual Machine: java
-    - Query and parse data from a memcache daemon: memcachec
+    - Query and parse data from a memcache daemon: memcachec (disabled in
+      Debian, libmemcached is not available)
     - Information about network protocols: protocols
     - Parse table-like structured files: table
     - Power consumption measurements from "The Energy Detective" (TED): ted
