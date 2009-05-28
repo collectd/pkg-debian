@@ -7,6 +7,9 @@ collectd (4.6.2-2) unstable; urgency=low
     - Added ntpd_type_pun_fix.dpatch - upstream patch to fix dereferencing of
       a type-punned pointer identified by GCC 4.4, thanks to Martin Michlmayr
       for reporting this (Closes: #526667).
+    - Added include_empty_files.dpatch - upstream patch to fix the inclusion
+      of empty configuration files, thanks to Alexander Wirt for reporting
+      this.
   * debian/collectd.conf, debian/filters.conf:
     - Added a sample filter chain configuration.
   * debian/rules:
@@ -19,7 +22,7 @@ collectd (4.6.2-2) unstable; urgency=low
       libiptc which is available as shared library since iptables 1.4.3.
       Depend on versions >= 1.4.3.2-2 because of #524766.
 
- -- Sebastian Harl <sh@tokkee.org>  Tue, 05 May 2009 22:59:33 +0200
+ -- Sebastian Harl <sh@tokkee.org>  Thu, 28 May 2009 16:23:01 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 

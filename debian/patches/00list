@@ -2,4 +2,5 @@ rrd_filter_path.dpatch
 collection_conf_path.dpatch
 battery_acpi_complain.dpatch
 ntpd_type_pun_fix.dpatch
+include_empty_files.dpatch
 
