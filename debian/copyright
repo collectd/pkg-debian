@@ -1,4 +1,4 @@
-This package was debianized by Sebastian Harl <sh@tokkee.org> on
+This package was debianized by Sebastian Harl <tokkee@debian.org> on
 Wed, 10 May 2006 09:20:39 +0200.
 
 It was downloaded from <http://collectd.org/files/>.
@@ -336,13 +336,13 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	Use whatever you like more.
 
-The Debian packaging is © 2006-2008, Sebastian Harl <sh@tokkee.org> and
+The Debian packaging is © 2006-2009, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above. The debconf template translations are
 distributed under the same license as the package itself.
 
 	de.po:
 	Copyright © 2008 Kai Wasserbäch <debian@carbon-project.org>
-	Copyright © 2008 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2008 Sebastian Harl <tokkee@debian.org>
 
 	fr.po:
 	Copyright © 2008 Florent Usseil <swiip81@free.fr>
