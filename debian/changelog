@@ -1,3 +1,10 @@
+collectd (4.6.2-3) unstable; urgency=low
+
+  * debian/patches:
+    - Actually enabled rrdtool_uninitialized_fix.dpatch - d'oh!
+
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 29 May 2009 15:49:46 +0200
+
 collectd (4.6.2-2) unstable; urgency=low
 
   * debian/patches:
