@@ -6,10 +6,12 @@ collectd (4.6.3-1) unstable; urgency=low
     - Removed include_empty_files.dpatch - included upstream.
     - Removed ntpd_type_pun_fix.dpatch - included upstream.
     - Removed rrdtool_uninitialized_fix.dpatch - included upstream.
+    - Added libcollectdclient_static_sstrerror.dpatch to make a private
+      function in libcollectdclient static.
   * debian/rules:
     - Install collectd-network.py to /usr/share/doc/collectd/examples/.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 02 Jun 2009 21:14:21 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 02 Jun 2009 22:03:10 +0200
 
 collectd (4.6.2-3) unstable; urgency=low
 

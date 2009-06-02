@@ -1,3 +1,4 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
+libcollectdclient_static_sstrerror.dpatch
 
