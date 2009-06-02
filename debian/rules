@@ -138,8 +138,6 @@ binary-arch: build install-arch
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd-network.py \
 		contrib/snmp-probe-host.px
-	# the 4.6.2 upstream tarball had been built inside a dirty working dir
-	rm debian/collectd/usr/share/doc/collectd/examples/collection3/bin/foo
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_link -a
