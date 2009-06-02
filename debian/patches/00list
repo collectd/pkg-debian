@@ -1,5 +1,4 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
-ntpd_type_pun_fix.dpatch
 rrdtool_uninitialized_fix.dpatch
 

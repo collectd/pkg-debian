@@ -4,10 +4,11 @@ collectd (4.6.3-1) unstable; urgency=low
   * debian/patches:
     - Removed battery_acpi_complain.dpatch - included upstream.
     - Removed include_empty_files.dpatch - included upstream.
+    - Removed ntpd_type_pun_fix.dpatch - included upstream.
   * debian/rules:
     - Install collectd-network.py to /usr/share/doc/collectd/examples/.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 02 Jun 2009 21:08:34 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 02 Jun 2009 21:11:22 +0200
 
 collectd (4.6.2-3) unstable; urgency=low
 
