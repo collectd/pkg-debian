@@ -10,30 +10,38 @@ Upstream Authors:
 	For individual credits, see AUTHORS.
 
 Copyright Holders (in alphabetical order):
+	Adrian Perez <aperez@igalia.com>
 	Alessandro Iurlano <alessandro.iurlano@gmail.com>
 	Alexander Wirt <formorer@formorer.de>
 	Américo Monteiro
+	Amit Gupta <amit.gupta221@gmail.com>
 	Andre M. Hedrick <andre@suse.com>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
 	Bruno Prémont <bonbons@linux-vserver.org>
 	C-Ware, Inc.
+	Clay Loveless <clay@killersoft.com>
 	David Bacher <drbacher@gmail.com>
 	Doug MacEachern <dougm@hyperic.com>
+	Edward Konetzko <konetzed@quixoticagony.com>
+	Eric Reed <ericr@reedhome.net>
 	Eric Spreen <erispre@gmail.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
 	Florent Usseil <swiip81@free.fr>
 	Florian Forster <octo@verplant.org>
+	Franck Lombardi
 	Free Software Foundation, Inc.
 	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
 	Julian Anastasov <ja@ssi.bg>
+	Justo Alonso Achaques <justo.alonso@gmail.com>
 	Kai Wasserbäch <debian@carbon-project.org>
 	Kern Sibbald
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
+	Marco Chiappero <marco@absence.it>
 	Martin Bagge <brother@bsnet.se>
 	Michael Stapelberg <michael+git@stapelberg.de>
 	Michał Mirosław <mirq-linux@rere.qmqm.pl>
@@ -45,6 +53,7 @@ Copyright Holders (in alphabetical order):
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
 	Red Hat Inc.
+	Rodolphe Quiédeville <rquiedeville@bearstech.com>
 	Scott Garrett <sgarrett@technomancer.com>
 	Sebastian Harl <sh@tokkee.org>
 	Simon Kuhnle <simon@blarzwurst.de>
@@ -52,6 +61,7 @@ Copyright Holders (in alphabetical order):
 	Stefan Hacker <d0t@dbclan.de>
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	The Regents of the University of California
+	Tomasz Pala <gotar@pld-linux.org>
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
 	Wouter Gadeyne
@@ -69,6 +79,7 @@ Licenses:
 	      src/email.c
 	      src/notify_desktop.c
 	      src/perl.c
+	      src/table.c
 	      src/types.db.pod
 	      src/utils_cmd_flush.h
 	      src/utils_subst.c
@@ -76,8 +87,15 @@ Licenses:
 	Copyright © 2006-2008 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
-	Files contrib/collectd2html.pl
-	      src/hddtemp.c
+	File contrib/collectd-network.py
+	Copyright © 2009 Adrian Perez <aperez@igalia.com>
+	License: GNU General Public License
+
+	File contrib/collectd-unixsock.py
+	Copyright © 2008 Clay Loveless <clay@killersoft.com>
+	License: GNU General Public License
+
+	File contrib/collectd2html.pl
 	Copyright © 2006 Vincent Stehlé <vincent.stehle@free.fr>
 	License: GNU General Public License
 
@@ -98,8 +116,9 @@ Licenses:
 	License: GNU General Public License
 
 	File src/apache.c
-	Copyright © 2006-2008 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2007 Florent Monbillard <eppo@darox.net>
+	Copyright © 2009 Amit Gupta <amit.gupta221@gmail.com>
 	License: GNU General Public License
 
 	File src/apcups.c
@@ -133,6 +152,10 @@ Licenses:
 	Copyright © 2006-2009 Sebastian Harl
 	License: GNU General Public License
 
+	File src/conntrack.c
+	Copyright © 2009 Tomasz Pala <gotar@pld-linux.org>
+	License: GNU General Public License
+
 	File src/cpu.c
 	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
@@ -161,6 +184,10 @@ Licenses:
 	Copyright © 2008 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
+	File src/fscache.c
+	Copyright © 2009 Edward Konetzko <konetzed@quixoticagony.com>
+	License: GNU General Public License
+
 	File src/hddtemp.c
 	Copyright © 2005-2006 Vincent Stehlé <vincent.stehle@free.fr>
 	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
@@ -176,6 +203,7 @@ Licenses:
 	File src/iptables.c
 	Copyright © 2007 Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	Copyright © 2007 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Marco Chiappero <marco@absence.it>
 	License: GNU General Public License
 
 	File src/ipvs.c
@@ -183,6 +211,11 @@ Licenses:
 	Copyright © 1998-2004 Wensong Zhang <wensong@linuxvirtualserver.org>
 	Copyright © 2003-2004 Peter Kese <peter.kese@ijs.si>
 	Copyright © 2007 Sebastian Harl <sh@tokkee.org>
+	License: GNU General Public License
+
+	File src/java.c
+	Copyright © 2008 Justo Alonso Achaques <justo.alonso@gmail.com>
+	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	Files src/libiptc/*
@@ -199,15 +232,30 @@ Licenses:
 	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
+	Files src/memcachec.c
+	      src/openvpn.c
+	Copyright © 2008-2009 Doug MacEachern <dougm@hyperic.com>
+	Copyright © 2006-2009 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
 	File src/memcached.c
 	Copyright © 2007 Antony Dovgal
 	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
+	Copyright © Franck Lombardi
+	License: GNU General Public License
+
+	File src/memory.c
+	Copyright © 2005-2008 Florian Forster <octo@verplant.org>
+	Simon Kuhnle <simon@blarzwurst.de>
 	License: GNU General Public License
 
 	File src/mysql.c
 	Copyright © 2006-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2008 Mirko Buffoni <briareos@eswat.org>
+	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
+	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2009 Rodolphe Quiédeville <rquiedeville@bearstech.com>
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -216,11 +264,6 @@ Licenses:
 
 	File src/notify_email.c
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
-	License: GNU General Public License
-
-	File src/openvpn.c
-	Copyright © 2008 Doug MacEachern <dougm@hyperic.com>
-	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	Files src/powerdns.c
@@ -261,8 +304,16 @@ Licenses:
 	Copyright © 2008 Florian Forster
 	License: GNU General Public License
 
+	File src/ted.c
+	Copyright © 2009 Eric Reed <ericr@reedhome.net>
+	License: GNU General Public License
+
 	File src/thermal.c
 	Copyright © 2008 Michał Mirosław <mirq-linux@rere.qmqm.pl>
+	License: GNU General Public License
+
+	File src/uptime.c
+	Copyright © 2009 Marco Chiappero <marco@absence.it>
 	License: GNU General Public License
 
 	File src/users.c

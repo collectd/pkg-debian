@@ -117,6 +117,9 @@ Examples:
   protocol in pure Python. It currently supports to receive data and
   notifications from collectd.
 
+- collectd-unixsock.py: Python module providing an interface to collect's
+  unixsock plugin.
+
 - cussh.pl: "Collectd Unix Socket SHell" is a small, interactive front-end for
   the unixsock plugin. See the embedded POD documentation for details: perldoc
   cussh.pl.

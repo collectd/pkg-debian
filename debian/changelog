@@ -1,3 +1,25 @@
+collectd (4.7.0-1) unstable; urgency=low
+
+  * New upstream release.
+    New plugins:
+    - Connection tracking table size: conntrack
+    - Linux file-system based caching framework statistics: fscache
+    - Receive and interpret Ganglia multicast traffic: gmond (disabled in
+      Debian, libganglia >= 3 is required)
+    - Embedded Java Virtual Machine: java
+    - Query and parse data from a memcache daemon: memcachec (disabled in
+      Debian, libmemcached is not available)
+    - Information about network protocols: protocols
+    - Parse table-like structured files: table
+    - Power consumption measurements from "The Energy Detective" (TED): ted
+    - System uptime: uptime
+  * debian/rules:
+    - Install collectd-unixsock.py to /usr/share/doc/collectd/examples/.
+    - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
+      them in the environment - this is the recommended way.
+
+ -- Sebastian Harl <sh@tokkee.org>  Sun, 10 May 2009 19:57:25 +0200
+
 collectd (4.6.3-1) unstable; urgency=low
 
   * New upstream release.

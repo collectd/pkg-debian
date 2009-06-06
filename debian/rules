@@ -39,15 +39,31 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
-			--disable-onewire \
-			--disable-xmms \
 			--without-libstatgrab
 
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
+# libganglia >= 3 is required for the gmond plugin.
+confflags += --disable-gmond
+
+# libmemcached is required for the memcachec plugin.
+confflags += --disable-memcachec
+
+# libowcapi is required for the onewire plugin.
+confflags += --disable-onewire
+
+# libclntsh is required for the oracle plugin.
+confflags += --disable-oracle
+
+# rrdclient support in librrd is required for the rrdcached plugin.
+confflags += --disable-rrdcached
+
+# xmms1 is required for the xmms plugin.
+confflags += --disable-xmms
+
 # The static library netstat cannot be linked into shared objects on some
-# architectures (see bugs #358637 and #419684 for more details).
+# architectures (see bugs #358637, #419684 and #524593 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink
 endif
@@ -59,7 +75,7 @@ endif
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)"
 
 build: build-stamp
 
@@ -136,7 +152,7 @@ binary-arch: build install-arch
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
-		contrib/collectd-network.py \
+		contrib/collectd-network.py contrib/collectd-unixsock.py \
 		contrib/snmp-probe-host.px
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
