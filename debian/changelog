@@ -1,3 +1,26 @@
+collectd (4.6.3-1~bpo40+1) etch-backports; urgency=low
+
+  * Rebuild for etch-backports.
+  * debian/control:
+    - Removed dpkg-dev build-dependency - we don't care about Vcs-* and
+      Homepage fields in backports.org.
+    - Removed optional build-dependencies libcurl4-gnutls-dev, librrd-dev and
+      libsnmp-dev - they are not available in Etch and might confuse buildds.
+    - Switch back to build-depend on nut-dev - libupsclient1-dev is not
+      available in Etch and limit the "nut" plugin to [!alpha !amd64 !hppa
+      !ia64 !ppc64 !mips !mipsel].
+    - Replaced linux-libc-dev build-dependency with linux-kernel-headers.
+    - Build-conflict with iptables-dev to force the use of the shipped libiptc
+      (this allows building the iptables plugin on all architectures).
+  * debian/control, debian/rules:
+    - Disabled the "openipmi" plugin - the work around for #474087 (broken
+      openipmi .pc files) no longer works because of the strict dependency
+      checking introduced in 4.5.1. Removed libopenipmi-dev build-dependency.
+    - Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
+      libdbi is not available on Etch.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 14 Jun 2009 13:00:37 +0200
+
 collectd (4.6.3-1) unstable; urgency=low
 
   * New upstream release.
@@ -48,27 +71,6 @@ collectd (4.6.2-2) unstable; urgency=low
       Depend on versions >= 1.4.3.2-2 because of #524766.
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 May 2009 14:12:36 +0200
-
-collectd (4.6.2-1~bpo40+1) etch-backports; urgency=low
-
-  * Rebuild for etch-backports.
-  * Removed dpkg-dev build-dependency - we don't care about Vcs-* and Homepage
-    fields in backports.org.
-  * Removed optional build-dependencies libcurl4-gnutls-dev, librrd-dev and
-    libsnmp-dev - they are not available in Etch and might confuse buildds.
-  * Switch back to build-depend on nut-dev - libupsclient1-dev is not
-    available in Etch:
-    - Limit the "nut" plugin to [!alpha !amd64 !hppa !ia64 !ppc64].
-  * Replaced linux-libc-dev build-dependency with linux-kernel-headers.
-  * Build-conflict with iptables-dev to force the use of the shipped libiptc
-    (this allows building the iptables plugin on all architectures).
-  * Disabled the "openipmi" plugin - the work around for #474087 (broken
-    openipmi .pc files) no longer works because of the strict dependency
-    checking introduced in 4.5.1. Removed libopenipmi-dev build-dependency.
-  * Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
-    libdbi is not available on Etch.
-
- -- Sebastian Harl <sh@tokkee.org>  Mon, 13 Apr 2009 22:51:56 +0200
 
 collectd (4.6.2-1) unstable; urgency=low
 
