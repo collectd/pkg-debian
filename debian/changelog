@@ -1,3 +1,54 @@
+collectd (4.6.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - Removed battery_acpi_complain.dpatch - included upstream.
+    - Removed include_empty_files.dpatch - included upstream.
+    - Removed ntpd_type_pun_fix.dpatch - included upstream.
+    - Removed rrdtool_uninitialized_fix.dpatch - included upstream.
+    - Added libcollectdclient_static_sstrerror.dpatch to make a private
+      function in libcollectdclient static.
+  * debian/rules:
+    - Install collectd-network.py to /usr/share/doc/collectd/examples/.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 02 Jun 2009 22:03:10 +0200
+
+collectd (4.6.2-3) unstable; urgency=low
+
+  * debian/patches:
+    - Actually enabled rrdtool_uninitialized_fix.dpatch - d'oh!
+
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 29 May 2009 15:49:46 +0200
+
+collectd (4.6.2-2) unstable; urgency=low
+
+  * debian/patches:
+    - Added battery_acpi_complain.dpatch - upstream patch to fix excessive
+      error messages in the battery plugin in case /proc/acpi/battery is not
+      available.
+    - Added ntpd_type_pun_fix.dpatch - upstream patch to fix dereferencing of
+      a type-punned pointer identified by GCC 4.4, thanks to Martin Michlmayr
+      for reporting this (Closes: #526667).
+    - Added include_empty_files.dpatch - upstream patch to fix the inclusion
+      of empty configuration files, thanks to Alexander Wirt for reporting
+      this.
+    - Added rrdtool_uninitialized_fix.dpatch - upstream patch to fix an
+      uninitialized value warning in the rrdtool plugin, thanks to Andreas
+      Moog for reporting this.
+  * debian/collectd.conf, debian/filters.conf:
+    - Added a sample filter chain configuration.
+  * debian/rules:
+    - Added contrib/php-collection/ to /usr/share/doc/collectd/.
+    - Disabled "netlink" plugin on mips and mipsel - those architectures do
+      not allow to link non-PIC code into shared objects, thanks to Peter De
+      Schrijver for reporting this (Closes: #524593).
+  * debian/control:
+    - Build-depend on iptables-dev (>= 1.4.3.2-2) to link against the packaged
+      libiptc which is available as shared library since iptables 1.4.3.
+      Depend on versions >= 1.4.3.2-2 because of #524766.
+
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 29 May 2009 14:12:36 +0200
+
 collectd (4.6.2-1~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for etch-backports.

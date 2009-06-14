@@ -4,7 +4,7 @@
 # http://collectd.org/
 #
 # Copyright (C) 2005-2006 Florian Forster <octo@verplant.org>
-# Copyright (C) 2006-2008 Sebastian Harl <sh@tokkee.org>
+# Copyright (C) 2006-2009 Sebastian Harl <tokkee@debian.org>
 #
 
 ### BEGIN INIT INFO

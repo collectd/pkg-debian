@@ -1,7 +1,7 @@
 #! /usr/bin/make -f
 # debian/rules for collectd
 #
-# Written by Sebastian Harl <sh@tokkee.org>.
+# Written by Sebastian Harl <tokkee@debian.org>.
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
@@ -49,7 +49,7 @@ confflags += --disable-apple_sensors --disable-tape
 # The static libraries netstat and upsclient cannot be linked into shared
 # objects on some architectures (see bugs #358637 and #419684 for more
 # details).
-ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64))
+ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink --disable-nut
 endif
 
@@ -138,11 +138,12 @@ binary-arch: build install-arch
 	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
-		contrib/collection3/ \
+		contrib/collection3/ contrib/php-collection/ \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
+		contrib/collectd-network.py \
 		contrib/snmp-probe-host.px
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
