@@ -46,11 +46,10 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static libraries netstat and upsclient cannot be linked into shared
-# objects on some architectures (see bugs #358637 and #419684 for more
-# details).
+# The static library netstat cannot be linked into shared objects on some
+# architectures (see bugs #358637 and #419684 for more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
-	confflags += --disable-netlink --disable-nut
+	confflags += --disable-netlink
 endif
 
 # libvirt is only available on amd64, i386 and powerpc.
@@ -58,19 +57,8 @@ ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
 	confflags += --disable-libvirt
 endif
 
-# libdbi is not available on Etch
-confflags += --disable-dbi
-
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	
-	# This is a work-around for #474087 (broken openipmi .pc files).
-	mkdir debian/pkgconfig
-	sed -re 's/^(Requires:.*) pthread(.*)$$/\1\2/' \
-		/usr/lib/pkgconfig/OpenIPMIpthread.pc \
-		> debian/pkgconfig/OpenIPMIpthread.pc
-	
-	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp
@@ -92,8 +80,6 @@ clean: unpatch
 	
 	rm -f debian/README.Debian.plugins
 	rm -f src/*.1 src/*.5
-	
-	rm -rf debian/pkgconfig
 	
 	dh_clean
 	debconf-updatepo
