@@ -53,7 +53,6 @@ Description: statistics collection and monitoring daemon
    * count the number of files in directories: filecount
    * harddisk temperature: hddtemp
    * network traffic: interface
-   * IPMI sensors information: ipmi
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
