@@ -61,11 +61,16 @@ endif
 # libdbi is not available on Etch
 confflags += --disable-dbi
 
-# OpenIPMI's .pc files are broken on Etch (see #474087)
-confflags += --disable-ipmi
-
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
+	
+	# This is a work-around for #474087 (broken openipmi .pc files).
+	mkdir debian/pkgconfig
+	sed -re 's/^(Requires:.*) pthread(.*)$$/\1\2/' \
+		/usr/lib/pkgconfig/OpenIPMIpthread.pc \
+		> debian/pkgconfig/OpenIPMIpthread.pc
+	
+	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
 
 build: build-stamp
@@ -87,6 +92,8 @@ clean: unpatch
 	
 	rm -f debian/README.Debian.plugins
 	rm -f src/*.1 src/*.5
+	
+	rm -rf debian/pkgconfig
 	
 	dh_clean
 	debconf-updatepo

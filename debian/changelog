@@ -13,13 +13,15 @@ collectd (4.6.3-1~bpo40+1) etch-backports; urgency=low
     - Build-conflict with iptables-dev to force the use of the shipped libiptc
       (this allows building the iptables plugin on all architectures).
   * debian/control, debian/rules:
-    - Disabled the "openipmi" plugin - the work around for #474087 (broken
-      openipmi .pc files) no longer works because of the strict dependency
-      checking introduced in 4.5.1. Removed libopenipmi-dev build-dependency.
+    - Added a work around for #474087 (broken openipmi .pc files) by providing
+      a fixed version of OpenIPMIpthread.pc in debian/pkgconfig and adding
+      that path to PKG_CONFIG_PATH. Removed the version from the
+      libopenipmi-dev build dependency - Etch does not include a fixed version
+      of openipmi.
     - Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
       libdbi is not available on Etch.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 14 Jun 2009 13:00:37 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 14 Jun 2009 13:52:04 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
