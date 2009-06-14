@@ -1,3 +1,9 @@
+collectd (4.6.3-1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 14 Jun 2009 16:20:23 +0200
+
 collectd (4.6.3-1~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for etch-backports.
