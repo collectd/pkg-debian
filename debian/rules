@@ -32,6 +32,18 @@ else
 	CFLAGS += -O2
 endif
 
+# The archdir map has been copied from openjdk-6's debian/rules.
+JAVA_ARCHDIR_MAP = alpha=alpha arm=arm armel=arm amd64=amd64 hppa=parisc \
+			i386=i386 lpia=i386 m68k=m68k mips=mips mipsel=mipsel \
+			powerpc=ppc sparc=sparc s390=s390 ia64=ia64
+JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
+			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+
+JAVAC = $(JAVA_HOME)/bin/javac
+JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
+JAVA_LDFLAGS = -L$(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
+
 include /usr/share/dpatch/dpatch.make
 
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
@@ -72,7 +84,9 @@ endif
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
-	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)"
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
+		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
+		JAVA_LDFLAGS="$(JAVA_LDFLAGS)"
 
 build: build-stamp
 

@@ -16,8 +16,16 @@ collectd (4.7.1-1) unstable; urgency=low
     - Install collectd-unixsock.py to /usr/share/doc/collectd/examples/.
     - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
       them in the environment - this is the recommended way.
+    - Pass appropriate JAVAC, JAVA_CPPFLAGS and JAVA_LDFLAGS variables to
+      configure, using OpenJDK found in /usr/lib/jvm/java-6-openjdk. The
+      archdir mapping used by the openjdk-6 Debian package is used to find
+      libjvm.so in JAVA_HOME/jre/lib/ARCHDIR/server.
+  * debian/control:
+    - Build-depend on openjdk-6-jdk.
+  * debian/collectd.install:
+    - Install collectd-java.5.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 20:04:32 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 23:37:08 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
