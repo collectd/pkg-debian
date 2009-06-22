@@ -1,4 +1,4 @@
-collectd (4.7.0-1) unstable; urgency=low
+collectd (4.7.1-1) unstable; urgency=low
 
   * New upstream release.
     New plugins:
@@ -17,7 +17,7 @@ collectd (4.7.0-1) unstable; urgency=low
     - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
       them in the environment - this is the recommended way.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 18:46:26 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 20:04:32 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
