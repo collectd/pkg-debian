@@ -7,8 +7,7 @@ collectd (4.7.0-1) unstable; urgency=low
     - Receive and interpret Ganglia multicast traffic: gmond (disabled in
       Debian, libganglia >= 3 is required)
     - Embedded Java Virtual Machine: java
-    - Query and parse data from a memcache daemon: memcachec (disabled in
-      Debian, libmemcached is not available)
+    - Query and parse data from a memcache daemon: memcachec
     - Information about network protocols: protocols
     - Parse table-like structured files: table
     - Power consumption measurements from "The Energy Detective" (TED): ted
@@ -18,7 +17,7 @@ collectd (4.7.0-1) unstable; urgency=low
     - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
       them in the environment - this is the recommended way.
 
- -- Sebastian Harl <sh@tokkee.org>  Sun, 10 May 2009 19:57:25 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 18:46:26 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
