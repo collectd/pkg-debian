@@ -51,7 +51,8 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
-			--without-libstatgrab
+			--without-libstatgrab \
+			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape

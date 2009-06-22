@@ -20,12 +20,14 @@ collectd (4.7.1-1) unstable; urgency=low
       configure, using OpenJDK found in /usr/lib/jvm/java-6-openjdk. The
       archdir mapping used by the openjdk-6 Debian package is used to find
       libjvm.so in JAVA_HOME/jre/lib/ARCHDIR/server.
+    - Pass --enable-all-plugins to configure to make sure that the build fails
+      if any prerequisites are missing.
   * debian/control:
     - Build-depend on openjdk-6-jdk.
   * debian/collectd.install:
     - Install collectd-java.5.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 23:37:08 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Jun 2009 23:44:35 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
