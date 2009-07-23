@@ -4,8 +4,7 @@ collectd (4.7.2-1) unstable; urgency=low
     New plugins:
     - Connection tracking table size: conntrack
     - Linux file-system based caching framework statistics: fscache
-    - Receive and interpret Ganglia multicast traffic: gmond (disabled in
-      Debian, libganglia >= 3 is required)
+    - Receive and interpret Ganglia multicast traffic: gmond
     - Embedded Java Virtual Machine: java
     - Query and parse data from a memcache daemon: memcachec
     - Information about network protocols: protocols
@@ -24,10 +23,11 @@ collectd (4.7.2-1) unstable; urgency=low
       if any prerequisites are missing.
   * debian/control:
     - Build-depend on openjdk-6-jdk.
+    - Build-depend on libganglia1-dev (>= 3), required by the gmond plugin.
   * debian/collectd.install:
     - Install collectd-java.5.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 22:14:37 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 22:53:53 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
