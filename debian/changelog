@@ -27,6 +27,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Build-depend on openjdk-6-jdk.
     - Build-depend on libganglia1-dev (>= 3), required by the gmond plugin.
     - Build-depend on libgcrypt11-dev, used by the network plugin.
+    - Updated Standards-Version to 3.8.2 (no changes).
   * debian/collectd.install:
     - Install collectd-java.5.
   * debian/patches:
@@ -36,7 +37,7 @@ collectd (4.7.2-1) unstable; urgency=low
       version 4 of collectd - the script now supports the --recursive option
       which takes care of that.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 23:11:30 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 23:35:03 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
