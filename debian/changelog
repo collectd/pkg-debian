@@ -27,8 +27,10 @@ collectd (4.7.2-1) unstable; urgency=low
     - Build-depend on libgcrypt11-dev, used by the network plugin.
   * debian/collectd.install:
     - Install collectd-java.5.
+  * debian/patches:
+    - Removed libcollectdclient_static_sstrerror.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 22:57:36 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 23:01:48 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
