@@ -1,6 +1,8 @@
 collectd (4.7.2-1) unstable; urgency=low
 
   * New upstream release.
+    - collectd2html.pl now supports the creation of SVG images; thanks to Ivan
+      Shmakov for providing a patch (Closes: #482185).
     New plugins:
     - Connection tracking table size: conntrack
     - Linux file-system based caching framework statistics: fscache
@@ -30,7 +32,7 @@ collectd (4.7.2-1) unstable; urgency=low
   * debian/patches:
     - Removed libcollectdclient_static_sstrerror.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 23:01:48 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 23 Jul 2009 23:02:43 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
