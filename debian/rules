@@ -39,10 +39,11 @@ JAVA_ARCHDIR_MAP = alpha=alpha arm=arm armel=arm amd64=amd64 hppa=parisc \
 JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
 			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
 JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
-JAVA_LDFLAGS = -L$(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
+JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
 include /usr/share/dpatch/dpatch.make
 
