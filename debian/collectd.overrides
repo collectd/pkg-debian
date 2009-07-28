@@ -3,3 +3,8 @@ collectd: spelling-error-in-description apache Apache
 collectd: spelling-error-in-description mysql MySQL
 collectd: spelling-error-in-description postgresql PostgreSQL
 
+# The "java" plugin uses libjvm.so which can only be found in a non-standard
+# directory. According to the Java guys the path name and the ABI is stable
+# though ...
+collectd: binary-or-shlib-defines-rpath ./usr/lib/collectd/java.so /usr/lib/jvm/java-6-openjdk/jre/lib/*
+
