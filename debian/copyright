@@ -43,6 +43,7 @@ Copyright Holders (in alphabetical order):
 	Lyonel Vincent <lyonel@ezix.org>
 	Marco Chiappero <marco@absence.it>
 	Martin Bagge <brother@bsnet.se>
+	Martin Sin <martin.sin@zshk.cz>
 	Michael Stapelberg <michael+git@stapelberg.de>
 	Michał Mirosław <mirq-linux@rere.qmqm.pl>
 	Mirko Buffoni <briareos@eswat.org>
@@ -449,6 +450,9 @@ can be found in `/usr/share/common-licenses/LGPL'.
 The Debian packaging is © 2006-2009, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above. The debconf template translations are
 distributed under the same license as the package itself.
+
+	cs.po:
+	Copyright © 2009 Martin Sin <martin.sin@zshk.cz>
 
 	de.po:
 	Copyright © 2008 Kai Wasserbäch <debian@carbon-project.org>
