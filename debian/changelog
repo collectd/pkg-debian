@@ -29,6 +29,8 @@ collectd (4.7.2-1) unstable; urgency=low
     - Build-depend on libganglia1-dev (>= 3), required by the gmond plugin.
     - Build-depend on libgcrypt11-dev, used by the network plugin.
     - Updated Standards-Version to 3.8.2 (no changes).
+    - Changed build-dependency libmysqlclient15-dev to libmysqlclient-dev -
+      this allows transitions to be handled thru binNMUs if possible.
   * debian/collectd.install:
     - Install collectd-java.5.
   * debian/patches:
@@ -43,7 +45,7 @@ collectd (4.7.2-1) unstable; urgency=low
   * New debconf template translations:
     - cs.po, thanks to Martin Sin (Closes: #534206).
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jul 2009 16:53:41 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jul 2009 17:00:41 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
