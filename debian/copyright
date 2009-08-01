@@ -66,6 +66,7 @@ Copyright Holders (in alphabetical order):
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
 	Wouter Gadeyne
+	Yuri Kozlov <yuray@komyakino.ru>
 
 Licenses:
 
@@ -469,6 +470,9 @@ distributed under the same license as the package itself.
 
 	pt.po:
 	Copyright © 2008 Américo Monteiro
+
+	ru.po:
+	Copyright © 2009 Yuri Kozlov <yuray@komyakino.ru>
 
 	sv.po:
 	Copyright © 2008 Martin Bagge <brother@bsnet.se>

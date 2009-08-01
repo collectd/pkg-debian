@@ -44,11 +44,12 @@ collectd (4.7.2-1) unstable; urgency=low
       required by the java plugin.
   * New debconf template translations:
     - cs.po, thanks to Martin Sin (Closes: #534206).
+    - ru.po, thanks to Yuri Kozlov (Closes: #539467).
   * debian/control, debian/rules:
     - No not limit the libvirt plugin to amd64, i386, powerpc - libvirt-dev
       seems to be available on all architectures now.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jul 2009 17:42:11 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 01 Aug 2009 10:39:09 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
