@@ -48,8 +48,11 @@ collectd (4.7.2-1) unstable; urgency=low
   * debian/control, debian/rules:
     - No not limit the libvirt plugin to amd64, i386, powerpc - libvirt-dev
       seems to be available on all architectures now.
+  * debian/collectd.conf:
+    - Set the 'apache' plugin's URL according to the default used by Debian's
+      Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 01 Aug 2009 10:39:09 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 18 Aug 2009 22:47:45 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
