@@ -1,6 +1,6 @@
 collectd (4.7.2-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release (Closes: #541887).
     - collectd2html.pl now supports the creation of SVG images; thanks to Ivan
       Shmakov for providing a patch (Closes: #482185).
     New plugins:
@@ -52,7 +52,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 18 Aug 2009 22:47:45 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 18 Aug 2009 22:51:12 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
