@@ -2,4 +2,5 @@ rrd_filter_path.dpatch
 collection_conf_path.dpatch
 network-fix-cacheflush.dpatch
 libvirt-reconnect.dpatch
+plugin-fix-unregister.dpatch
 

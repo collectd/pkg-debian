@@ -39,6 +39,9 @@ collectd (4.7.2-1) unstable; urgency=low
       the CacheFlush config option of the network plugin.
     - Added libvirt-reconnect.dpatch - upstream patch to let the libvirt
       plugin re-connect to libvirtd if connecting fails.
+    - Added plugin-fix-unregister.dpatch - upstream patch to make
+      'plugin_unregister_read()' functional again, thus fixing a failed
+      assertion in some cases.
   * debian/README.Debian:
     - Removed the note about how to get collectd2html.pl working with
       version 4 of collectd - the script now supports the --recursive option
@@ -56,7 +59,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 22:57:05 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 23:11:09 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
