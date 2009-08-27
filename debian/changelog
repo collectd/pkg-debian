@@ -43,6 +43,9 @@ collectd (4.7.2-1) unstable; urgency=low
       'plugin_unregister_read()' functional again, thus fixing a failed
       assertion in some cases.
     - Added java-fix-jvm-start.dpatch - upstream patch to fix the JVM startup.
+    - Added curl-followlocation.dpatch - upstream patch to let plugins using
+      libcurl follow HTTP redirects; thanks to Joey Hess for reporting this
+      (Closes: #541953).
   * debian/README.Debian:
     - Removed the note about how to get collectd2html.pl working with
       version 4 of collectd - the script now supports the --recursive option
@@ -60,7 +63,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 23:23:16 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 23:29:41 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
