@@ -50,6 +50,9 @@ collectd (4.7.2-1) unstable; urgency=low
       the handling of the LocalSocket config option of the powerdns plugin;
       thanks to Thomas Morgan for reporting this and Luke Heberling for
       providing a patch (references: #535787).
+    - Added bts542859-df-fix-ignorelist.dpatch - upstream patch to fix the
+      handling of the ignorelist in the df plugin; thanks to Joey Hess for
+      reporting this (Closes: #542859).
   * debian/README.Debian:
     - Removed the note about how to get collectd2html.pl working with
       version 4 of collectd - the script now supports the --recursive option
@@ -67,7 +70,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 23:41:50 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 27 Aug 2009 23:49:54 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 

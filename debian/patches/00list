@@ -6,4 +6,5 @@ plugin-fix-unregister.dpatch
 java-fix-jvm-start.dpatch
 curl-followlocation.dpatch
 bts535787-powerdns-fix-localsocket.dpatch
+bts542859-df-fix-ignorelist.dpatch
 
