@@ -8,13 +8,13 @@
 diff a/src/apache.c b/src/apache.c
 --- a/src/apache.c
 +++ b/src/apache.c
-@@ -160,6 +160,7 @@ static int init (void)
+@@ -458,6 +458,7 @@ static int init_host (apache_t *st) /* {{{ */
  	}
  
- 	curl_easy_setopt (curl, CURLOPT_URL, url);
-+	curl_easy_setopt (curl, CURLOPT_FOLLOWLOCATION, 1);
+ 	curl_easy_setopt (st->curl, CURLOPT_URL, st->url);
++	curl_easy_setopt (st->curl, CURLOPT_FOLLOWLOCATION, 1);
  
- 	if ((verify_peer == NULL) || (strcmp (verify_peer, "true") == 0))
+ 	if (st->verify_peer != 0)
  	{
 diff a/src/ascent.c b/src/ascent.c
 --- a/src/ascent.c
