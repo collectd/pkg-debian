@@ -121,6 +121,7 @@ install-arch: build
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	
 	rm -f debian/tmp/usr/lib/collectd/*.la
+	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
 	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing

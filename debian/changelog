@@ -69,8 +69,12 @@ collectd (4.7.2-1) unstable; urgency=low
   * debian/collectd.conf:
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
+  * debian/libcollectdclient-dev.install, debian/rules:
+    - Do not install libcollectdclient's .la file in favor of the Squeeze
+      release goal to remove those files (for details see
+      <http://lists.debian.org/debian-devel/2009/08/msg00783.html>).
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 29 Aug 2009 09:31:12 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 29 Aug 2009 09:42:52 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
