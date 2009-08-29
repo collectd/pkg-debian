@@ -185,7 +185,7 @@ diff a/src/plugin.c b/src/plugin.c
  } /* int plugin_register_complex_read */
  
  int plugin_register_write (const char *name,
-@@ -816,12 +871,37 @@ int plugin_unregister_init (const char *name)
+@@ -816,12 +871,45 @@ int plugin_unregister_init (const char *name)
  	return (plugin_unregister (list_init, name));
  }
  
@@ -211,6 +211,14 @@ diff a/src/plugin.c b/src/plugin.c
 +	}
 +
 +	le = llist_search (read_list, name);
++	if (le == NULL)
++	{
++		pthread_mutex_unlock (&read_lock);
++		WARNING ("plugin_unregister_read: No such read function: %s",
++				name);
++		return (-ENOENT);
++	}
++
 +	llist_remove (read_list, le);
 +
 +	rf = le->value;
@@ -228,7 +236,7 @@ diff a/src/plugin.c b/src/plugin.c
  
  int plugin_unregister_write (const char *name)
  {
-@@ -1093,6 +1173,12 @@ void plugin_shutdown_all (void)
+@@ -1093,6 +1181,12 @@ void plugin_shutdown_all (void)
  	stop_read_threads ();
  
  	destroy_all_callbacks (&list_init);
