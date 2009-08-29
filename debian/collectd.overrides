@@ -1,4 +1,7 @@
+# This is only done on architectures that support it.
 collectd: shlib-with-non-pic-code usr/lib/collectd/netlink.so
+
+# All plugin names are spelled in lower-case.
 collectd: spelling-error-in-description apache Apache
 collectd: spelling-error-in-description mysql MySQL
 collectd: spelling-error-in-description postgresql PostgreSQL
