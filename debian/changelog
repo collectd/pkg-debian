@@ -28,7 +28,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Build-depend on openjdk-6-jdk.
     - Build-depend on libganglia1-dev (>= 3), required by the gmond plugin.
     - Build-depend on libgcrypt11-dev, used by the network plugin.
-    - Updated Standards-Version to 3.8.2 (no changes).
+    - Updated Standards-Version to 3.8.3 (no changes).
     - Changed build-dependency libmysqlclient15-dev to libmysqlclient-dev -
       this allows transitions to be handled thru binNMUs if possible.
   * debian/collectd.install:
@@ -70,7 +70,7 @@ collectd (4.7.2-1) unstable; urgency=low
     - Set the 'apache' plugin's URL according to the default used by Debian's
       Apache; thanks to Joey Hess for reporting this (Closes: #541888).
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 28 Aug 2009 00:04:37 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 29 Aug 2009 09:31:12 +0200
 
 collectd (4.6.3-1) unstable; urgency=low
 
