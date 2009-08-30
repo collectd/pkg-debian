@@ -170,6 +170,12 @@ binary-arch: build install-arch
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd-network.py contrib/collectd-unixsock.py \
 		contrib/snmp-probe-host.px
+	# the 4.7.2 upstream tarball had been built inside a dirty working dir
+	( cd debian/collectd/usr/share/doc/collectd/examples/collection3/ \
+		&& rm -f bin/foo bin/test_config.px etc/collection4.conf \
+		&& rm -f lib/Collectd/Graph.pm lib/Collectd/Graph/Data.pm \
+		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
+		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
 	dh_installinit -a -- defaults 95
 	dh_link -a
