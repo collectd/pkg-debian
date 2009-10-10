@@ -1,8 +1,20 @@
 collectd (4.8.1-1) unstable; urgency=low
 
   * New upstream release.
+    New plugins:
+    - Parse JSON files: curl_json
+    - Query data from Java processes using JMX: GenericJMX (Java based plugin)
+    - Atheros wireless LAN chipset statistics: madwifi
+    - Optimized Link State Routing daemon statistics: olsrd
+    - Tokyo Tyrant server statistics: tokyotyrant (disabled in Debian,
+      libtokyotyrant is not available)
+    - Send collected values to a web-server: write_http
+    - ZFS Adaptive Replacement Cache statistics: zfs_arc (disabled in Debian,
+      libkstat is not available)
+    New matches:
+    - Match zero COUNTER values: empty_counter
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 10 Oct 2009 11:26:16 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 10 Oct 2009 11:29:45 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 

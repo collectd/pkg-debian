@@ -45,6 +45,7 @@ Description: statistics collection and monitoring daemon
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
+   * parse JSON files: curl_json
    * query data from a relational database: dbi
    * disk space usage: df
    * disk and partition throughput: disk
@@ -54,6 +55,7 @@ Description: statistics collection and monitoring daemon
    * execution of external programs: exec
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
+   * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * Receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * network traffic: interface
@@ -65,6 +67,7 @@ Description: statistics collection and monitoring daemon
    * CPU, disk, network statistics of guest systems: libvirt
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
+   * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
    * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
@@ -80,6 +83,7 @@ Description: statistics collection and monitoring daemon
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
    * OpenVPN traffic and compression statistics: openvpn
+   * Optimized Link State Routing daemon statistics: olsrd
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
@@ -105,6 +109,7 @@ Description: statistics collection and monitoring daemon
    * detailed virtual memory statistics: vmem
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
+   * send collected values to a web-server: write_http
 
 Package: collectd-utils
 Architecture: any
