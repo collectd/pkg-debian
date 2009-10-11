@@ -16,6 +16,7 @@ Copyright Holders (in alphabetical order):
 	Américo Monteiro
 	Amit Gupta <amit.gupta221@gmail.com>
 	Andre M. Hedrick <andre@suse.com>
+	Anthony Dewhurst <dewhurst@gmail>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
 	Bruno Prémont <bonbons@linux-vserver.org>
@@ -42,6 +43,7 @@ Copyright Holders (in alphabetical order):
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Marco Chiappero <marco@absence.it>
+	Mariusz Gronczewski <xani666@gmail.com>
 	Martin Bagge <brother@bsnet.se>
 	Martin Sin <martin.sin@zshk.cz>
 	Michael Stapelberg <michael+git@stapelberg.de>
@@ -49,7 +51,10 @@ Copyright Holders (in alphabetical order):
 	Mirko Buffoni <briareos@eswat.org>
 	Netfilter Core Team
 	Niki W. Waibel <niki.waibel@newlogic.com>
+	Novell Inc.
 	Oleg King <king2@kaluga.ru>
+	Ondrej 'SanTiago' Zajicek <santiago@crfreenet.org>
+	Paul Sadauskas <psadauskas@gmail.com>
 	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
@@ -60,6 +65,7 @@ Copyright Holders (in alphabetical order):
 	Simon Kuhnle <simon@blarzwurst.de>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	Stefan Hacker <d0t@dbclan.de>
+	Stefan Völkel <bd@bc-bd.org>
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	The Regents of the University of California
 	Tomasz Pala <gotar@pld-linux.org>
@@ -99,6 +105,11 @@ Licenses:
 
 	File contrib/collectd2html.pl
 	Copyright © 2006 Vincent Stehlé <vincent.stehle@free.fr>
+	License: GNU General Public License
+
+	Files contrib/collection3/lib/Collectd/Graph/Type/ArcCounts.pm
+	      src/zfs_arc.c
+	Copyright © 2009 Anthony Dewhurst <dewhurst@gmail>
 	License: GNU General Public License
 
 	File contrib/network-proxy.py
@@ -170,9 +181,20 @@ Licenses:
 	Copyright © 2005-2007 Peter Holik <peter@holik.at>
 	License: GNU General Public License
 
-	File src/csv.c
-	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
+	Files src/csv.c
+	      src/curl_json.c
+	Copyright © 2006-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
+	License: GNU General Public License
+
+	File src/df.c
+	Copyright © 2005-2007 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Paul Sadauskas <psadauskas@gmail.com>
+	License: GNU General Public License
+
+	File src/dns.c
+	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Mirko Buffoni <briareos@eswat.org>
 	License: GNU General Public License
 
 	File src/exec.c
@@ -220,13 +242,13 @@ Licenses:
 	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
-	Files src/libiptc/*
-	Copyright © 1999-2008 Netfilter Core Team
-	License: GNU General Public License
-
 	Files src/libvirt.c
 	      src/uuid.c
 	Copyright © 2006-2008 Red Hat Inc.
+	License: GNU General Public License
+
+	File src/madwifi.c
+	Copyright © 2009 Ondrej 'SanTiago' Zajicek <santiago@crfreenet.org>
 	License: GNU General Public License
 
 	File src/mbmon.c
@@ -260,12 +282,21 @@ Licenses:
 	Copyright © 2009 Rodolphe Quiédeville <rquiedeville@bearstech.com>
 	License: GNU General Public License
 
+	File src/network.c
+	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Aman Gupta <aman@tmm1.net>
+	License: GNU General Public License
+
 	File src/nfs.c
 	Copyright © 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
 	License: GNU General Public License
 
 	File src/notify_email.c
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
+	License: GNU General Public License
+
+	Files src/owniptc/*
+	Copyright © 1999-2008 Netfilter Core Team
 	License: GNU General Public License
 
 	Files src/powerdns.c
@@ -283,6 +314,12 @@ Licenses:
 	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
+	File src/rrdtool.c
+	Copyright © 2006-2008 Florian Forster <octo@verplant.org>
+	Copyright © 2008 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2009 Mariusz Gronczewski <xani666@gmail.com>
+	License: GNU General Public License
+
 	File src/sensors.c
 	Copyright © 2005-2008 Florian Forster <octo@verplant.org>
 	Copyright © 2006 Lubos Stanek <lubek@users.sourceforge.net>
@@ -290,6 +327,11 @@ Licenses:
 
 	File src/serial.c
 	Copyright © 2005, 2006 David Bacher <drbacher@gmail.com>
+	License: GNU General Public License
+
+	File src/swap.c
+	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Stefan Völkel <bd@bc-bd.org>
 	License: GNU General Public License
 
 	File src/tape.c
@@ -312,6 +354,10 @@ Licenses:
 
 	File src/thermal.c
 	Copyright © 2008 Michał Mirosław <mirq-linux@rere.qmqm.pl>
+	License: GNU General Public License
+
+	File src/tokyotyrant.c
+	Copyright © 2009 Paul Sadauskas <psadauskas@gmail.com>
 	License: GNU General Public License
 
 	File src/uptime.c
@@ -343,6 +389,18 @@ Licenses:
 	Copyright © 2007-2008 C-Ware, Inc.
 	License: GNU General Public License
 
+	File src/utils_threshold.c
+	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2008-2009 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2009 Andrés J. Díaz <ajdiaz@connectical.com>
+	License: GNU General Public License
+
+	File src/write_http.c
+	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2009 Paul Sadauskas <psadauskas@gmail.com>
+	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
+	License: GNU General Public License
+
 	All other files (except libltdl/*, src/utils_dns.* and
 		contrib/SpamAssassin/*):
 	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
@@ -368,6 +426,28 @@ Licenses:
 On Debian systems, the complete text of the GNU General Public License,
 version 2, can be found in `/usr/share/common-licenses/GPL-2'. The complete
 text of the latest version can be found in `/usr/share/common-licenses/GPL'.
+
+	File contrib/collectd_unix_sock.rb
+	Copyrigh © 2009 Novell Inc.
+	Author: Duncan Mac-Vicar P. <dmacvicar@suse.de>
+	Based on Python version:
+	Copyright (C) 2008 Clay Loveless <clay@killersoft.com>
+
+	This software is provided 'as-is', without any express or implied
+	warranty. In no event will the author be held liable for any damages
+	arising from the use of this software.
+
+	Permission is granted to anyone to use this software for any purpose,
+	including commercial applications, and to alter it and redistribute it
+	freely, subject to the following restrictions:
+
+	1. The origin of this software must not be misrepresented; you must not
+	   claim that you wrote the original software. If you use this software
+	   in a product, an acknowledgment in the product documentation would be
+	   appreciated but is not required.
+	2. Altered source versions must be plainly marked as such, and must not be
+	   misrepresented as being the original software.
+	3. This notice may not be removed or altered from any source distribution.
 
 	File libltdl/ltdl.c
 	Copyright © 1998-2001, 2003-2007 Free Software Foundation, Inc.
@@ -401,6 +481,11 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 1983, 1988, 1993 The Regents of the University of California
 	License: BSD License
 
+	File src/madwifi.h
+	Copyright © 2001 Atsushi Onoe
+	Copyright © 2002-2005 Sam Leffler, Errno Consulting
+	License: BSD License
+
 	File src/utils_dns.c
 	Copyright © 2002 The Measurement Factory, Inc.
 	Copyright © 2006 Florian Forster <octo@verplant.org>
@@ -418,9 +503,9 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	2. Redistributions in binary form must reproduce the above copyright
 	   notice, this list of conditions and the following disclaimer in the
 	   documentation and/or other materials provided with the distribution.
-	3. Neither the name of The Measurement Factory nor the names of its
-	   contributors may be used to endorse or promote products derived from
-	   this software without specific prior written permission.
+	3. Neither the name of the author nor the names of his contributors may be
+	   used to endorse or promote products derived from this software without
+	   specific prior written permission.
 
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
