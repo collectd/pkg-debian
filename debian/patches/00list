@@ -4,5 +4,4 @@ network-fix-cacheflush.dpatch
 libvirt-reconnect.dpatch
 plugin-fix-unregister.dpatch
 java-fix-jvm-start.dpatch
-bts542859-df-fix-ignorelist.dpatch
 
