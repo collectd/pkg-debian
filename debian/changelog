@@ -17,8 +17,9 @@ collectd (4.8.1-1) unstable; urgency=low
     - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
   * debian/patches:
     - Removed bts535787-powerdns-fix-localsocket.dpatch - included upstream.
+    - Removed bts541953-curl-followlocation.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:11:39 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:13:42 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
