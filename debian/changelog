@@ -13,8 +13,10 @@ collectd (4.8.1-1) unstable; urgency=low
       libkstat is not available)
     New matches:
     - Match zero COUNTER values: empty_counter
+  * debian/rules:
+    - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 10 Oct 2009 11:29:45 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 18:10:37 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
