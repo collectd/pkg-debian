@@ -20,8 +20,9 @@ collectd (4.8.1-1) unstable; urgency=low
     - Removed bts541953-curl-followlocation.dpatch - included upstream.
     - Removed bts542859-df-fix-ignorelist.dpatch - included upstream.
     - Removed java-fix-jvm-start.dpatch - included upstream.
+    - Removed libvirt-reconnect.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:18:29 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:20:07 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
