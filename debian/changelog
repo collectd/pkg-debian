@@ -15,8 +15,10 @@ collectd (4.8.1-1) unstable; urgency=low
     - Match zero COUNTER values: empty_counter
   * debian/rules:
     - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
+  * debian/patches:
+    - Removed bts535787-powerdns-fix-localsocket.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 18:10:37 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:11:39 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 

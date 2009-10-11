@@ -5,6 +5,5 @@ libvirt-reconnect.dpatch
 plugin-fix-unregister.dpatch
 java-fix-jvm-start.dpatch
 bts541953-curl-followlocation.dpatch
-bts535787-powerdns-fix-localsocket.dpatch
 bts542859-df-fix-ignorelist.dpatch
 
