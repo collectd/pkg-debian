@@ -1,6 +1,11 @@
 collectd (4.8.1-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release:
+    - Fixed a build issue with libiptc that caused a segfault in the iptables
+      plugin; thanks to Rodrigo Campos for reporting this (Closes: #535786).
+    - Updated the powerdns plugin to support pdns 2.9.22 (and above) as well;
+      thanks to Thomas Morgan for reporting this and Luke Heberling for
+      providing a patch (Closes: #535787).
     New plugins:
     - Parse JSON files: curl_json
     - Query data from Java processes using JMX: GenericJMX (Java based plugin)
@@ -24,7 +29,7 @@ collectd (4.8.1-1) unstable; urgency=low
     - Removed network-fix-cacheflush.dpatch - included upstream.
     - Removed plugin-fix-unregister.dpatch - included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:23:25 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:31:27 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
