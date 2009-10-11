@@ -28,8 +28,10 @@ collectd (4.8.1-1) unstable; urgency=low
     - Removed libvirt-reconnect.dpatch - included upstream.
     - Removed network-fix-cacheflush.dpatch - included upstream.
     - Removed plugin-fix-unregister.dpatch - included upstream.
+  * debian/control:
+    - Build depend on libyajl-dev, which is required by the curl_json plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:31:27 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:39:46 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
