@@ -1,4 +1,4 @@
-collectd (4.8.1-1) unstable; urgency=low
+collectd (4.8.1-1) unstable; urgency=medium
 
   * New upstream release:
     - Fixed a build issue with libiptc that caused a segfault in the iptables
@@ -18,6 +18,7 @@ collectd (4.8.1-1) unstable; urgency=low
       libkstat is not available)
     New matches:
     - Match zero COUNTER values: empty_counter
+  * Set urgency to medium because of the fix for #535786.
   * debian/rules:
     - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
   * debian/patches:
@@ -31,7 +32,7 @@ collectd (4.8.1-1) unstable; urgency=low
   * debian/control:
     - Build depend on libyajl-dev, which is required by the curl_json plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 19:39:46 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 11 Oct 2009 20:00:06 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
