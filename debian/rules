@@ -67,8 +67,14 @@ confflags += --disable-oracle
 # rrdclient support in librrd is required for the rrdcached plugin.
 confflags += --disable-rrdcached
 
+# libtokyotyrant is required for the tokyotyrant plugin.
+confflags += --disable-tokyotyrant
+
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
+
+# libkstat is required for the xfs_arc plugin.
+confflags += --disable-zfs-arc
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).

@@ -21,6 +21,8 @@ collectd (4.8.1-1) unstable; urgency=medium
   * Set urgency to medium because of the fix for #535786.
   * debian/rules:
     - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
+    - Disabled the tokyotyrant and zfs_arc plugins - their dependencies are
+      not available.
   * debian/patches:
     - Removed bts535787-powerdns-fix-localsocket.dpatch - included upstream.
     - Removed bts541953-curl-followlocation.dpatch - included upstream.
@@ -34,7 +36,7 @@ collectd (4.8.1-1) unstable; urgency=medium
   * debian/control:
     - Build depend on libyajl-dev, which is required by the curl_json plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 15 Oct 2009 19:25:02 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 15 Oct 2009 19:27:09 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 
