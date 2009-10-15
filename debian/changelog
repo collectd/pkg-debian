@@ -37,8 +37,10 @@ collectd (4.8.1-1) unstable; urgency=medium
     - Build depend on libyajl-dev, which is required by the curl_json plugin.
   * Added debian/README.source:
     - The file includes a pointer to /usr/share/doc/dpatch/README.source.gz.
+  * New debconf template translations:
+    - ja.po, thanks to Hideki Yamane (Closes: #550968).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 15 Oct 2009 20:07:52 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 15 Oct 2009 20:54:46 +0200
 
 collectd (4.7.2-1) unstable; urgency=low
 

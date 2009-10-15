@@ -33,6 +33,7 @@ Copyright Holders (in alphabetical order):
 	Florian Forster <octo@verplant.org>
 	Franck Lombardi
 	Free Software Foundation, Inc.
+	Hideki Yamane <henrich@debian.or.jp>
 	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
@@ -549,6 +550,9 @@ distributed under the same license as the package itself.
 
 	gl.po:
 	Copyright © 2008 Jacobo Tarrio <jtarrio@debian.org>
+
+	ja.po:
+	Copyright © 2009 Hideki Yamane <henrich@debian.or.jp>
 
 	nl.po:
 	Copyright © 2008 Eric Spreen <erispre@gmail.com>
