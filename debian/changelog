@@ -1,3 +1,13 @@
+collectd (4.8.1-2) unstable; urgency=low
+
+  * debian/rules:
+    - Disabled the "java" plugin on hppa for now to work around a backlog in
+      the buildds that currently prevents a transition to testing.
+  * debian/control:
+    - Do not build-depend on openjdk-6-jdk on hppa.
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 19 Nov 2009 10:55:33 +0100
+
 collectd (4.8.1-1) unstable; urgency=medium
 
   * New upstream release:

@@ -82,6 +82,12 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink
 endif
 
+# The hppa buildds currently do not keep up with Java related stuff, thus
+# prevending testing transitions.
+ifneq (,$(findstring $(DEB_BUILD_ARCH),hppa))
+	confflags += --disable-java
+endif
+
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
 	
