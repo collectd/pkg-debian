@@ -10,6 +10,9 @@ collectd (4.8.1-3) unstable; urgency=low
     - Do not (try to) start collectd if the config file does not exist. Else,
       installation of "collectd-core" (which does not provide configuration)
       would fail.
+  * debian/collectd.postinst:
+    - Let the "collectd" package restart the daemon, since it provides the
+      config file.
   * debian/collectd.links:
     - Symlink /u/s/d/collectd/examples to /u/s/d/collectd-core/examples.
   * debian/control:
@@ -20,7 +23,7 @@ collectd (4.8.1-3) unstable; urgency=low
       thanks to Lamont Jones and Dann Frazier for reporting this
       (Closes: #559087).
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 22:14:47 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 23:19:40 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
