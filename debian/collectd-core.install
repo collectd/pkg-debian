@@ -1,0 +1,19 @@
+../../contrib/migrate-3-4.px usr/lib/collectd/utils
+../../contrib/rrd_filter.px usr/lib/collectd/utils
+usr/lib/collectd/*.so
+usr/sbin
+usr/share/collectd
+usr/share/man/man1/collectdmon.1
+usr/share/man/man1/collectd.1
+usr/share/man/man3/Collectd::Unixsock.3pm
+usr/share/man/man5/collectd-unixsock.5
+usr/share/man/man5/collectd-email.5
+usr/share/man/man5/collectd-exec.5
+usr/share/man/man5/collectd-java.5
+usr/share/man/man5/collectd.conf.5
+usr/share/man/man5/collectd-snmp.5
+usr/share/man/man5/collectd-perl.5
+usr/share/man/man5/types.db.5
+usr/share/perl5
+var
+

@@ -150,9 +150,9 @@ install-arch: build
 	
 	perl ./debian/bin/gen_plugin_deps.pl
 	
-	mkdir -p debian/collectd/usr/share/lintian/overrides/
-	cp debian/collectd.overrides \
-		debian/collectd/usr/share/lintian/overrides/collectd
+	mkdir -p debian/collectd-core/usr/share/lintian/overrides/
+	cp debian/collectd-core.overrides \
+		debian/collectd-core/usr/share/lintian/overrides/collectd-core
 
 binary-indep: install-indep
 	dh_testdir
@@ -183,24 +183,29 @@ binary-arch: build install-arch
 		contrib/collectd-network.py contrib/collectd-unixsock.py \
 		contrib/snmp-probe-host.px contrib/GenericJMX.conf
 	# some upstream tarballs have been built inside a dirty working dir
-	( cd debian/collectd/usr/share/doc/collectd/examples/collection3/ \
+	( cd debian/collectd-core/ \
+		&& cd usr/share/doc/collectd-core/examples/collection3/ \
 		&& rm -f bin/foo bin/test_config.px etc/collection4.conf \
 		&& rm -f lib/Collectd/Graph.pm lib/Collectd/Graph/Data.pm \
 		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
 		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
-	dh_installinit -a -- defaults 95
+	dh_installinit -pcollectd-core --name=collectd -- defaults 95
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_makeshlibs -a
 	dh_installdeb -a
-	dpkg-shlibdeps -Tdebian/collectd.substvars \
-		-dDepends debian/collectd/usr/sbin/* \
-			debian/collectd/usr/lib/collectd/rrdtool.so \
-		-dRecommends debian/collectd/usr/lib/collectd/*.so
-	dh_shlibdeps -a -Ncollectd
+	dh_shlibdeps -a -Ncollectd-core -Ncollectd
+	dh_shlibdeps -pcollectd \
+		-- -edebian/collectd-core/usr/lib/collectd/rrdtool.so
+	dpkg-shlibdeps -Tdebian/collectd-core.substvars \
+		-dDepends debian/collectd-core/usr/sbin/* \
+		-dSuggests debian/collectd-core/usr/lib/collectd/*.so
+	grep shlibs:Suggests debian/collectd-core.substvars \
+		| sed -e 's/shlibs:Suggests/shlibs:Recommends/' \
+		>> debian/collectd.substvars
 	dh_gencontrol -a
 	dh_md5sums -a
 	dh_builddeb -a

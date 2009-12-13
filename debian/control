@@ -9,19 +9,20 @@ Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
 
-Package: collectd
+Package: collectd-core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: perl, rrdtool, lm-sensors, ${shlibs:Recommends}
+Recommends: perl, rrdtool, lm-sensors
 Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
- libregexp-common-perl, libconfig-general-perl, httpd-cgi, hddtemp, mbmon
+ libregexp-common-perl, libconfig-general-perl, httpd-cgi, hddtemp, mbmon,
+ ${shlibs:Suggests}
 Conflicts: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
  collectd-perl, collectd-ping, collectd-sensors
 Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
  collectd-perl, collectd-ping, collectd-sensors
 Replaces: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Description: statistics collection and monitoring daemon
+ collectd-perl, collectd-ping, collectd-sensors, collectd (<< 4.8.1-2~)
+Description: statistics collection and monitoring daemon (core system)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
  Since the daemon doesn't need to startup every time it wants to update the
@@ -31,9 +32,12 @@ Description: statistics collection and monitoring daemon
  The collected information can be used to find current performance bottlenecks
  (performance analysis) and predict future system load (capacity planning).
  .
- This package contains the main program file and the following plugins (some
+ This package contains the main program file and the plugins listed below (some
  of those plugins require additional libraries - for more details see
- /usr/share/doc/collectd/README.Debian.plugins):
+ /usr/share/doc/collectd/README.Debian.plugins) but no configuration. For a
+ full installation (including configuration), see the "collectd" package. This
+ package allows sites to, e.g., provide customizations (like a custom default
+ configuration) on top of it without having to modify the "collectd" package.
  .
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
@@ -111,6 +115,25 @@ Description: statistics collection and monitoring daemon
    * wireless network stats: wireless
    * send collected values to a web-server: write_http
 
+Package: collectd
+Architecture: any
+Depends: collectd-core, ${misc:Depends}
+Recommends: ${shlibs:Recommends}
+Description: statistics collection and monitoring daemon
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways.
+ Since the daemon doesn't need to startup every time it wants to update the
+ values it's very fast and easy on the system. Also, the statistics are very
+ fine grained since the files are updated every 10 seconds by default.
+ .
+ The collected information can be used to find current performance bottlenecks
+ (performance analysis) and predict future system load (capacity planning).
+ .
+ This package provides a full installation of the daemon, including the
+ configuration. For the core system, see the "collectd-core" package, which
+ allows sites to, e.g., provide customizations (like a custom default
+ configuration) on top of it without having to modify the "collectd" package.
+
 Package: collectd-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -132,7 +155,7 @@ Package: collectd-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: collectd (= ${binary:Version}), ${misc:Depends}
+Depends: collectd-core (= ${binary:Version}), ${misc:Depends}
 Recommends: collectd-utils (= ${binary:Version}),
  libcollectdclient0 (= ${binary:Version})
 Description: statistics collection and monitoring daemon (debugging symbols)
@@ -146,7 +169,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.9~), ${misc:Depends}
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 4.9~), ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.

@@ -1,3 +1,14 @@
+collectd (4.8.1-3) unstable; urgency=low
+
+  * Split the "collectd" binary package into "collectd-core" and "collectd".
+    The former provides the main program file and the plugins while the latter
+    provides the configuration. This allows for much more flexible setups
+    (e.g. providing customizations on top of "collectd-core" without modifying
+    the "collectd" package) and, amongst others, removes the hard dependency
+    on librrd (Closes: #495936, #544311).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 20:54:52 +0100
+
 collectd (4.8.1-2) unstable; urgency=low
 
   * debian/rules:

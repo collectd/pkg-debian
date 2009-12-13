@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd_4.4.2-2_nl\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2008-03-12 17:35+0100\n"
+"POT-Creation-Date: 2009-12-13 16:24+0100\n"
 "PO-Revision-Date: 2008-09-28 15:22+0100\n"
 "Last-Translator: Eric Spreen <erispre@gmail.com>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
+#: ../collectd-core.templates:1001
 msgid "Layout of RRD files has changed"
 msgstr "De lay-out van RRD-bestanden is gewijzigd."
 
@@ -24,35 +24,50 @@ msgstr "De lay-out van RRD-bestanden is gewijzigd."
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001
-#: ../collectd.templates:2001
-msgid "The layout of the RRD files created by collectd has changed significantly since version 3.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
-msgstr "De lay-out van de RRD-bestanden, die zijn gemaakt door collectd, is sterk gewijzigd sinds versie 3.x. Om uw oude gegevens te behouden zult u deze moeten migreren. Dit kunt u doen door /usr/lib/collectd/utils/migrate-3-4.px te gebruiken."
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
+msgid ""
+"The layout of the RRD files created by collectd has changed significantly "
+"since version 3.x. In order to keep your old data you have to migrate it. "
+"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+msgstr ""
+"De lay-out van de RRD-bestanden, die zijn gemaakt door collectd, is sterk "
+"gewijzigd sinds versie 3.x. Om uw oude gegevens te behouden zult u deze "
+"moeten migreren. Dit kunt u doen door /usr/lib/collectd-core/utils/migrate-3"
+"-4.px te gebruiken."
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
-msgid "This step requires both the perl and the rrdtool packages to be installed, which is currently not the case. You need to perform the migration manually."
-msgstr "Deze stap vereist dat zowel de perl als de rrdtool pakketten worden geïnstalleerd, wat op dit moment niet het geval is. U zult de migratie handmatig moeten verrichten."
+#: ../collectd-core.templates:1001
+msgid ""
+"This step requires both the perl and the rrdtool packages to be installed, "
+"which is currently not the case. You need to perform the migration manually."
+msgstr ""
+"Deze stap vereist dat zowel de perl als de rrdtool pakketten worden "
+"geïnstalleerd, wat op dit moment niet het geval is. U zult de migratie "
+"handmatig moeten verrichten."
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001
-#: ../collectd.templates:2001
-msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
-msgstr "Zie /usr/share/doc/collectd/NEWS.Debian voor meer informatie."
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
+msgstr "Zie /usr/share/doc/collectd-core/NEWS.Debian voor meer informatie."
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
+#: ../collectd-core.templates:2001
 msgid "Automatically try to migrate your RRD files?"
 msgstr "Proberen om uw RRD-bestanden automatisch te migreren?"
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
-msgid "This step can be done automatically. In this case a backup of /var/lib/collectd/ is made in /var/backups/. This script is still experimental, though. Do not expect it to work in all cases."
-msgstr "Deze stap kan automatisch verricht worden. In dat geval wordt er in /var/backups/ een back-up gemaakt van /var/lib/collectd/. Dit script is echter nog experimenteel. Verwacht u niet dat het in alle gevallen werkt."
-
+#: ../collectd-core.templates:2001
+msgid ""
+"This step can be done automatically. In this case a backup of /var/lib/"
+"collectd/ is made in /var/backups/. This script is still experimental, "
+"though. Do not expect it to work in all cases."
+msgstr ""
+"Deze stap kan automatisch verricht worden. In dat geval wordt er in /var/"
+"backups/ een back-up gemaakt van /var/lib/collectd/. Dit script is echter "
+"nog experimenteel. Verwacht u niet dat het in alle gevallen werkt."
