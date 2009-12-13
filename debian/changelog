@@ -10,8 +10,15 @@ collectd (4.8.1-3) unstable; urgency=low
     - Do not (try to) start collectd if the config file does not exist. Else,
       installation of "collectd-core" (which does not provide configuration)
       would fail.
+  * debian/control:
+    - Build-depend on the right combination of libsnmp-dev and perl. Perl's
+      CFLAGS (included in net-snmp's CFLAGS) introduced '-fstack-protector' in
+      version 5.10.1 on some architectures (those supporting that features).
+      net-snmp has been fixed to handle that correctly in 5.4.2.1~dfsg-4;
+      thanks to Lamont Jones and Dann Frazier for reporting this
+      (Closes: #559087).
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 21:30:38 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 22:00:33 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
