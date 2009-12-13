@@ -34,10 +34,11 @@ Description: statistics collection and monitoring daemon (core system)
  .
  This package contains the main program file and the plugins listed below (some
  of those plugins require additional libraries - for more details see
- /usr/share/doc/collectd/README.Debian.plugins) but no configuration. For a
- full installation (including configuration), see the "collectd" package. This
- package allows sites to, e.g., provide customizations (like a custom default
- configuration) on top of it without having to modify the "collectd" package.
+ /usr/share/doc/collectd-core/README.Debian.plugins) but no configuration. For
+ a full installation (including configuration), see the "collectd" package.
+ This package allows sites to, e.g., provide customizations (like a custom
+ default configuration) on top of it without having to modify the "collectd"
+ package.
  .
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
