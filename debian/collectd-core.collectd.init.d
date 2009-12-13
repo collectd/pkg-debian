@@ -49,6 +49,11 @@ if test "$DISABLE" != 0 -a "$1" == "start"; then
 	exit 0
 fi
 
+if ! test -e "$CONFIGFILE"; then
+	echo "Not starting $NAME - no configuration ($CONFIGFILE) found."
+	exit 0
+fi
+
 if test "$ENABLE_COREFILES" == 1; then
 	ulimit -c unlimited
 fi

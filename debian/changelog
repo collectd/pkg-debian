@@ -6,8 +6,12 @@ collectd (4.8.1-3) unstable; urgency=low
     (e.g. providing customizations on top of "collectd-core" without modifying
     the "collectd" package) and, amongst others, removes the hard dependency
     on librrd (Closes: #495936, #544311).
+  * debian/collectd-core.collectd.init.d:
+    - Do not (try to) start collectd if the config file does not exist. Else,
+      installation of "collectd-core" (which does not provide configuration)
+      would fail.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 20:54:52 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 21:30:38 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
