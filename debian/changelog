@@ -1,5 +1,6 @@
-collectd (4.8.1-3) unstable; urgency=low
+collectd (4.8.2-1) unstable; urgency=low
 
+  * New upstream release.
   * Split the "collectd" binary package into "collectd-core" and "collectd".
     The former provides the main program file and the plugins while the latter
     provides the configuration. This allows for much more flexible setups
@@ -23,7 +24,7 @@ collectd (4.8.1-3) unstable; urgency=low
       thanks to Lamont Jones and Dann Frazier for reporting this
       (Closes: #559087).
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 13 Dec 2009 23:19:40 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 21 Dec 2009 23:43:14 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
