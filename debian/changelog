@@ -30,8 +30,11 @@ collectd (4.8.2-1) unstable; urgency=low
       thanks to Anssi Kolehmainen for reporting this (Closes: #538795).
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
+  * debian/rules:
+    - Pass --disable-static to configure to tell libtool 2 to not build any
+      static libraries.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 01:08:11 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 01:17:06 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
