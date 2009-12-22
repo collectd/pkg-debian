@@ -34,8 +34,10 @@ collectd (4.8.2-1) unstable; urgency=low
     - Pass --disable-static to configure to tell libtool 2 to not build any
       static libraries.
     - Install debian/collectd.conf as an example into "collectd-core".
+  * debian/README.Debian:
+    - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 01:37:23 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 23:20:46 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
