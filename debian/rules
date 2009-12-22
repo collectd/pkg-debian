@@ -202,8 +202,8 @@ binary-arch: build install-arch
 	dh_makeshlibs -a
 	dh_installdeb -a
 	dh_shlibdeps -a -Ncollectd-core -Ncollectd
-	dh_shlibdeps -pcollectd \
-		-- -edebian/collectd-core/usr/lib/collectd/rrdtool.so
+	dpkg-shlibdeps -Tdebian/collectd.substvars \
+		-dDepends debian/collectd-core/usr/lib/collectd/rrdtool.so
 	dpkg-shlibdeps -Tdebian/collectd-core.substvars \
 		-dDepends debian/collectd-core/usr/sbin/* \
 		-dSuggests debian/collectd-core/usr/lib/collectd/*.so
