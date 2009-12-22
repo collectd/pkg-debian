@@ -23,10 +23,15 @@ collectd (4.8.2-1) unstable; urgency=low
       net-snmp has been fixed to handle that correctly in 5.4.2.1~dfsg-4;
       thanks to Lamont Jones and Dann Frazier for reporting this
       (Closes: #559087).
+    - Build-depend on libsensors4-dev rather than libsensors-dev. libsnmp-dev,
+      starting with version 5.4.2.1~dfsg-5, supports libsensors4, thus making
+      that possible. This restores the full functionality of the "sensors"
+      plugin, which does not work well with libsensors3 and lm-sensors-3;
+      thanks to Anssi Kolehmainen for reporting this (Closes: #538795).
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 00:41:03 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 01:08:11 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
