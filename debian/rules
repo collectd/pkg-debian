@@ -101,7 +101,8 @@ config.status: configure $(DPATCH_STAMPFN)
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
 		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
-		JAVA_LDFLAGS="$(JAVA_LDFLAGS)"
+		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
+		|| ( status=$$?; cat config.log; exit $$status )
 
 build: build-stamp
 
