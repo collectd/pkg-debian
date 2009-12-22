@@ -181,7 +181,7 @@ binary-arch: build install-arch
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
-		contrib/collectd-network.py contrib/collectd-unixsock.py \
+		contrib/collectd_network.py contrib/collectd_unixsock.py \
 		contrib/snmp-probe-host.px contrib/GenericJMX.conf
 	# some upstream tarballs have been built inside a dirty working dir
 	( cd debian/collectd-core/ \
