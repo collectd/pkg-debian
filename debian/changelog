@@ -31,6 +31,8 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
   * debian/rules:
+    - Pass --without-included-ltdl to configure to tell libtool 2 to not use
+      the shipped libltdl but rather the one available in the system.
     - Pass --disable-static to configure to tell libtool 2 to not build any
       static libraries.
     - Install debian/collectd.conf as an example into "collectd-core".
@@ -39,7 +41,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Dec 2009 23:56:46 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 23 Dec 2009 00:05:00 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
