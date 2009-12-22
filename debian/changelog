@@ -28,6 +28,8 @@ collectd (4.8.2-1) unstable; urgency=low
       that possible. This restores the full functionality of the "sensors"
       plugin, which does not work well with libsensors3 and lm-sensors-3;
       thanks to Anssi Kolehmainen for reporting this (Closes: #538795).
+    - Build-depend on libltdl-dev to make it possible to use the system-wide
+      libltdl.
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
   * debian/rules:
@@ -41,7 +43,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 23 Dec 2009 00:05:00 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 23 Dec 2009 00:10:11 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
