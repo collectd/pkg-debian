@@ -5,9 +5,10 @@ General notes:
 --------------
 
 - Some plugins require additional libraries. To prevent you from having to
-  install dependencies that you don't actually need those libraries are
-  recommendations rather than dependencies. See README.Debian.plugins in the
-  "collectd-core" package for details.
+  install dozens of further packages that you don't actually need, there is no
+  strict dependency on those libraries. Rather, they are listed as recommenda-
+  tions ("collectd" package) or suggestions ("collectd-core" package"). See
+  /usr/share/doc/collectd-core/README.Debian.plugins for details.
 
 Configuring collectd:
 ---------------------
