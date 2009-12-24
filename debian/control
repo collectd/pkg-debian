@@ -23,6 +23,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libpq-dev,
  librrd-dev | librrd2-dev,
  libsensors4-dev,
+# libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),
  libupsclient1-dev,
@@ -41,8 +42,12 @@ Package: collectd-core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: perl, rrdtool, lm-sensors
-Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
- libregexp-common-perl, libconfig-general-perl, httpd-cgi, hddtemp, mbmon,
+Suggests: collectd-dev,
+# collection.cgi / collection3 dependencies
+ librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
+ libconfig-general-perl, httpd-cgi,
+# services providing data that may be collected by collectd
+ hddtemp, mbmon,
  ${shlibs:Suggests}
 Replaces: collectd (<< 4.8.1-2~)
 Description: statistics collection and monitoring daemon (core system)
