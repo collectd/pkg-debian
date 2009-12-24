@@ -41,13 +41,15 @@ Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
 Package: collectd-core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: perl, rrdtool, lm-sensors
+Recommends: perl, rrdtool
 Suggests: collectd-dev,
 # collection.cgi / collection3 dependencies
  librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
- hddtemp, mbmon,
+ apache2, apcupsd, bind9, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
+ memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
+ pdns-server, postgresql, time-daemon,
  ${shlibs:Suggests}
 Replaces: collectd (<< 4.8.1-2~)
 Description: statistics collection and monitoring daemon (core system)

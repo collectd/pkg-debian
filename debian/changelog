@@ -32,6 +32,9 @@ collectd (4.8.2-1) unstable; urgency=low
       libltdl.
     - No longer conflict/provide/replace the pre-Lenny "collectd-$plugin"
       packages.
+    - Update the list of collectd-core's suggestions: added various services
+      providing data that may be collected by collectd. Downgraded lm-sensors
+      from a recommendation to a suggestion.
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
   * debian/rules:
@@ -45,7 +48,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 24 Dec 2009 10:36:10 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 24 Dec 2009 11:57:58 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
