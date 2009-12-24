@@ -16,12 +16,7 @@ Recommends: perl, rrdtool, lm-sensors
 Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
  libregexp-common-perl, libconfig-general-perl, httpd-cgi, hddtemp, mbmon,
  ${shlibs:Suggests}
-Conflicts: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Replaces: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors, collectd (<< 4.8.1-2~)
+Replaces: collectd (<< 4.8.1-2~)
 Description: statistics collection and monitoring daemon (core system)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
