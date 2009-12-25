@@ -37,6 +37,9 @@ collectd (4.8.2-1) unstable; urgency=low
       from a recommendation to a suggestion.
   * debian/patches:
     - Removed gmond-fix-compile-error.dpatch -- included upstream.
+    - Added bts561577_collectd2html_recursive_fix.dpatch -- fixed
+      collectd2html.pl's recursive mode and improved some defaults; thanks to
+      Yuri D'Elia for reporting this and providing a patch (Closes: #561577).
   * debian/rules:
     - Pass --without-included-ltdl to configure to tell libtool 2 to not use
       the shipped libltdl but rather the one available in the system.
@@ -48,7 +51,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 24 Dec 2009 11:57:58 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 09:42:42 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
