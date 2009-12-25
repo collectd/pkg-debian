@@ -1,6 +1,7 @@
 collectd (4.8.2-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release:
+    - Now using libtool 2.
   * Split the "collectd" binary package into "collectd-core" and "collectd".
     The former provides the main program file and the plugins while the latter
     provides the configuration. This allows for much more flexible setups
@@ -45,7 +46,11 @@ collectd (4.8.2-1) unstable; urgency=low
       and Luke Heberling for providing the patch (Closes: #557599).
   * debian/rules:
     - Pass --without-included-ltdl to configure to tell libtool 2 to not use
-      the shipped libltdl but rather the one available in the system.
+      the shipped libltdl but rather the one available in the system. This
+      fixes a potential but very unlikely security issue of the embedded copy
+      (see CVE-2009-3736). For details about how collectd might be affected,
+      see <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559801#15>; thanks
+      to Michael Gilbert for reporting this (Closes: #559801).
     - Pass --disable-static to configure to tell libtool 2 to not build any
       static libraries.
     - Install debian/collectd.conf as an example into "collectd-core".
@@ -54,7 +59,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 09:55:21 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 20:41:02 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
