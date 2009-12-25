@@ -40,6 +40,9 @@ collectd (4.8.2-1) unstable; urgency=low
     - Added bts561577_collectd2html_recursive_fix.dpatch -- fixed
       collectd2html.pl's recursive mode and improved some defaults; thanks to
       Yuri D'Elia for reporting this and providing a patch (Closes: #561577).
+    - Added bts557599_powerdns_fix.dpatch -- fixed communication to pdns
+      versions 2.9.22 and above; thanks to <tm@iprog.com> for reporting this
+      and Luke Heberling for providing the patch (Closes: #557599).
   * debian/rules:
     - Pass --without-included-ltdl to configure to tell libtool 2 to not use
       the shipped libltdl but rather the one available in the system.
@@ -51,7 +54,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 09:42:42 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 09:55:21 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
