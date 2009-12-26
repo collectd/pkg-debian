@@ -18,7 +18,8 @@ General notes:
     without having to modify the "collectd" package. For example, a custom
     configuration and appropriate dependencies may be provided by some package
     depending on "collectd-core" and conflicting / replacing / providing
-    "collectd".
+    "collectd". Ready-to-use sample config files (collectd.conf, filters.conf,
+    thresholds.conf) are available in /usr/share/doc/collectd-core/examples/.
 
   * "collectd":
     This package provides a full installation of the daemon, including a
