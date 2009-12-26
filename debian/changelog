@@ -44,13 +44,17 @@ collectd (4.8.2-1) unstable; urgency=low
     - Added bts557599_powerdns_fix.dpatch -- fixed communication to pdns
       versions 2.9.22 and above; thanks to <tm@iprog.com> for reporting this
       and Luke Heberling for providing the patch (Closes: #557599).
+    - Added bts559801_plugin_find_fix.dpatch -- make collectd resistant
+      against copies of libltdl affected by CVE-2009-3736. This fixes a
+      potential but very unlikely security issue, e.g. found in the embedded
+      copy. For details about how collectd might be affected, see
+      <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559801#15>; thanks to
+      Michael Gilbert for reporting this (Closes: #559801).
   * debian/rules:
     - Pass --without-included-ltdl to configure to tell libtool 2 to not use
-      the shipped libltdl but rather the one available in the system. This
-      fixes a potential but very unlikely security issue of the embedded copy
-      (see CVE-2009-3736). For details about how collectd might be affected,
-      see <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559801#15>; thanks
-      to Michael Gilbert for reporting this (Closes: #559801).
+      the shipped libltdl but rather the one available in the system. Thus,
+      in the future, libltdl related issues do no longer require updated
+      collectd packages.
     - Pass --disable-static to configure to tell libtool 2 to not build any
       static libraries.
     - Install debian/collectd.conf as an example into "collectd-core".
@@ -59,7 +63,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 25 Dec 2009 20:41:02 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 26 Dec 2009 10:54:18 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 

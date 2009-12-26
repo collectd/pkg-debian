@@ -1,0 +1,24 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## bts559801_plugin_find_fix.dpatch by Sebastian Harl <sh@tokkee.org>
+##
+## DP: plugin: Use strcasecmp rather than strncasecmp to find a plugin.
+## DP:
+## DP: This makes collectd resistant against vulnerable copies of libltdl
+## DP: (CVE-2009-3736).
+## DP: See <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559801#15>
+## DP: for details.
+
+@DPATCH@
+
+diff a/src/plugin.c b/src/plugin.c
+--- a/src/plugin.c
++++ b/src/plugin.c
+@@ -572,7 +572,7 @@ int plugin_load (const char *type)
+ 
+ 	while ((de = readdir (dh)) != NULL)
+ 	{
+-		if (strncasecmp (de->d_name, typename, typename_len))
++		if (strcasecmp (de->d_name, typename))
+ 			continue;
+ 
+ 		status = ssnprintf (filename, sizeof (filename),
