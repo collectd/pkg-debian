@@ -54,9 +54,8 @@ solutions are welcome.
   (http://localhost/cgi-bin/collection.cgi by default). Please refer to your
   webserver's documentation for more details.
 
-  Starting with version 4, collection.cgi requires a small config file, which
-  is installed to /etc/collectd/collection.conf. You should not need to change
-  anything there.
+  collection.cgi requires a small config file, which is installed to
+  /etc/collectd/collection.conf. You should not need to change anything there.
 
 - collection3: A graphing front-end for the RRD files created by and filled
   with collectd. See /usr/share/doc/collectd/examples/collection3/README for
