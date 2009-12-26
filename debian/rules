@@ -185,7 +185,7 @@ binary-arch: build install-arch
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd_network.py contrib/collectd_unixsock.py \
 		contrib/snmp-probe-host.px contrib/GenericJMX.conf \
-		debian/collectd.conf
+		debian/collectd.conf debian/filters.conf debian/thresholds.conf
 	# some upstream tarballs have been built inside a dirty working dir
 	( cd debian/collectd-core/ \
 		&& cd usr/share/doc/collectd-core/examples/collection3/ \
