@@ -1,7 +1,8 @@
-collectd (4.8.2-1) unstable; urgency=low
+collectd (4.8.2-1) unstable; urgency=medium
 
   * New upstream release:
     - Now using libtool 2.
+  * Set urgency to medium because of the fix for #559801.
   * Split the "collectd" binary package into "collectd-core" and "collectd".
     The former provides the main program file and the plugins while the latter
     provides the configuration. This allows for much more flexible setups
@@ -63,7 +64,7 @@ collectd (4.8.2-1) unstable; urgency=low
   * debian/README.Debian:
     - Added a short explanation of the package split.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 26 Dec 2009 10:54:18 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 26 Dec 2009 12:06:46 +0100
 
 collectd (4.8.1-2) unstable; urgency=low
 
