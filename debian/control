@@ -51,7 +51,7 @@ Suggests: collectd-dev,
  memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
  pdns-server, postgresql, time-daemon,
  ${shlibs:Suggests}
-Replaces: collectd (<< 4.8.1-2~)
+Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
