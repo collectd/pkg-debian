@@ -16,8 +16,11 @@ collectd (4.9.0-1) unstable; urgency=low
     - Scale (multiply) values: scale
   * debian/control:
     - Build-depend on "python-dev", required to build the "python" plugin.
+  * debian/collectd-core.install:
+    - Install all collectd-*.5 manpages (in particular, this includes the
+      newly added collectd-python.5).
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 27 Dec 2009 01:49:09 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 27 Dec 2009 02:10:29 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
