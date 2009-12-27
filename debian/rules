@@ -69,6 +69,9 @@ confflags += --disable-onewire
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
+# librouteros is required for the routeros plugin.
+confflags += --disable-routeros
+
 # rrdclient support in librrd is required for the rrdcached plugin.
 confflags += --disable-rrdcached
 

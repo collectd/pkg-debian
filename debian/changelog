@@ -8,13 +8,14 @@ collectd (4.9.0-1) unstable; urgency=low
       libnetapp is not available)
     - OpenVZ statistics: OpenVZ (Perl based plugin)
     - Embedding a Python interpreter: python
-    - Query statistics from RouterOS: routeros
+    - Query statistics from RouterOS: routeros (disabled in Debian;
+      librouteros is not available)
     New matches:
     - Match values using a hash function of the hostname: hashed
     New targets:
     - Scale (multiply) values: scale
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 27 Dec 2009 01:39:51 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 27 Dec 2009 01:41:47 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
