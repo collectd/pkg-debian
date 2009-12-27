@@ -1,3 +1,20 @@
+collectd (4.9.0-1) unstable; urgency=low
+
+  * New upstream release:
+    New plugins:
+    - Number of context switches done by the OS: contextswitch
+    - Query statistics from mon.itor.us: Monitorus (Perl based plugin)
+    - Collect statistics from NetApp filers: netapp
+    - OpenVZ statistics: OpenVZ (Perl based plugin)
+    - Embedding a Python interpreter: python
+    - Query statistics from RouterOS: routeros
+    New matches:
+    - Match values using a hash function of the hostname: hashed
+    New targets:
+    - Scale (multiply) values: scale
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 27 Dec 2009 00:41:44 +0100
+
 collectd (4.8.2-1) unstable; urgency=medium
 
   * New upstream release:
