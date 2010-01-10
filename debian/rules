@@ -33,11 +33,12 @@ else
 endif
 
 # The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = alpha=alpha arm=arm armel=arm amd64=amd64 hppa=parisc \
-			i386=i386 lpia=i386 m68k=m68k mips=mips mipsel=mipsel \
-			powerpc=ppc sparc=sparc s390=s390 ia64=ia64 sh4=sh4
+JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc
 JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
 			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+ifeq (,$(JAVA_ARCHDIR))
+	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
+endif
 JAVA_HOME = /usr/lib/jvm/java-6-openjdk
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
