@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2008-03-12 17:35+0100\n"
+"POT-Creation-Date: 2009-12-13 16:24+0100\n"
 "PO-Revision-Date: 2008-05-24 11:24+0100\n"
 "Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
+#: ../collectd-core.templates:1001
 msgid "Layout of RRD files has changed"
 msgstr "A organización dos ficheiros RRD cambiou"
 
@@ -24,20 +24,20 @@ msgstr "A organización dos ficheiros RRD cambiou"
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001 ../collectd.templates:2001
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgstr ""
 "A organización dos ficheiros RRD creados por collectd cambiou "
 "significativamente desde a versión 3.x. Para conservar os seus datos antigos "
-"ten que migralos. Pódese facer empregando /usr/lib/collectd/utils/migrate-3-"
-"4.px."
+"ten que migralos. Pódese facer empregando /usr/lib/collectd-core/utils/"
+"migrate-3-4.px."
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
+#: ../collectd-core.templates:1001
 msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
@@ -49,19 +49,19 @@ msgstr ""
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001 ../collectd.templates:2001
-msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
-msgstr "Consulte /usr/share/doc/collectd/NEWS.Debian para máis detalles."
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
+msgstr "Consulte /usr/share/doc/collectd-core/NEWS.Debian para máis detalles."
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
+#: ../collectd-core.templates:2001
 msgid "Automatically try to migrate your RRD files?"
 msgstr "¿Migrar automaticamente os ficheiros RRD?"
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
+#: ../collectd-core.templates:2001
 msgid ""
 "This step can be done automatically. In this case a backup of /var/lib/"
 "collectd/ is made in /var/backups/. This script is still experimental, "

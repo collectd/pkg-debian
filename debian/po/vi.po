@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd 4.4.2-3\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2008-03-12 17:35+0100\n"
+"POT-Creation-Date: 2009-12-13 16:24+0100\n"
 "PO-Revision-Date: 2009-02-18 15:36+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
+#: ../collectd-core.templates:1001
 msgid "Layout of RRD files has changed"
 msgstr "Bố trí tập tin RRD đã thay đổi"
 
@@ -26,19 +26,19 @@ msgstr "Bố trí tập tin RRD đã thay đổi"
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001 ../collectd.templates:2001
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgstr ""
 "Bố trí của tập tin RRD được collectd thu thập đã thay đổi nhiều kể từ phiên "
-"bản 3.x. Muốn giữ lại dữ liệu cũ thì bạn cần phải nâng cấp, dùng « "
-"/usr/lib/collectd/utils/migrate-3-4.px »."
+"bản 3.x. Muốn giữ lại dữ liệu cũ thì bạn cần phải nâng cấp, dùng « /usr/lib/"
+"collectd-core/utils/migrate-3-4.px »."
 
 #. Type: note
 #. Description
-#: ../collectd.templates:1001
+#: ../collectd-core.templates:1001
 msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
@@ -50,27 +50,25 @@ msgstr ""
 #. Description
 #. Type: boolean
 #. Description
-#: ../collectd.templates:1001 ../collectd.templates:2001
-msgid "See /usr/share/doc/collectd/NEWS.Debian for details."
+#: ../collectd-core.templates:1001 ../collectd-core.templates:2001
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
 msgstr ""
-"Xem tài liệu Tin Tức « /usr/share/doc/collectd/NEWS.Debian » để tìm chi "
-"tiết."
+"Xem tài liệu Tin Tức « /usr/share/doc/collectd-core/NEWS.Debian » để tìm chi tiết."
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
+#: ../collectd-core.templates:2001
 msgid "Automatically try to migrate your RRD files?"
 msgstr "Tự động thử nâng cấp các tập tin RRD của bạn ?"
 
 #. Type: boolean
 #. Description
-#: ../collectd.templates:2001
+#: ../collectd-core.templates:2001
 msgid ""
 "This step can be done automatically. In this case a backup of /var/lib/"
 "collectd/ is made in /var/backups/. This script is still experimental, "
 "though. Do not expect it to work in all cases."
 msgstr ""
-"Bước này có thể được tự động làm. Trong trường hợp này, một bản sao của « "
-"/var/lib/collectd/ » được tạo trong thư mục « /var/backups/ ». Tuy nhiên, "
-"văn lệnh này vẫn còn dựa vào thí nghiệm. Không nên nhờ nó trong mọi trường "
-"hợp."
+"Bước này có thể được tự động làm. Trong trường hợp này, một bản sao của « /"
+"var/lib/collectd/ » được tạo trong thư mục « /var/backups/ ». Tuy nhiên, văn "
+"lệnh này vẫn còn dựa vào thí nghiệm. Không nên nhờ nó trong mọi trường hợp."

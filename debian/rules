@@ -32,6 +32,19 @@ else
 	CFLAGS += -O2
 endif
 
+# The archdir map has been copied from openjdk-6's debian/rules.
+JAVA_ARCHDIR_MAP = alpha=alpha arm=arm armel=arm amd64=amd64 hppa=parisc \
+			i386=i386 lpia=i386 m68k=m68k mips=mips mipsel=mipsel \
+			powerpc=ppc sparc=sparc s390=s390 ia64=ia64
+JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
+			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
+
+JAVAC = $(JAVA_HOME)/bin/javac
+JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
+JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
+
 include /usr/share/dpatch/dpatch.make
 
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
@@ -39,27 +52,47 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor" \
-			--disable-onewire \
-			--disable-xmms \
-			--without-libstatgrab
+			--without-libstatgrab \
+			--without-included-ltdl \
+			--disable-static \
+			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
-# The static libraries netstat and upsclient cannot be linked into shared
-# objects on some architectures (see bugs #358637 and #419684 for more
-# details).
+# libowcapi is required for the onewire plugin.
+confflags += --disable-onewire
+
+# libclntsh is required for the oracle plugin.
+confflags += --disable-oracle
+
+# rrdclient support in librrd is required for the rrdcached plugin.
+confflags += --disable-rrdcached
+
+# libtokyotyrant is required for the tokyotyrant plugin.
+confflags += --disable-tokyotyrant
+
+# xmms1 is required for the xmms plugin.
+confflags += --disable-xmms
+
+# libkstat is required for the xfs_arc plugin.
+confflags += --disable-zfs-arc
+
+# libdbi is not available on Etch
+confflags += --disable-dbi
+
+# The static library netstat and upsclient cannot be linked into shared
+# objects on some architectures (see bugs #358637, #419684 and #524593 for
+# more details).
 ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink --disable-nut
 endif
 
-# libvirt is only available on amd64, i386 and powerpc.
-ifeq (,$(findstring $(DEB_BUILD_ARCH),amd64 i386 powerpc))
-	confflags += --disable-libvirt
+# The hppa buildds currently do not keep up with Java related stuff, thus
+# prevending testing transitions.
+ifneq (,$(findstring $(DEB_BUILD_ARCH),hppa))
+	confflags += --disable-java
 endif
-
-# libdbi is not available on Etch
-confflags += --disable-dbi
 
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
@@ -71,7 +104,10 @@ config.status: configure $(DPATCH_STAMPFN)
 		> debian/pkgconfig/OpenIPMIpthread.pc
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
-	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" ./configure $(confflags)
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
+		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
+		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
+		|| ( status=$$?; cat config.log; exit $$status )
 
 build: build-stamp
 
@@ -114,15 +150,16 @@ install-arch: build
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	
 	rm -f debian/tmp/usr/lib/collectd/*.la
+	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
 	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
 	perl ./debian/bin/gen_plugin_deps.pl
 	
-	mkdir -p debian/collectd/usr/share/lintian/overrides/
-	cp debian/collectd.overrides \
-		debian/collectd/usr/share/lintian/overrides/collectd
+	mkdir -p debian/collectd-core/usr/share/lintian/overrides/
+	cp debian/collectd-core.overrides \
+		debian/collectd-core/usr/share/lintian/overrides/collectd-core
 
 binary-indep: install-indep
 	dh_testdir
@@ -150,21 +187,33 @@ binary-arch: build install-arch
 		contrib/exec-nagios.conf contrib/exec-nagios.px \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
-		contrib/collectd-network.py \
-		contrib/snmp-probe-host.px
+		contrib/collectd_network.py contrib/collectd_unixsock.py \
+		contrib/snmp-probe-host.px contrib/GenericJMX.conf \
+		debian/collectd.conf debian/filters.conf debian/thresholds.conf
+	# some upstream tarballs have been built inside a dirty working dir
+	( cd debian/collectd-core/ \
+		&& cd usr/share/doc/collectd-core/examples/collection3/ \
+		&& rm -f bin/foo bin/test_config.px etc/collection4.conf \
+		&& rm -f lib/Collectd/Graph.pm lib/Collectd/Graph/Data.pm \
+		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
+		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
-	dh_installinit -a -- defaults 95
+	dh_installinit -pcollectd-core --name=collectd -- defaults 95
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_makeshlibs -a
 	dh_installdeb -a
+	dh_shlibdeps -a -Ncollectd-core -Ncollectd
 	dpkg-shlibdeps -Tdebian/collectd.substvars \
-		-dDepends debian/collectd/usr/sbin/* \
-			debian/collectd/usr/lib/collectd/rrdtool.so \
-		-dRecommends debian/collectd/usr/lib/collectd/*.so
-	dh_shlibdeps -a -Ncollectd
+		-dDepends debian/collectd-core/usr/lib/collectd/rrdtool.so
+	dpkg-shlibdeps -Tdebian/collectd-core.substvars \
+		-dDepends debian/collectd-core/usr/sbin/* \
+		-dSuggests debian/collectd-core/usr/lib/collectd/*.so
+	grep shlibs:Suggests debian/collectd-core.substvars \
+		| sed -e 's/shlibs:Suggests/shlibs:Recommends/' \
+		>> debian/collectd.substvars
 	dh_gencontrol -a
 	dh_md5sums -a
 	dh_builddeb -a

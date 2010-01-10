@@ -2,26 +2,53 @@ Source: collectd
 Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
-Build-Depends: debhelper (>= 5), po-debconf, dpatch, bison, flex, autotools-dev, pkg-config, linux-kernel-headers, libcurl3-gnutls-dev, libmysqlclient15-dev, librrd2-dev, libsensors-dev, liboping-dev (>= 0.3.3), libpcap0.8-dev | libpcap-dev, nut-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel], libperl-dev, iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel], libsnmp9-dev, libvirt-dev (>= 0.4.0-6) [amd64 i386 powerpc], libxml2-dev, libhal-dev, libopenipmi-dev, libglib2.0-dev, libnotify-dev, libesmtp-dev, libpq-dev
+Build-Depends: debhelper (>= 5), po-debconf, dpatch,
+ bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
+ libcurl3-gnutls-dev,
+ libesmtp-dev,
+ libganglia1-dev (>= 3),
+ libgcrypt11-dev,
+ libglib2.0-dev,
+ libhal-dev,
+ libmemcached-dev,
+ libmysqlclient-dev,
+ libnotify-dev,
+ libopenipmi-dev,
+ liboping-dev (>= 0.3.3),
+ libpcap0.8-dev | libpcap-dev,
+ libperl-dev,
+ libpq-dev,
+ librrd2-dev,
+ libsensors4-dev,
+ libsnmp9-dev,
+ libvirt-dev (>= 0.4.0-6),
+ libxml2-dev,
+ libyajl-dev,
+ linux-kernel-headers,
+ nut-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
+ openjdk-6-jdk [!hppa]
 Build-Conflicts: libpthread-dev, iptables-dev
-Standards-Version: 3.8.1
+Standards-Version: 3.8.3
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
 
-Package: collectd
+Package: collectd-core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: perl, rrdtool, lm-sensors, ${shlibs:Recommends}
-Suggests: collectd-dev, librrds-perl, liburi-perl, libhtml-parser-perl,
- libregexp-common-perl, libconfig-general-perl, httpd-cgi, hddtemp, mbmon
-Conflicts: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Provides: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Replaces: collectd-apache, collectd-dns, collectd-hddtemp, collectd-mysql,
- collectd-perl, collectd-ping, collectd-sensors
-Description: statistics collection and monitoring daemon
+Recommends: perl, rrdtool
+Suggests: collectd-dev,
+# collection.cgi / collection3 dependencies
+ librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
+ libconfig-general-perl, httpd-cgi,
+# services providing data that may be collected by collectd
+ apache2, apcupsd, bind9, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
+ memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
+ pdns-server, postgresql, time-daemon,
+ ${shlibs:Suggests}
+Replaces: collectd (<< 4.8.2-1~)
+Description: statistics collection and monitoring daemon (core system)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
  Since the daemon doesn't need to startup every time it wants to update the
@@ -31,19 +58,25 @@ Description: statistics collection and monitoring daemon
  The collected information can be used to find current performance bottlenecks
  (performance analysis) and predict future system load (capacity planning).
  .
- This package contains the main program file and the following plugins (some
+ This package contains the main program file and the plugins listed below (some
  of those plugins require additional libraries - for more details see
- /usr/share/doc/collectd/README.Debian.plugins):
+ /usr/share/doc/collectd-core/README.Debian.plugins) but no configuration. For
+ a full installation (including configuration), see the "collectd" package.
+ This package allows sites to, e.g., provide customizations (like a custom
+ default configuration) on top of it without having to modify the "collectd"
+ package.
  .
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Ascent server statistics: ascent
    * battery status: battery
    * bind9 name-server and zone statistics: bind
+   * connection tracking table size: conntrack
    * CPU utilization: cpu
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
+   * parse JSON files: curl_json
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
@@ -51,16 +84,22 @@ Description: statistics collection and monitoring daemon
    * amount of available entropy: entropy
    * execution of external programs: exec
    * count the number of files in directories: filecount
+   * Linux file-system based caching framework statistics: fscache
+   * query data from Java processes using JMX: GenericJMX (Java based plugin)
+   * Receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
+   * embedded Java Virtual Machine: java
    * CPU, disk, network statistics of guest systems: libvirt
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
+   * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
+   * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
    * multimeter statistics: multimeter
@@ -74,27 +113,52 @@ Description: statistics collection and monitoring daemon
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
    * OpenVPN traffic and compression statistics: openvpn
+   * Optimized Link State Routing daemon statistics: olsrd
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
    * output to RRD files: rrdtool
    * embedded Perl interpreter: perl
    * network latency statistics: ping
+   * information about network protocols: protocols
    * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
    * values from SNMP enabled network devices: snmp
    * swap usage: swap
    * logging to syslog: syslog
+   * parse table-like structured files: table
    * incremental parsing of logfiles: tail
    * number of TCP connections to specific ports: tcpconns
+   * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
    * TeamSpeak2 server statistics: teamspeak2
    * external runtime interface: unixsock
+   * system uptime: uptime
    * number of users logged into the system: users
    * set the hostname to an unique identifier: uuid
    * detailed virtual memory statistics: vmem
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
+   * send collected values to a web-server: write_http
+
+Package: collectd
+Architecture: any
+Depends: collectd-core, ${shlibs:Depends}, ${misc:Depends}
+Recommends: ${shlibs:Recommends}
+Description: statistics collection and monitoring daemon
+ collectd is a small daemon which collects system information periodically and
+ provides mechanisms to monitor and store the values in a variety of ways.
+ Since the daemon doesn't need to startup every time it wants to update the
+ values it's very fast and easy on the system. Also, the statistics are very
+ fine grained since the files are updated every 10 seconds by default.
+ .
+ The collected information can be used to find current performance bottlenecks
+ (performance analysis) and predict future system load (capacity planning).
+ .
+ This package provides a full installation of the daemon, including the
+ configuration. For the core system, see the "collectd-core" package, which
+ allows sites to, e.g., provide customizations (like a custom default
+ configuration) on top of it without having to modify the "collectd" package.
 
 Package: collectd-utils
 Architecture: any
@@ -117,7 +181,7 @@ Package: collectd-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: collectd (= ${binary:Version}), ${misc:Depends}
+Depends: collectd-core (= ${binary:Version}), ${misc:Depends}
 Recommends: collectd-utils (= ${binary:Version}),
  libcollectdclient0 (= ${binary:Version})
 Description: statistics collection and monitoring daemon (debugging symbols)
@@ -131,7 +195,8 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd (>= ${source:Version}), collectd (<< 4.7~), ${misc:Depends}
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 4.9~),
+ ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.

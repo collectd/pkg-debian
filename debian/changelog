@@ -1,3 +1,207 @@
+collectd (4.8.2-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Now using libtool 2.
+  * Set urgency to medium because of the fix for #559801.
+  * Split the "collectd" binary package into "collectd-core" and "collectd".
+    The former provides the main program file and the plugins while the latter
+    provides the configuration. This allows for much more flexible setups
+    (e.g. providing customizations on top of "collectd-core" without modifying
+    the "collectd" package) and, amongst others, removes the hard dependency
+    on librrd (Closes: #495936, #544311).
+  * debian/collectd-core.collectd.init.d:
+    - Do not (try to) start collectd if the config file does not exist. Else,
+      installation of "collectd-core" (which does not provide configuration)
+      would fail.
+  * debian/collectd.postinst:
+    - Let the "collectd" package restart the daemon, since it provides the
+      config file.
+  * debian/collectd.links:
+    - Symlink /u/s/d/collectd/examples to /u/s/d/collectd-core/examples.
+  * debian/control:
+    - Build-depend on the right combination of libsnmp-dev and perl. Perl's
+      CFLAGS (included in net-snmp's CFLAGS) introduced '-fstack-protector' in
+      version 5.10.1 on some architectures (those supporting that features).
+      net-snmp has been fixed to handle that correctly in 5.4.2.1~dfsg-4;
+      thanks to Lamont Jones and Dann Frazier for reporting this
+      (Closes: #559087).
+    - Build-depend on libsensors4-dev rather than libsensors-dev. libsnmp-dev,
+      starting with version 5.4.2.1~dfsg-5, supports libsensors4, thus making
+      that possible. This restores the full functionality of the "sensors"
+      plugin, which does not work well with libsensors3 and lm-sensors-3;
+      thanks to Anssi Kolehmainen for reporting this (Closes: #538795).
+    - Build-depend on libltdl-dev to make it possible to use the system-wide
+      libltdl.
+    - No longer conflict/provide/replace the pre-Lenny "collectd-$plugin"
+      packages.
+    - Update the list of collectd-core's suggestions: added various services
+      providing data that may be collected by collectd. Downgraded lm-sensors
+      from a recommendation to a suggestion.
+  * debian/patches:
+    - Removed gmond-fix-compile-error.dpatch -- included upstream.
+    - Added bts561577_collectd2html_recursive_fix.dpatch -- fixed
+      collectd2html.pl's recursive mode and improved some defaults; thanks to
+      Yuri D'Elia for reporting this and providing a patch (Closes: #561577).
+    - Added bts557599_powerdns_fix.dpatch -- fixed communication to pdns
+      versions 2.9.22 and above; thanks to <tm@iprog.com> for reporting this
+      and Luke Heberling for providing the patch (Closes: #557599).
+    - Added bts559801_plugin_find_fix.dpatch -- make collectd resistant
+      against copies of libltdl affected by CVE-2009-3736. This fixes a
+      potential but very unlikely security issue, e.g. found in the embedded
+      copy. For details about how collectd might be affected, see
+      <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559801#15>; thanks to
+      Michael Gilbert for reporting this (Closes: #559801).
+  * debian/rules:
+    - Pass --without-included-ltdl to configure to tell libtool 2 to not use
+      the shipped libltdl but rather the one available in the system. Thus,
+      in the future, libltdl related issues do no longer require updated
+      collectd packages.
+    - Pass --disable-static to configure to tell libtool 2 to not build any
+      static libraries.
+    - Install debian/collectd.conf as an example into "collectd-core".
+    - Output the content of config.log if configure fails -- this might help
+      debugging.
+  * debian/README.Debian:
+    - Added a short explanation of the package split.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 26 Dec 2009 12:06:46 +0100
+
+collectd (4.8.1-2) unstable; urgency=low
+
+  * debian/rules:
+    - Disabled the "java" plugin on hppa for now to work around a backlog in
+      the buildds that currently prevents a transition to testing.
+  * debian/control:
+    - Do not build-depend on openjdk-6-jdk on hppa.
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 19 Nov 2009 10:55:33 +0100
+
+collectd (4.8.1-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Fixed a build issue with libiptc that caused a segfault in the iptables
+      plugin; thanks to Rodrigo Campos for reporting this (Closes: #535786).
+    - Updated the powerdns plugin to support pdns 2.9.22 (and above) as well;
+      thanks to Thomas Morgan for reporting this and Luke Heberling for
+      providing a patch (Closes: #535787).
+    New plugins:
+    - Parse JSON files: curl_json
+    - Query data from Java processes using JMX: GenericJMX (Java based plugin)
+    - Atheros wireless LAN chipset statistics: madwifi
+    - Optimized Link State Routing daemon statistics: olsrd
+    - Tokyo Tyrant server statistics: tokyotyrant (disabled in Debian,
+      libtokyotyrant is not available)
+    - Send collected values to a web-server: write_http
+    - ZFS Adaptive Replacement Cache statistics: zfs_arc (disabled in Debian,
+      libkstat is not available)
+    New matches:
+    - Match zero COUNTER values: empty_counter
+  * Set urgency to medium because of the fix for #535786.
+  * debian/rules:
+    - Install contrib/GenericJMX.conf to /usr/share/doc/collectd/examples/.
+    - Disabled the tokyotyrant and zfs_arc plugins - their dependencies are
+      not available.
+  * debian/patches:
+    - Removed bts535787-powerdns-fix-localsocket.dpatch - included upstream.
+    - Removed bts541953-curl-followlocation.dpatch - included upstream.
+    - Removed bts542859-df-fix-ignorelist.dpatch - included upstream.
+    - Removed java-fix-jvm-start.dpatch - included upstream.
+    - Removed libvirt-reconnect.dpatch - included upstream.
+    - Removed network-fix-cacheflush.dpatch - included upstream.
+    - Removed plugin-fix-unregister.dpatch - included upstream.
+    - Added gmond-fix-compile-error.dpatch - upstream patch fixing a compile
+      error in the gmond plugin.
+  * debian/control:
+    - Build depend on libyajl-dev, which is required by the curl_json plugin.
+  * Added debian/README.source:
+    - The file includes a pointer to /usr/share/doc/dpatch/README.source.gz.
+  * New debconf template translations:
+    - ja.po, thanks to Hideki Yamane (Closes: #550968).
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 15 Oct 2009 20:54:46 +0200
+
+collectd (4.7.2-1) unstable; urgency=low
+
+  * New upstream release (Closes: #541887).
+    - collectd2html.pl now supports the creation of SVG images; thanks to Ivan
+      Shmakov for providing a patch (Closes: #482185).
+    New plugins:
+    - Connection tracking table size: conntrack
+    - Linux file-system based caching framework statistics: fscache
+    - Receive and interpret Ganglia multicast traffic: gmond
+    - Embedded Java Virtual Machine: java
+    - Query and parse data from a memcache daemon: memcachec
+    - Information about network protocols: protocols
+    - Parse table-like structured files: table
+    - Power consumption measurements from "The Energy Detective" (TED): ted
+    - System uptime: uptime
+  * debian/rules:
+    - Install collectd-unixsock.py to /usr/share/doc/collectd/examples/.
+    - Pass CPPFLAGS and CFLAGS as arguments to configure instead of setting
+      them in the environment - this is the recommended way.
+    - Pass appropriate JAVAC, JAVA_CPPFLAGS and JAVA_LDFLAGS variables to
+      configure, using OpenJDK found in /usr/lib/jvm/java-6-openjdk. The
+      archdir mapping used by the openjdk-6 Debian package is used to find
+      libjvm.so in JAVA_HOME/jre/lib/ARCHDIR/server.
+    - Use -rpath to tell the "java" plugin where to find libjvm.so.
+    - Pass --enable-all-plugins to configure to make sure that the build fails
+      if any prerequisites are missing.
+  * debian/control:
+    - Build-depend on openjdk-6-jdk.
+    - Build-depend on libganglia1-dev (>= 3), required by the gmond plugin.
+    - Build-depend on libgcrypt11-dev, used by the network plugin.
+    - Updated Standards-Version to 3.8.3 (no changes).
+    - Changed build-dependency libmysqlclient15-dev to libmysqlclient-dev -
+      this allows transitions to be handled thru binNMUs if possible.
+  * debian/collectd.install:
+    - Install collectd-java.5.
+  * debian/patches:
+    - Removed libcollectdclient_static_sstrerror.dpatch - included upstream.
+    - Added network-fix-cacheflush.dpatch - upstream patch to fix the handling
+      of the 'CacheFlush' config option of the "network" plugin.
+    - Added libvirt-reconnect.dpatch - upstream patch to let the "libvirt"
+      plugin re-connect to libvirtd if connecting fails.
+    - Added plugin-fix-unregister.dpatch - upstream patch to make
+      'plugin_unregister_read()' functional again, thus fixing a failed
+      assertion in some cases.
+    - Added java-fix-jvm-start.dpatch - upstream patch to fix the JVM startup.
+    - Added bts541953-curl-followlocation.dpatch - upstream patch to let
+      plugins using libcurl follow HTTP redirects; thanks to Joey Hess for
+      reporting this (Closes: #541953).
+    - Added bts535787-powerdns-fix-localsocket.dpatch - upstream patch fixing
+      the handling of the 'LocalSocket' config option of the "powerdns"
+      plugin; thanks to Thomas Morgan for reporting this and Luke Heberling
+      for providing a patch (references: #535787).
+    - Added bts542859-df-fix-ignorelist.dpatch - upstream patch to fix the
+      handling of the ignorelist in the "df" plugin; thanks to Joey Hess for
+      reporting this (Closes: #542859).
+  * debian/README.Debian:
+    - Removed the note about how to get collectd2html.pl working with
+      version 4 of collectd - the script now supports the --recursive option
+      which takes care of that.
+  * debian/collectd.overrides:
+    - Documented the 'binary-or-shlib-defines-rpath' warning - the rpath is
+      required by the "java" plugin.
+  * New debconf template translations:
+    - cs.po, thanks to Martin Sin (Closes: #534206).
+    - ru.po, thanks to Yuri Kozlov (Closes: #539467).
+  * debian/control, debian/rules:
+    - No not limit the "libvirt" plugin to amd64, i386, powerpc - libvirt-dev
+      seems to be available on all architectures now.
+    - Reintroduced a work around for #474087 (broken openipmi .pc files) by
+      providing a fixed version of OpenIPMIpthread.pc in debian/pkgconfig and
+      adding that path to PKG_CONFIG_PATH. Removed the version from the
+      libopenipmi-dev build dependency for now.
+  * debian/collectd.conf:
+    - Set the "apache" plugin's URL according to the default used by Debian's
+      Apache; thanks to Joey Hess for reporting this (Closes: #541888).
+  * debian/libcollectdclient-dev.install, debian/rules:
+    - Do not install libcollectdclient's .la file in favor of the Squeeze
+      release goal to remove those files (for details see
+      <http://lists.debian.org/debian-devel/2009/08/msg00783.html>).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 29 Aug 2009 12:42:15 +0200
+
 collectd (4.6.3-1~bpo40+1) etch-backports; urgency=low
 
   * Rebuild for etch-backports.

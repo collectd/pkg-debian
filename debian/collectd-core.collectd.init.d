@@ -49,6 +49,11 @@ if test "$DISABLE" != 0 -a "$1" == "start"; then
 	exit 0
 fi
 
+if test ! -e "$CONFIGFILE" -a "$1" == "start"; then
+	echo "Not starting $NAME - no configuration ($CONFIGFILE) found."
+	exit 0
+fi
+
 if test "$ENABLE_COREFILES" == 1; then
 	ulimit -c unlimited
 fi
@@ -72,6 +77,12 @@ d_start() {
 	if test "$DISABLE" != 0; then
 		# we get here during restart
 		echo -n " - disabled by /etc/default/$NAME"
+		return 0
+	fi
+
+	if test ! -e "$CONFIGFILE"; then
+		# we get here during restart
+		echo -n " - no configuration ($CONFIGFILE) found."
 		return 0
 	fi
 
