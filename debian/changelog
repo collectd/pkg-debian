@@ -11,6 +11,7 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
       !ia64 !ppc64 !mips !mipsel].
     - Replaced linux-libc-dev build-dependency with linux-kernel-headers.
     - Replaced libltdl-dev build-dependency with libltdl3-dev.
+    - Replaced libsensors4-dev build-dependency with libsensors-dev.
     - Build-conflict with iptables-dev to force the use of the shipped libiptc
       (this allows building the iptables plugin on all architectures).
   * debian/control, debian/rules:
@@ -22,7 +23,7 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
     - Disabled memcachec plugin and removed build-dependency on
       libmemcached-dev, which is not available on Etch.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:36:30 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:38:50 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
