@@ -24,8 +24,10 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
       libmemcached-dev, which is not available on Etch.
     - Disabled curl_json plugin and removed build-dependency on libyajl-dev,
       which is not available on Etch.
+    - Disabled java plugin and removed build-dependency on openjdk-6-jdk,
+      which is not available on Etch.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:42:25 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:49:24 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 

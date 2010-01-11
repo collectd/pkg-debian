@@ -23,8 +23,7 @@ Build-Depends: debhelper (>= 5), po-debconf, dpatch,
  libvirt-dev (>= 0.4.0-6),
  libxml2-dev,
  linux-kernel-headers,
- nut-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
- openjdk-6-jdk [!hppa]
+ nut-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel]
 Build-Conflicts: libpthread-dev, iptables-dev
 Standards-Version: 3.8.3
 Homepage: http://collectd.org/
@@ -81,14 +80,12 @@ Description: statistics collection and monitoring daemon (core system)
    * execution of external programs: exec
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
-   * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
    * iptables statistics: iptables
    * IPVS connection statistics: ipvs
    * IRQ counters: irq
-   * embedded Java Virtual Machine: java
    * CPU, disk, network statistics of guest systems: libvirt
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile

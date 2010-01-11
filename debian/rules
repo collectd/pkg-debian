@@ -32,19 +32,6 @@ else
 	CFLAGS += -O2
 endif
 
-# The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = alpha=alpha arm=arm armel=arm amd64=amd64 hppa=parisc \
-			i386=i386 lpia=i386 m68k=m68k mips=mips mipsel=mipsel \
-			powerpc=ppc sparc=sparc s390=s390 ia64=ia64
-JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
-			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
-JAVA_HOME = /usr/lib/jvm/java-6-openjdk
-JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
-
-JAVAC = $(JAVA_HOME)/bin/javac
-JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
-JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
-
 include /usr/share/dpatch/dpatch.make
 
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
@@ -65,6 +52,9 @@ confflags += --disable-curl_json
 
 # libganglia >= 3 is required for the gmond plugin.
 confflags += --disable-gmond
+
+# OpenJDK is not available on Etch.
+confflags += --disable-java
 
 # libmemcached is required for the memcachec plugin.
 confflags += --disable-memcachec
@@ -97,12 +87,6 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink --disable-nut
 endif
 
-# The hppa buildds currently do not keep up with Java related stuff, thus
-# prevending testing transitions.
-ifneq (,$(findstring $(DEB_BUILD_ARCH),hppa))
-	confflags += --disable-java
-endif
-
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
 	
@@ -114,8 +98,6 @@ config.status: configure $(DPATCH_STAMPFN)
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
-		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
-		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
 build: build-stamp
