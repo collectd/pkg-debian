@@ -10,7 +10,6 @@ Build-Depends: debhelper (>= 5), po-debconf, dpatch,
  libgcrypt11-dev,
  libglib2.0-dev,
  libhal-dev,
- libmemcached-dev,
  libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
@@ -43,7 +42,7 @@ Suggests: collectd-dev,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
  apache2, apcupsd, bind9, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
- memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
+ mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
  pdns-server, postgresql, time-daemon,
  ${shlibs:Suggests}
 Replaces: collectd (<< 4.8.2-1~)
@@ -97,7 +96,6 @@ Description: statistics collection and monitoring daemon (core system)
    * logging to files, STDOUT and STDERR: logfile
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
-   * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
    * multimeter statistics: multimeter

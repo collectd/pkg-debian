@@ -63,6 +63,9 @@ confflags += --disable-apple_sensors --disable-tape
 # libganglia >= 3 is required for the gmond plugin.
 confflags += --disable-gmond
 
+# libmemcached is required for the memcachec plugin.
+confflags += --disable-memcachec
+
 # libowcapi is required for the onewire plugin.
 confflags += --disable-onewire
 
