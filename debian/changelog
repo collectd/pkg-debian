@@ -10,13 +10,14 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
       available in Etch and limit the "nut" plugin to [!alpha !amd64 !hppa
       !ia64 !ppc64 !mips !mipsel].
     - Replaced linux-libc-dev build-dependency with linux-kernel-headers.
+    - Replaced libltdl-dev build-dependency with libltdl3-dev.
     - Build-conflict with iptables-dev to force the use of the shipped libiptc
       (this allows building the iptables plugin on all architectures).
   * debian/control, debian/rules:
     - Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
       libdbi is not available on Etch.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:10:04 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:28:29 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 

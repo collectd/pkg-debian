@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Build-Depends: debhelper (>= 5), po-debconf, dpatch,
- bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ bison, flex, autotools-dev, libltdl3-dev, pkg-config,
  iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
  libcurl3-gnutls-dev,
  libesmtp-dev,
