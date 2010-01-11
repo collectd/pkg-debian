@@ -16,8 +16,11 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
   * debian/control, debian/rules:
     - Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
       libdbi is not available on Etch.
+  * debian/rules, debian/control, debian/collectd.conf:
+    - Disabled gmond plugin and removed build-dependency on libganglia1-dev -
+      versions >= 3 are not available on Etch.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:28:29 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:31:25 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 

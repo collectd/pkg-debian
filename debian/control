@@ -7,7 +7,6 @@ Build-Depends: debhelper (>= 5), po-debconf, dpatch,
  iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
  libcurl3-gnutls-dev,
  libesmtp-dev,
- libganglia1-dev (>= 3),
  libgcrypt11-dev,
  libglib2.0-dev,
  libhal-dev,
@@ -86,7 +85,6 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
-   * Receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
