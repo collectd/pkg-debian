@@ -26,8 +26,11 @@ collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
       which is not available on Etch.
     - Disabled java plugin and removed build-dependency on openjdk-6-jdk,
       which is not available on Etch.
+  * debian/rules:
+    - Remove the collectd-java(5) manpage to not let 'dh_install --fail-
+      missing' fail because of that being not installed.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:49:24 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 19:02:38 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 

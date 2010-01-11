@@ -142,6 +142,7 @@ install-arch: build
 	
 	rm -f debian/tmp/usr/lib/collectd/*.la
 	rm -f debian/tmp/usr/lib/libcollectdclient.la
+	rm -f debian/tmp/usr/share/man/man5/collectd-java.5
 	rm -f debian/tmp/etc/collectd.conf
 	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
