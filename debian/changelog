@@ -1,3 +1,23 @@
+collectd (4.8.2-1~bpo40+1) etch-backports; urgency=low
+
+  * Rebuild for etch-backports.
+  * debian/control:
+    - Removed dpkg-dev build-dependency - we don't care about Vcs-* and
+      Homepage fields in backports.org.
+    - Removed optional build-dependencies libcurl4-gnutls-dev, librrd-dev and
+      libsnmp-dev - they are not available in Etch and might confuse buildds.
+    - Switch back to build-depend on nut-dev - libupsclient1-dev is not
+      available in Etch and limit the "nut" plugin to [!alpha !amd64 !hppa
+      !ia64 !ppc64 !mips !mipsel].
+    - Replaced linux-libc-dev build-dependency with linux-kernel-headers.
+    - Build-conflict with iptables-dev to force the use of the shipped libiptc
+      (this allows building the iptables plugin on all architectures).
+  * debian/control, debian/rules:
+    - Removed libdbi0-dev build-dependency and disabled the "dbi" plugin -
+      libdbi is not available on Etch.
+
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 11 Jan 2010 18:10:04 +0100
+
 collectd (4.8.2-1) unstable; urgency=medium
 
   * New upstream release:
