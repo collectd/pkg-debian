@@ -60,6 +60,9 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
+# libyajl is required for the curl_json plugin.
+confflags += --disable-curl_json
+
 # libganglia >= 3 is required for the gmond plugin.
 confflags += --disable-gmond
 

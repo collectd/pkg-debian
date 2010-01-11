@@ -22,7 +22,6 @@ Build-Depends: debhelper (>= 5), po-debconf, dpatch,
  libsnmp9-dev,
  libvirt-dev (>= 0.4.0-6),
  libxml2-dev,
- libyajl-dev,
  linux-kernel-headers,
  nut-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
  openjdk-6-jdk [!hppa]
@@ -74,7 +73,6 @@ Description: statistics collection and monitoring daemon (core system)
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
-   * parse JSON files: curl_json
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
