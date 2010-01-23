@@ -73,9 +73,6 @@ confflags += --disable-oracle
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
-# libtokyotyrant is required for the tokyotyrant plugin.
-confflags += --disable-tokyotyrant
-
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
@@ -123,6 +120,7 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 	confflags += \
 		--disable-gmond \
 		--disable-libvirt \
+		--disable-tokyotyrant \
 		--disable-java
 endif
 

@@ -34,13 +34,15 @@ collectd (4.9.1-1) unstable; urgency=low
       + "java" plugin / openjdk6-jdk
     - Enabled the "rrdcached" plugin and build-depend on librrd-dev (>= 1.4~)
       (and removed the optional build-dep on librrd2-dev).
+    - Enabled the "tokyotyrant" plugin (except on kfreebsd-{i386,amd64}) and
+      build-depend on libtokyotyrant-dev (which is not available on kfreebsd).
   * debian/rules:
     - Disabled the following plugins on kfreebsd-{i386,amd64} which have not
       yet been ported to FreeBSD: battery, conntrack, contextswitch, cpufreq,
       disk, entropy, fscache, irq, madwifi, nfs, protocols, serial, thermal,
       vmem, vserver, wireless.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 22:50:15 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 23:11:19 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
