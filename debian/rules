@@ -100,6 +100,27 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 		--disable-sensors
 endif
 
+# These plugins have not been ported to FreeBSD yet.
+ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+	confflags += \
+		--disable-battery \
+		--disable-conntrack \
+		--disable-contextswitch \
+		--disable-cpufreq \
+		--disable-disk \
+		--disable-entropy \
+		--disable-fscache \
+		--disable-irq \
+		--disable-madwifi \
+		--disable-nfs \
+		--disable-protocols \
+		--disable-serial \
+		--disable-thermal \
+		--disable-vmem \
+		--disable-vserver \
+		--disable-wireless
+endif
+
 # Build-dependencies of these plugins are (not yet) available for kfreebsd.
 ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 	confflags += \
