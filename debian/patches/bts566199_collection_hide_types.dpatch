@@ -1,0 +1,36 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## bts566199_collection_hide_types.dpatch by Pavel Piatruk
+## <piatruk.p@gmail.com>
+##
+## DP: contrib/collection.cgi: Added ability to hide specified types.
+
+diff a/contrib/collection.cgi b/contrib/collection.cgi
+--- a/contrib/collection.cgi
++++ b/contrib/collection.cgi
+@@ -13,6 +13,7 @@ use Data::Dumper ();
+ 
+ our $Config = "/etc/collection.conf";
+ our @DataDirs = ();
++our @DontShowTypes = ();
+ our $LibDir;
+ 
+ our $ValidTimespan =
+@@ -78,6 +79,10 @@ sub read_config
+ 			$value =~ s#/*$##;
+ 			$LibDir = $value;
+ 		}
++		elsif ($key eq 'dontshowtype')
++		{
++		  push (@DontShowTypes, $value);
++		}
+ 		else
+ 		{
+ 			print STDERR "Unknown key: $key\n";
+@@ -239,6 +244,7 @@ sub _find_types
+       my $name = "$_";
+       $name =~ s/\.rrd$//i;
+       my ($type, $instance) = split (m/-/, $name, 2);
++      if (grep { $_ eq $type } @DontShowTypes) { next; }
+       $types{$type} = [] if (!$types{$type});
+       push (@{$types{$type}}, $instance) if (defined ($instance));
+     }
