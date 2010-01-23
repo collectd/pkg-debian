@@ -25,8 +25,14 @@ collectd (4.9.1-1) unstable; urgency=low
       + "iptables" plugin / iptables-dev
       + "ipvs" plugin / linux-libc-dev
       + "netlink" plugin / iproute-dev
+    - Disabled the following plugins / removed the following build-deps on
+      kfreebsd-{i386,amd64} -- the build-deps are (not yet) available on
+      kfreebsd:
+      + "gmond" plugin / libganglia1-dev
+      + "libvirt" plugin / libvirt-dev
+      + "java" plugin / openjdk6-jdk
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 15:56:31 +0000
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 16:06:38 +0000
 
 collectd (4.8.2-1) unstable; urgency=medium
 

@@ -99,6 +99,14 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 		--disable-netlink
 endif
 
+# Build-dependencies of these plugins are (not yet) available for kfreebsd.
+ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+	confflags += \
+		--disable-gmond \
+		--disable-libvirt \
+		--disable-java
+endif
+
 # The hppa buildds currently do not keep up with Java related stuff, thus
 # prevending testing transitions.
 ifneq (,$(findstring $(DEB_BUILD_ARCH),hppa))
