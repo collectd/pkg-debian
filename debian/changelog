@@ -32,13 +32,15 @@ collectd (4.9.1-1) unstable; urgency=low
       + "gmond" plugin / libganglia1-dev
       + "libvirt" plugin / libvirt-dev
       + "java" plugin / openjdk6-jdk
+    - Enabled the "rrdcached" plugin and build-depend on librrd-dev (>= 1.4~)
+      (and removed the optional build-dep on librrd2-dev).
   * debian/rules:
     - Disabled the following plugins on kfreebsd-{i386,amd64} which have not
       yet been ported to FreeBSD: battery, conntrack, contextswitch, cpufreq,
       disk, entropy, fscache, irq, madwifi, nfs, protocols, serial, thermal,
       vmem, vserver, wireless.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 18:38:40 +0000
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 22:50:15 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
