@@ -19,6 +19,8 @@ collectd (4.9.1-1) unstable; urgency=low
   * debian/collectd-core.install:
     - Install all collectd-*.5 manpages (in particular, this includes the
       newly added collectd-python.5).
+  * Added support for kfreebsd-{i386,amd64}; see below for details
+    (Closes: #566521).
   * debian/control, debian/rules:
     - Disabled the following Linux-specific plugins / removed the following
       build-deps on kfreebsd-{i386,amd64}:
@@ -41,8 +43,10 @@ collectd (4.9.1-1) unstable; urgency=low
       yet been ported to FreeBSD: battery, conntrack, contextswitch, cpufreq,
       disk, entropy, fscache, irq, madwifi, nfs, protocols, serial, thermal,
       vmem, vserver, wireless.
+    - Simplified Java archdir mapping: removed entries "pointing" to
+      themselves and let those default to DEB_BUILD_ARCH.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 23:11:19 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 23:42:50 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
