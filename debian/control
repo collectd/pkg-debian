@@ -5,7 +5,7 @@ Maintainer: Sebastian Harl <tokkee@debian.org>
 Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
  iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-i386 !kfreebsd-amd64],
- iptables-dev (>= 1.4.3.2-2),
+ iptables-dev (>= 1.4.3.2-2) [!kfreebsd-i386 !kfreebsd-amd64],
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
  libdbi0-dev,
  libesmtp-dev,
@@ -30,7 +30,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libvirt-dev (>= 0.4.0-6),
  libxml2-dev,
  libyajl-dev,
- linux-libc-dev (>= 2.6.25-4) | linux-libc-dev (<< 2.6.25-1),
+ linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
  openjdk-6-jdk [!hppa],
  python-dev
 Build-Conflicts: libpthread-dev

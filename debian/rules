@@ -87,9 +87,16 @@ confflags += --disable-zfs-arc
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).
-ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips \
-		mipsel kfreebsd-i386 kfreebsd-amd64))
+ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 	confflags += --disable-netlink
+endif
+
+# These plugins are Linux-specific.
+ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+	confflags += \
+		--disable-iptables \
+		--disable-ipvs \
+		--disable-netlink
 endif
 
 # The hppa buildds currently do not keep up with Java related stuff, thus

@@ -20,10 +20,13 @@ collectd (4.9.1-1) unstable; urgency=low
     - Install all collectd-*.5 manpages (in particular, this includes the
       newly added collectd-python.5).
   * debian/control, debian/rules:
-    - Disabled the "netlink" plugin on kfreebsd-{i386,amd64} and do not
-      build-depend on iproute-dev -- iproute is only available on Linux.
+    - Disabled the following Linux-specific plugins / removed the following
+      build-deps on kfreebsd-{i386,amd64}:
+      + "iptables" plugin / iptables-dev
+      + "ipvs" plugin / linux-libc-dev
+      + "netlink" plugin / iproute-dev
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 15:38:38 +0000
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Jan 2010 15:56:31 +0000
 
 collectd (4.8.2-1) unstable; urgency=medium
 
