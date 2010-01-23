@@ -87,7 +87,8 @@ confflags += --disable-zfs-arc
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).
-ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
+ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips \
+		mipsel kfreebsd-i386 kfreebsd-amd64))
 	confflags += --disable-netlink
 endif
 

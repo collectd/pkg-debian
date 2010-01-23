@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
- iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel],
+ iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-i386 !kfreebsd-amd64],
  iptables-dev (>= 1.4.3.2-2),
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
  libdbi0-dev,
