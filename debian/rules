@@ -96,7 +96,8 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 	confflags += \
 		--disable-iptables \
 		--disable-ipvs \
-		--disable-netlink
+		--disable-netlink \
+		--disable-sensors
 endif
 
 # Build-dependencies of these plugins are (not yet) available for kfreebsd.
