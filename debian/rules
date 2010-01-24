@@ -133,6 +133,12 @@ endif
 config.status: configure $(DPATCH_STAMPFN)
 	dh_testdir
 	
+	( cd debian/patches/; for patch in *; do \
+		if test "$$patch" != "00list"; then \
+			grep "$$patch" 00list > /dev/null \
+				|| ( echo "$$patch not enabled\!"; exit 1 ); \
+		fi; done )
+	
 	# This is a work-around for #474087 (broken openipmi .pc files).
 	mkdir debian/pkgconfig
 	sed -re 's/^(Requires:.*) pthread(.*)$$/\1\2/' \

@@ -45,6 +45,7 @@ collectd (4.9.1-1) unstable; urgency=low
       vmem, vserver, wireless.
     - Simplified Java archdir mapping: removed entries "pointing" to
       themselves and let those default to DEB_BUILD_ARCH.
+    - Check whether all patches have been enabled; fail, if not.
   * debian/patches:
     - Added bts566199_collection_hide_types.dpatch -- added ability to hide
       specified types in collection.cgi; thanks to Pavel Piatruk for the patch
@@ -55,7 +56,7 @@ collectd (4.9.1-1) unstable; urgency=low
     - Replaced overrides for spelling-error-in-description with
       capitalization-error-in-description.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 24 Jan 2010 14:40:32 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 24 Jan 2010 15:39:18 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
