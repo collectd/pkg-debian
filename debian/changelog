@@ -49,11 +49,13 @@ collectd (4.9.1-1) unstable; urgency=low
     - Added bts566199_collection_hide_types.dpatch -- added ability to hide
       specified types in collection.cgi; thanks to Pavel Piatruk for the patch
       (Closes: #566199).
+    - Added typo_fixes.dpatch -- fixing some typos in manpages and error
+      messages; thanks to lintian(1) for reporting this.
   * debian/collectd-core.overrides:
     - Replaced overrides for spelling-error-in-description with
       capitalization-error-in-description.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 24 Jan 2010 14:17:39 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 24 Jan 2010 14:40:32 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
