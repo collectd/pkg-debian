@@ -2,9 +2,9 @@
 collectd-core: shlib-with-non-pic-code usr/lib/collectd/netlink.so
 
 # All plugin names are spelled in lower-case.
-collectd-core: spelling-error-in-description apache Apache
-collectd-core: spelling-error-in-description mysql MySQL
-collectd-core: spelling-error-in-description postgresql PostgreSQL
+collectd-core: capitalization-error-in-description apache Apache
+collectd-core: capitalization-error-in-description mysql MySQL
+collectd-core: capitalization-error-in-description postgresql PostgreSQL
 
 # The "java" plugin uses libjvm.so which can only be found in a non-standard
 # directory. According to the Java guys the path name and the ABI is stable
