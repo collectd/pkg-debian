@@ -4,6 +4,8 @@
 ##
 ## DP: contrib/collection.cgi: Added ability to hide specified types.
 
+@DPATCH@
+
 diff a/contrib/collection.cgi b/contrib/collection.cgi
 --- a/contrib/collection.cgi
 +++ b/contrib/collection.cgi
