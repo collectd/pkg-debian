@@ -26,6 +26,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),
+ libtokyocabinet-dev [!kfreebsd-i386 !kfreebsd-amd64],
  libtokyotyrant-dev [!kfreebsd-i386 !kfreebsd-amd64],
  libupsclient1-dev,
  libvirt-dev (>= 0.4.0-6) [!kfreebsd-i386 !kfreebsd-amd64],

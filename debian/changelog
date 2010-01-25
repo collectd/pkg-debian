@@ -40,6 +40,8 @@ collectd (4.9.1-1) unstable; urgency=low
       (and removed the optional build-dep on librrd2-dev).
     - Enabled the "tokyotyrant" plugin (except on kfreebsd-{i386,amd64}) and
       build-depend on libtokyotyrant-dev (which is not available on kfreebsd).
+      Also, build-depend on libtokyocabinet-dev to work around a missing
+      dependency in libtokyotyrant-dev (see #566584).
   * debian/rules:
     - Disabled the following plugins on kfreebsd-{i386,amd64} which have not
       yet been ported to FreeBSD: battery, conntrack, contextswitch, cpufreq,
@@ -58,7 +60,7 @@ collectd (4.9.1-1) unstable; urgency=low
     - Replaced overrides for spelling-error-in-description with
       capitalization-error-in-description.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 25 Jan 2010 23:08:13 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 26 Jan 2010 00:22:32 +0100
 
 collectd (4.8.2-1) unstable; urgency=medium
 
