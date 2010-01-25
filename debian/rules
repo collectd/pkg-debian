@@ -90,8 +90,10 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 	confflags += \
 		--disable-iptables \
 		--disable-ipvs \
+		--disable-madwifi \
 		--disable-netlink \
-		--disable-sensors
+		--disable-sensors \
+		--disable-vserver
 endif
 
 # These plugins have not been ported to FreeBSD yet.
@@ -105,13 +107,11 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 		--disable-entropy \
 		--disable-fscache \
 		--disable-irq \
-		--disable-madwifi \
 		--disable-nfs \
 		--disable-protocols \
 		--disable-serial \
 		--disable-thermal \
 		--disable-vmem \
-		--disable-vserver \
 		--disable-wireless
 endif
 
