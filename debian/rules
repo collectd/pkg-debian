@@ -26,7 +26,7 @@ CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 CPPFLAGS += -UCONFIGFILE
 CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else
 	CFLAGS += -O2
@@ -81,7 +81,7 @@ confflags += --disable-zfs-arc
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).
-ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
+ifneq (,$(filter alpha amd64 hppa ia64 ppc64 mips mipsel, $(DEB_BUILD_ARCH)))
 	confflags += --disable-netlink
 endif
 
@@ -126,7 +126,7 @@ endif
 
 # The hppa buildds currently do not keep up with Java related stuff, thus
 # prevending testing transitions.
-ifneq (,$(findstring $(DEB_BUILD_ARCH),hppa))
+ifneq (,$(filter hppa, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 
