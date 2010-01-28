@@ -86,7 +86,7 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),alpha amd64 hppa ia64 ppc64 mips mipsel))
 endif
 
 # These plugins are Linux-specific.
-ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-iptables \
 		--disable-ipvs \
@@ -97,7 +97,7 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 endif
 
 # These plugins have not been ported to FreeBSD yet.
-ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-battery \
 		--disable-conntrack \
@@ -116,7 +116,7 @@ ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
 endif
 
 # Build-dependencies of these plugins are (not yet) available for kfreebsd.
-ifneq (,$(findstring $(DEB_BUILD_ARCH),kfreebsd-i386 kfreebsd-amd64))
+ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-gmond \
 		--disable-libvirt \

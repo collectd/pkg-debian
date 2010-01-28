@@ -1,3 +1,13 @@
+collectd (4.9.1-2) unstable; urgency=low
+
+  * debian/rules:
+    - Re-enabled non-kfreebsd plugins on i386 and amd64, which had been
+      disabled accidentally by using findstring (which does a substring match)
+      to compare DEB_BUILD_ARCH with kfreebsd-{amd64,i386}; thanks to ilia
+      kudirov for reporting this (Closes: #567259).
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 28 Jan 2010 21:58:35 +0100
+
 collectd (4.9.1-1) unstable; urgency=low
 
   * New upstream release:
