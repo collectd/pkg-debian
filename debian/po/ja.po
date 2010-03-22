@@ -1,26 +1,23 @@
-# translation of collectd.po to swedish
-# Copyright (C) 2008 Martin Bagge <brother@bsnet.se>
+# Copyright (C) 2009 Sebastian Harl <tokkee@debian.org>
 # This file is distributed under the same license as the collectd package.
-#
-# Martin Bagge <brother@bsnet.se>, 2008.
+# Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd\n"
+"Project-Id-Version: collectd 4.7.2-1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2009-12-13 16:24+0100\n"
-"PO-Revision-Date: 2008-11-02 05:17+0100\n"
-"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
-"Language-Team: swedish <debian-l10n-swedish@lists.debian.org>\n"
+"PO-Revision-Date: 2009-10-06 17:32+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #. Type: note
 #. Description
 #: ../collectd-core.templates:1001
 msgid "Layout of RRD files has changed"
-msgstr "Strukturen för RRD-filen har ändrats."
+msgstr "RRD ファイルの配置位置が変更されました"
 
 #. Type: note
 #. Description
@@ -32,9 +29,9 @@ msgid ""
 "since version 3.x. In order to keep your old data you have to migrate it. "
 "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgstr ""
-"Strukturen för RRD-filen som collectd skapar har ändrats mycket sedan "
-"version 3.x. För att behålla dina gamla data måste dessa migreras, detta kan "
-"göras genom att köra '/usr/lib/collectd-core/utils/migrate-3-4.px'."
+"collectd によって作成された RRD ファイルの配置位置はバージョン 3.x から大きく"
+"変わりました。移行を行うために古いデータを保存します。これは /usr/lib/"
+"collectd-core/utils/migrate-3-4.px を使って行われます。"
 
 #. Type: note
 #. Description
@@ -43,8 +40,9 @@ msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
-"Detta steg kräver att både perl och rrdtool är installerade och så är inte "
-"fallet just nu. Du måste genomföra migreringen manuellt."
+"この作業には perl パッケージと rrdtool パッケージの両方がインストールされてい"
+"る必要がありますが、現在そうなっていないようです。手動で移行作業を実行する必"
+"要があります。"
 
 #. Type: note
 #. Description
@@ -53,13 +51,13 @@ msgstr ""
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
 msgstr ""
-"Läs även /usr/share/doc/collectd-core/NEWS.Debian för ytterligare information."
+"詳細については /usr/share/doc/collectd-core/NEWS.Debian を参照してください。"
 
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:2001
 msgid "Automatically try to migrate your RRD files?"
-msgstr "Vill du försöka migrera RRD-filerna automatiskt?"
+msgstr "RRD ファイルの自動変換を試みますか?"
 
 #. Type: boolean
 #. Description
@@ -69,6 +67,6 @@ msgid ""
 "collectd/ is made in /var/backups/. This script is still experimental, "
 "though. Do not expect it to work in all cases."
 msgstr ""
-"Detta steg kan genomföras automatiskt, då kommer en säkerhetskopia av /var/"
-"lib/collectd i /var/backups. Detta skript är dock fortfarande inte helt "
-"uttestat, det kan finnas tillfällen när det inte fungerar."
+"この作業は自動的に行われます。今回の場合 /var/lib/collectd/ のバックアップ"
+"は /var/backups/ に作成されます。しかし、このスクリプトはまだ実験的なもので"
+"す。あらゆる状況で動作するのは期待しないでください。"

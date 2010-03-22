@@ -59,7 +59,7 @@ sub print_plugin_deps
 	my $pdir = undef;
 	my $i    = 0;
 
-	my $plugindir = "debian/collectd/usr/lib/collectd/";
+	my $plugindir = "debian/collectd-core/usr/lib/collectd/";
 
 	if (! opendir($pdir, $plugindir)) {
 		print STDERR "Could not open directory '$plugindir': $!\n";

@@ -5,9 +5,26 @@ General notes:
 --------------
 
 - Some plugins require additional libraries. To prevent you from having to
-  install dependencies that you don't actually need those libraries are
-  recommendations rather than dependencies. See README.Debian.plugins in the
-  "collectd" package for details.
+  install dozens of further packages that you don't actually need, there is no
+  strict dependency on those libraries. Rather, they are listed as recommenda-
+  tions ("collectd" package) or suggestions ("collectd-core" package"). See
+  /usr/share/doc/collectd-core/README.Debian.plugins for details.
+
+- The main components of collectd have been split into two packages:
+
+  * "collectd-core":
+    This package contains the main program file and the plugins but no config-
+    uration. It allows sites to, e.g., provide customizations on top of it
+    without having to modify the "collectd" package. For example, a custom
+    configuration and appropriate dependencies may be provided by some package
+    depending on "collectd-core" and conflicting / replacing / providing
+    "collectd". Ready-to-use sample config files (collectd.conf, filters.conf,
+    thresholds.conf) are available in /usr/share/doc/collectd-core/examples/.
+
+  * "collectd":
+    This package provides a full installation of the daemon, including a
+    configuration. It is meant to be ready to use for simple setups or first
+    steps.
 
 Configuring collectd:
 ---------------------
@@ -28,17 +45,6 @@ solutions are welcome.
   "/var/lib/collectd/" and generate a static HTML file and a directory
   containing several PNG files which are graphs of the RRD files found.
 
-  This script was intended to be used with version 3 of collectd but still
-  seems to be in use by some people. To get it working with version 4, you
-  have to call it once for each subdirectory containing RRD files. A sample
-  wrapper might look like this:
-
-    for dir in /var/lib/collectd/rrd/$hostname/*; do
-        out_dir=`basename "$dir"`
-        mkdir -p $out_dir
-        ( cd $out_dir && collectd2html.pl --data-dir="$dir" )
-    done
-
 - collection.cgi: Sample CGI script that creates graphs on the fly. The Perl
   modules "RRDs" (package librrds-perl), "URI:Escape" (package liburi-perl),
   "HTML::Entities" (package libhtml-parser-perl) and a CGI capable web server
@@ -48,9 +54,8 @@ solutions are welcome.
   (http://localhost/cgi-bin/collection.cgi by default). Please refer to your
   webserver's documentation for more details.
 
-  Starting with version 4, collection.cgi requires a small config file, which
-  is installed to /etc/collectd/collection.conf. You should not need to change
-  anything there.
+  collection.cgi requires a small config file, which is installed to
+  /etc/collectd/collection.conf. You should not need to change anything there.
 
 - collection3: A graphing front-end for the RRD files created by and filled
   with collectd. See /usr/share/doc/collectd/examples/collection3/README for
@@ -116,6 +121,9 @@ Examples:
 - collectd-network.py: Python module implementing the collectd network
   protocol in pure Python. It currently supports to receive data and
   notifications from collectd.
+
+- collectd-unixsock.py: Python module providing an interface to collect's
+  unixsock plugin.
 
 - cussh.pl: "Collectd Unix Socket SHell" is a small, interactive front-end for
   the unixsock plugin. See the embedded POD documentation for details: perldoc
