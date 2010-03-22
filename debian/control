@@ -11,7 +11,6 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libgcrypt11-dev,
  libglib2.0-dev,
  libhal-dev,
- libmemcached-dev,
  libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
@@ -104,7 +103,6 @@ Description: statistics collection and monitoring daemon (core system)
    * logging to files, STDOUT and STDERR: logfile
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
-   * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
    * multimeter statistics: multimeter

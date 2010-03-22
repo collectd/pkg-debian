@@ -9,8 +9,10 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
   * debian/collectd.conf, debian/control, debian/rules:
     - Disabled the "gmond" plugin, which requires libganglia (>= 3) which is
       not available in Lenny; removed build-dependency on libganglia-dev.
+    - Disabled the "memcachec" plugin, which requires libmemcached which is
+      not available in Lenny; removed build-dependency on libmemcached-dev.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:14:11 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:17:31 +0100
 
 collectd (4.9.1-2) unstable; urgency=low
 
