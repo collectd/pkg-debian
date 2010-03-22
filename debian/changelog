@@ -1,6 +1,9 @@
 collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
 
   * Rebuild for lenny-backports.
+  * debian/control:
+    - Build-conflict with iptables-dev to force the use of the shipped libiptc
+      (this allows building the iptables plugin on all architectures).
 
  -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 18:35:32 +0100
 
