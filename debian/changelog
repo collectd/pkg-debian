@@ -4,8 +4,10 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
   * debian/control:
     - Build-conflict with iptables-dev to force the use of the shipped libiptc
       (this allows building the iptables plugin on all architectures).
+    - Build-depend on libltdl3-dev, rather than libltdl-dev -- the latter is
+      not available on Lenny.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 18:35:32 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:10:51 +0100
 
 collectd (4.9.1-2) unstable; urgency=low
 
