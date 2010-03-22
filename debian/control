@@ -125,6 +125,7 @@ Description: statistics collection and monitoring daemon (core system)
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
+   * write data via the RRD accelerator daemon: rrdcached
    * output to RRD files: rrdtool
    * embedded Perl interpreter: perl
    * network latency statistics: ping
@@ -140,6 +141,7 @@ Description: statistics collection and monitoring daemon (core system)
    * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
    * TeamSpeak2 server statistics: teamspeak2
+   * Tokyo Tyrant server statistics: tokyotyrant
    * external runtime interface: unixsock
    * system uptime: uptime
    * number of users logged into the system: users
