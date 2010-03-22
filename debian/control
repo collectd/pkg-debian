@@ -26,7 +26,6 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libupsclient1-dev,
  libvirt-dev (>= 0.4.0-6) [!kfreebsd-i386 !kfreebsd-amd64],
  libxml2-dev,
- libyajl-dev,
  linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
  openjdk-6-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
  python-dev
@@ -78,7 +77,6 @@ Description: statistics collection and monitoring daemon (core system)
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
-   * parse JSON files: curl_json
    * query data from a relational database: dbi
    * disk space usage: df
    * disk and partition throughput: disk
