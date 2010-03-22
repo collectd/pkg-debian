@@ -11,8 +11,10 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
       not available in Lenny; removed build-dependency on libganglia-dev.
     - Disabled the "memcachec" plugin, which requires libmemcached which is
       not available in Lenny; removed build-dependency on libmemcached-dev.
+    - Disabled the "rrdcached" plugin, which requires rrdclient support in
+      librrd; removed version from librrd-dev build-dependency.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:17:31 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:21:05 +0100
 
 collectd (4.9.1-2) unstable; urgency=low
 

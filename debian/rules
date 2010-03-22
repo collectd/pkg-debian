@@ -79,6 +79,9 @@ confflags += --disable-oracle
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
+# rrdclient support in librrd is required for the rrdcached plugin.
+confflags += --disable-rrdcached
+
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
