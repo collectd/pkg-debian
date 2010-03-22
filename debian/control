@@ -19,7 +19,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libperl-dev,
  libpq-dev,
  librrd-dev,
- libsensors4-dev [!kfreebsd-i386 !kfreebsd-amd64],
+ libsensors-dev [!kfreebsd-i386 !kfreebsd-amd64],
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),

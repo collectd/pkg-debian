@@ -6,6 +6,10 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
       (this allows building the iptables plugin on all architectures).
     - Build-depend on libltdl3-dev, rather than libltdl-dev -- the latter is
       not available in Lenny.
+    - Build-depend on libsensors-dev, rather than libsensors4-dev, which is
+      not available in Lenny. This limits the functionality of the "sensors"
+      plugin which does not work well with libsensors3 and lm-sensors-3
+      (Re-opens: #538795).
   * debian/collectd.conf, debian/control, debian/rules:
     - Disabled the "gmond" plugin, which requires libganglia (>= 3) which is
       not available in Lenny; removed build-dependency on libganglia-dev.
@@ -14,7 +18,7 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
     - Disabled the "rrdcached" plugin, which requires rrdclient support in
       librrd; removed version from librrd-dev build-dependency.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:21:05 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:23:02 +0100
 
 collectd (4.9.1-2) unstable; urgency=low
 
