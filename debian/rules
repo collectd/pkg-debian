@@ -61,6 +61,9 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
+# libganglia >= 3 is required for the gmond plugin.
+confflags += --disable-gmond
+
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 

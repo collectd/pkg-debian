@@ -5,9 +5,12 @@ collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
     - Build-conflict with iptables-dev to force the use of the shipped libiptc
       (this allows building the iptables plugin on all architectures).
     - Build-depend on libltdl3-dev, rather than libltdl-dev -- the latter is
-      not available on Lenny.
+      not available in Lenny.
+  * debian/collectd.conf, debian/control, debian/rules:
+    - Disabled the "gmond" plugin, which requires libganglia (>= 3) which is
+      not available in Lenny; removed build-dependency on libganglia-dev.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:10:51 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 22 Mar 2010 23:14:11 +0100
 
 collectd (4.9.1-2) unstable; urgency=low
 
