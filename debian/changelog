@@ -1,3 +1,12 @@
+collectd (4.9.1-2~bpo50+2) lenny-backports; urgency=low
+
+  * debian/control:
+    - Build-depend on "libsnmp-dev | libsnmp9-dev" rather than specifying the
+      right combination of libsnmp-dev and perl, which might confuse buildds
+      on Lenny. Lenny is not affected by #559087 (see 4.8.2-1).
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 08 Apr 2010 20:05:46 +0200
+
 collectd (4.9.1-2~bpo50+1) lenny-backports; urgency=low
 
   * Rebuild for lenny-backports.
