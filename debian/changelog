@@ -6,8 +6,11 @@ collectd (4.10.0-1) unstable; urgency=low
     - Parse values from Modbus/TCP enabled devices: modbus (disabled in
       Debian; libmodbus is not available)
     - Timing values from Pinba: pinba
+  * debian/control:
+    - Build-depend on libprotobuf-c0-dev and protobuf-c-compiler required by
+      the 'pinba' plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 13:36:01 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 14:40:54 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 

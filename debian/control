@@ -21,6 +21,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libpcap0.8-dev | libpcap-dev,
  libperl-dev,
  libpq-dev,
+ libprotobuf-c0-dev,
  librrd-dev (>= 1.4~),
  libsensors4-dev [!kfreebsd-i386 !kfreebsd-amd64],
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
@@ -34,6 +35,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libyajl-dev,
  linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
  openjdk-6-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
+ protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev
 Standards-Version: 3.8.3
