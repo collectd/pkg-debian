@@ -9,6 +9,7 @@ collectd (4.10.0-1) unstable; urgency=low
   * debian/control:
     - Build-depend on libprotobuf-c0-dev and protobuf-c-compiler required by
       the 'pinba' plugin.
+    - Updated to standards-version 3.8.4 -- no changes.
   * debian/patches:
     - Removed bts566199_collection_hide_types -- applied upstream.
     - Removed typo_fixes -- applied upstream.
@@ -20,7 +21,7 @@ collectd (4.10.0-1) unstable; urgency=low
     - Added support for Renesas SH4 to the Java arch mapping; thanks to
       Nobuhiro Iwamatsu for the patch (Closes: #564165).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 16:31:02 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 17:04:44 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
