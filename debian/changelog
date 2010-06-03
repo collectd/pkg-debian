@@ -9,8 +9,10 @@ collectd (4.10.0-1) unstable; urgency=low
   * debian/control:
     - Build-depend on libprotobuf-c0-dev and protobuf-c-compiler required by
       the 'pinba' plugin.
+  * debian/patches:
+    - Removed bts566199_collection_hide_types -- applied upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 14:40:54 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 14:59:18 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
