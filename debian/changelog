@@ -12,8 +12,10 @@ collectd (4.10.0-1) unstable; urgency=low
   * debian/patches:
     - Removed bts566199_collection_hide_types -- applied upstream.
     - Removed typo_fixes -- applied upstream.
+  * debian/rules:
+    - Define (and pass to configure) $JAR.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 15:00:56 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 15:17:43 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 

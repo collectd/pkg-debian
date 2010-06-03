@@ -43,6 +43,7 @@ JAVA_HOME = /usr/lib/jvm/java-6-openjdk
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
+JAR = $(JAVA_HOME)/bin/jar
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
 JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
@@ -150,7 +151,7 @@ config.status: configure $(DPATCH_STAMPFN)
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
-		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
+		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
