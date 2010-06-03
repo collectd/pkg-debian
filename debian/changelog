@@ -12,12 +12,15 @@ collectd (4.10.0-1) unstable; urgency=low
   * debian/patches:
     - Removed bts566199_collection_hide_types -- applied upstream.
     - Removed typo_fixes -- applied upstream.
+    - Added bts575029-collectd2html-xhtml, adding support for XHTML to
+      collectd2html.pl; thanks to Ivan Shmakov for reporting this and Max
+      Henkel and Timur Kirilichev for providing patches (Closes: #575029).
   * debian/rules:
     - Define (and pass to configure) $JAR.
     - Added support for Renesas SH4 to the Java arch mapping; thanks to
       Nobuhiro Iwamatsu for the patch (Closes: #564165).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 15:22:13 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 16:31:02 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
