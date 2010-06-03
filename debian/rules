@@ -61,6 +61,9 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 # These plugins do not provide any functionality under Linux.
 confflags += --disable-apple_sensors --disable-tape
 
+# libmodbus is required for the modbus plugin.
+confflags += --disable-modbus
+
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 

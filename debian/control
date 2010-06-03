@@ -85,6 +85,7 @@ Description: statistics collection and monitoring daemon (core system)
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
    * parse JSON files: curl_json
+   * parse XML data: curl_xml
    * query data from a relational database: dbi
    * disk space usage: df
    * disk and partition throughput: disk
@@ -126,6 +127,7 @@ Description: statistics collection and monitoring daemon (core system)
    * OpenVPN traffic and compression statistics: openvpn
    * OpenVZ statistics: OpenVZ (Perl based plugin)
    * embedded Perl interpreter: perl
+   * timing values from Pinba: pinba
    * network latency statistics: ping
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns

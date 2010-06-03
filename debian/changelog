@@ -1,8 +1,13 @@
 collectd (4.10.0-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release:
+    New plugins:
+    - Parse XML data: curl_xml
+    - Parse values from Modbus/TCP enabled devices: modbus (disabled in
+      Debian; libmodbus is not available)
+    - Timing values from Pinba: pinba
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 12:58:27 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 13:36:01 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
