@@ -79,6 +79,7 @@ Description: statistics collection and monitoring daemon (core system)
    * battery status: battery
    * bind9 name-server and zone statistics: bind
    * connection tracking table size: conntrack
+   * number of context switches done by the operating system: contextswitch
    * CPU utilization: cpu
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
@@ -110,6 +111,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * statistics from mon.itor.us: Monitorus (Perl based plugin)
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
    * detailed Linux network interface and routing statistics: netlink
@@ -121,10 +123,12 @@ Description: statistics collection and monitoring daemon (core system)
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
    * OpenVPN traffic and compression statistics: openvpn
+   * OpenVZ statistics: OpenVZ (Perl based plugin)
    * Optimized Link State Routing daemon statistics: olsrd
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
+   * embedded Python interpreter: python
    * write data via the RRD accelerator daemon: rrdcached
    * output to RRD files: rrdtool
    * embedded Perl interpreter: perl
