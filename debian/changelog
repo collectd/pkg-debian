@@ -20,8 +20,13 @@ collectd (4.10.0-1) unstable; urgency=low
     - Define (and pass to configure) $JAR.
     - Added support for Renesas SH4 to the Java arch mapping; thanks to
       Nobuhiro Iwamatsu for the patch (Closes: #564165).
+  * debian/collectd.postinst:
+    - Manually replace /usr/share/doc/collectd/examples/ with a symlink when
+      upgrading from versions << 4.10.0-1~ -- this is not handled by dpkg
+      according to policy 6.6; thanks to Joey Hess for reporting this
+      (Closes: #569268).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Jun 2010 17:04:44 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 08 Jun 2010 00:14:50 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
