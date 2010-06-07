@@ -17,7 +17,8 @@ collectd (4.10.0-1) unstable; urgency=low
       collectd2html.pl; thanks to Ivan Shmakov for reporting this and Max
       Henkel and Timur Kirilichev for providing patches (Closes: #575029).
   * debian/rules:
-    - Define (and pass to configure) $JAR.
+    - Define (and pass to configure) $JAR, required by current versions of the
+      Java bindings.
     - Added support for Renesas SH4 to the Java arch mapping; thanks to
       Nobuhiro Iwamatsu for the patch (Closes: #564165).
   * debian/collectd.postinst:
@@ -26,7 +27,7 @@ collectd (4.10.0-1) unstable; urgency=low
       according to policy 6.6; thanks to Joey Hess for reporting this
       (Closes: #569268).
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 08 Jun 2010 00:14:50 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 08 Jun 2010 00:27:10 +0200
 
 collectd (4.9.1-2) unstable; urgency=low
 
