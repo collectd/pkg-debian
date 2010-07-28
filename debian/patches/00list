@@ -1,7 +1,5 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
-bts561577_collectd2html_recursive_fix.dpatch
 bts557599_powerdns_fix.dpatch
 bts559801_plugin_find_fix.dpatch
-bts575029-collectd2html-xhtml.dpatch
 
