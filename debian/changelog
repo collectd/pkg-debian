@@ -4,8 +4,9 @@ collectd (4.10.1-1) unstable; urgency=low
   * debian/patches:
     - Removed bts561577_collectd2html_recursive_fix -- applied upstream.
     - Removed bts575029-collectd2html-xhtml -- applied upstream.
+    - Removed bts557599_powerdns_fix -- applied upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Jul 2010 18:31:35 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Jul 2010 18:37:25 +0200
 
 collectd (4.10.0-1) unstable; urgency=low
 
