@@ -1,3 +1,9 @@
+collectd (4.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Jul 2010 18:26:10 +0200
+
 collectd (4.10.0-1) unstable; urgency=low
 
   * New upstream release:
