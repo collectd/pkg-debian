@@ -1,4 +1,4 @@
-collectd (4.10.1-2) unstable; urgency=low
+collectd (4.10.1-2) unstable; urgency=medium
 
   * debian/patches:
     - Added bts595756-notify_email-segfault -- upstream patch fixing a
@@ -10,8 +10,9 @@ collectd (4.10.1-2) unstable; urgency=low
     - Added bts596128-reheap-fix -- upstream patch fixing the 'reheap()'
       function used to manage the "read" callbacks and making sure all plugins
       get executed correctly and in each interval (Closes: #596128).
+  * Set urgency to "medium" because of the RC bug-fix.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:35:38 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:39:57 +0200
 
 collectd (4.10.1-1) unstable; urgency=low
 
