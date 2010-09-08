@@ -1,5 +1,8 @@
 collectd (4.10.1-2) unstable; urgency=medium
 
+  * debian/rules:
+    - Added support for ‘powerpcspe’ to the Java arch mapping; thanks to
+      Sebastian Andrzej Siewior for the patch (Closes: #592909).
   * debian/patches:
     - Added bts595756-notify_email-segfault -- upstream patch fixing a
       segfault in the 'notify_email' plugin; thanks to Manuel CISSE for
@@ -12,7 +15,7 @@ collectd (4.10.1-2) unstable; urgency=medium
       get executed correctly and in each interval (Closes: #596128).
   * Set urgency to "medium" because of the RC bug-fix.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:39:57 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:50:54 +0200
 
 collectd (4.10.1-1) unstable; urgency=low
 
