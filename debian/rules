@@ -83,6 +83,9 @@ confflags += --disable-onewire
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
+# protobuf is required for the pinba plugin.
+confflags += --disable-pinba
+
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
