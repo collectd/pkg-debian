@@ -18,6 +18,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libpcap0.8-dev | libpcap-dev,
  libperl-dev,
  libpq-dev,
+ libprotobuf-c0-dev,
  librrd-dev,
  libsensors-dev [!kfreebsd-i386 !kfreebsd-amd64],
  libsnmp-dev | libsnmp9-dev,
@@ -26,9 +27,10 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libxml2-dev,
  linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
  openjdk-6-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
+ protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev, iptables-dev
-Standards-Version: 3.8.3
+Standards-Version: 3.9.1
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
@@ -71,10 +73,12 @@ Description: statistics collection and monitoring daemon (core system)
    * battery status: battery
    * bind9 name-server and zone statistics: bind
    * connection tracking table size: conntrack
+   * number of context switches done by the operating system: contextswitch
    * CPU utilization: cpu
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
+   * parse XML data: curl_xml
    * query data from a relational database: dbi
    * disk space usage: df
    * disk and partition throughput: disk
@@ -99,6 +103,7 @@ Description: statistics collection and monitoring daemon (core system)
    * motherboard monitor: mbmon
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * statistics from mon.itor.us: Monitorus (Perl based plugin)
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
    * detailed Linux network interface and routing statistics: netlink
@@ -109,15 +114,18 @@ Description: statistics collection and monitoring daemon (core system)
    * send notification E-mails: notify_email
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
-   * OpenVPN traffic and compression statistics: openvpn
    * Optimized Link State Routing daemon statistics: olsrd
+   * OpenVPN traffic and compression statistics: openvpn
+   * OpenVZ statistics: OpenVZ (Perl based plugin)
+   * embedded Perl interpreter: perl
+   * timing values from Pinba: pinba
+   * network latency statistics: ping
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
    * number of processes: processes
-   * output to RRD files: rrdtool
-   * embedded Perl interpreter: perl
-   * network latency statistics: ping
    * information about network protocols: protocols
+   * embedded Python interpreter: python
+   * output to RRD files: rrdtool
    * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
    * values from SNMP enabled network devices: snmp
@@ -126,9 +134,9 @@ Description: statistics collection and monitoring daemon (core system)
    * parse table-like structured files: table
    * incremental parsing of logfiles: tail
    * number of TCP connections to specific ports: tcpconns
+   * TeamSpeak2 server statistics: teamspeak2
    * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
-   * TeamSpeak2 server statistics: teamspeak2
    * external runtime interface: unixsock
    * system uptime: uptime
    * number of users logged into the system: users
@@ -192,7 +200,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd-core (>= ${source:Version}), collectd-core (<< 4.10~),
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 4.11~),
  ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and

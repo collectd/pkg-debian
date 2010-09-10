@@ -33,7 +33,7 @@ else
 endif
 
 # The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc
+JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc sh4=sh
 JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
 			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
 ifeq (,$(JAVA_ARCHDIR))
@@ -43,6 +43,7 @@ JAVA_HOME = /usr/lib/jvm/java-6-openjdk
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
+JAR = $(JAVA_HOME)/bin/jar
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
 JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
@@ -69,6 +70,9 @@ confflags += --disable-gmond
 
 # libmemcached is required for the memcachec plugin.
 confflags += --disable-memcachec
+
+# libmodbus is required for the modbus plugin.
+confflags += --disable-modbus
 
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
@@ -162,7 +166,7 @@ config.status: configure $(DPATCH_STAMPFN)
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
-		JAVAC="$(JAVAC)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
+		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 

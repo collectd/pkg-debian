@@ -11,6 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2008-11-02 05:17+0100\n"
 "Last-Translator: Martin Bagge <brother@bsnet.se>\n"
 "Language-Team: swedish <debian-l10n-swedish@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,7 +54,8 @@ msgstr ""
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
 msgstr ""
-"Läs även /usr/share/doc/collectd-core/NEWS.Debian för ytterligare information."
+"Läs även /usr/share/doc/collectd-core/NEWS.Debian för ytterligare "
+"information."
 
 #. Type: boolean
 #. Description

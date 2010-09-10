@@ -35,6 +35,7 @@ msgstr ""
 "PO-Revision-Date: 2009-03-21 23:09+0100\n"
 "Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +79,8 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
-msgstr "Vea el archivo «/usr/share/doc/collectd-core/NEWS.Debian» para más detalles."
+msgstr ""
+"Vea el archivo «/usr/share/doc/collectd-core/NEWS.Debian» para más detalles."
 
 #. Type: boolean
 #. Description

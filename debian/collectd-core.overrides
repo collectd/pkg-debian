@@ -5,6 +5,7 @@ collectd-core: shlib-with-non-pic-code usr/lib/collectd/netlink.so
 collectd-core: capitalization-error-in-description apache Apache
 collectd-core: capitalization-error-in-description mysql MySQL
 collectd-core: capitalization-error-in-description postgresql PostgreSQL
+collectd-core: capitalization-error-in-description python Python
 
 # The "java" plugin uses libjvm.so which can only be found in a non-standard
 # directory. According to the Java guys the path name and the ABI is stable
