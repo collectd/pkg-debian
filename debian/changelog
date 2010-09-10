@@ -1,4 +1,4 @@
-collectd (4.10.1-2) unstable; urgency=medium
+collectd (4.10.1-2) testing-proposed-updates; urgency=medium
 
   * debian/rules:
     - Added support for ‘powerpcspe’ to the Java arch mapping; thanks to
@@ -15,7 +15,7 @@ collectd (4.10.1-2) unstable; urgency=medium
       get executed correctly and in each interval (Closes: #596128).
   * Set urgency to "medium" because of the RC bug-fix.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:50:54 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 10 Sep 2010 18:35:06 +0200
 
 collectd (4.10.1-1) unstable; urgency=low
 
