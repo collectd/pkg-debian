@@ -89,9 +89,6 @@ confflags += --disable-pinba
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
-# rrdclient support in librrd is required for the rrdcached plugin.
-confflags += --disable-rrdcached
-
 # libtokyotyrant is required for the tokyotyrant plugin.
 confflags += --disable-tokyotyrant
 

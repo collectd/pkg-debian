@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libpcap0.8-dev | libpcap-dev,
  libperl-dev,
  libpq-dev,
- librrd-dev,
+ librrd-dev (>= 1.4~),
  libsensors-dev [!kfreebsd-i386 !kfreebsd-amd64],
  libsnmp-dev | libsnmp9-dev,
  libupsclient1-dev,
@@ -122,6 +122,7 @@ Description: statistics collection and monitoring daemon (core system)
    * number of processes: processes
    * information about network protocols: protocols
    * embedded Python interpreter: python
+   * write data via the RRD accelerator daemon: rrdcached
    * output to RRD files: rrdtool
    * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
