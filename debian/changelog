@@ -1,3 +1,34 @@
+collectd (4.10.1-1+squeeze1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+  * debian/control:
+    - Build-conflict with iptables-dev to force the use of the shipped libiptc
+      (this allows building the iptables plugin on all architectures).
+    - Build-depend on libltdl3-dev, rather than libltdl-dev -- the latter is
+      not available in Lenny.
+    - Build-depend on libsensors-dev, rather than libsensors4-dev, which is
+      not available in Lenny. This limits the functionality of the "sensors"
+      plugin which does not work well with libsensors3 and lm-sensors-3
+      (Re-opens: #538795).
+    - Build-depend on "libsnmp-dev | libsnmp9-dev" rather than specifying the
+      right combination of libsnmp-dev and perl, which might confuse buildds
+      on Lenny. Lenny is not affected by #559087 (see 4.8.2-1).
+  * debian/collectd.conf, debian/control, debian/rules:
+    - Disabled the "gmond" plugin, which requires libganglia (>= 3) which is
+      not available in Lenny; removed build-dependency on libganglia-dev.
+    - Disabled the "memcachec" plugin, which requires libmemcached which is
+      not available in Lenny; removed build-dependency on libmemcached-dev.
+    - Disabled the "tokyotyrant" plugin, which requires libtokyotyrant which
+      is not available in Lenny; removed libtokyocabinet-dev and
+      libtokyotyrant-dev build-dependencies.
+    - Disabled the "curl_json" plugin, which requires libyajl which is not
+      available in Lenny; removed libyajl-dev build-dependency.
+    - Disabled the "pinba" plugin, which requires protobuf which is not
+      available in Lenny; removed libprotobuf-c0-dev and protobuf-c-compiler
+      build-dependencies.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 21 Sep 2010 00:10:55 +0200
+
 collectd (4.10.1-1+squeeze1) testing-proposed-updates; urgency=medium
 
   * debian/rules:
