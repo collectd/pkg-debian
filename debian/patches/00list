@@ -1,4 +1,7 @@
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
 bts559801_plugin_find_fix.dpatch
+bts595756-notify_email-segfault.dpatch
+bts592623-curl_json-file.dpatch
+bts596128-reheap-fix.dpatch
 

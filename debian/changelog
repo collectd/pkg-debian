@@ -1,3 +1,22 @@
+collectd (4.10.1-1+squeeze1) testing-proposed-updates; urgency=medium
+
+  * debian/rules:
+    - Added support for ‘powerpcspe’ to the Java arch mapping; thanks to
+      Sebastian Andrzej Siewior for the patch (Closes: #592909).
+  * debian/patches:
+    - Added bts595756-notify_email-segfault -- upstream patch fixing a
+      segfault in the 'notify_email' plugin; thanks to Manuel CISSE for
+      reporting this (Closes: #595756).
+    - Added bts592623-curl_json-file -- upstream patch fixing access to
+      file:// URLs in the 'curl_json' plugin; thanks Baptiste Mille-Mathias
+      for reporting this and pointing out the patch (Closes: #592623).
+    - Added bts596128-reheap-fix -- upstream patch fixing the 'reheap()'
+      function used to manage the "read" callbacks and making sure all plugins
+      get executed correctly and in each interval (Closes: #596128).
+  * Set urgency to "medium" because of the RC bug-fix.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 12 Sep 2010 13:53:37 +0200
+
 collectd (4.10.1-1~bpo50+1) lenny-backports; urgency=low
 
   * Rebuild for lenny-backports.
