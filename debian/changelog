@@ -1,3 +1,12 @@
+collectd (4.10.1-2.1) unstable; urgency=high
+
+  * Non-maintainer upload by the security team
+  * Fix DoS in RRD file creation (Closes: #605092)
+    Fixes: CVE-2010-4336
+    Thanks to Florian Forster
+
+ -- Steffen Joeris <white@debian.org>  Wed, 08 Dec 2010 17:45:50 +1100
+
 collectd (4.10.1-2) unstable; urgency=medium
 
   * debian/rules:
