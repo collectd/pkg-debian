@@ -3,7 +3,7 @@ collectd (5.0.0-1) unstable; urgency=low
   * New upstream release.
   * debian/rules:
     - Disabled lpar plugin -- this requires AIX (perfstat).
-    - Disabled redis and write_redis plugin -- they require libcredis.
+    - Disabled redis and write_redis plugins -- they require libcredis.
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
     - Added build-dep on libvarnish-dev, required by the varnish plugin.
