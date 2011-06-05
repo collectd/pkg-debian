@@ -60,7 +60,12 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
-confflags += --disable-apple_sensors --disable-tape
+# MacOS only (requires IO Kit):
+confflags += --disable-apple_sensors
+# AIX only (requires perfstat):
+confflags += --disable-lpar
+# Solaris only (requires devinfo and kstat)
+confflags += --disable-tape
 
 # libmodbus is required for the modbus plugin.
 confflags += --disable-modbus
