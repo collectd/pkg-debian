@@ -1,8 +1,10 @@
 collectd (5.0.0-1) unstable; urgency=low
 
   * New upstream release.
+  * debian/rules:
+    - Disabled redis and write_redis plugin -- they require libcredis.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 17:50:54 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 18:00:55 +0200
 
 collectd (4.10.1-2) unstable; urgency=medium
 
