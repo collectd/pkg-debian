@@ -5,8 +5,9 @@ collectd (5.0.0-1) unstable; urgency=low
     - Disabled redis and write_redis plugin -- they require libcredis.
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
+    - Added build-dep on libvarnish-dev, required by the varnish plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 18:02:35 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 18:03:57 +0200
 
 collectd (4.10.1-2) unstable; urgency=medium
 
