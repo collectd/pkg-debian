@@ -1,6 +1,17 @@
 collectd (5.0.0-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release:
+    New plugins:
+    - AMQP output plugin: amqp
+    - AIX logical partitions statistics: lpar (disabled in Debian; AIX only)
+    - Redis key-value database server statistics: redis (disabled in Debian;
+      libcredis is not available)
+    - Check thresholds and for missing values: threshold
+    - Varnish HTTP accelerator daemon statistics: varnish
+    - Write values to a Redis key-value database server: write_redis (disabled
+      in Debian; libcredis is not available)
+    New targets:
+    - Upgrade data-sets from v4 clients to v5: v5upgrade
   * debian/rules:
     - Disabled lpar plugin -- this requires AIX (perfstat).
     - Disabled redis and write_redis plugins -- they require libcredis.

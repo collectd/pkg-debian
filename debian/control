@@ -77,6 +77,7 @@ Description: statistics collection and monitoring daemon (core system)
  default configuration) on top of it without having to modify the "collectd"
  package.
  .
+   * AMQP output plugin: amqp
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Ascent server statistics: ascent
@@ -151,11 +152,13 @@ Description: statistics collection and monitoring daemon (core system)
    * TeamSpeak2 server statistics: teamspeak2
    * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
+   * Check thresholds and for missing values: threshold
    * Tokyo Tyrant server statistics: tokyotyrant
    * external runtime interface: unixsock
    * system uptime: uptime
    * number of users logged into the system: users
    * set the hostname to an unique identifier: uuid
+   * Varnish HTTP accelerator daemon statistics: varnish
    * detailed virtual memory statistics: vmem
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
