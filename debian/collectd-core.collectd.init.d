@@ -20,7 +20,7 @@
 
 set -e
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
 DISABLE=0
 
