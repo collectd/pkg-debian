@@ -15,6 +15,8 @@ collectd (4.10.4-1) unstable; urgency=low
       (Closes: #625323).
     - Added support for libnotify 0.7; thanks to Michael Biebl for reporting
       this (Closes: #636818).
+    - Fixed FTBFS with current libiptc; thanks to Lucas Nussbaum for reporting
+      this (Closes: #614439).
   * debian/patches:
     - Removed bts595756-notify_email-segfault -- included upstream.
     - Removed bts592623-curl_json-file -- included upstream.
@@ -24,7 +26,7 @@ collectd (4.10.4-1) unstable; urgency=low
     - Append DEB_BUILD_ARCH to JAVA_HOME; this is how it's done in the OpenJDK
       package.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:44:44 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 16:18:51 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
