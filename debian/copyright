@@ -621,7 +621,8 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGE.
 
-	Files src/cpython.h
+	Files src/collectd-python.pod
+	      src/cpython.h
 	      src/netapp.c
 	      src/pyconfig.c
 	      src/python.c
