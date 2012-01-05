@@ -23,8 +23,9 @@ collectd (4.10.4-1) unstable; urgency=low
     - Removed bts595756-notify_email-segfault -- included upstream.
     - Removed bts592623-curl_json-file -- included upstream.
     - Removed bts596128-reheap-fix -- included upstream.
+    - Removed CVE-2010-4336 -- included upstream.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:22:34 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:23:40 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
