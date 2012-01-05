@@ -13,12 +13,14 @@ collectd (4.10.4-1) unstable; urgency=low
     - Fixed FTBFS with GCC 4.6; thanks to Matthias Klose for reporting this
       and Peter Green and Colin Watson for providing patches
       (Closes: #625323).
+    - Added support for libnotify 0.7; thanks to Michael Biebl for reporting
+      this (Closes: #636818).
   * debian/control, debian/rules:
     - Depend on libmodbus-dev (which is now available in Debian) and enabled
      "modbus" plugin; thanks to Ivo De Decker for reporting this
      (Closes: #639796).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:10:11 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:15:21 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
