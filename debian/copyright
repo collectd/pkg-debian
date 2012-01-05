@@ -224,7 +224,7 @@ Licenses:
 
 	Files src/csv.c
 	      src/curl_json.c
-	Copyright © 2006-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2011 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
 	License: GNU General Public License
 
