@@ -3,8 +3,11 @@ collectd (4.10.4-1) unstable; urgency=low
   * New upstream release.
     - Added support for Yajl version 2; thanks to John Stamp for reporting
       this (Closes: #653879).
+    - collectd.conf(5) now documents the "Globals" config option and that this
+      is required for the "perl" and "python" plugins; thanks to Jeff Green
+      for reporting this (Closes: #612784).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 14:30:56 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 14:35:14 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
