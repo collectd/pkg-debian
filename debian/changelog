@@ -8,8 +8,10 @@ collectd (4.10.4-1) unstable; urgency=low
       for reporting this (Closes: #612784).
     - Be more verbose about why loading a plugin fails; thanks to Martin
       Steigerwald for reporting this (Closes: #585975).
+    - Don't abort if including a config file fails; thanks to Reinhard Tartler
+      for reporting this (Closes: #592880).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 14:53:54 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:01:31 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
