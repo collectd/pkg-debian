@@ -241,7 +241,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/dns.c
-	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2011 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Mirko Buffoni <briareos@eswat.org>
 	License: GNU General Public License
 
@@ -342,6 +342,7 @@ Licenses:
 
 	File src/notify_email.c
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
+	Copyright © 2010 Florian Forster
 	License: GNU General Public License
 
 	File src/openvpn.c
