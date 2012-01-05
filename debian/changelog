@@ -10,8 +10,12 @@ collectd (4.10.4-1) unstable; urgency=low
       Steigerwald for reporting this (Closes: #585975).
     - Don't abort if including a config file fails; thanks to Reinhard Tartler
       for reporting this (Closes: #592880).
+  * debian/control, debian/rules:
+    - Depend on libmodbus-dev (which is now available in Debian) and enabled
+     "modbus" plugin; thanks to Ivo De Decker for reporting this
+     (Closes: #639796).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:01:31 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jan 2012 15:05:15 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
