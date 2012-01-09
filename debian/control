@@ -38,7 +38,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
