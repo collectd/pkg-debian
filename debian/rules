@@ -98,6 +98,11 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-netlink \
 		--disable-sensors \
 		--disable-vserver
+else
+	# configure is not currently able to correctly check for ip_vs.h.
+	# ipvs_h_include.dpatch takes care of using the right one. Overwriting
+	# KERNEL_DIR makes sure we don't use any kernel headers directly.
+	confflags += --enable-ipvs=force KERNEL_DIR=/usr
 endif
 
 # These plugins have not been ported to FreeBSD yet.

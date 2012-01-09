@@ -1,0 +1,18 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## ipvs_h_include.dpatch by Sebastian Harl <sh@tokkee.org>
+##
+## DP: Include linux/ip_vs.h.
+
+@DPATCH@
+
+diff a/src/ipvs.c b/src/ipvs.c
+--- a/src/ipvs.c
++++ b/src/ipvs.c
+@@ -45,6 +45,7 @@
+ #endif /* HAVE_NETINET_IN_H */
+ 
+ /* this can probably only be found in the kernel sources */
++#include <linux/ip_vs.h>
+ #if HAVE_NET_IP_VS_H
+ # include <net/ip_vs.h>
+ #elif HAVE_IP_VS_H
