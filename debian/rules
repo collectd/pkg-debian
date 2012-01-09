@@ -160,7 +160,9 @@ config.status: configure $(DPATCH_STAMPFN)
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
-build: build-stamp
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
 
 build-stamp: config.status
 	dh_testdir
@@ -270,5 +272,5 @@ binary-arch: build install-arch
 	dh_builddeb -a
 
 binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install-indep install-arch
+.PHONY: build build-arch build-indep clean binary-indep binary-arch binary install-indep install-arch
 

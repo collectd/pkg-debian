@@ -25,6 +25,8 @@ collectd (4.10.4-1) unstable; urgency=low
   * debian/rules:
     - Append DEB_BUILD_ARCH to JAVA_HOME; this is how it's done in the OpenJDK
       package.
+    - Split 'build' target into 'build-arch' and 'build-indep' as recommended
+      by policy.
   * debian/patches/ipvs_h_include, debian/rules:
     - Let the ipvs plugin use linux/ip_vs.h rather than net/ip_vs.h. Also,
       make sure to look for the header in /usr/include rather than the kernel
@@ -32,7 +34,7 @@ collectd (4.10.4-1) unstable; urgency=low
     - Force building of the ipvs plugin since configure is not currently able
       to correctly check for ip_vs.h.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 14:35:27 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 15:22:45 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
