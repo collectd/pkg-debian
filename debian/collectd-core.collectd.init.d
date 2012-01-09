@@ -15,7 +15,11 @@
 # Should-Stop:       $network $named $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: start the statistics collection daemon
+# Short-Description: manage the statistics collection daemon
+# Description:       collectd is the statistics collection daemon.
+#                    It is a small daemon which collects system information
+#                    periodically and provides mechanisms to monitor and store
+#                    the values in a variety of ways.
 ### END INIT INFO
 
 set -e
