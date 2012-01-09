@@ -1,3 +1,13 @@
+collectd (4.10.4-2) unstable; urgency=low
+
+  * debian/patches/:
+    - Added bts619123_mkdir_endless_loop_fix, fixing an endless loop in case
+      the datadir is a symlink pointing to a non-existent target; thanks to
+      Michael Prokop for reporting this and Jonathan Nieder for providing the
+      patch (Closes: #619123).
+
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 19:17:32 +0100
+
 collectd (4.10.4-1) unstable; urgency=low
 
   * New upstream release.
