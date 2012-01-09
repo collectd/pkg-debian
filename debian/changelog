@@ -37,8 +37,10 @@ collectd (4.10.4-1) unstable; urgency=low
     - Updated standards-version to 3.9.2 -- no changes.
   * debian/collectd-core.collectd.init.d:
     - Added a description LSB header field.
+  * debian/collectd-core.overrides:
+    - Updated entry for java's binary-or-shlib-defines-rpath.
 
- -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 15:32:07 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 16:10:58 +0100
 
 collectd (4.10.1-2.1) unstable; urgency=high
 
