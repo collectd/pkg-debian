@@ -352,6 +352,10 @@ Licenses:
 	Copyright © 2009 Fabian Schuh <mail@xeroc.org>
 	License: GNU General Public License
 
+	File src/oracle.c
+	Copyright © 2008-2009 noris network AG
+	Copyright © 2012 Florian octo Forster
+
 	Files src/owniptc/*
 	Copyright © 1999-2008 Netfilter Core Team
 	License: GNU General Public License
@@ -470,7 +474,7 @@ Licenses:
 
 	All other files (except libltdl/*, src/network.c, src/postgresql.c,
 		src/utils_dns.* and contrib/SpamAssassin/*):
-	Copyright © 2005-2010 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2011 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
@@ -517,7 +521,7 @@ text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 	3. This notice may not be removed or altered from any source distribution.
 
 	Files libltdl/* (except libltdl/m4/*)
-	Copyright © 1998-2008 Free Software Foundation, Inc.
+	Copyright © 1998-2010 Free Software Foundation, Inc.
 	License: GNU Lesser General Public License
 
 	File src/network.c
