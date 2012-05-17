@@ -14,9 +14,9 @@ DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
-CPPFLAGS = `dpkg-buildflags --get CPPFLAGS`
+CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 CPPFLAGS += -I$(CURDIR)/debian/include
-CFLAGS = `dpkg-buildflags --get CFLAGS`
+CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall
 
 # There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
@@ -30,7 +30,7 @@ CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 CPPFLAGS += -UCONFIGFILE
 CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
-LDFLAGS = `dpkg-buildflags --get LDFLAGS`
+LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
 
 # The archdir map has been copied from openjdk-6's debian/rules.
 JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
