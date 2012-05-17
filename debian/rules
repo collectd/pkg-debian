@@ -31,9 +31,7 @@ CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 LDFLAGS = `dpkg-buildflags --get LDFLAGS`
 
 # The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc powerpcspe=ppc sh4=sh
-JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
-			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
 ifeq (,$(JAVA_ARCHDIR))
 	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
 endif
