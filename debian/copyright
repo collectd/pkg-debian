@@ -674,6 +674,10 @@ distributed under the same license as the package itself.
 	cs.po:
 	Copyright © 2009 Martin Sin <martin.sin@zshk.cz>
 
+	da.po:
+	Copyright © 2012 collectd & nedenstående oversættere
+	Written by Joe Hansen <joedalton2@yahoo.dk>
+
 	de.po:
 	Copyright © 2008 Kai Wasserbäch <debian@carbon-project.org>
 	Copyright © 2008 Sebastian Harl <tokkee@debian.org>
