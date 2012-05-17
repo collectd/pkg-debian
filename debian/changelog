@@ -22,6 +22,10 @@ collectd (4.10.7-1) unstable; urgency=low
   * debian/control:
     - Updated to standards-version 3.9.3 -- no changes.
     - Build depend on javahelper providing java-arch.sh.
+    - Use linux-any, kfreebsd-any, etc. rather than hardcoded list of
+      non-Linux architectures to make life of porters easier; thanks to Robert
+      Millan for reporting this and providing a pointer to the fix
+      (Closes: #634690).
   * debian/collectd-core.postrm, debian/collectd-core.templates:
     - Prompt the user (debconf priority high) when purging the collected data
       providing an option to opt out. The question defaults to remove the
