@@ -2,10 +2,7 @@ collectd (4.10.7-1) unstable; urgency=low
 
   * New upstream release.
   * debian/patches/:
-    - Added bts619123_mkdir_endless_loop_fix, fixing an endless loop in case
-      the datadir is a symlink pointing to a non-existent target; thanks to
-      Michael Prokop for reporting this and Jonathan Nieder for providing the
-      patch (Closes: #619123).
+    - Removed ipvs_h_include.dpatch -- applied upstream.
   * debian/rules:
     - Use dpkg-buildflags to determine compiler/linker flags; this also
       enables hardening build flags; thanks to Moritz Muehlenhoff for
