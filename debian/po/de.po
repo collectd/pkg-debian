@@ -1,6 +1,6 @@
 # German translation of the collectd debconf template
 # Copyright © 2008 Kai Wasserbäch <debian@carbon-project.org>
-# Copyright © 2008 Sebastian Harl <sh@tokkee.org>
+# Copyright © 2008, 2012 Sebastian Harl <sh@tokkee.org>
 # This file is distributed under the same license as the collectd package.
 #
 msgid ""
@@ -79,7 +79,7 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001
 msgid "Remove all collected data (e.g. RRD files)?"
-msgstr ""
+msgstr "Alle gesammelten Daten entfernen (z.B. RRD Dateien)?"
 
 #. Type: boolean
 #. Description
@@ -89,6 +89,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
+"Das Verzeichnis /var/lib/collectd/ mit den gesammelten Statistiken soll "
+"entfernt werden. Das Verzeichnis enthält (in der Standardkonfiguration) "
+"zum Beispiel die RRD Dateien."
 
 #. Type: boolean
 #. Description
@@ -98,3 +101,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
+"Falls geplant ist, nur eine höhere oder eigene Version von collectd zu "
+"installieren oder falls die Daten zu weiteren Anlysen genutzen werden, "
+"sollten die Daten behalten werden"
