@@ -142,10 +142,16 @@ d_status() {
 			echo "collectd ($PID) is running."
 			exit 0
 		else
+			if test -f "$_PIDFILE"; then
+				echo "collectd is stopped but PID file exists."
+				exit 1
+			fi
 			echo "collectd is stopped."
+			exit 3
 		fi
 	fi
-	exit 1
+	echo "status of collectd unknown."
+	exit 4
 }
 
 case "$1" in

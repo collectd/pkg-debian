@@ -31,6 +31,8 @@ collectd (4.10.7-1) unstable; urgency=low
     - Added cpufrequtils to should-start, else collectd does not reliably
       detect all CPUs; thanks to Mathias Bauer for reporting and debugging
       this (Closes: #662040).
+    - Use the exit codes specified by LSB in 'status' command; thanks to
+      Michael Prokop for reporting this (Closes: #615840).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 17 May 2012 15:55:39 +0200
 
