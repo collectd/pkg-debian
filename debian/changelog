@@ -42,6 +42,8 @@ collectd (4.10.7-1) unstable; urgency=low
       (Closes: #660918).
     - Added Brazilian Portuguese debconf template translation; thanks to
       Adriano Rafael Gomes (Closes: #662174).
+    - Added Polish debconf template translation; thanks to Michał Kułach
+      (Closes: #672739).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 17 May 2012 15:55:39 +0200
 
