@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2009-12-13 16:24+0100\n"
+"POT-Creation-Date: 2012-05-17 18:25+0200\n"
 "PO-Revision-Date: 2012-02-22 12:42+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
@@ -32,9 +32,9 @@ msgid ""
 "since version 3.x. In order to keep your old data you have to migrate it. "
 "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgstr ""
-"Layouttet for RRD-filer oprettet af collectd har ændret sig markant "
-"siden version 3.x. For at bevare dine gamle data skal du migrere dem. "
-"Dette kan gøres ved at bruge /usr/lib/collectd-core/utils/migrate-3-4.px."
+"Layouttet for RRD-filer oprettet af collectd har ændret sig markant siden "
+"version 3.x. For at bevare dine gamle data skal du migrere dem. Dette kan "
+"gøres ved at bruge /usr/lib/collectd-core/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -43,8 +43,8 @@ msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
-"Dette trin kræver at pakkerne perl og rrdtool installeres, hvilket ikke "
-"er tilfældet i øjeblikket. Du skal udføre migreringen manuelt."
+"Dette trin kræver at pakkerne perl og rrdtool installeres, hvilket ikke er "
+"tilfældet i øjeblikket. Du skal udføre migreringen manuelt."
 
 #. Type: note
 #. Description
@@ -69,6 +69,29 @@ msgid ""
 "though. Do not expect it to work in all cases."
 msgstr ""
 "Dette trin kan udføres automatisk. I dette tilfælde laves en sikkerhedskopi "
-"af /var/lib/collectd/ i /var/backups/. Dette skript er dog stadig "
-"under udvikling. Forvent ikke at det virker i alle tilfælde."
+"af /var/lib/collectd/ i /var/backups/. Dette skript er dog stadig under "
+"udvikling. Forvent ikke at det virker i alle tilfælde."
 
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid "Remove all collected data (e.g. RRD files)?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid ""
+"The /var/lib/collectd/ directory which contains the data files containing "
+"the collected statistics is about to be removed. For example, this directory "
+"includes (in the default configuration) all RRD files."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid ""
+"If you're purging the collectd package in order to replace it with a more "
+"recent or custom version or if you want to keep the data for further "
+"analysis, the data should be kept."
+msgstr ""

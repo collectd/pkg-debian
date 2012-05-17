@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd 4.6.3-1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2009-12-13 16:24+0100\n"
+"POT-Creation-Date: 2012-05-17 18:25+0200\n"
 "PO-Revision-Date: 2009-06-22 16:07+0200\n"
 "Last-Translator: Martin Sin <martin.sin@zshk.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -71,3 +71,27 @@ msgstr ""
 "Tento krok je možno provést automaticky. Pokud se pro to rozhodnete, bude "
 "ve /var/backups/ provedena záloha /var/lib/collectd. Tento skript je stále "
 "ve stavu testování, takže nečekejte že bude ve všech případech zcela funkční."
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid "Remove all collected data (e.g. RRD files)?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid ""
+"The /var/lib/collectd/ directory which contains the data files containing "
+"the collected statistics is about to be removed. For example, this directory "
+"includes (in the default configuration) all RRD files."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001
+msgid ""
+"If you're purging the collectd package in order to replace it with a more "
+"recent or custom version or if you want to keep the data for further "
+"analysis, the data should be kept."
+msgstr ""
