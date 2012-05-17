@@ -10,6 +10,8 @@ collectd (4.10.7-1) unstable; urgency=low
     - Use dpkg-buildflags to determine compiler/linker flags; this also
       enables hardening build flags; thanks to Moritz Muehlenhoff for
       providing the patch (Closes: #656271).
+    - Don't force building of the ipvs plugin. The ip_vs.h check has been
+      fixed in configure.
   * debian/README.Debian:
     - Added section 'Cleanup of old data' explaining how to get rid of
       out-dated data files (e.g. RRD files).
