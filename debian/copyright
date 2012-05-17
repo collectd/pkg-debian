@@ -667,7 +667,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	Use whatever you like more.
 
-The Debian packaging is © 2006-2009, Sebastian Harl <tokkee@debian.org> and
+The Debian packaging is © 2006-2012, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above. The debconf template translations are
 distributed under the same license as the package itself.
 
