@@ -24,3 +24,15 @@ _Description: Automatically try to migrate your RRD files?
  .
  See /usr/share/doc/collectd-core/NEWS.Debian for details.
 
+Template: collectd/postrm_purge_data
+Type: boolean
+Default: true
+_Description: Remove all collected data (e.g. RRD files)?
+ The /var/lib/collectd/ directory which contains the data files containing the
+ collected statistics is about to be removed. For example, this directory
+ includes (in the default configuration) all RRD files.
+ .
+ If you're purging the collectd package in order to replace it with a more
+ recent or custom version or if you want to keep the data for further
+ analysis, the data should be kept.
+

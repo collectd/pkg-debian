@@ -17,6 +17,11 @@ collectd (4.10.7-1) unstable; urgency=low
       out-dated data files (e.g. RRD files).
   * debian/control:
     - Updated to standards-version 3.9.3 -- no changes.
+  * debian/collectd-core.postrm, debian/collectd-core.templates:
+    - Prompt the user (debconf priority high) when purging the collected data
+      providing an option to opt out. The question defaults to remove the
+      data; thanks to Trent W. Buck for reporting and discussing this
+      (Closes: #631167).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 17 May 2012 15:55:39 +0200
 
