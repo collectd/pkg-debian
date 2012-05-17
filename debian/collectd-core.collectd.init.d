@@ -11,7 +11,7 @@
 # Provides:          collectd
 # Required-Start:    $local_fs $remote_fs
 # Required-Stop:     $local_fs $remote_fs
-# Should-Start:      $network $named $syslog $time
+# Should-Start:      $network $named $syslog $time cpufrequtils
 # Should-Stop:       $network $named $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6

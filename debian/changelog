@@ -27,6 +27,10 @@ collectd (4.10.7-1) unstable; urgency=low
       providing an option to opt out. The question defaults to remove the
       data; thanks to Trent W. Buck for reporting and discussing this
       (Closes: #631167).
+  * debian/collectd-core.collectd.init.d:
+    - Added cpufrequtils to should-start, else collectd does not reliably
+      detect all CPUs; thanks to Mathias Bauer for reporting and debugging
+      this (Closes: #662040).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 17 May 2012 15:55:39 +0200
 
