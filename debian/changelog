@@ -4,6 +4,9 @@ collectd (4.10.7-1) unstable; urgency=low
     - Fixed an endless loop in case the datadir is a symlink pointing to a
       non-existent target; thanks to Michael Prokop for reporting this and
       Jonathan Nieder for providing the patch (Closes: #619123).
+    - Use bsd/nlist.h rather than the deprecated nlist.h on FreeBSD fixing a
+      FTBFS on kfreebsd; thanks to Tobias Frost for reporting this
+      (Closes: #664429).
   * debian/patches/:
     - Removed ipvs_h_include.dpatch -- applied upstream.
   * debian/rules:
