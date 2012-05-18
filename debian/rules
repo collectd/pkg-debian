@@ -100,6 +100,10 @@ endif
 
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	# Work-around an incomplete check for kvm functionality
+	CPPFLAGS  += -DHAVE_STRUCT_KINFO_PROC_FREEBSD
+	confflags += --enable-processes=force
+
 	confflags += \
 		--disable-battery \
 		--disable-conntrack \

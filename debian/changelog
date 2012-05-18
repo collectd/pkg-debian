@@ -16,6 +16,8 @@ collectd (4.10.7-1) unstable; urgency=low
       architecture directory, thus, making sure armhf and armel are supported
       as well; thanks to peter green for reporting this and providing the
       pointer (Closes: #656274).
+    - Work around #673431 (kvm.h requires sys/types.h) by forcing the processes
+      plugin on kfreebsd and manually defining HAVE_STRUCT_KINFO_PROC_FREEBSD.
   * debian/README.Debian:
     - Added section 'Cleanup of old data' explaining how to get rid of
       out-dated data files (e.g. RRD files).
