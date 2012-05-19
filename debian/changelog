@@ -1,6 +1,8 @@
 collectd (5.1.0-1) unstable; urgency=low
 
   * New upstream release (Closes: #630968):
+    - syslog plugin now supports logging notifications; thanks to Trent W.
+      Buck for suggesting this (Closes: #632940).
     New plugins:
     - AMQP output plugin: amqp
     - AIX logical partitions statistics: lpar (disabled in Debian; AIX only)
