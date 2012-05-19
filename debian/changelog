@@ -33,6 +33,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Added lcc_sort_identifiers introduced in 5.1.0.
   * debian/NEWS.Debian:
     - Documented the upgrade from version 4 to 5.
+  * debian/collectd-core.install:
+    - Install migrate-4-5.px.
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
 
