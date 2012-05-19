@@ -1,3 +1,35 @@
+collectd (5.1.0-1) unstable; urgency=low
+
+  Version 5 of collectd introduced a couple of backward-incompatible changes.
+  The full list of changes is documented in the collectd wiki found at
+  <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>.
+
+  In a client / server setups it's generally advised to upgrade the server
+  first. By using the v5_upgrade target plugin, the v5 server will be able to
+  receive and process data sent by v4 clients. This allows to upgrade the
+  clients at an arbitrary later date. See the wiki for details.
+
+  The layout of various RRD files has changed. In order to keep your old data
+  you have to migrate it. This can be done by using /usr/lib/collectd/utils/
+  migrate-4-5.px. The script will output a series of shell commands that
+  should do all the work automatically. However, depending on your setup, a
+  couple of minor changes might be necessary to migrate all of your data. In
+  this case, please file a bug report so that the necessary changes can be
+  added to the script. The script will modify the RRD files in place.
+
+  Thus, the migration can be done like this (you might want to backup your
+  data before):
+
+    /usr/lib/collectd/utils/migrate-4-5.px -indir /var/lib/collectd/rrd/ \
+        > migrate-4-5.sh
+    vim migrate-4-5.sh # verify / adapt the script
+    bash migrate-4-5.sh
+
+  Also, the syntax of some plugin configuration blocks has changed. See the
+  wiki for details and instructions how to update your configuration.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
+
 collectd (4.2.0-1) experimental; urgency=low
 
   Prior to this version any plugin that has dependencies other than libc6 got
