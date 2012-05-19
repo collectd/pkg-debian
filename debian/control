@@ -200,6 +200,7 @@ Description: statistics collection and monitoring daemon (utilities)
  .
  This package contains the following utility:
  .
+   * collectdctl: Control interface for collectd
    * collectd-nagios: Nagios plugin for querying collectd
 
 Package: collectd-dbg
