@@ -24,6 +24,7 @@ Copyright Holders (in alphabetical order):
 	C-Ware, Inc.
 	Clay Loveless <clay@killersoft.com>
 	Clément Stenac <clement.stenac@diwi.org>
+	Cyril Feraudet <cyril@feraudet.com>
 	David Bacher <drbacher@gmail.com>
 	Doug MacEachern <dougm@hyperic.com>
 	Edward Konetzko <konetzed@quixoticagony.com>
@@ -53,6 +54,7 @@ Copyright Holders (in alphabetical order):
 	Mariusz Gronczewski <xani666@gmail.com>
 	Martin Bagge <brother@bsnet.se>
 	Martin Sin <martin.sin@zshk.cz>
+	Michael Hanselmann
 	Michael Stapelberg <michael+git@stapelberg.de>
 	Michał Mirosław <mirq-linux@rere.qmqm.pl>
 	Mirko Buffoni <briareos@eswat.org>
@@ -127,9 +129,17 @@ Licenses:
 	Copyright © 2006 Vincent Stehlé <vincent.stehle@free.fr>
 	License: GNU General Public License
 
+	Files contrib/collection3/bin/graph.cgi
+	      contrib/collection3/bin/index.cgi
+	      contrib/collection3/lib/Collectd/Graph/Common.pm
+	Copyright © 2008-2011 Florian Forser
+	Copyright © 2011 noris network AG
+	License: GNU General Public License
+
 	Files contrib/collection3/lib/Collectd/Graph/Type/ArcCounts.pm
 	      src/zfs_arc.c
 	Copyright © 2009 Anthony Dewhurst <dewhurst@gmail>
+	Copyright © 2012 Aurelien Rougemont
 	License: GNU General Public License
 
 	File contrib/network-proxy.py
@@ -214,7 +224,6 @@ Licenses:
 	License: GNU General Public License
 
 	Files src/cpufreq.c
-	      src/irq.c
 	      src/multimeter.c
 	Copyright © 2005-2007 Peter Holik <peter@holik.at>
 	License: GNU General Public License
@@ -249,6 +258,11 @@ Licenses:
 	File src/dns.c
 	Copyright © 2006-2011 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Mirko Buffoni <briareos@eswat.org>
+	License: GNU General Public License
+
+	File src/ethstat.c
+	Copyright © 2011 Cyril Feraudet
+	Copyright © 2012 Florian "octo" Forster
 	License: GNU General Public License
 
 	File src/exec.c
@@ -291,6 +305,11 @@ Licenses:
 	Copyright © 2007 Sebastian Harl <sh@tokkee.org>
 	License: GNU General Public License
 
+	File src/irq.c
+	Copyright © 2007 Peter Holik
+	Copyright © 2011 Florian Forster
+	Copyright: GNU General Public License
+
 	File src/java.c
 	Copyright © 2008 Justo Alonso Achaques <justo.alonso@gmail.com>
 	Copyright © 2009 Florian Forster <octo@verplant.org>
@@ -308,6 +327,10 @@ Licenses:
 	File src/mbmon.c
 	Copyright © 2006 Flavio Stanchina
 	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
+	File src/md.c
+	Copyright © 2010-2011 Michael Hanselmann
 	License: GNU General Public License
 
 	Files src/memcachec.c
@@ -330,7 +353,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/modbus.c
-	Copyright © 2010 noris network AG
+	Copyright © 2010-2011 noris network AG
 	Author: Florian Forster <octo@noris.net>
 	License: GNU General Public License
 
@@ -361,9 +384,6 @@ Licenses:
 	File src/oracle.c
 	Copyright © 2008-2009 noris network AG
 	Copyright © 2012 Florian octo Forster
-
-	Files src/owniptc/*
-	Copyright © 1999-2008 Netfilter Core Team
 	License: GNU General Public License
 
 	File src/pinba.c
@@ -472,15 +492,28 @@ Licenses:
 	Copyright © 2009 Andrés J. Díaz <ajdiaz@connectical.com>
 	License: GNU General Public License
 
+	File src/write_graphite.c
+	Copyright © 2009 Paul Sadauskas
+	Copyright © 2009 Doug MacEachern
+	Copyright © 2011 Scott Sanders
+	Copyright © 2012 Pierre-Yves Ritschard
+	Copyright © 2007-2012 Florian octo Forster
+	License: GNU General Public License
+
 	File src/write_http.c
 	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Paul Sadauskas <psadauskas@gmail.com>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
 	License: GNU General Public License
 
+	File src/write_mongodb.c
+	Copyright © 2010-2012 Florian Forster
+	Copyright © 2010 Akkarit Sangpetch
+	Copyright © 2012 Chris Lundquist
+
 	All other files (except libltdl/*, src/network.c, src/postgresql.c,
 		src/utils_dns.* and contrib/SpamAssassin/*):
-	Copyright © 2005-2011 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
@@ -552,6 +585,27 @@ text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 
 On Debian systems, the complete text of the GNU Lesser General Public License
 can be found in `/usr/share/common-licenses/LGPL'.
+
+	File contrib/exec-ksm.sh
+	Copyright © 2011 Florian Forster
+
+	Permission is hereby granted, free of charge, to any person obtaining a
+	copy of this software and associated documentation files (the "Software"),
+	to deal in the Software without restriction, including without limitation
+	the rights to use, copy, modify, merge, publish, distribute, sublicense,
+	and/or sell copies of the Software, and to permit persons to whom the
+	Software is furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+	DEALINGS IN THE SOFTWARE.
 
 	Files libltdl/m4/*
 	Copyright © 1996-2009 Free Software Foundation, Inc.
@@ -643,7 +697,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	File src/amqp.c
 	Copyright © 2009 Sebastien Pahl <sebastien.pahl@dotcloud.com>
-	Copyright © 2010 Florian Forster <octo@verplant.org>
+	Copyright © 2010-2012 Florian Forster <octo@verplant.org>
 	License: MIT License
 
 	Permission is hereby granted, free of charge, to any person obtaining a
