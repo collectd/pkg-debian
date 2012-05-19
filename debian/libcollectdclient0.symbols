@@ -6,6 +6,7 @@ libcollectdclient.so.0 libcollectdclient0 #MINVER#
  lcc_identifier_to_string@Base 4.6.0
  lcc_listval@Base 4.6.0
  lcc_putval@Base 4.6.0
+ lcc_sort_identifiers@Base 5.1.0
  lcc_strerror@Base 4.6.0
  lcc_string_to_identifier@Base 4.6.0
  lcc_version@Base 4.6.0

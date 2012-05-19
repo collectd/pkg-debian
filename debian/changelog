@@ -27,6 +27,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Added build-dep on libvarnish-dev, required by the varnish plugin.
   * debian/collectd-utils.install:
     - Install collectdctl and collectdctl.1 to collectd-utils.
+  * debian/libcollectdclient0.symbols:
+    - Added lcc_sort_identifiers introduced in 5.1.0.
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
 
