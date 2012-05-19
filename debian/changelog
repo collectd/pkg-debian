@@ -1,6 +1,6 @@
 collectd (5.1.0-1) unstable; urgency=low
 
-  * New upstream release:
+  * New upstream release (Closes: #630968):
     New plugins:
     - AMQP output plugin: amqp
     - AIX logical partitions statistics: lpar (disabled in Debian; AIX only)
