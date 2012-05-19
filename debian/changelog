@@ -12,7 +12,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Check thresholds and for missing values: threshold
     - Varnish HTTP accelerator daemon statistics: varnish
     - Sends data to Carbon, the storage layer of Graphite: write_graphite
-    - Write values to a MongoDB NoSQL database server: write_mongodb
+    - Write values to a MongoDB NoSQL database server: write_mongodb (disabled
+      in Debian; libmongoc is not available)
     - Write values to a Redis key-value database server: write_redis (disabled
       in Debian; libcredis is not available)
     New targets:
@@ -20,6 +21,7 @@ collectd (5.1.0-1) unstable; urgency=low
   * debian/rules:
     - Disabled lpar plugin -- this requires AIX (perfstat).
     - Disabled redis and write_redis plugins -- they require libcredis.
+    - Disabled write_mongodb plugin -- this requires libmongoc.
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
     - Added build-dep on libvarnish-dev, required by the varnish plugin.
