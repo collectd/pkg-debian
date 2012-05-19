@@ -111,8 +111,8 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
-msgstr "Siehe »/usr/share/doc/collectd-core/NEWS.Debian« und das collectd "
-"Wiki unter <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
+"Siehe »/usr/share/doc/collectd-core/NEWS.Debian« und das collectd Wiki "
+"unter <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
 "für Details."
 
 #. Type: boolean
