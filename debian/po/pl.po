@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2012-05-17 18:25+0200\n"
+"POT-Creation-Date: 2012-05-19 17:59+0200\n"
 "PO-Revision-Date: 2012-05-13 13:08+0200\n"
 "Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -41,7 +41,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../collectd-core.templates:1001
+#. Type: note
+#. Description
+#: ../collectd-core.templates:1001 ../collectd-core.templates:3001
 msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
@@ -60,13 +62,17 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../collectd-core.templates:2001
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:2001 ../collectd-core.templates:4001
 msgid "Automatically try to migrate your RRD files?"
 msgstr "Spróbować przekształcić pliki RRD automatycznie?"
 
 #. Type: boolean
 #. Description
-#: ../collectd-core.templates:2001
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:2001 ../collectd-core.templates:4001
 msgid ""
 "This step can be done automatically. In this case a backup of /var/lib/"
 "collectd/ is made in /var/backups/. This script is still experimental, "
@@ -77,15 +83,52 @@ msgstr ""
 "eksperymentalny. Proszę nie oczekiwać, że będzie działał we wszystkich "
 "przypadkach."
 
-#. Type: boolean
+#. Type: note
 #. Description
 #: ../collectd-core.templates:3001
+#, fuzzy
+#| msgid "Layout of RRD files has changed"
+msgid "Layout of RRD files has changed in version 5.0"
+msgstr "Składnia plików RRD zmieniła się"
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001 ../collectd-core.templates:4001
+#, fuzzy
+#| msgid ""
+#| "The layout of the RRD files created by collectd has changed significantly "
+#| "since version 3.x. In order to keep your old data you have to migrate it. "
+#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+msgid ""
+"The layout of some RRD files created by collectd has changed since version 4."
+"x. In order to keep your old data you have to migrate it. This can be done "
+"by using /usr/lib/collectd-core/utils/migrate-4-5.px."
+msgstr ""
+"Układ plików RRD tworzonych przez collectd znacznie się zmienił od wersji 3."
+"x. Aby zatrzymać stare dane, należy je przekształcić np. za pomocą /usr/lib/"
+"collectd-core/utils/migrate-3-4.px."
+
+#. Type: note
+#. Description
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:3001 ../collectd-core.templates:4001
+msgid ""
+"See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../collectd-core.templates:5001
 msgid "Remove all collected data (e.g. RRD files)?"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../collectd-core.templates:3001
+#: ../collectd-core.templates:5001
 msgid ""
 "The /var/lib/collectd/ directory which contains the data files containing "
 "the collected statistics is about to be removed. For example, this directory "
@@ -94,7 +137,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../collectd-core.templates:3001
+#: ../collectd-core.templates:5001
 msgid ""
 "If you're purging the collectd package in order to replace it with a more "
 "recent or custom version or if you want to keep the data for further "
