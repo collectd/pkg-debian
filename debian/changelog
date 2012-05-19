@@ -4,9 +4,12 @@ collectd (5.1.0-1) unstable; urgency=low
     New plugins:
     - AMQP output plugin: amqp
     - AIX logical partitions statistics: lpar (disabled in Debian; AIX only)
-    - Network interface card statistics: ethstat
-    - Linux software-RAID device information: md
-    - Information about Non-Uniform Memory Access: numa
+    - Network interface card statistics: ethstat (disabled on kfreebsd; Linux
+      only)
+    - Linux software-RAID device information: md (disabled on kfreebsd; Linux
+      only)
+    - Information about Non-Uniform Memory Access: numa (disabled on kfreebsd;
+      Linux only)
     - Redis key-value database server statistics: redis (disabled in Debian;
       libcredis is not available)
     - Check thresholds and for missing values: threshold
