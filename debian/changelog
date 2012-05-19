@@ -28,7 +28,7 @@ collectd (5.1.0-1) unstable; urgency=low
   * debian/collectd-utils.install:
     - Install collectdctl and collectdctl.1 to collectd-utils.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 18:09:49 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
 
 collectd (4.10.7-1) unstable; urgency=low
 
