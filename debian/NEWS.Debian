@@ -6,7 +6,7 @@ collectd (5.1.0-1) unstable; urgency=low
 
   In a client / server setups it's generally advised to upgrade the server
   first. By using the v5_upgrade target plugin, the v5 server will be able to
-  receive and process data sent by v4 clients. This allows to upgrade the
+  receive and process data sent by v4 clients. This allows one to upgrade the
   clients at an arbitrary later date. See the wiki for details.
 
   The layout of various RRD files has changed. In order to keep your old data
