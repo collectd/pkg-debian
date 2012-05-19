@@ -248,7 +248,7 @@ binary-arch: build install-arch
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
-		contrib/exec-nagios.conf contrib/exec-nagios.px \
+		contrib/exec-nagios.conf contrib/exec-nagios.px contrib/exec-ksm.sh \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd_network.py contrib/collectd_unixsock.py \

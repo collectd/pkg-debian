@@ -24,6 +24,7 @@ collectd (5.1.0-1) unstable; urgency=low
     - Disabled write_mongodb plugin -- this requires libmongoc.
     - Disabled ethstat, md, and numa plugins on kfreebsd -- these plugins are
       Linux specific.
+    - Install contrib/exec-ksm.sh as example.
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
     - Added build-dep on libvarnish-dev, required by the varnish plugin.
