@@ -25,6 +25,8 @@ collectd (5.1.0-1) unstable; urgency=low
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
     - Added build-dep on libvarnish-dev, required by the varnish plugin.
+  * debian/collectd-utils.install:
+    - Install collectdctl and collectdctl.1 to collectd-utils.
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 05 Jun 2011 18:09:49 +0200
 
