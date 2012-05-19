@@ -4,15 +4,17 @@ Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
- iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-i386 !kfreebsd-amd64],
- iptables-dev (>= 1.4.3.2-2) [!kfreebsd-i386 !kfreebsd-amd64],
+ iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-any !hurd-any],
+ iptables-dev (>= 1.4.3.2-2) [linux-any],
+ javahelper,
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
  libdbi0-dev,
  libesmtp-dev,
- libganglia1-dev (>= 3) [!kfreebsd-i386 !kfreebsd-amd64],
+ libganglia1-dev (>= 3) [linux-any],
  libgcrypt11-dev,
  libglib2.0-dev,
  libhal-dev,
+ libkvm-dev [kfreebsd-any],
  libmemcached-dev,
  libmysqlclient-dev,
  libnotify-dev,
@@ -24,23 +26,23 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libprotobuf-c0-dev,
  librabbitmq-dev,
  librrd-dev (>= 1.4~),
- libsensors4-dev [!kfreebsd-i386 !kfreebsd-amd64],
+ libsensors4-dev [linux-any],
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),
- libtokyocabinet-dev [!kfreebsd-i386 !kfreebsd-amd64],
- libtokyotyrant-dev [!kfreebsd-i386 !kfreebsd-amd64],
+ libtokyocabinet-dev [linux-any],
+ libtokyotyrant-dev [linux-any],
  libupsclient1-dev,
  libvarnish-dev,
- libvirt-dev (>= 0.4.0-6) [!kfreebsd-i386 !kfreebsd-amd64],
+ libvirt-dev (>= 0.4.0-6) [linux-any],
  libxml2-dev,
  libyajl-dev,
- linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
- openjdk-6-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
+ linux-libc-dev (>= 2.6.25-4) [linux-any] | linux-libc-dev (<< 2.6.25-1) [linux-any],
+ openjdk-6-jdk [!hppa !kfreebsd-any !hurd-any],
  protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev
-Standards-Version: 3.9.1
+Standards-Version: 3.9.3
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git

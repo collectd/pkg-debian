@@ -61,6 +61,48 @@ solutions are welcome.
   with collectd. See /usr/share/doc/collectd/examples/collection3/README for
   details. This is a successor for collection.cgi.
 
+Cleanup of old data:
+--------------------
+
+collectd itself does not take care of removing any data files (e.g. RRDtool)
+that are no longer updated (e.g., no longer existing hosts or instances).
+There are a couple of ways to take care of that. In any case, double-check the
+list of files to be removed before doing so! We do not take responsibility for
+any data loss or similar.
+
+- Check the last modification time of all RRD files:
+
+    find /var/lib/collectd/rrd/ -mtime +30 -type f
+
+  This will list all files that have not been updated within the last 30 days.
+  After double-checking the list of files, use a command like the following to
+  delete old files:
+
+    find /var/lib/collectd/rrd/ -mtime +30 -type f | xargs rm
+
+  NOTE: Some versions of RRDtool did not update mtime when writing to a file.
+        This has been fixed in version 1.3.5 of RRDtool. If your version is
+        affected by that, this approach does not work.
+
+- Check the 'last_update' header of the RRD files:
+
+    export IFS="
+    "
+    for file in $( find /var/lib/collectd/rrd/ -type f -name '*.rrd' ); do
+        last_update=$( rrdtool info $file | grep last_update | cut -d' ' -f3 )
+        if test -n "$last_update" \
+                -a $(( $( date +%s ) - $last_update )) -gt 2592000; then
+            echo $file
+        fi
+    done
+
+  This will also list all files that have not been updated within the last 30
+  days. It's a bit more expensive since each and every RRD file will have to
+  be read from disk rather than checking the file-system meta-data only.
+
+When doing those checks, take into account any caching times configured in the
+RRDtool plugin or when using RRDCacheD.
+
 Building your own plugins:
 --------------------------
 

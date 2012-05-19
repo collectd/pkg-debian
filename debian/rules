@@ -12,8 +12,12 @@ DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
-CPPFLAGS = -I$(CURDIR)/debian/include
-CFLAGS = -Wall -g
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+CPPFLAGS += -I$(CURDIR)/debian/include
+CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
+CFLAGS += -Wall
 
 # There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
 # however required by the perl plugin (which would otherwise be unable to find
@@ -26,20 +30,14 @@ CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 CPPFLAGS += -UCONFIGFILE
 CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
 
 # The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc powerpcspe=ppc sh4=sh
-JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
-			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
 ifeq (,$(JAVA_ARCHDIR))
 	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
 endif
-JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+JAVA_HOME = /usr/lib/jvm/java-6-openjdk-$(DEB_BUILD_ARCH)
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
@@ -110,6 +108,10 @@ endif
 
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	# Work-around an incomplete check for kvm functionality
+	CPPFLAGS  += -DHAVE_STRUCT_KINFO_PROC_FREEBSD
+	confflags += --enable-processes=force
+
 	confflags += \
 		--disable-battery \
 		--disable-conntrack \
@@ -158,12 +160,14 @@ config.status: configure $(DPATCH_STAMPFN)
 		> debian/pkgconfig/OpenIPMIpthread.pc
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
-	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
 		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
-build: build-stamp
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
 
 build-stamp: config.status
 	dh_testdir
@@ -273,5 +277,5 @@ binary-arch: build install-arch
 	dh_builddeb -a
 
 binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install-indep install-arch
+.PHONY: build build-arch build-indep clean binary-indep binary-arch binary install-indep install-arch
 

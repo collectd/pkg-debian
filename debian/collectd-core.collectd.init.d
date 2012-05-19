@@ -11,11 +11,15 @@
 # Provides:          collectd
 # Required-Start:    $local_fs $remote_fs
 # Required-Stop:     $local_fs $remote_fs
-# Should-Start:      $network $named $syslog $time
+# Should-Start:      $network $named $syslog $time cpufrequtils
 # Should-Stop:       $network $named $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: start the statistics collection daemon
+# Short-Description: manage the statistics collection daemon
+# Description:       collectd is the statistics collection daemon.
+#                    It is a small daemon which collects system information
+#                    periodically and provides mechanisms to monitor and store
+#                    the values in a variety of ways.
 ### END INIT INFO
 
 set -e
@@ -138,10 +142,16 @@ d_status() {
 			echo "collectd ($PID) is running."
 			exit 0
 		else
+			if test -f "$_PIDFILE"; then
+				echo "collectd is stopped but PID file exists."
+				exit 1
+			fi
 			echo "collectd is stopped."
+			exit 3
 		fi
 	fi
-	exit 1
+	echo "status of collectd unknown."
+	exit 4
 }
 
 case "$1" in
