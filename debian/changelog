@@ -9,6 +9,8 @@ collectd (4.10.7-1) unstable; urgency=low
       (Closes: #664429).
   * debian/patches/:
     - Removed ipvs_h_include.dpatch -- applied upstream.
+    - Added rtnl_dump_filter.dpatch, updating the rtnl_dump_filter() signature
+      to recent versions of iproute2.
   * debian/rules:
     - Use dpkg-buildflags to determine compiler/linker flags; this also
       enables hardening build flags; thanks to Moritz Muehlenhoff for
