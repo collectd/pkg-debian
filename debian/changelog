@@ -36,6 +36,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Documented the upgrade from version 4 to 5.
   * debian/collectd-core.install:
     - Install migrate-4-5.px.
+  * debian/collectd-core.{config,postinst,templates}:
+    - Added debconf queries and code to automatically migrate from v4.
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
 
