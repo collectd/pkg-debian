@@ -22,6 +22,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Disabled lpar plugin -- this requires AIX (perfstat).
     - Disabled redis and write_redis plugins -- they require libcredis.
     - Disabled write_mongodb plugin -- this requires libmongoc.
+    - Disabled ethstat, md, and numa plugins on kfreebsd -- these plugins are
+      Linux specific.
   * debian/control:
     - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
     - Added build-dep on libvarnish-dev, required by the varnish plugin.

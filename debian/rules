@@ -101,10 +101,13 @@ endif
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-ethstat \
 		--disable-iptables \
 		--disable-ipvs \
 		--disable-madwifi \
+		--disable-md \
 		--disable-netlink \
+		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
 endif
