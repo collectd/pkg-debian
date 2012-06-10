@@ -119,7 +119,7 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:5001
 msgid "Remove all collected data (e.g. RRD files)?"
-msgstr ""
+msgstr "Smazat všechna získaná data (např. soubory RRD)?"
 
 #. Type: boolean
 #. Description
@@ -129,6 +129,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
+"Adresář /var/lib/collectd/ obsahuje soubory se statistikami a může být "
+"v tomto kroku odstraněn. Tento adresář obsahuje (ve výchozím nastavení) např. "
+"soubory RRD."
 
 #. Type: boolean
 #. Description
@@ -138,3 +141,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
+"Pokud nahrazujete balíček collectd novější nebo jinou verzí, nebo chcete "
+"stávající data uchovat pro jejich pozdější analýzu, měli byste tato data "
+"zachovat."

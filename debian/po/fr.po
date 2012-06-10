@@ -1,14 +1,15 @@
 # Translation of collectd debconf templates to French
-# Copyright (C) 2008 Florent USSEIL <swiip81@free.fr>
+# Copyright (C) 2012 Debian French l10n Team
 # This file is distributed under the same license as the collectd package.
 #
 # Florent USSEIL <swiip81@free.fr>, 2008.
+# Steve Petruzzello <dlist@bluewin.ch>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd\n"
+"Project-Id-Version: collectd_4.10.7\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2008-03-14 01:00+0100\n"
+"PO-Revision-Date: 2012-05-26 09:20+0200\n"
 "Last-Translator: Florent USSEIL <swiip81@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -35,8 +36,8 @@ msgid ""
 msgstr ""
 "Le format des fichiers RRD créés par collectd a changé de façon "
 "significative depuis la version 3.x. Afin de conserver les données, il est "
-"nécessaire de les convertir.Cette opération peut être réalisée avec la "
-"commande « /usr/lib/collectd-core/utils/migrate-3-4.px »."
+"nécessaire de les convertir. Cette opération peut être réalisée avec la "
+"commande « /usr/lib/collectd-core/utils/migrate-3-4.px »."
 
 #. Type: note
 #. Description
@@ -48,7 +49,8 @@ msgid ""
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
 "Cette étape a besoin des paquets perl et rrdtool qui ne sont pas "
-"actuellement installés. La conversion doit donc être effectuée manuellement."
+"actuellement installés. La conversion doit par conséquent être effectuée "
+"manuellement."
 
 #. Type: note
 #. Description
@@ -57,8 +59,8 @@ msgstr ""
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
 msgstr ""
-"Veuillez lire le fichier /usr/share/doc/collectd-core/NEWS.Debian pour plus "
-"d'informations."
+"Veuillez lire le fichier « /usr/share/doc/collectd-core/NEWS.Debian » pour "
+"plus d'informations."
 
 #. Type: boolean
 #. Description
@@ -79,9 +81,10 @@ msgid ""
 "though. Do not expect it to work in all cases."
 msgstr ""
 "La conversion des fichiers RRD peut être effectuée automatiquement. Pour "
-"cela, une sauvegarde de /var/lib/collectd/ aura lieu dans /var/backups/. "
-"Veuillez noter que cette conversion est expérimentale : il est recommandé de "
-"contrôler sa bonne exécution."
+"cela, une sauvegarde du répertoire « /var/lib/collectd/ » aura lieu dans le "
+"répertoire « /var/backups/ ». Veuillez noter que cette conversion est "
+"expérimentale ; ne vous attendez pas à ce qu'elle fonctionne dans tous les "
+"cas."
 
 #. Type: note
 #. Description
@@ -126,6 +129,7 @@ msgstr ""
 #: ../collectd-core.templates:5001
 msgid "Remove all collected data (e.g. RRD files)?"
 msgstr ""
+"Faut-il supprimer toutes les données collectées (p. ex. les fichiers RRD) ?"
 
 #. Type: boolean
 #. Description
@@ -135,6 +139,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
+"Le répertoire « /var/lib/collectd/ », qui contient tous les fichiers de "
+"données des statistiques collectées est en passe d'être supprimé. Dans la "
+"configuration par défaut, ce répertoire contient tous les fichiers RRD."
 
 #. Type: boolean
 #. Description
@@ -144,3 +151,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
+"Si vous purgez le paquet collectd afin de le remplacer par une version plus "
+"récente ou une version personnalisée ou si vous désirez conserver les "
+"données pour une analyse ultérieure, vous devriez refuser."

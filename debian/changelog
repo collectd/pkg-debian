@@ -50,6 +50,36 @@ collectd (5.1.0-1) unstable; urgency=low
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 19 May 2012 15:13:21 +0200
 
+collectd (4.10.7-2) unstable; urgency=low
+
+  * debian/po:
+    - Updated Czech debconf translation; thanks to Martin Šín
+      (Closes: #673693).
+    - Updated Polish debconf translation; thanks to Michał Kułach
+      (Closes: #673697).
+    - Updated Dutch debconf translation; thanks to Jeroen Schot
+      (Closes: #673769).
+    - Updated Swedish debconf translation; thanks to Martin Bagge
+      (Closes: #673888).
+    - Updated Russian debconf translation; thanks to Vladimir Zhbanov
+      (Closes: #673890).
+    - Added Italian debconf translation; thanks to Beatrice Torracca
+      (Closes: #674044).
+    - Updated Portuguese debconf translation; thanks to Américo Monteiro
+      (Closes: #674065).
+    - Updated Danish debconf translation; thanks to Joe Dalton
+      (Closes: #674459).
+    - Updated Brazilian Portuguese debconf translation; thanks to Adriano
+      Rafael Gomes (Closes: #674589).
+    - Updated French debconf translation; thanks to Steve Petruzzello and
+      Christian PERRIER (Closes: #674629).
+    - Updated Spanish debconf translation; thanks to Omar Campagne
+      (Closes: #676383).
+    - Updated German debconf translation based on Holger Wansing's feedback on
+      debian-l10n-german.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:49:32 +0200
+
 collectd (4.10.7-1) unstable; urgency=low
 
   * New upstream release.
