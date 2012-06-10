@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Das Layout der von collectd erstellten RRD-Dateien hat sich seit Version 3.x "
 "grundlegend geändert. Um Ihre alten Daten beizubehalten, müssen Sie diese "
-"migrieren. Dies kann unter Verwendung von »/usr/lib/collectd-core/utils/"
+"migrieren. Dies kann durch Verwendung von »/usr/lib/collectd-core/utils/"
 "migrate-3-4.px« erreicht werden."
 
 #. Type: note
@@ -60,7 +60,7 @@ msgstr "Siehe »/usr/share/doc/collectd-core/NEWS.Debian« für Details."
 #. Description
 #: ../collectd-core.templates:2001
 msgid "Automatically try to migrate your RRD files?"
-msgstr "Soll eine automatische Migration Ihrer RRD-Dateien versucht werden?"
+msgstr "Soll automatisch versucht werden, Ihre RRD-Dateien zu migrieren?"
 
 #. Type: boolean
 #. Description
@@ -79,7 +79,7 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001
 msgid "Remove all collected data (e.g. RRD files)?"
-msgstr "Alle gesammelten Daten entfernen (z.B. RRD Dateien)?"
+msgstr "Alle gesammelten Daten entfernen (z.B. RRD-Dateien)?"
 
 #. Type: boolean
 #. Description
@@ -91,7 +91,7 @@ msgid ""
 msgstr ""
 "Das Verzeichnis /var/lib/collectd/ mit den gesammelten Statistiken soll "
 "entfernt werden. Das Verzeichnis enthält (in der Standardkonfiguration) "
-"zum Beispiel die RRD Dateien."
+"zum Beispiel die RRD-Dateien."
 
 #. Type: boolean
 #. Description
@@ -102,5 +102,5 @@ msgid ""
 "analysis, the data should be kept."
 msgstr ""
 "Falls geplant ist, nur eine höhere oder eigene Version von collectd zu "
-"installieren oder falls die Daten zu weiteren Anlysen genutzen werden, "
-"sollten die Daten behalten werden"
+"installieren oder falls die Daten für weitere Analysen genutzt werden, "
+"sollten die Daten behalten werden."

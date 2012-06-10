@@ -23,6 +23,8 @@ collectd (4.10.7-2) UNRELEASED; urgency=low
       Christian PERRIER (Closes: #674629).
     - Updated Spanish debconf translation; thanks to Omar Campagne
       (Closes: #676383).
+    - Updated German debconf translation based on Holger Wansing's feedback on
+      debian-l10n-german.
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:18:01 +0200
 
