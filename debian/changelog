@@ -1,4 +1,4 @@
-collectd (4.10.7-2) UNRELEASED; urgency=low
+collectd (4.10.7-2) unstable; urgency=low
 
   * debian/po:
     - Updated Czech debconf translation; thanks to Martin Šín
@@ -26,7 +26,7 @@ collectd (4.10.7-2) UNRELEASED; urgency=low
     - Updated German debconf translation based on Holger Wansing's feedback on
       debian-l10n-german.
 
- -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:18:01 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:49:32 +0200
 
 collectd (4.10.7-1) unstable; urgency=low
 
