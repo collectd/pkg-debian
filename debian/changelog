@@ -17,6 +17,8 @@ collectd (4.10.7-2) UNRELEASED; urgency=low
       (Closes: #674065).
     - Updated Danish debconf translation; thanks to Joe Dalton
       (Closes: #674459).
+    - Updated Brazilian Portuguese debconf translation; thanks to Adriano
+      Rafael Gomes (Closes: #674589).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:18:01 +0200
 
