@@ -5,6 +5,8 @@ collectd (4.10.7-2) UNRELEASED; urgency=low
       (Closes: #673693).
     - Updated Polish debconf translation; thanks to Michał Kułach
       (Closes: #673697).
+    - Updated Dutch debconf translation; thanks to Jeroen Schot
+      (Closes: #673769).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:18:01 +0200
 
