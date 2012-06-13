@@ -47,6 +47,8 @@ collectd (5.1.0-1) unstable; urgency=low
     - Set to "1.0" for now.
   * debian/po/:
     - Updated German debconf template translation.
+  * debian/collectd-core.override:
+    - Limit netlink override to appropriate architectures.
 
  -- Sebastian Harl <tokkee@debian.org>  Wed, 13 Jun 2012 08:05:01 +0200
 

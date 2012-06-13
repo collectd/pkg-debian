@@ -1,5 +1,5 @@
 # This is only done on architectures that support it.
-collectd-core: shlib-with-non-pic-code usr/lib/collectd/netlink.so
+collectd-core [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel]: shlib-with-non-pic-code usr/lib/collectd/netlink.so
 
 # All plugin names are spelled in lower-case.
 collectd-core: capitalization-error-in-description apache Apache
