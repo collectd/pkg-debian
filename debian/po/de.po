@@ -99,7 +99,7 @@ msgid ""
 msgstr ""
 "Das Layout einiger von collectd erstellten RRD-Dateien hat sich seit Version 4.x "
 "grundlegend geändert. Um Ihre alten Daten beizubehalten, müssen Sie diese "
-"migrieren. Dies kann unter Verwendung von »/usr/lib/collectd-core/utils/"
+"migrieren. Dies kann durch Verwendung von »/usr/lib/collectd-core/utils/"
 "migrate-4-5.px« erreicht werden."
 
 #. Type: note
@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Das Verzeichnis /var/lib/collectd/ mit den gesammelten Statistiken soll "
 "entfernt werden. Das Verzeichnis enthält (in der Standardkonfiguration) zum "
-"Beispiel die RRD Dateien."
+"Beispiel die RRD-Dateien."
 
 #. Type: boolean
 #. Description
