@@ -65,9 +65,6 @@ confflags += --disable-lpar
 # Solaris only (requires devinfo and kstat)
 confflags += --disable-tape
 
-# libmodbus is required for the modbus plugin.
-confflags += --disable-modbus
-
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 

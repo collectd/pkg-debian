@@ -16,6 +16,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libhal-dev,
  libkvm-dev [kfreebsd-any],
  libmemcached-dev,
+ libmodbus-dev,
  libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
@@ -119,6 +120,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * read values from Modbus/TCP enabled devices: modbus
    * statistics from mon.itor.us: Monitorus (Perl based plugin)
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql

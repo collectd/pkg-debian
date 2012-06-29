@@ -2,6 +2,10 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
 
   * debian/collectd-core.postinst:
     - Don't create unused temp. directory.
+  * debian/control, debian/rules:
+    - Build depend on libmodbus-dev and enabled modbus plugin. 5.1 now
+      supports libmodbus 3; thanks to Ivo De Decker for reporting this
+      (Closes: #639796).
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
 
