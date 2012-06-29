@@ -43,8 +43,6 @@ case "$1" in
 
         db_get collectd/auto-migrate-4-5
         if [ "$RET" = "true" ]; then
-            tmpdir=`mktemp -dt collectd.XXXXXXXXXX`
-
             cp -a /var/lib/collectd/ /var/backups/collectd-"$2"
             /usr/lib/collectd/utils/migrate-4-5.px \
                 -indir /var/lib/collectd/rrd/ | bash

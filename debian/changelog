@@ -1,3 +1,10 @@
+collectd (5.1.0-2) UNRELEASED; urgency=low
+
+  * debian/collectd-core.postinst:
+    - Don't create unused temp. directory.
+
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
+
 collectd (5.1.0-1) unstable; urgency=low
 
   * New upstream release (Closes: #630968):
