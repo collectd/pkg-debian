@@ -1,5 +1,5 @@
 # translation of collectd debconf to Portuguese
-# Copyright (C) 2008 Américo Monteiro
+# Copyright (C) 2008 the collectd's copyright holder
 # This file is distributed under the same license as the collectd package.
 #
 # Américo Monteiro <a_monteiro@netcabo.pt>, 2008, 2012.
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: collectd 4.10.7-1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2012-05-20 18:54+0100\n"
+"PO-Revision-Date: 2012-06-18 20:55+0100\n"
 "Last-Translator: Américo Monteiro <a_monteiro@netcabo.pt>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -85,17 +85,15 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
 #| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "A disposição dos ficheiros RRD foi alterada"
+msgstr "A disposição dos ficheiros RRD foi alterada na versão 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
 #| msgid ""
 #| "The layout of the RRD files created by collectd has changed significantly "
 #| "since version 3.x. In order to keep your old data you have to migrate it. "
@@ -105,10 +103,10 @@ msgid ""
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"A disposição dos ficheiros RRD criada pelo collectd foi alterada "
-"significativamente desde a versão 3.x. De forma a manter os seus dados "
-"antigos você terá que migrá-los. Isto pode ser feito usando /usr/lib/"
-"collectd-core/utils/migrate-3-4.px."
+"A disposição de alguns ficheiros RRD criada pelo collectd foi alterada "
+"desde a versão 4.x. De modo a manter os seus dados antigos você terá que "
+"migrá-los. Isto pode ser feito usando /usr/lib/collectd-core/utils/"
+"migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -119,6 +117,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Veja /usr/share/doc/collectd-core/NEWS.Debian e o wiki do collectd em "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> para mais "
+"detalhes."
 
 #. Type: boolean
 #. Description
@@ -135,7 +136,7 @@ msgid ""
 "includes (in the default configuration) all RRD files."
 msgstr ""
 "O directório /var/lib/collectd/ que contém todos os ficheiros de dados "
-"que contém as estatísticas coleccionadas está prestes a ser removido. "
+"com as estatísticas recebidas está prestes a ser removido. "
 "Por exemplo, este directório inclui todos os ficheiros RDD (na configuração "
 "predefinida)."
 
@@ -147,7 +148,7 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
-"Se você está a purgar o pacote collectd de modo a substituí-lo por uma "
+"Se está a purgar o pacote collectd de modo a substituí-lo por uma "
 "versão mais recente ou personalizada, ou se deseja manter os dados para "
 "análise posterior, estes dados deverão ser mantidos."
 
