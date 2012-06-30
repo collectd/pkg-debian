@@ -1,4 +1,4 @@
-collectd (5.1.0-2) UNRELEASED; urgency=low
+collectd (5.1.0-2) unstable; urgency=low
 
   * debian/collectd-core.postinst:
     - Don't create unused temp. directory.
@@ -35,7 +35,7 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
       make collectd's output look like all the other output; thanks to
       Matthias Urlichs for pointing this out (Closes: #679355).
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 30 Jun 2012 13:27:41 +0200
 
 collectd (5.1.0-1) unstable; urgency=low
 
