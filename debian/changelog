@@ -9,6 +9,8 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
   * debian/po:
     - Updated Swedish debconf translation; thanks to Martin Bagge
       (Closes: #677842).
+    - Added Slovak debconf translation; thanks to 'helix84'
+      (Closes: #677902).
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
 
