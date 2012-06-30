@@ -24,6 +24,8 @@
 
 set -e
 
+. /lib/lsb/init-functions
+
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
 DISABLE=0
