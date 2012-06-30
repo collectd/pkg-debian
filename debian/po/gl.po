@@ -84,7 +84,6 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
 msgstr "A organización dos ficheiros RRD cambiou na versión 5.0"
 
@@ -93,19 +92,14 @@ msgstr "A organización dos ficheiros RRD cambiou na versión 5.0"
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
 "A organización dos ficheiros RRD creados por collectd cambiou desde a "
-"versión 4.x. Para conservar os seus datos antigos "
-"ten que migralos. Pódese facer empregando "
-"/usr/lib/collectd-core/utils/migrate-4-5.px."
+"versión 4.x. Para conservar os seus datos antigos ten que migralos. Pódese "
+"facer empregando /usr/lib/collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -117,9 +111,8 @@ msgid ""
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 "Consulte o ficheiro /usr/share/doc/collectd-core/NEWS.Debian e a wiki de "
-"collectd en "
-"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> para obter "
-"máis detalles."
+"collectd en <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
+"para obter máis detalles."
 
 #. Type: boolean
 #. Description
@@ -151,4 +144,3 @@ msgstr ""
 "Se está purgando o paquete «collectd» para substituílo por unha versión máis "
 "recente, ou unha versión personalizada, ou se quere conservar os datos para "
 "posteriores análises, os datos deben conservarse."
-

@@ -86,7 +86,6 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
 msgstr "Składnia plików RRD zmieniła się w wersji 5.0"
 
@@ -95,10 +94,6 @@ msgstr "Składnia plików RRD zmieniła się w wersji 5.0"
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
@@ -117,8 +112,8 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
-"Plik /usr/share/doc/collectd-core/NEWS.Debian oraz wiki collectd <"
-"http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> zawiera więcej "
+"Plik /usr/share/doc/collectd-core/NEWS.Debian oraz wiki collectd <http://"
+"collectd.org/wiki/index.php/V4_to_v5_migration_guide> zawiera więcej "
 "informacji na ten temat."
 
 #. Type: boolean
@@ -136,8 +131,8 @@ msgid ""
 "includes (in the default configuration) all RRD files."
 msgstr ""
 "Katalog /var/lib/collectd/, zawierający pliki z danymi obejmującymi "
-"zgromadzone statystyki jest przeznaczony do usunięcia. Ten katalog zawiera np."
-" (w domyślnej konfiguracji) wszystkie pliki RRD."
+"zgromadzone statystyki jest przeznaczony do usunięcia. Ten katalog zawiera "
+"np. (w domyślnej konfiguracji) wszystkie pliki RRD."
 
 #. Type: boolean
 #. Description
@@ -147,7 +142,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
-"Jeśli pakiet collectd jest czyszczony w celu zastąpienia go nowszą lub własną "
-"wersją, albo dane będą jeszcze analizowane, to powinny one zostać zachowane."
-
-
+"Jeśli pakiet collectd jest czyszczony w celu zastąpienia go nowszą lub "
+"własną wersją, albo dane będą jeszcze analizowane, to powinny one zostać "
+"zachowane."

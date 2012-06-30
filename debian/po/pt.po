@@ -49,8 +49,7 @@ msgid ""
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
 "Este passo necessita que ambos os pacotes perl e rrdtool estejam instalados, "
-"o que não é actualmente o caso. Você precisa executar manualmente a "
-"migração."
+"o que não é actualmente o caso. Você precisa executar manualmente a migração."
 
 #. Type: note
 #. Description
@@ -85,7 +84,6 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
 msgstr "A disposição dos ficheiros RRD foi alterada na versão 5.0"
 
@@ -94,19 +92,14 @@ msgstr "A disposição dos ficheiros RRD foi alterada na versão 5.0"
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"A disposição de alguns ficheiros RRD criada pelo collectd foi alterada "
-"desde a versão 4.x. De modo a manter os seus dados antigos você terá que "
-"migrá-los. Isto pode ser feito usando /usr/lib/collectd-core/utils/"
-"migrate-4-5.px."
+"A disposição de alguns ficheiros RRD criada pelo collectd foi alterada desde "
+"a versão 4.x. De modo a manter os seus dados antigos você terá que migrá-"
+"los. Isto pode ser feito usando /usr/lib/collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -135,10 +128,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
-"O directório /var/lib/collectd/ que contém todos os ficheiros de dados "
-"com as estatísticas recebidas está prestes a ser removido. "
-"Por exemplo, este directório inclui todos os ficheiros RDD (na configuração "
-"predefinida)."
+"O directório /var/lib/collectd/ que contém todos os ficheiros de dados com "
+"as estatísticas recebidas está prestes a ser removido. Por exemplo, este "
+"directório inclui todos os ficheiros RDD (na configuração predefinida)."
 
 #. Type: boolean
 #. Description
@@ -148,8 +140,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
-"Se está a purgar o pacote collectd de modo a substituí-lo por uma "
-"versão mais recente ou personalizada, ou se deseja manter os dados para "
-"análise posterior, estes dados deverão ser mantidos."
-
-
+"Se está a purgar o pacote collectd de modo a substituí-lo por uma versão "
+"mais recente ou personalizada, ou se deseja manter os dados para análise "
+"posterior, estes dados deverão ser mantidos."

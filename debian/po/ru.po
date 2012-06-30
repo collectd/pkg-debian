@@ -47,8 +47,8 @@ msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
-"Для этого должны быть установлены пакеты perl и rrdtool, "
-"которых, похоже, нет в системе. Вам нужно выполнить перенос вручную."
+"Для этого должны быть установлены пакеты perl и rrdtool, которых, похоже, "
+"нет в системе. Вам нужно выполнить перенос вручную."
 
 #. Type: note
 #. Description
@@ -83,7 +83,6 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
 msgstr "В версии 5.0 изменилось расположение файлов RRD"
 
@@ -92,10 +91,6 @@ msgstr "В версии 5.0 изменилось расположение фай
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
@@ -114,9 +109,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
-"Дополнительную информацию можно найти в файле "
-"/usr/share/doc/collectd-core/NEWS.Debian и вики collectd wiki по адресу "
-"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>."
+"Дополнительную информацию можно найти в файле /usr/share/doc/collectd-core/"
+"NEWS.Debian и вики collectd wiki по адресу <http://collectd.org/wiki/index."
+"php/V4_to_v5_migration_guide>."
 
 #. Type: boolean
 #. Description
@@ -132,9 +127,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
-"Каталог /var/lib/collectd/, содержащий данные собранной статистики, "
-"будет удалён. В этом каталоге, например, находятся (при стандартной "
-"настройке) все RRD-файлы."
+"Каталог /var/lib/collectd/, содержащий данные собранной статистики, будет "
+"удалён. В этом каталоге, например, находятся (при стандартной настройке) все "
+"RRD-файлы."
 
 #. Type: boolean
 #. Description
@@ -147,4 +142,3 @@ msgstr ""
 "Если вы удаляете пакет collectd для замещения его более новой или "
 "нестандартной версией, или если вы хотите сохранить данные для последующего "
 "анализа, эти данные нужно сохранить."
-
