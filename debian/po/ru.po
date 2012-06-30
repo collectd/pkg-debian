@@ -1,19 +1,20 @@
 # translation of collectd_4.6.3-1_ru.po to Russian
 # Copyright (C) Yuri Kozlov <yuray@komyakino.ru>, 2009.
 # This file is distributed under the same license as the collectd package.
+# Yuri Kozlov <yuray@komyakino.ru>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd 4.6.3-1\n"
+"Project-Id-Version: collectd 5.1.0-1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2012-05-20 21:58+0400\n"
+"PO-Revision-Date: 2012-06-18 20:50+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -82,17 +83,15 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
 #| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "Изменилось расположение файлов RRD"
+msgstr "В версии 5.0 изменилось расположение файлов RRD"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
 #| msgid ""
 #| "The layout of the RRD files created by collectd has changed significantly "
 #| "since version 3.x. In order to keep your old data you have to migrate it. "
@@ -102,9 +101,9 @@ msgid ""
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"Начиная с версий 3.x изменилось расположение файлов RRD, создаваемых "
+"Начиная с версий 4.x изменилось расположение файлов RRD, создаваемых "
 "collectd. Чтобы сохранить старые данные, вы должны их переместить. Это можно "
-"сделать с помощью /usr/lib/collectd-core/utils/migrate-3-4.px."
+"сделать с помощью /usr/lib/collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -115,6 +114,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Дополнительную информацию можно найти в файле "
+"/usr/share/doc/collectd-core/NEWS.Debian и вики collectd wiki по адресу "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>."
 
 #. Type: boolean
 #. Description
@@ -145,3 +147,4 @@ msgstr ""
 "Если вы удаляете пакет collectd для замещения его более новой или "
 "нестандартной версией, или если вы хотите сохранить данные для последующего "
 "анализа, эти данные нужно сохранить."
+
