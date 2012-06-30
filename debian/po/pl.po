@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2012-05-20 21:50+0200\n"
+"PO-Revision-Date: 2012-06-19 18:13+0200\n"
 "Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
@@ -86,17 +86,15 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
 #| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "Składnia plików RRD zmieniła się"
+msgstr "Składnia plików RRD zmieniła się w wersji 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
 #| msgid ""
 #| "The layout of the RRD files created by collectd has changed significantly "
 #| "since version 3.x. In order to keep your old data you have to migrate it. "
@@ -106,9 +104,9 @@ msgid ""
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"Układ plików RRD tworzonych przez collectd znacznie się zmienił od wersji 3."
+"Układ plików RRD tworzonych przez collectd znacznie się zmienił od wersji 4."
 "x. Aby zatrzymać stare dane, należy je przekształcić np. za pomocą /usr/lib/"
-"collectd-core/utils/migrate-3-4.px."
+"collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -119,6 +117,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Plik /usr/share/doc/collectd-core/NEWS.Debian oraz wiki collectd <"
+"http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> zawiera więcej "
+"informacji na ten temat."
 
 #. Type: boolean
 #. Description
@@ -148,4 +149,5 @@ msgid ""
 msgstr ""
 "Jeśli pakiet collectd jest czyszczony w celu zastąpienia go nowszą lub własną "
 "wersją, albo dane będą jeszcze analizowane, to powinny one zostać zachowane."
+
 

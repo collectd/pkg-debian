@@ -19,6 +19,8 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
       (Closes: #678016).
     - Updated Portuguese debconf translation; thanks to Américo Monteiro
       (Closes: #678048).
+    - Updated Polish debconf translation; thanks to Michał Kułach
+      (Closes: #678157).
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
 
