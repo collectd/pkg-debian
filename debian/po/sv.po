@@ -1,7 +1,7 @@
 # translation of collectd.po to swedish
 # Copyright (C) 2008, 2012 Martin Bagge <brother@bsnet.se>
 # This file is distributed under the same license as the collectd package.
-#
+# 
 # Martin Bagge <brother@bsnet.se>, 2008, 2012.
 msgid ""
 msgstr ""
@@ -86,7 +86,6 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
 msgstr "Strukturen för RRD-filerna har ändrats i version 5.0"
 
@@ -95,10 +94,6 @@ msgstr "Strukturen för RRD-filerna har ändrats i version 5.0"
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
