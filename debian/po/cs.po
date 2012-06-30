@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: collectd 4.6.3-1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2009-06-22 16:07+0200\n"
+"PO-Revision-Date: 2012-06-18 07:13+0200\n"
 "Last-Translator: Martin Sin <martin.sin@zshk.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "Language: cs\n"
@@ -81,17 +81,15 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
 #| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "Uspořádání souborů RRD se změnilo"
+msgstr "Uspořádání souborů RRD se změnilo ve verzi 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
 #| msgid ""
 #| "The layout of the RRD files created by collectd has changed significantly "
 #| "since version 3.x. In order to keep your old data you have to migrate it. "
@@ -101,9 +99,9 @@ msgid ""
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"Ve struktuře souborů RRD vytvořených collectd počínaje verzí 3.x došlo k "
-"výrazné změně. Pro uchování vašich dat je nutná jejich migrace. Tu můžete "
-"provést pomocí /usr/lib/collectd-core/utils/migrate-3-4.px."
+"Struktura některých souborů RRD vytvořených collectd počínaje verzí 4.x byla "
+"změněna. Pro uchování vašich dat je nutná jejich migrace. Tu můžete provést "
+"pomocí /usr/lib/collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -114,6 +112,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Pro více informací se podívejte do souboru "
+"/usr/share/doc/collectd-core/NEWS.Debian a na wiki collectd na adrese "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>."
 
 #. Type: boolean
 #. Description

@@ -13,6 +13,8 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
       (Closes: #677902).
     - Updated Danish debconf translation; thanks to Joe Dalton
       (Closes: #677908).
+    - Updated Czech debconf translation; thanks to Martin Šín
+      (Closes: #677949).
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
 
