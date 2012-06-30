@@ -25,6 +25,8 @@ collectd (5.1.0-2) UNRELEASED; urgency=low
       (Closes: #678467).
     - Updated French debconf translation; thanks to Steve Petruzzello
       (Closes: #678614).
+    - Updated Spanish debconf translation; thanks to Omar Campagne
+      (Closes: #679281).
 
  -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jun 2012 22:17:27 +0200
 
