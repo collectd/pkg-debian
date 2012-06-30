@@ -42,6 +42,7 @@ Copyright Holders (in alphabetical order):
 	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Jeff Green <jeff@kikisoso.org>
+	Joe Dalton <joedalton2@yahoo.dk>
 	Jonathan Kolb <jon@b0g.us>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
 	Julian Anastasov <ja@ssi.bg>
@@ -742,7 +743,7 @@ distributed under the same license as the package itself.
 
 	da.po:
 	Copyright © 2012 collectd & nedenstående oversættere
-	Written by Joe Hansen <joedalton2@yahoo.dk>
+	Written by Joe Dalton (fka: Joe Hansen) <joedalton2@yahoo.dk>
 
 	de.po:
 	Copyright © 2008 Kai Wasserbäch <debian@carbon-project.org>
