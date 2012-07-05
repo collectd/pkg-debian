@@ -20,10 +20,15 @@ set -e
 
 case "$1" in
     purge)
-        rm -rf /var/lib/collectd
+        db_input high collectd/postrm_purge_data || true
+        db_go || true
+        db_get collectd/postrm_purge_data || true
+        if [ "$RET" = "true" ]; then
+            rm -rf /var/lib/collectd
+        fi
         rm -rf /etc/collectd
         ;;
-    
+
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
         ;;
 

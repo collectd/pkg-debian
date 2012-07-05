@@ -1,3 +1,256 @@
+collectd (5.1.0-2) unstable; urgency=low
+
+  * debian/collectd-core.postinst:
+    - Don't create unused temp. directory.
+  * debian/control, debian/rules:
+    - Build depend on libmodbus-dev and enabled modbus plugin. 5.1 now
+      supports libmodbus 3; thanks to Ivo De Decker for reporting this
+      (Closes: #639796).
+  * debian/po:
+    - Updated Swedish debconf translation; thanks to Martin Bagge
+      (Closes: #677842).
+    - Added Slovak debconf translation; thanks to 'helix84'
+      (Closes: #677902).
+    - Updated Danish debconf translation; thanks to Joe Dalton
+      (Closes: #677908).
+    - Updated Czech debconf translation; thanks to Martin Šín
+      (Closes: #677949).
+    - Updated Russian debconf translation; thanks to Yuri Kozlov
+      (Closes: #678016).
+    - Updated Portuguese debconf translation; thanks to Américo Monteiro
+      (Closes: #678048).
+    - Updated Polish debconf translation; thanks to Michał Kułach
+      (Closes: #678157).
+    - Updated Galician debconf translation; thanks to Jorge Barreiro
+      (Closes: #678467).
+    - Updated French debconf translation; thanks to Steve Petruzzello
+      (Closes: #678614).
+    - Updated Spanish debconf translation; thanks to Omar Campagne
+      (Closes: #679281).
+  * debian/collectd-core.collectd.init.d:
+    - Source /lib/lsb/init-functions in order to make systemd work in
+      compatibility mode; thanks to Michael Stapelberg for reporting this
+      (Closes: #679544).
+    - Use log_* and status_of_proc functions from LSB's init functions to
+      make collectd's output look like all the other output; thanks to
+      Matthias Urlichs for pointing this out (Closes: #679355).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 30 Jun 2012 13:27:41 +0200
+
+collectd (5.1.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #630968):
+    - syslog plugin now supports logging notifications; thanks to Trent W.
+      Buck for suggesting this (Closes: #632940).
+    New plugins:
+    - AMQP output plugin: amqp
+    - AIX logical partitions statistics: lpar (disabled in Debian; AIX only)
+    - Network interface card statistics: ethstat (disabled on kfreebsd; Linux
+      only)
+    - Linux software-RAID device information: md (disabled on kfreebsd; Linux
+      only)
+    - Information about Non-Uniform Memory Access: numa (disabled on kfreebsd;
+      Linux only)
+    - Redis key-value database server statistics: redis (disabled in Debian;
+      libcredis is not available)
+    - Check thresholds and for missing values: threshold
+    - Varnish HTTP accelerator daemon statistics: varnish
+    - Sends data to Carbon, the storage layer of Graphite: write_graphite
+    - Write values to a MongoDB NoSQL database server: write_mongodb (disabled
+      in Debian; libmongoc is not available)
+    - Write values to a Redis key-value database server: write_redis (disabled
+      in Debian; libcredis is not available)
+    New targets:
+    - Upgrade data-sets from v4 clients to v5: v5upgrade
+  * debian/rules:
+    - Disabled lpar plugin -- this requires AIX (perfstat).
+    - Disabled redis and write_redis plugins -- they require libcredis.
+    - Disabled write_mongodb plugin -- this requires libmongoc.
+    - Disabled ethstat, md, and numa plugins on kfreebsd -- these plugins are
+      Linux specific.
+    - Install contrib/exec-ksm.sh as example.
+  * debian/control:
+    - Added build-dep on librabbitmq-dev, required by the AMQP plugin.
+    - Added build-dep on libvarnish-dev, required by the varnish plugin.
+  * debian/collectd-utils.install:
+    - Install collectdctl and collectdctl.1 to collectd-utils.
+  * debian/libcollectdclient0.symbols:
+    - Added lcc_sort_identifiers introduced in 5.1.0.
+  * debian/NEWS.Debian:
+    - Documented the upgrade from version 4 to 5.
+  * debian/collectd-core.install:
+    - Install migrate-4-5.px.
+  * debian/collectd-core.{config,postinst,templates}:
+    - Added debconf queries and code to automatically migrate from v4.
+  * debian/source/format:
+    - Set to "1.0" for now.
+  * debian/po/:
+    - Updated German debconf template translation.
+  * debian/collectd-core.override:
+    - Limit netlink override to appropriate architectures.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 13 Jun 2012 08:05:01 +0200
+
+collectd (4.10.7-2) unstable; urgency=low
+
+  * debian/po:
+    - Updated Czech debconf translation; thanks to Martin Šín
+      (Closes: #673693).
+    - Updated Polish debconf translation; thanks to Michał Kułach
+      (Closes: #673697).
+    - Updated Dutch debconf translation; thanks to Jeroen Schot
+      (Closes: #673769).
+    - Updated Swedish debconf translation; thanks to Martin Bagge
+      (Closes: #673888).
+    - Updated Russian debconf translation; thanks to Vladimir Zhbanov
+      (Closes: #673890).
+    - Added Italian debconf translation; thanks to Beatrice Torracca
+      (Closes: #674044).
+    - Updated Portuguese debconf translation; thanks to Américo Monteiro
+      (Closes: #674065).
+    - Updated Danish debconf translation; thanks to Joe Dalton
+      (Closes: #674459).
+    - Updated Brazilian Portuguese debconf translation; thanks to Adriano
+      Rafael Gomes (Closes: #674589).
+    - Updated French debconf translation; thanks to Steve Petruzzello and
+      Christian PERRIER (Closes: #674629).
+    - Updated Spanish debconf translation; thanks to Omar Campagne
+      (Closes: #676383).
+    - Updated German debconf translation based on Holger Wansing's feedback on
+      debian-l10n-german.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 10 Jun 2012 13:49:32 +0200
+
+collectd (4.10.7-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixed an endless loop in case the datadir is a symlink pointing to a
+      non-existent target; thanks to Michael Prokop for reporting this and
+      Jonathan Nieder for providing the patch (Closes: #619123).
+    - Use bsd/nlist.h rather than the deprecated nlist.h on FreeBSD fixing a
+      FTBFS on kfreebsd; thanks to Tobias Frost for reporting this
+      (Closes: #664429).
+  * debian/patches/:
+    - Removed ipvs_h_include.dpatch -- applied upstream.
+    - Added rtnl_dump_filter.dpatch, updating the rtnl_dump_filter() signature
+      to recent versions of iproute2.
+  * debian/rules:
+    - Use dpkg-buildflags to determine compiler/linker flags; this also
+      enables hardening build flags; thanks to Moritz Muehlenhoff for
+      providing the patch (Closes: #656271).
+    - Don't force building of the ipvs plugin. The ip_vs.h check has been
+      fixed in configure.
+    - Use /usr/share/javahelper/java-arch.sh to determine the Java
+      architecture directory, thus, making sure armhf and armel are supported
+      as well; thanks to peter green for reporting this and providing the
+      pointer (Closes: #656274).
+    - Work around #673431 (kvm.h requires sys/types.h) by forcing the processes
+      plugin on kfreebsd and manually defining HAVE_STRUCT_KINFO_PROC_FREEBSD.
+  * debian/README.Debian:
+    - Added section 'Cleanup of old data' explaining how to get rid of
+      out-dated data files (e.g. RRD files).
+  * debian/control:
+    - Updated to standards-version 3.9.3 -- no changes.
+    - Build depend on javahelper providing java-arch.sh.
+    - Use linux-any, kfreebsd-any, etc. rather than hardcoded list of
+      non-Linux architectures to make life of porters easier; thanks to Robert
+      Millan for reporting this and providing a pointer to the fix
+      (Closes: #634690).
+    - Explicitly build-depend on libkvm-dev on kfreebsd; this is required by
+      the processes, swap and tcpconns plugins.
+  * debian/collectd-core.postrm, debian/collectd-core.templates:
+    - Prompt the user (debconf priority high) when purging the collected data
+      providing an option to opt out. The question defaults to remove the
+      data; thanks to Trent W. Buck for reporting and discussing this
+      (Closes: #631167).
+  * debian/collectd-core.collectd.init.d:
+    - Added cpufrequtils to should-start, else collectd does not reliably
+      detect all CPUs; thanks to Mathias Bauer for reporting and debugging
+      this (Closes: #662040).
+    - Use the exit codes specified by LSB in 'status' command; thanks to
+      Michael Prokop for reporting this (Closes: #615840).
+  * debian/po/:
+    - Added Danish debconf template translation; thanks to Joe Dalton
+      (Closes: #660918).
+    - Added Brazilian Portuguese debconf template translation; thanks to
+      Adriano Rafael Gomes (Closes: #662174).
+    - Added Polish debconf template translation; thanks to Michał Kułach
+      (Closes: #672739).
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 17 May 2012 15:55:39 +0200
+
+collectd (4.10.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - Added support for Yajl version 2; thanks to John Stamp for reporting
+      this (Closes: #653879).
+    - collectd.conf(5) now documents the "Globals" config option and that this
+      is required for the "perl" and "python" plugins; thanks to Jeff Green
+      for reporting this (Closes: #612784).
+    - Be more verbose about why loading a plugin fails; thanks to Martin
+      Steigerwald for reporting this (Closes: #585975).
+    - Don't abort if including a config file fails; thanks to Reinhard Tartler
+      for reporting this (Closes: #592880).
+    - Fixed FTBFS with GCC 4.6; thanks to Matthias Klose for reporting this
+      and Peter Green and Colin Watson for providing patches
+      (Closes: #625323).
+    - Added support for libnotify 0.7; thanks to Michael Biebl for reporting
+      this (Closes: #636818).
+    - Fixed FTBFS with current libiptc; thanks to Lucas Nussbaum for reporting
+      this (Closes: #614439).
+  * debian/patches:
+    - Removed bts595756-notify_email-segfault -- included upstream.
+    - Removed bts592623-curl_json-file -- included upstream.
+    - Removed bts596128-reheap-fix -- included upstream.
+    - Removed CVE-2010-4336 -- included upstream.
+  * debian/rules:
+    - Append DEB_BUILD_ARCH to JAVA_HOME; this is how it's done in the OpenJDK
+      package.
+    - Split 'build' target into 'build-arch' and 'build-indep' as recommended
+      by policy.
+  * debian/patches/ipvs_h_include, debian/rules:
+    - Let the ipvs plugin use linux/ip_vs.h rather than net/ip_vs.h. Also,
+      make sure to look for the header in /usr/include rather than the kernel
+      directory (which has been deprecated).
+    - Force building of the ipvs plugin since configure is not currently able
+      to correctly check for ip_vs.h.
+  * debian/control:
+    - Updated standards-version to 3.9.2 -- no changes.
+  * debian/collectd-core.collectd.init.d:
+    - Added a description LSB header field.
+  * debian/collectd-core.overrides:
+    - Updated entry for java's binary-or-shlib-defines-rpath.
+
+ -- Sebastian Harl <tokkee@debian.org>  Mon, 09 Jan 2012 16:10:58 +0100
+
+collectd (4.10.1-2.1) unstable; urgency=high
+
+  * Non-maintainer upload by the security team
+  * Fix DoS in RRD file creation (Closes: #605092)
+    Fixes: CVE-2010-4336
+    Thanks to Florian Forster
+
+ -- Steffen Joeris <white@debian.org>  Wed, 08 Dec 2010 17:45:50 +1100
+
+collectd (4.10.1-2) unstable; urgency=medium
+
+  * debian/rules:
+    - Added support for ‘powerpcspe’ to the Java arch mapping; thanks to
+      Sebastian Andrzej Siewior for the patch (Closes: #592909).
+  * debian/patches:
+    - Added bts595756-notify_email-segfault -- upstream patch fixing a
+      segfault in the 'notify_email' plugin; thanks to Manuel CISSE for
+      reporting this (Closes: #595756).
+    - Added bts592623-curl_json-file -- upstream patch fixing access to
+      file:// URLs in the 'curl_json' plugin; thanks Baptiste Mille-Mathias
+      for reporting this and pointing out the patch (Closes: #592623).
+    - Added bts596128-reheap-fix -- upstream patch fixing the 'reheap()'
+      function used to manage the "read" callbacks and making sure all plugins
+      get executed correctly and in each interval (Closes: #596128).
+  * Set urgency to "medium" because of the RC bug-fix.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 08 Sep 2010 22:50:54 +0200
+
 collectd (4.10.1-1+squeeze1~bpo50+1) lenny-backports; urgency=low
 
   * Rebuild for lenny-backports.

@@ -1,27 +1,29 @@
-# Vietnamese translation for Collect D.
-# Copyright © 2009 Free Software Foundation, Inc.
-# Clytie Siddall <clytie@riverland.net.au>, 2009.
+# Translation of collectd debconf templates to Polish.
+# Copyright (C) 2009
+# This file is distributed under the same license as the collectd package.
 #
+# Michał Kułach <michal.kulach@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd 4.4.2-3\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2009-02-18 15:36+1030\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
-"Language: vi\n"
+"PO-Revision-Date: 2012-06-19 18:13+0200\n"
+"Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
+"Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.8\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #. Type: note
 #. Description
 #: ../collectd-core.templates:1001
 msgid "Layout of RRD files has changed"
-msgstr "Bố trí tập tin RRD đã thay đổi"
+msgstr "Składnia plików RRD zmieniła się"
 
 #. Type: note
 #. Description
@@ -33,9 +35,9 @@ msgid ""
 "since version 3.x. In order to keep your old data you have to migrate it. "
 "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgstr ""
-"Bố trí của tập tin RRD được collectd thu thập đã thay đổi nhiều kể từ phiên "
-"bản 3.x. Muốn giữ lại dữ liệu cũ thì bạn cần phải nâng cấp, dùng « /usr/lib/"
-"collectd-core/utils/migrate-3-4.px »."
+"Układ plików RRD tworzonych przez collectd znacznie się zmienił od wersji 3."
+"x. Aby zatrzymać stare dane, należy je przekształcić np. za pomocą /usr/lib/"
+"collectd-core/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -46,8 +48,8 @@ msgid ""
 "This step requires both the perl and the rrdtool packages to be installed, "
 "which is currently not the case. You need to perform the migration manually."
 msgstr ""
-"Bước này yêu cầu cài đặt cả hai gói perl và gói rrdtool mà chưa. Bạn cần "
-"phải tự làm quá trình nâng cấp này."
+"Ten krok wymaga zainstalowania pakietów perl i rrdtool, co aktualnie nie ma "
+"miejsca. Konieczne jest ręczne przeprowadzenie migracji."
 
 #. Type: note
 #. Description
@@ -56,8 +58,7 @@ msgstr ""
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
 msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
 msgstr ""
-"Xem tài liệu Tin Tức « /usr/share/doc/collectd-core/NEWS.Debian » để tìm chi "
-"tiết."
+"Plik /usr/share/doc/collectd-core/NEWS.Debian zawiera więcej szczegółów."
 
 #. Type: boolean
 #. Description
@@ -65,7 +66,7 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:2001 ../collectd-core.templates:4001
 msgid "Automatically try to migrate your RRD files?"
-msgstr "Tự động thử nâng cấp các tập tin RRD của bạn ?"
+msgstr "Spróbować przekształcić pliki RRD automatycznie?"
 
 #. Type: boolean
 #. Description
@@ -77,36 +78,30 @@ msgid ""
 "collectd/ is made in /var/backups/. This script is still experimental, "
 "though. Do not expect it to work in all cases."
 msgstr ""
-"Bước này có thể được tự động làm. Trong trường hợp này, một bản sao của « /"
-"var/lib/collectd/ » được tạo trong thư mục « /var/backups/ ». Tuy nhiên, văn "
-"lệnh này vẫn còn dựa vào thí nghiệm. Không nên nhờ nó trong mọi trường hợp."
+"Ten krok może zostać przeprowadzony automatycznie. Kopia zapasowa /var/lib/"
+"collectd/ zostanie utworzona w /var/backups/. Skrypt jest jednak wciąż "
+"eksperymentalny. Proszę nie oczekiwać, że będzie działał we wszystkich "
+"przypadkach."
 
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "Bố trí tập tin RRD đã thay đổi"
+msgstr "Składnia plików RRD zmieniła się w wersji 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"Bố trí của tập tin RRD được collectd thu thập đã thay đổi nhiều kể từ phiên "
-"bản 3.x. Muốn giữ lại dữ liệu cũ thì bạn cần phải nâng cấp, dùng « /usr/lib/"
-"collectd-core/utils/migrate-3-4.px »."
+"Układ plików RRD tworzonych przez collectd znacznie się zmienił od wersji 4."
+"x. Aby zatrzymać stare dane, należy je przekształcić np. za pomocą /usr/lib/"
+"collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -117,12 +112,15 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Plik /usr/share/doc/collectd-core/NEWS.Debian oraz wiki collectd <http://"
+"collectd.org/wiki/index.php/V4_to_v5_migration_guide> zawiera więcej "
+"informacji na ten temat."
 
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:5001
 msgid "Remove all collected data (e.g. RRD files)?"
-msgstr ""
+msgstr "Usunąć wszystkie zgromadzone dane (np. pliki RRD)?"
 
 #. Type: boolean
 #. Description
@@ -132,6 +130,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
+"Katalog /var/lib/collectd/, zawierający pliki z danymi obejmującymi "
+"zgromadzone statystyki jest przeznaczony do usunięcia. Ten katalog zawiera "
+"np. (w domyślnej konfiguracji) wszystkie pliki RRD."
 
 #. Type: boolean
 #. Description
@@ -141,3 +142,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
+"Jeśli pakiet collectd jest czyszczony w celu zastąpienia go nowszą lub "
+"własną wersją, albo dane będą jeszcze analizowane, to powinny one zostać "
+"zachowane."

@@ -3,14 +3,20 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
- bison, flex, autotools-dev, libltdl3-dev, pkg-config,
- iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-i386 !kfreebsd-amd64],
+ bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ iproute-dev [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel !kfreebsd-any !hurd-any],
+ iptables-dev (>= 1.4.3.2-2) [linux-any],
+ javahelper,
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
  libdbi0-dev,
  libesmtp-dev,
+ libganglia1-dev (>= 3) [linux-any],
  libgcrypt11-dev,
  libglib2.0-dev,
  libhal-dev,
+ libkvm-dev [kfreebsd-any],
+ libmemcached-dev,
+ libmodbus-dev,
  libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
@@ -18,17 +24,26 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libpcap0.8-dev | libpcap-dev,
  libperl-dev,
  libpq-dev,
+ libprotobuf-c0-dev,
+ librabbitmq-dev,
  librrd-dev (>= 1.4~),
- libsensors-dev [!kfreebsd-i386 !kfreebsd-amd64],
- libsnmp-dev | libsnmp9-dev,
+ libsensors4-dev [linux-any],
+# libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
+ libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
+ libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),
+ libtokyocabinet-dev [linux-any],
+ libtokyotyrant-dev [linux-any],
  libupsclient1-dev,
- libvirt-dev (>= 0.4.0-6) [!kfreebsd-i386 !kfreebsd-amd64],
+ libvarnish-dev,
+ libvirt-dev (>= 0.4.0-6) [linux-any],
  libxml2-dev,
- linux-libc-dev (>= 2.6.25-4) [!kfreebsd-i386 !kfreebsd-amd64] | linux-libc-dev (<< 2.6.25-1) [!kfreebsd-i386 !kfreebsd-amd64],
- openjdk-6-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
+ libyajl-dev,
+ linux-libc-dev (>= 2.6.25-4) [linux-any] | linux-libc-dev (<< 2.6.25-1) [linux-any],
+ openjdk-6-jdk [!hppa !kfreebsd-any !hurd-any],
+ protobuf-c-compiler,
  python-dev
-Build-Conflicts: libpthread-dev, iptables-dev
-Standards-Version: 3.9.1
+Build-Conflicts: libpthread-dev
+Standards-Version: 3.9.3
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
@@ -65,6 +80,7 @@ Description: statistics collection and monitoring daemon (core system)
  default configuration) on top of it without having to modify the "collectd"
  package.
  .
+   * AMQP output plugin: amqp
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Ascent server statistics: ascent
@@ -76,6 +92,7 @@ Description: statistics collection and monitoring daemon (core system)
    * CPU frequency: cpufreq
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
+   * parse JSON files: curl_json
    * parse XML data: curl_xml
    * query data from a relational database: dbi
    * disk space usage: df
@@ -87,6 +104,7 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
+   * Receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPMI sensors information: ipmi
@@ -99,8 +117,10 @@ Description: statistics collection and monitoring daemon (core system)
    * logging to files, STDOUT and STDERR: logfile
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
+   * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * read values from Modbus/TCP enabled devices: modbus
    * statistics from mon.itor.us: Monitorus (Perl based plugin)
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
@@ -116,6 +136,7 @@ Description: statistics collection and monitoring daemon (core system)
    * OpenVPN traffic and compression statistics: openvpn
    * OpenVZ statistics: OpenVZ (Perl based plugin)
    * embedded Perl interpreter: perl
+   * timing values from Pinba: pinba
    * network latency statistics: ping
    * PostgreSQL database statistics: postgresql
    * PowerDNS name server statistics: powerdns
@@ -135,10 +156,13 @@ Description: statistics collection and monitoring daemon (core system)
    * TeamSpeak2 server statistics: teamspeak2
    * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
+   * Check thresholds and for missing values: threshold
+   * Tokyo Tyrant server statistics: tokyotyrant
    * external runtime interface: unixsock
    * system uptime: uptime
    * number of users logged into the system: users
    * set the hostname to an unique identifier: uuid
+   * Varnish HTTP accelerator daemon statistics: varnish
    * detailed virtual memory statistics: vmem
    * system resources used by Linux-VServers: vserver
    * wireless network stats: wireless
@@ -178,6 +202,7 @@ Description: statistics collection and monitoring daemon (utilities)
  .
  This package contains the following utility:
  .
+   * collectdctl: Control interface for collectd
    * collectd-nagios: Nagios plugin for querying collectd
 
 Package: collectd-dbg
@@ -198,7 +223,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd-core (>= ${source:Version}), collectd-core (<< 4.11~),
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 5.2~),
  ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and

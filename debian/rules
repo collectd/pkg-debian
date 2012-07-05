@@ -12,8 +12,12 @@ DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
-CPPFLAGS = -I$(CURDIR)/debian/include
-CFLAGS = -Wall -g
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+CPPFLAGS += -I$(CURDIR)/debian/include
+CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
+CFLAGS += -Wall
 
 # There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
 # however required by the perl plugin (which would otherwise be unable to find
@@ -26,20 +30,14 @@ CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 CPPFLAGS += -UCONFIGFILE
 CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
 
 # The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR_MAP = armel=arm hppa=parisc lpia=i386 powerpc=ppc powerpcspe=ppc sh4=sh
-JAVA_ARCHDIR = $(strip $(patsubst $(DEB_BUILD_ARCH)=%, %, \
-			$(filter $(DEB_BUILD_ARCH)=%, $(JAVA_ARCHDIR_MAP))))
+JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
 ifeq (,$(JAVA_ARCHDIR))
 	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
 endif
-JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+JAVA_HOME = /usr/lib/jvm/java-6-openjdk-$(DEB_BUILD_ARCH)
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
@@ -60,19 +58,12 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
-confflags += --disable-apple_sensors --disable-tape
-
-# libyajl is required for the curl_json plugin.
-confflags += --disable-curl_json
-
-# libganglia >= 3 is required for the gmond plugin.
-confflags += --disable-gmond
-
-# libmemcached is required for the memcachec plugin.
-confflags += --disable-memcachec
-
-# libmodbus is required for the modbus plugin.
-confflags += --disable-modbus
+# MacOS only (requires IO Kit):
+confflags += --disable-apple_sensors
+# AIX only (requires perfstat):
+confflags += --disable-lpar
+# Solaris only (requires devinfo and kstat)
+confflags += --disable-tape
 
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
@@ -83,14 +74,14 @@ confflags += --disable-onewire
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
-# protobuf is required for the pinba plugin.
-confflags += --disable-pinba
+# libcredis is required for the *redis plugins.
+confflags += --disable-redis --disable-write_redis
 
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
-# libtokyotyrant is required for the tokyotyrant plugin.
-confflags += --disable-tokyotyrant
+# libmongoc is required for the write_mongodb plugin.
+confflags += --disable-write_mongodb
 
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
@@ -107,16 +98,23 @@ endif
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-ethstat \
 		--disable-iptables \
 		--disable-ipvs \
 		--disable-madwifi \
+		--disable-md \
 		--disable-netlink \
+		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
 endif
 
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	# Work-around an incomplete check for kvm functionality
+	CPPFLAGS  += -DHAVE_STRUCT_KINFO_PROC_FREEBSD
+	confflags += --enable-processes=force
+
 	confflags += \
 		--disable-battery \
 		--disable-conntrack \
@@ -165,12 +163,14 @@ config.status: configure $(DPATCH_STAMPFN)
 		> debian/pkgconfig/OpenIPMIpthread.pc
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
-	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" \
+	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
 		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
-build: build-stamp
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
 
 build-stamp: config.status
 	dh_testdir
@@ -245,7 +245,7 @@ binary-arch: build install-arch
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
-		contrib/exec-nagios.conf contrib/exec-nagios.px \
+		contrib/exec-nagios.conf contrib/exec-nagios.px contrib/exec-ksm.sh \
 		contrib/SpamAssassin/ contrib/iptables/ contrib/cussh.pl \
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd_network.py contrib/collectd_unixsock.py \
@@ -280,5 +280,5 @@ binary-arch: build install-arch
 	dh_builddeb -a
 
 binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install-indep install-arch
+.PHONY: build build-arch build-indep clean binary-indep binary-arch binary install-indep install-arch
 
