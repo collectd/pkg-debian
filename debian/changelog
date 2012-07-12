@@ -5,6 +5,7 @@ collectd (5.1.0-3) UNRELEASED; urgency=low
       thanks to 'markuskaindl' for reporting this on IRC.
     - Pass --rrdfilter and --rrdtool parameters to migrate-4-5.px in order to
       let the script find those binaries/scripts.
+    (Closes: #681363)
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 12 Jul 2012 18:57:04 +0200
 
