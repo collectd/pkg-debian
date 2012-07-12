@@ -1,8 +1,10 @@
 collectd (5.1.0-3) UNRELEASED; urgency=low
 
-  * debian/patches/migrate-4-5-df.dpatch:
+  * debian/patches/migrate-4-5-df.dpatch, debian/collectd-core.postinst:
     - Added patch to fix the migration of 'df' values in migrate-4-5.px;
       thanks to 'markuskaindl' for reporting this on IRC.
+    - Pass --rrdfilter and --rrdtool parameters to migrate-4-5.px in order to
+      let the script find those binaries/scripts.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 12 Jul 2012 18:57:04 +0200
 
