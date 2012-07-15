@@ -22,8 +22,6 @@
 #                    the values in a variety of ways.
 ### END INIT INFO
 
-set -e
-
 . /lib/lsb/init-functions
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
@@ -50,16 +48,6 @@ if [ -r /etc/default/$NAME ]; then
 	. /etc/default/$NAME
 fi
 
-if test "$DISABLE" != 0 -a "$1" == "start"; then
-	log_warning_msg "Not starting $DESC, disabled by /etc/default/$NAME."
-	exit 0
-fi
-
-if test ! -e "$CONFIGFILE" -a "$1" == "start"; then
-	log_warning_msg "Not starting $DESC, no configuration ($CONFIGFILE) found."
-	exit 0
-fi
-
 if test "$ENABLE_COREFILES" == 1; then
 	ulimit -c unlimited
 fi
@@ -70,28 +58,41 @@ else
 	_PIDFILE="$PIDFILE"
 fi
 
+# return:
+#   0 if config is fine
+#   1 if there is a syntax error
+#   2 if there is no configuration
 check_config() {
+	if test ! -e "$CONFIGFILE"; then
+		return 2
+	fi
 	if ! $DAEMON -t -C "$CONFIGFILE"; then
 		return 1
 	fi
+	return 0
 }
 
+# return:
+#   0 if the daemon has been started
+#   1 if the daemon was already running
+#   2 if the daemon could not be started
+#   3 if the daemon was not supposed to be started
 d_start() {
 	if test "$DISABLE" != 0; then
 		# we get here during restart
 		log_progress_msg "disabled by /etc/default/$NAME"
-		return 2
+		return 3
 	fi
 
 	if test ! -e "$CONFIGFILE"; then
 		# we get here during restart
 		log_progress_msg "disabled, no configuration ($CONFIGFILE) found"
-		return 2
+		return 3
 	fi
 
 	check_config
 	rc="$?"
-	if test "$rc" -eq 1; then
+	if test "$rc" -ne 0; then
 		log_progress_msg "not starting, configuration error"
 		return 2
 	fi
@@ -105,6 +106,7 @@ d_start() {
 			--exec $DAEMON -- -C "$CONFIGFILE" -P "$_PIDFILE" \
 			|| return 2
 	fi
+	return 0
 }
 
 still_running_warning="
@@ -112,6 +114,10 @@ WARNING: $NAME might still be running.
 In large setups it might take some time to write all pending data to
 the disk. You can adjust the waiting time in /etc/default/collectd."
 
+# return:
+#   0 if the daemon has been stopped
+#   1 if the daemon was already stopped
+#   2 if daemon could not be stopped
 d_stop() {
 	PID=$( cat "$_PIDFILE" 2> /dev/null ) || true
 
@@ -148,6 +154,8 @@ case "$1" in
 		case "$?" in
 			0|1) log_end_msg 0 ;;
 			2) log_end_msg 1 ;;
+			3) log_end_msg 255; true ;;
+			*) log_end_msg 1 ;;
 		esac
 		;;
 	stop)
@@ -178,7 +186,9 @@ case "$1" in
 				d_start
 				rc2="$?"
 				case "$rc2" in
-					0) log_end_msg 0 ;;
+					0|1) log_end_msg 0 ;;
+					2) log_end_msg 1 ;;
+					3) log_end_msg 255; true ;;
 					*) log_end_msg 1 ;;
 				esac
 				;;
@@ -192,8 +202,6 @@ case "$1" in
 		exit 3
 		;;
 esac
-
-exit 0
 
 # vim: syntax=sh noexpandtab sw=4 ts=4 :
 
