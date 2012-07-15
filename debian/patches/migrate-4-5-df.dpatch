@@ -25,8 +25,8 @@ index d3ff796..c39b51b 100755
 -    print "mv \"$path\" \"$dir/$plugin-$type_inst/$type.rrd\"\n";
 +    if (($plugin eq 'df') and ($type eq 'df'))
 +    {
-+      print "$RRDFilter --infile=\"$path\" --outfile=\"$dir/$plugin-$type_inst/df_complex-free.rrd --map free:value\n";
-+      print "$RRDFilter --infile=\"$path\" --outfile=\"$dir/$plugin-$type_inst/df_complex-used.rrd --map used:value\n";
++      print "$RRDFilter --infile=\"$path\" --outfile=\"$dir/$plugin-$type_inst/df_complex-free.rrd\" --map free:value\n";
++      print "$RRDFilter --infile=\"$path\" --outfile=\"$dir/$plugin-$type_inst/df_complex-used.rrd\" --map used:value\n";
 +    }
 +    else
 +    {
