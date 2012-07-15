@@ -1,4 +1,4 @@
-collectd (5.1.0-3) UNRELEASED; urgency=low
+collectd (5.1.0-3) unstable; urgency=low
 
   * debian/patches/migrate-4-5-df.dpatch, debian/collectd-core.postinst:
     - Added patch to fix the migration of 'df' values in migrate-4-5.px;
@@ -14,7 +14,7 @@ collectd (5.1.0-3) UNRELEASED; urgency=low
     - Don't use 'set -e' and 'exit 0' (at the end) in order to let return
       statuses propagate correctly. (cf. #681216)
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 12 Jul 2012 18:57:04 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 15 Jul 2012 11:17:10 +0200
 
 collectd (5.1.0-2) unstable; urgency=low
 
