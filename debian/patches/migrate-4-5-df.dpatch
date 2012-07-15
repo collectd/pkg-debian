@@ -1,8 +1,10 @@
-commit 605dab534eb2f0ee26446c157c9fdd2ad6e9427a
-Author: Florian Forster <octo@collectd.org>
-Date:   Thu Jul 5 15:48:29 2012 +0200
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## migrate-4-5-df.dpatch by Florian Forster <octo@collectd.org>
+##
+## DP: contrib/migrate-4-5.px: Break up "df" RRD files into multiple files.
+## DP: cf. upstream commit 605dab534eb2f0ee26446c157c9fdd2ad6e9427a
 
-    contrib/migrate-4-5.px: Break up "df" RRD files into multiple files.
+@DPATCH@
 
 diff --git a/contrib/migrate-4-5.px b/contrib/migrate-4-5.px
 index d3ff796..c39b51b 100755
