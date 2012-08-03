@@ -1,6 +1,8 @@
 collectd (5.1.0-3~bpo60+1) squeeze-backports; urgency=low
 
   * Rebuild for squeeze-backports.
+  * debian/rules, debian/control:
+    - Disabled modbus plugin, libmodbus-dev is not available on Squeeze.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jul 2012 13:39:28 +0200
 

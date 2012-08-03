@@ -89,6 +89,10 @@ confflags += --disable-xmms
 # libkstat is required for the xfs_arc plugin.
 confflags += --disable-zfs-arc
 
+# build-deps for these plugins are not available on Squeeze
+confflags += \
+		--disable-modbus
+
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).
 ifneq (,$(filter alpha amd64 hppa ia64 ppc64 mips mipsel, $(DEB_BUILD_ARCH)))
