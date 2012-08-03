@@ -45,7 +45,9 @@ case "$1" in
         if [ "$RET" = "true" ]; then
             cp -a /var/lib/collectd/ /var/backups/collectd-"$2"
             /usr/lib/collectd/utils/migrate-4-5.px \
-                -indir /var/lib/collectd/rrd/ | bash
+                --rrdfilter /usr/lib/collectd/utils/rrd_filter.px \
+                --rrdtool /usr/bin/rrdtool \
+                --indir /var/lib/collectd/rrd/ | bash
         fi
     ;;
 

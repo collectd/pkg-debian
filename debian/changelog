@@ -1,8 +1,26 @@
-collectd (5.1.0-2~bpo60+1) squeeze-backports; urgency=low
+collectd (5.1.0-3~bpo60+1) squeeze-backports; urgency=low
 
   * Rebuild for squeeze-backports.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 05 Jul 2012 13:39:28 +0200
+
+collectd (5.1.0-3) unstable; urgency=low
+
+  * debian/patches/migrate-4-5-df.dpatch, debian/collectd-core.postinst:
+    - Added patch to fix the migration of 'df' values in migrate-4-5.px;
+      thanks to 'markuskaindl' for reporting this on IRC.
+    - Pass --rrdfilter and --rrdtool parameters to migrate-4-5.px in order to
+      let the script find those binaries/scripts.
+    (Closes: #681363)
+  * debian/collectd-core.collectd.init.d:
+    - Catch disabled state in start and restart and don't exit with an error
+      status. Amongst others, this fixes an upgrade of collectd when the
+      daemon is disabled. Thanks to Florian Ernst for reporting this and
+      Evgeni Golov for providing (an early) patch (Closes: #681216).
+    - Don't use 'set -e' and 'exit 0' (at the end) in order to let return
+      statuses propagate correctly. (cf. #681216)
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 15 Jul 2012 11:17:10 +0200
 
 collectd (5.1.0-2) unstable; urgency=low
 
