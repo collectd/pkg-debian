@@ -91,6 +91,7 @@ confflags += --disable-zfs-arc
 
 # build-deps for these plugins are not available on Squeeze
 confflags += \
+		--disable-amqp \
 		--disable-modbus
 
 # The static library netstat cannot be linked into shared objects on some
