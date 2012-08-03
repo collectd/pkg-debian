@@ -6,8 +6,10 @@ collectd (5.1.0-3~bpo60+1) squeeze-backports; urgency=low
     - Disabled AMQP plugin, librabbitmq-dev is not available on Squeeze.
   * debian/rules, debian/collectd-core.overrides:
     - Changed JAVA_HOME to /usr/lib/jvm/java-6-openjdk (without arch).
+  * debian/collectd.conf:
+    - Removed sample config for the 'amqp' plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Fri, 03 Aug 2012 11:23:19 +0000
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 03 Aug 2012 12:04:12 +0000
 
 collectd (5.1.0-3) unstable; urgency=low
 
