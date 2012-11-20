@@ -4,6 +4,9 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
     New plugins:
     - Aggregate multiple values lists into one: aggregation
     - Query statistics from BSD's packet filter: pf (FreeBSD only)
+  * debian/control, debian/rules:
+    - Build-depend on kfreebsd-kernel-headers (kfreebsd-any only) and disable
+      the 'pf' plugin on non-kfreebsd systems.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 

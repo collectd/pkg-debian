@@ -109,6 +109,12 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-vserver
 endif
 
+# This plugin is FreeBSD-specific.
+ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	confflags += \
+		--disable-pf
+endif
+
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	# Work-around an incomplete check for kvm functionality
