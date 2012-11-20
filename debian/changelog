@@ -18,6 +18,8 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
     - Install collectd-tg(1).
   * debian/libcollectdclient-dev.install:
     - Install the libcollectdclient network*.h header files.
+  * Renamed libcollectclient0 to libcollectdclient1 due to the SONAME version
+    bump.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 

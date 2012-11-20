@@ -1,4 +1,4 @@
-libcollectdclient.so.0 libcollectdclient0 #MINVER#
+libcollectdclient.so.1 libcollectdclient1 #MINVER#
  lcc_connect@Base 4.6.0
  lcc_disconnect@Base 4.6.0
  lcc_flush@Base 4.6.0

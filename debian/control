@@ -212,7 +212,7 @@ Architecture: any
 Priority: extra
 Depends: collectd-core (= ${binary:Version}), ${misc:Depends}
 Recommends: collectd-utils (= ${binary:Version}),
- libcollectdclient0 (= ${binary:Version})
+ libcollectdclient1 (= ${binary:Version})
 Description: statistics collection and monitoring daemon (debugging symbols)
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
@@ -239,7 +239,7 @@ Description: statistics collection and monitoring daemon (development files)
 Package: libcollectdclient-dev
 Section: libdevel
 Architecture: any
-Depends: libcollectdclient0 (= ${binary:Version}), ${misc:Depends}
+Depends: libcollectdclient1 (= ${binary:Version}), ${misc:Depends}
 Description: client library for collectd's control interface (development files)
  libcollectdclient provides an API to access the control interface provided by
  the unixsock plugin of collectd, a statistics collection and monitoring
@@ -249,7 +249,7 @@ Description: client library for collectd's control interface (development files)
  .
  This package contains the header files and the static library.
 
-Package: libcollectdclient0
+Package: libcollectdclient1
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
