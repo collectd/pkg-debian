@@ -16,6 +16,8 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
       bindings being installed to different locations than before.
   * debian/collectd-utils.install:
     - Install collectd-tg(1).
+  * debian/libcollectdclient-dev.install:
+    - Install the libcollectdclient network*.h header files.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 
