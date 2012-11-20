@@ -14,6 +14,8 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
     - Fix installation paths used for Perl bindings. Upstream now passes
       INSTALL_BASE rather than PREFIX to Makefile.PL which resulted in the
       bindings being installed to different locations than before.
+  * debian/collectd-utils.install:
+    - Install collectd-tg(1).
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 
