@@ -9,6 +9,7 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
       the 'pf' plugin on non-kfreebsd systems.
   * debian/patches:
     - Removed migrate-4-5-df.dpatch; merged upstream.
+    - Removed rtnl_dump_filter.dpatch; merged upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 
