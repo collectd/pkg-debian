@@ -1,9 +1,10 @@
-collectd (5.2.0-1) UNRELEASED; urgency=low
+collectd (5.2.0-1) experimental; urgency=low
 
   * New upstream release:
     New plugins:
     - Aggregate multiple values lists into one: aggregation
     - Query statistics from BSD's packet filter: pf (FreeBSD only)
+  * Uploading to experimental because of the Wheezy freeze.
   * debian/control, debian/rules:
     - Build-depend on kfreebsd-kernel-headers (kfreebsd-any only) and disable
       the 'pf' plugin on non-kfreebsd systems.
@@ -29,7 +30,7 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
       rather than /usr/include/collectd/. The latter is used by
       libcollectdclient which causes file conflicts.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 15:40:12 +0100
 
 collectd (5.1.0-3) unstable; urgency=low
 
