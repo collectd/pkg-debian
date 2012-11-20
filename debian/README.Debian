@@ -109,7 +109,8 @@ Building your own plugins:
 - Originally, plugins for collectd had to be written in C and linked as shared
   objects. Starting with version 4.0.0, it is also possible to use plugins
   written in the scripting language Perl or implemented as separate processes.
-  See collectd-perl(5) and collectd-exec(5) for details.
+  In later versions, support for Java and Python has been added. See the
+  appropriate collectd-<extension>(5) manual page for details.
 
 - If you want to contribute plugins to the official distribution you should
   read http://collectd.org/dev-info.shtml.
