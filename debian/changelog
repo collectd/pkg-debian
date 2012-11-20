@@ -7,6 +7,8 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
   * debian/control, debian/rules:
     - Build-depend on kfreebsd-kernel-headers (kfreebsd-any only) and disable
       the 'pf' plugin on non-kfreebsd systems.
+  * debian/patches:
+    - Removed migrate-4-5-df.dpatch; merged upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 
