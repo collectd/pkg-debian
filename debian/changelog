@@ -10,6 +10,8 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
   * debian/patches:
     - Removed migrate-4-5-df.dpatch; merged upstream.
     - Removed rtnl_dump_filter.dpatch; merged upstream.
+    - Added myplugin_includes.dpatch -- change the example plugin include path
+      to /usr/include/collectd/core/ (see below).
   * debian/rules:
     - Fix installation paths used for Perl bindings. Upstream now passes
       INSTALL_BASE rather than PREFIX to Makefile.PL which resulted in the
