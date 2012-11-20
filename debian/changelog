@@ -1,3 +1,9 @@
+collectd (5.2.0-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
+
 collectd (5.1.0-3) unstable; urgency=low
 
   * debian/patches/migrate-4-5-df.dpatch, debian/collectd-core.postinst:
