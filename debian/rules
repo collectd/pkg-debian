@@ -220,6 +220,14 @@ install-arch: build
 	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
 	
+	# this was broken by passing INSTALL_BASE rather than PREFIX to
+	# Makefile.PL
+	install -d -m 755 debian/tmp/usr/share/man/man3
+	mv debian/tmp/usr/man/man3/Collectd::Unixsock.3pm \
+		debian/tmp/usr/share/man/man3/
+	install -d -m 755 debian/tmp/usr/share/
+	mv debian/tmp/usr/lib/perl5 debian/tmp/usr/share/
+	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
 	perl ./debian/bin/gen_plugin_deps.pl
