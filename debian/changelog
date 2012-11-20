@@ -22,6 +22,10 @@ collectd (5.2.0-1) UNRELEASED; urgency=low
     bump.
   * debian/libcollectdclient1.symbols:
     - Updated for 5.2.
+  * debian/collectd-dev.install:
+    - Install the collectd (daemon) headers to /usr/include/collectd/core/
+      rather than /usr/include/collectd/. The latter is used by
+      libcollectdclient which causes file conflicts.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 11:35:22 +0100
 
