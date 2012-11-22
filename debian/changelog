@@ -6,6 +6,8 @@ collectd (5.2.0-1) experimental; urgency=low
     - df plugin: Ignore "rootfs" file-system type to make sure that root
       file-system statistics are only collected once; thanks to Florian La
       Roche for reporting this (Closes: #657122).
+    - Fixed parse errors when using (including) empty config files; thanks to
+      Reinhard Tartler for reporting this (Closes: #592881).
     New plugins:
     - Aggregate multiple values lists into one: aggregation
     - Query statistics from BSD's packet filter: pf (FreeBSD only)
