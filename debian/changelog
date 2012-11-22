@@ -20,6 +20,11 @@ collectd (5.2.0-1) experimental; urgency=low
     - Removed rtnl_dump_filter.dpatch; merged upstream.
     - Added myplugin_includes.dpatch -- change the example plugin include path
       to /usr/include/collectd/core/ (see below).
+    - rrd_filter_path.dpatch: Also patch the migrate-4-5 script; while this is
+      not required for the (optional) auto-migration when updating the package
+      (the full path is passed as an argument) it helps the user to just use
+      the script without the need to add further arguments; thanks to Joey
+      Hess for reporting this (Closes: #689001).
   * debian/rules:
     - Fix installation paths used for Perl bindings. Upstream now passes
       INSTALL_BASE rather than PREFIX to Makefile.PL which resulted in the
