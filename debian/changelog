@@ -1,6 +1,8 @@
 collectd (5.2.0-1) experimental; urgency=low
 
   * New upstream release:
+    - ping plugin: Don't abort if ping_send fails but report an error only;
+      thanks to Bernd Zeimetz for reporting this (Closes: #630683).
     New plugins:
     - Aggregate multiple values lists into one: aggregation
     - Query statistics from BSD's packet filter: pf (FreeBSD only)
