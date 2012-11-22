@@ -42,7 +42,8 @@ collectd (5.2.0-1) experimental; urgency=low
       the usual virtual / temporary file-systems (cf. #657122).
   * debian/collectd-core.postrm:
     - Source the debconf confmodule to make the db_* functions available;
-      thanks to Joey Hess for reporting this (Closes: #680172).
+      thanks to Joey Hess and YunQiang Su for reporting this
+      (Closes: #680172, #688285).
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 15:40:12 +0100
 
