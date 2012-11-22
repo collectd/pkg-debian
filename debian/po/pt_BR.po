@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd 4.10.7-1\n"
+"Project-Id-Version: collectd 5.1.0-3\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2012-05-20 21:50-0300\n"
+"PO-Revision-Date: 2012-08-19 10:32-0300\n"
 "Last-Translator: Adriano Rafael Gomes <adrianorg@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
@@ -83,30 +83,22 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "O layout dos arquivos RRD foi alterado"
+msgstr "O layout dos arquivos RRD foi alterado na versão 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd-core/utils/migrate-4-5.px."
 msgstr ""
-"O layout dos arquivos RRD criados pelo collectd foi alterado "
-"significativamente desde a versão 3.x. Para manter seus dados antigos você "
-"deve migrá-los. Isso pode ser feito usando /usr/lib/collectd-core/utils/"
-"migrate-3-4.px."
+"O layout dos arquivos RRD criados pelo collectd foi alterado desde a versão "
+"4.x. Para manter seus dados antigos você deve migrá-los. Isso pode ser feito "
+"usando /usr/lib/collectd-core/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -117,6 +109,8 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Veja /usr/share/doc/collectd-core/NEWS.Debian e o wiki do collectd em "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> para detalhes."
 
 #. Type: boolean
 #. Description
@@ -144,6 +138,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
-"Se você está expurgando o pacote collectd para substitui-lo por uma versão "
+"Se você está expurgando o pacote collectd para substituí-lo por uma versão "
 "mais recente ou personalizada, ou se você quer manter os dados para uma "
 "análise mais aprofundada, os dados deveriam ser mantidos."
