@@ -40,6 +40,9 @@ collectd (5.2.0-1) experimental; urgency=low
     - Let the 'df' plugin ignore 'rootfs' (else, the root file-system would
       appear twice, causing one of the updates to fail and spam the log) and
       the usual virtual / temporary file-systems (cf. #657122).
+  * debian/collectd-core.postrm:
+    - Source the debconf confmodule to make the db_* functions available;
+      thanks to Joey Hess for reporting this (Closes: #680172).
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 15:40:12 +0100
 
