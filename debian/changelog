@@ -1,10 +1,10 @@
-collectd (5.2.0-1~debmon70+1) UNRELEASED; urgency=low
+collectd (5.2.0-1~debmon70+1) debmon-wheezy; urgency=low
 
   * Rebuild for debmon-wheezy.
   * Re-enabled the modbus and AMQP plugins which were previously disabled for
     Squeeze.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Nov 2012 12:37:29 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Nov 2012 12:47:16 +0100
 
 collectd (5.2.0-1~debmon60+1) debmon-squeeze; urgency=low
 
