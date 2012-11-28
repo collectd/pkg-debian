@@ -17,6 +17,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libhal-dev,
  libkvm-dev [kfreebsd-any],
  libmemcached-dev,
+ libmodbus-dev,
  libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
@@ -25,6 +26,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libperl-dev,
  libpq-dev,
  libprotobuf-c0-dev,
+ librabbitmq-dev,
  librrd-dev (>= 1.4~),
  libsensors4-dev [linux-any],
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
@@ -79,6 +81,7 @@ Description: statistics collection and monitoring daemon (core system)
  default configuration) on top of it without having to modify the "collectd"
  package.
  .
+   * AMQP output plugin: amqp
    * Apache and lighttpd statistics provided by mod_status: apache
    * APC UPS's charge, load, input/output/battery voltage, etc.: apcups
    * Ascent server statistics: ascent
@@ -118,6 +121,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
+   * read values from Modbus/TCP enabled devices: modbus
    * statistics from mon.itor.us: Monitorus (Perl based plugin)
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql

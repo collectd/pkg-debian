@@ -37,7 +37,7 @@ JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
 ifeq (,$(JAVA_ARCHDIR))
 	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
 endif
-JAVA_HOME = /usr/lib/jvm/java-6-openjdk
+JAVA_HOME = /usr/lib/jvm/java-6-openjdk-$(DEB_BUILD_ARCH)
 JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
 
 JAVAC = $(JAVA_HOME)/bin/javac
@@ -88,11 +88,6 @@ confflags += --disable-xmms
 
 # libkstat is required for the xfs_arc plugin.
 confflags += --disable-zfs-arc
-
-# build-deps for these plugins are not available on Squeeze
-confflags += \
-		--disable-amqp \
-		--disable-modbus
 
 # The static library netstat cannot be linked into shared objects on some
 # architectures (see bugs #358637, #419684 and #524593 for more details).
