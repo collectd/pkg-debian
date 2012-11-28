@@ -1,3 +1,9 @@
+collectd (5.2.0-1~debmon60+1) UNRELEASED; urgency=low
+
+  * Rebuild for debmon-squeeze.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Nov 2012 08:26:37 +0100
+
 collectd (5.2.0-1) experimental; urgency=low
 
   * New upstream release:
