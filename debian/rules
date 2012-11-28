@@ -98,6 +98,9 @@ confflags += \
 # architectures (see bugs #358637, #419684 and #524593 for more details).
 ifneq (,$(filter alpha amd64 hppa ia64 ppc64 mips mipsel, $(DEB_BUILD_ARCH)))
 	confflags += --disable-netlink
+else
+# disable netlink on all archs, as the API in debian/stable is different
+	confflags += --disable-netlink
 endif
 
 # These plugins are Linux-specific.
