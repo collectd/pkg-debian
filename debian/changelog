@@ -2,7 +2,7 @@ collectd (5.2.0-1~debmon60+1) debmon-squeeze; urgency=low
 
   * Rebuild for debmon-squeeze.
   * debian/rules:
-    - Reenabled the netlink plugin (previously disabled for
+    - Re-enabled the netlink plugin (previously disabled for
       squeeze-backports); the plugin should now build with older and current
       versions of iproute2.
   Changes kept from squeeze-backports:
