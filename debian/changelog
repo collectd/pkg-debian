@@ -1,4 +1,4 @@
-collectd (5.2.0-1~debmon60+1) UNRELEASED; urgency=low
+collectd (5.2.0-1~debmon60+1) debmon-squeeze; urgency=low
 
   * Rebuild for debmon-squeeze.
   * debian/rules:
@@ -14,7 +14,7 @@ collectd (5.2.0-1~debmon60+1) UNRELEASED; urgency=low
   * debian/collectd.conf:
     - Removed sample config for the 'amqp' plugin.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Nov 2012 08:26:37 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 28 Nov 2012 09:06:28 +0100
 
 collectd (5.2.0-1) experimental; urgency=low
 
