@@ -21,9 +21,10 @@ Copyright Holders (in alphabetical order):
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
 	Bruno Prémont <bonbons@linux-vserver.org>
-	C-Ware, Inc.
 	Clay Loveless <clay@killersoft.com>
 	Clément Stenac <clement.stenac@diwi.org>
+	Cosmin Ioiart <cioiart@gmail.com>
+	C-Ware, Inc.
 	Cyril Feraudet <cyril@feraudet.com>
 	David Bacher <drbacher@gmail.com>
 	Doug MacEachern <dougm@hyperic.com>
@@ -62,6 +63,7 @@ Copyright Holders (in alphabetical order):
 	Michał Mirosław <mirq-linux@rere.qmqm.pl>
 	Mirko Buffoni <briareos@eswat.org>
 	Netfilter Core Team
+	Nicolas Szalay
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	noris network AG
 	Novell Inc.
@@ -73,6 +75,7 @@ Copyright Holders (in alphabetical order):
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
 	Phoenix Kayo <kayo.k11.4@gmail.com>
+	Pierre-Yves Ritschard <pyr@openbsd.org>
 	Red Hat Inc.
 	Rodolphe Quiédeville <rquiedeville@bearstech.com>
 	Scott Garrett <sgarrett@technomancer.com>
@@ -81,6 +84,7 @@ Copyright Holders (in alphabetical order):
 	Simon Kuhnle <simon@blarzwurst.de>
 	Sjoerd van der Berg <harekiet@users.sourceforge.net>
 	Stefan Hacker <d0t@dbclan.de>
+	Stefan Rinkes <stefan.rinkes@gmail.org>
 	Stefan Völkel <bd@bc-bd.org>
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	Sven Trenkel <collectd@semidefinite.de>
@@ -105,8 +109,6 @@ Licenses:
 	      contrib/examples/MyPlugin.pm
 	      contrib/examples/myplugin.c
 	      contrib/cussh.pl
-	      src/libcollectdclient/lcc_features.h
-	      src/libcollectdclient/lcc_features.h.in
 	      src/collectdmon.c
 	      src/collectdmon.pod
 	      src/email.c
@@ -173,7 +175,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/apcups.c
-	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2006 Anthony Gialluca <tonyabg@charter.net>
 	Copyright © 2000-2004 Kern Sibbald
 	Copyright © 1996-1999 Andre M. Hedrick <andre@suse.com>
@@ -254,7 +256,7 @@ Licenses:
 	Files src/disk.c
 	      src/interface.c
 	      src/load.c
-	Copyright © 2005-2008 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Manuel Sanmartin
 	License: GNU General Public License
 
@@ -344,9 +346,10 @@ Licenses:
 
 	File src/memcached.c
 	Copyright © 2007 Antony Dovgal
-	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2007-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
-	Copyright © Franck Lombardi
+	Copyright © 2009 Franck Lombardi
+	Copyright © 2012 Nicolas Szalay
 	License: GNU General Public License
 
 	File src/memory.c
@@ -411,6 +414,7 @@ Licenses:
 	Copyright © 2009 Andrés J. Díaz <ajdiaz@connectical.com>
 	Copyright © 2009 Manuel Sanmartin
 	Copyright © 2010 Clément Stenac <clement.stenac@diwi.org>
+	Copyright © 2012 Cosmin Ioiart <cioiart@gmail.com>
 	License: GNU General Public License
 
 	File src/rrdtool.c
@@ -429,7 +433,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/swap.c
-	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Stefan Völkel <bd@bc-bd.org>
 	Copyright © 2009 Manuel Sanmartin
 	License: GNU General Public License
@@ -469,6 +473,15 @@ Licenses:
 	Copyright © 2005 Niki W. Waibel <niki.waibel@newlogic.com>
 	Copyright © 2005-2007 Florian Forster <octo@verplant.org>
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
+	License: GNU General Public License
+
+	File src/utils_format_graphite.c
+	Copyright © 2012 Thomas Meson <zllak@hycik.org>
+	Copyright © 2012 Florian octo Forster <octo@collectd.org>
+	License: GNU General Public License
+
+	File src/utils_format_graphite.h
+	Copyright © 2012 Thomas Meson <zllak@hycik.org>
 	License: GNU General Public License
 
 	File src/utils_ignorelist.c
@@ -659,8 +672,12 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGE.
 
+	File contrib/postgresql/collectd_insert.sql
+	Copyright © 2012 Sebastian 'tokkee' Harl <sh@tokkee.org>
+	License: 2-clause BSD License
+
 	File src/postgresql.c
-	Copyright © 2008-2009 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2008-2012 Sebastian Harl <sh@tokkee.org>
 	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: 2-clause BSD License
 
@@ -689,18 +706,27 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGE.
 
+	File src/amqp.c
+	Copyright © 2009 Sebastien Pahl <sebastien.pahl@dotcloud.com>
+	Copyright © 2010-2012 Florian Forster <octo@verplant.org>
+	License: MIT License
+
 	Files src/collectd-python.pod
 	      src/cpython.h
 	      src/netapp.c
 	      src/pyconfig.c
 	      src/python.c
 	      src/pyvalues.c
-	Copyright © 2009 Sven Trenkel <collectd@semidefinite.de>
+	Copyright © 2009-2010 Sven Trenkel <collectd@semidefinite.de>
 	License: MIT License
 
-	File src/amqp.c
-	Copyright © 2009 Sebastien Pahl <sebastien.pahl@dotcloud.com>
-	Copyright © 2010-2012 Florian Forster <octo@verplant.org>
+	Files src/libcollectdclient/collectd/lcc_features.h
+	      src/libcollectdclient/collectd/lcc_features.h.in
+	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
+	License: MIT License
+
+	Other files in src/libcollectdclient/
+	Copyright © 2005-2012 Florian octo Forster <octo@verplant.org>
 	License: MIT License
 
 	Permission is hereby granted, free of charge, to any person obtaining a
@@ -720,6 +746,22 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 	FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 	DEALINGS IN THE SOFTWARE.
+
+	File src/pf.c
+	Copyright © 2010 Pierre-Yves Ritschard <pyr@openbsd.org>
+	Copyright © 2011 Stefan Rinkes <stefan.rinkes@gmail.org>
+
+	Permission to use, copy, modify, and distribute this software for any
+	purpose with or without fee is hereby granted, provided that the above
+	copyright notice and this permission notice appear in all copies.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+	WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+	MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+	ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+	WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+	ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+	OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 	Files contrib/SpamAssassin/*
 	Copyright © 2006 Alexander Wirt <formorer@formorer.de>

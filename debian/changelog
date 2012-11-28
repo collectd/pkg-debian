@@ -1,3 +1,60 @@
+collectd (5.2.0-1) experimental; urgency=low
+
+  * New upstream release:
+    - ping plugin: Don't abort if ping_send fails but report an error only;
+      thanks to Bernd Zeimetz for reporting this (Closes: #630683).
+    - df plugin: Ignore "rootfs" file-system type to make sure that root
+      file-system statistics are only collected once; thanks to Florian La
+      Roche for reporting this (Closes: #657122).
+    - Fixed parse errors when using (including) empty config files; thanks to
+      Reinhard Tartler for reporting this (Closes: #592881).
+    New plugins:
+    - Aggregate multiple values lists into one: aggregation
+    - Query statistics from BSD's packet filter: pf (FreeBSD only)
+  * Uploading to experimental because of the Wheezy freeze.
+  * debian/control, debian/rules:
+    - Build-depend on kfreebsd-kernel-headers (kfreebsd-any only) and disable
+      the 'pf' plugin on non-kfreebsd systems.
+  * debian/patches:
+    - Removed migrate-4-5-df.dpatch; merged upstream.
+    - Removed rtnl_dump_filter.dpatch; merged upstream.
+    - Added myplugin_includes.dpatch -- change the example plugin include path
+      to /usr/include/collectd/core/ (see below).
+    - rrd_filter_path.dpatch: Also patch the migrate-4-5 script; while this is
+      not required for the (optional) auto-migration when updating the package
+      (the full path is passed as an argument) it helps the user to just use
+      the script without the need to add further arguments; thanks to Joey
+      Hess for reporting this (Closes: #689001).
+  * debian/rules:
+    - Fix installation paths used for Perl bindings. Upstream now passes
+      INSTALL_BASE rather than PREFIX to Makefile.PL which resulted in the
+      bindings being installed to different locations than before.
+  * debian/collectd-utils.install:
+    - Install collectd-tg(1).
+  * debian/libcollectdclient-dev.install:
+    - Install the libcollectdclient network*.h header files.
+  * Renamed libcollectclient0 to libcollectdclient1 due to the SONAME version
+    bump.
+  * debian/libcollectdclient1.symbols:
+    - Updated for 5.2.
+  * debian/collectd-dev.install:
+    - Install the collectd (daemon) headers to /usr/include/collectd/core/
+      rather than /usr/include/collectd/. The latter is used by
+      libcollectdclient which causes file conflicts.
+  * debian/collectd.conf:
+    - Let the 'df' plugin ignore 'rootfs' (else, the root file-system would
+      appear twice, causing one of the updates to fail and spam the log) and
+      the usual virtual / temporary file-systems (cf. #657122).
+  * debian/collectd-core.postrm:
+    - Source the debconf confmodule to make the db_* functions available;
+      thanks to Joey Hess and YunQiang Su for reporting this
+      (Closes: #680172, #688285).
+  * debian/po:
+    - Updated Brazilian Portuguese debconf templates; thanks to Adriano Rafael
+      Gomes (Closes: #685760).
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 15:40:12 +0100
+
 collectd (5.1.0-3~bpo60+2) squeeze-backports; urgency=low
 
   * Disable the netlink plugin, as it does not compile anyways

@@ -41,3 +41,17 @@ diff a/contrib/migrate-3-4.px b/contrib/migrate-3-4.px
  }
  
  sub exit_usage
+diff a/contrib/migrate-4-5.px b/contrib/migrate-4-5.px
+--- a/contrib/migrate-4-5.px
++++ b/contrib/migrate-4-5.px
+@@ -32,8 +32,8 @@
+ use File::Basename ('dirname');
+ 
+ our $InDir = '/var/lib/collectd';
+-our $RRDtool = 'rrdtool';
+-our $RRDFilter = 'rrd_filter.px';
++our $RRDtool = '/usr/bin/rrdtool';
++our $RRDFilter = '/usr/lib/collectd/utils/rrd_filter.px';
+ 
+ our %TypesCounterToDerive = # {{{
+ (

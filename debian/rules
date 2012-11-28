@@ -117,6 +117,12 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-vserver
 endif
 
+# This plugin is FreeBSD-specific.
+ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	confflags += \
+		--disable-pf
+endif
+
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	# Work-around an incomplete check for kvm functionality
@@ -222,6 +228,14 @@ install-arch: build
 	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
 	
+	# this was broken by passing INSTALL_BASE rather than PREFIX to
+	# Makefile.PL
+	install -d -m 755 debian/tmp/usr/share/man/man3
+	mv debian/tmp/usr/man/man3/Collectd::Unixsock.3pm \
+		debian/tmp/usr/share/man/man3/
+	install -d -m 755 debian/tmp/usr/share/
+	mv debian/tmp/usr/lib/perl5 debian/tmp/usr/share/
+	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
 	perl ./debian/bin/gen_plugin_deps.pl
@@ -258,6 +272,7 @@ binary-arch: build install-arch
 		contrib/snmp-data.conf contrib/add_rra.sh contrib/network-proxy.py \
 		contrib/collectd_network.py contrib/collectd_unixsock.py \
 		contrib/snmp-probe-host.px contrib/GenericJMX.conf \
+		contrib/postgresql \
 		debian/collectd.conf debian/filters.conf debian/thresholds.conf
 	# some upstream tarballs have been built inside a dirty working dir
 	( cd debian/collectd-core/ \
