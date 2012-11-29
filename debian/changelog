@@ -1,10 +1,10 @@
-collectd (5.2.0-2) UNRELEASED; urgency=low
+collectd (5.2.0-2) experimental; urgency=low
 
   * debian/patches:
     - Added postgresql_writer_memleak.dpatch fixing a memory leak in the
       PostgreSQL writer implementation.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 29 Nov 2012 09:08:21 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 29 Nov 2012 09:09:51 +0100
 
 collectd (5.2.0-1) experimental; urgency=low
 
