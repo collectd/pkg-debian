@@ -1,3 +1,11 @@
+collectd (5.2.0-2~debmon70+1) debmon-wheezy; urgency=low
+
+  * Rebuild for debmon-wheezy.
+  * Re-enabled the modbus and AMQP plugins which were previously disabled for
+    Squeeze.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 05 Dec 2012 15:00:59 +0100
+
 collectd (5.2.0-2~debmon60+1) debmon-squeeze; urgency=low
 
   * Rebuild for squeeze-backports.
