@@ -1,3 +1,21 @@
+collectd (5.2.0-2~debmon60+1) squeeze-backports; urgency=low
+
+  * Rebuild for squeeze-backports.
+  * debian/rules:
+    - Re-enabled the netlink plugin (previously disabled for
+      squeeze-backports); the plugin should now build with older and current
+      versions of iproute2.
+  Changes kept from squeeze-backports:
+  * debian/rules, debian/control:
+    - Disabled modbus plugin, libmodbus-dev is not available on Squeeze.
+    - Disabled AMQP plugin, librabbitmq-dev is not available on Squeeze.
+  * debian/rules, debian/collectd-core.overrides:
+    - Changed JAVA_HOME to /usr/lib/jvm/java-6-openjdk (without arch).
+  * debian/collectd.conf:
+    - Removed sample config for the 'amqp' plugin.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 05 Dec 2012 13:57:50 +0100
+
 collectd (5.2.0-2) experimental; urgency=low
 
   * debian/patches:
