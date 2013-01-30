@@ -1,4 +1,4 @@
-collectd (5.2.1-1) UNRELEASED; urgency=low
+collectd (5.2.1-1) experimental; urgency=low
 
   * New upstream release.
   * debian/patches:
@@ -8,7 +8,7 @@ collectd (5.2.1-1) UNRELEASED; urgency=low
   * debian/control:
     - Updated standards-version to 3.9.4 -- no changes.
 
- -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 20:54:27 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 21:35:30 +0100
 
 collectd (5.2.0-2) experimental; urgency=low
 
