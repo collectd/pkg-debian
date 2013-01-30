@@ -1,6 +1,8 @@
 collectd (5.2.1-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/patches:
+    - Removed postgresql_writer_memleak.dpatch -- applied upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 20:54:27 +0100
 
