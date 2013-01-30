@@ -5,6 +5,8 @@ collectd (5.2.1-1) UNRELEASED; urgency=low
     - Removed postgresql_writer_memleak.dpatch -- applied upstream.
   * debian/collectd-utils.install:
     - Install collectd-tg manpage.
+  * debian/control:
+    - Updated standards-version to 3.9.4 -- no changes.
 
  -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 20:54:27 +0100
 
