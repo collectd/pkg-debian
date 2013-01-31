@@ -43,6 +43,7 @@ Copyright Holders (in alphabetical order):
 	Jacobo Tarrio <jtarrio@debian.org>
 	Jason Pepas <cell@ices.utexas.edu>
 	Jeff Green <jeff@kikisoso.org>
+	Jérôme Renard <jerome.renard@gmail.com>
 	Joe Dalton <joedalton2@yahoo.dk>
 	Jonathan Kolb <jon@b0g.us>
 	Jorge Barreiro <yortx.barry@gmail.com>
@@ -54,6 +55,7 @@ Copyright Holders (in alphabetical order):
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Manuel Sanmartin
+	Marc Fournier <marc.fournier@camptocamp.com>
 	Marco Chiappero <marco@absence.it>
 	Mariusz Gronczewski <xani666@gmail.com>
 	Martin Bagge <brother@bsnet.se>
@@ -200,7 +202,7 @@ Licenses:
 	      src/utils_complain.c
 	      src/utils_complain.h
 	      src/vserver.c
-	Copyright © 2006-2009 Florian Forster
+	Copyright © 2006-2013 Florian Forster
 	Copyright © 2006-2009 Sebastian Harl
 	License: GNU General Public License
 
@@ -508,12 +510,18 @@ Licenses:
 	Copyright © 2009 Andrés J. Díaz <ajdiaz@connectical.com>
 	License: GNU General Public License
 
+	File src/varnish.c
+	Copyright © 2010 Jérôme Renard
+	Copyright © 2010 Marc Fournier
+	Copyright © 2010-2012 Florian Forster
+	License: GNU General Public License
+
 	File src/write_graphite.c
 	Copyright © 2009 Paul Sadauskas
 	Copyright © 2009 Doug MacEachern
 	Copyright © 2011 Scott Sanders
 	Copyright © 2012 Pierre-Yves Ritschard
-	Copyright © 2007-2012 Florian octo Forster
+	Copyright © 2007-2013 Florian octo Forster
 	License: GNU General Public License
 
 	File src/write_http.c

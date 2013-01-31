@@ -1,3 +1,29 @@
+collectd (5.2.1-1~debmon60+1) debmon-squeeze; urgency=low
+
+  * Rebuild for debmon-squeeze.
+  Remaining changes:
+  * debian/rules, debian/control:
+    - Disabled modbus plugin, libmodbus-dev is not available on Squeeze.
+    - Disabled AMQP plugin, librabbitmq-dev is not available on Squeeze.
+  * debian/rules, debian/collectd-core.overrides:
+    - Changed JAVA_HOME to /usr/lib/jvm/java-6-openjdk (without arch).
+  * debian/collectd.conf:
+    - Removed sample config for the 'amqp' plugin.
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 31 Jan 2013 08:40:11 +0100
+
+collectd (5.2.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - Removed postgresql_writer_memleak.dpatch -- applied upstream.
+  * debian/collectd-utils.install:
+    - Install collectd-tg manpage.
+  * debian/control:
+    - Updated standards-version to 3.9.4 -- no changes.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 21:35:30 +0100
+
 collectd (5.2.0-2~debmon70+1) debmon-wheezy; urgency=low
 
   * Rebuild for debmon-wheezy.
