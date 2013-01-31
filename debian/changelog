@@ -1,3 +1,15 @@
+collectd (5.2.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - Removed postgresql_writer_memleak.dpatch -- applied upstream.
+  * debian/collectd-utils.install:
+    - Install collectd-tg manpage.
+  * debian/control:
+    - Updated standards-version to 3.9.4 -- no changes.
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 30 Jan 2013 21:35:30 +0100
+
 collectd (5.2.0-2~debmon60+1) debmon-squeeze; urgency=low
 
   * Rebuild for squeeze-backports.
