@@ -52,6 +52,7 @@ Copyright Holders (in alphabetical order):
 	Justo Alonso Achaques <justo.alonso@gmail.com>
 	Kai Wasserbäch <debian@carbon-project.org>
 	Kern Sibbald
+	Kris Nielander <nielander@fox-it.com>
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Manuel Sanmartin
@@ -375,6 +376,7 @@ Licenses:
 
 	File src/nfs.c
 	Copyright © 2005, 2006 Jason Pepas <cell@ices.utexas.edu>
+	Copyright © 2012, 2013 Florian octo Forster <octo@collectd.org>
 	License: GNU General Public License
 
 	File src/notify_email.c
@@ -420,7 +422,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/rrdtool.c
-	Copyright © 2006-2008 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2013 Florian Forster <octo@verplant.org>
 	Copyright © 2008 Sebastian Harl <sh@tokkee.org>
 	Copyright © 2009 Mariusz Gronczewski <xani666@gmail.com>
 	License: GNU General Public License
@@ -438,6 +440,11 @@ Licenses:
 	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Stefan Völkel <bd@bc-bd.org>
 	Copyright © 2009 Manuel Sanmartin
+	License: GNU General Public License
+
+	File src/tail_csv.c
+	Copyright © 2013 Kris Nielander <nielander@fox-it.com>
+	Copyright © 2013 Florian Forster <octo@collectd.org>
 	License: GNU General Public License
 
 	File src/tape.c
@@ -531,13 +538,14 @@ Licenses:
 	License: GNU General Public License
 
 	File src/write_mongodb.c
-	Copyright © 2010-2012 Florian Forster
+	Copyright © 2010-2013 Florian Forster
 	Copyright © 2010 Akkarit Sangpetch
 	Copyright © 2012 Chris Lundquist
 
 	All other files (except libltdl/*, src/network.c, src/postgresql.c,
-		src/utils_dns.* and contrib/SpamAssassin/*):
-	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
+		src/utils_dns.*, src/utils_random.*, src/write_riemann.c, and
+		contrib/SpamAssassin/*):
+	Copyright © 2005-2013 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
 	This package is free software; you can redistribute it and/or modify
@@ -588,7 +596,7 @@ text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 	License: GNU Lesser General Public License
 
 	File src/network.c
-	Copyright © 2005-2009 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2013 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Aman Gupta <aman@tmm1.net>
 	License: GNU Lesser General Public License
 
@@ -721,7 +729,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	Files src/collectd-python.pod
 	      src/cpython.h
-	      src/netapp.c
 	      src/pyconfig.c
 	      src/python.c
 	      src/pyvalues.c
@@ -733,8 +740,13 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
 	License: MIT License
 
-	Other files in src/libcollectdclient/
-	Copyright © 2005-2012 Florian octo Forster <octo@verplant.org>
+	File src/netapp.c
+	Copyright © 2009-2010 Sven Trenkel <collectd@semidefinite.de>
+	Copyright © 2012-2013 teamix GmbH
+	License: MIT License
+
+	Other files in src/libcollectdclient/ and src/utils_random.*
+	Copyright © 2005-2013 Florian octo Forster <octo@verplant.org>
 	License: MIT License
 
 	Permission is hereby granted, free of charge, to any person obtaining a
@@ -758,6 +770,10 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	File src/pf.c
 	Copyright © 2010 Pierre-Yves Ritschard <pyr@openbsd.org>
 	Copyright © 2011 Stefan Rinkes <stefan.rinkes@gmail.org>
+
+	File src/write_riemann.c
+	Copyright © 2012, 2013 Pierre-Yves Ritschard <pyr@spootnik.org>
+	Copyright © 2013 Florian octo Forster <octo@collectd.org>
 
 	Permission to use, copy, modify, and distribute this software for any
 	purpose with or without fee is hereby granted, provided that the above
