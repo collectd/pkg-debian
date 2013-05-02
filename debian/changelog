@@ -1,3 +1,12 @@
+collectd (5.3.0-1) UNRELEASED; urgency=low
+
+  * New upstream release:
+    New plugins:
+    - incremental parsing of CSV files: tail_csv
+    - send collected values to Riemann: write_riemann
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
+
 collectd (5.2.1-1) experimental; urgency=low
 
   * New upstream release.
