@@ -1,6 +1,9 @@
 collectd (5.3.0-1) UNRELEASED; urgency=low
 
   * New upstream release:
+    - MySQL plugin now uses the name of the <Database> block rather than the
+      database name to identify the read callback; thanks to Mathieu Parent
+      for reporting this (Closes: #703446).
     New plugins:
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
