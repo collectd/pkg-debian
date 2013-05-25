@@ -39,7 +39,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  libxml2-dev,
  libyajl-dev,
  linux-libc-dev (>= 2.6.25-4) [linux-any] | linux-libc-dev (<< 2.6.25-1) [linux-any],
- openjdk-6-jdk [!hppa !kfreebsd-any !hurd-any],
+ default-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev
