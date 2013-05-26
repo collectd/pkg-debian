@@ -87,6 +87,21 @@ collectd (5.2.0-1) experimental; urgency=low
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 20 Nov 2012 15:40:12 +0100
 
+collectd (5.1.0-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "FTBFS with perl 5.18: POD errors":
+    add patch pod-perl-5.18 that adds =encoding to some POD files.
+    (Closes: #708718)
+  * Fix "Transition package to use default java implementation":
+    apply modified patch from Ubuntu / James Page:
+    - switch build dependency from openjdk-6-jdk to default-jdk
+    - set JAVA_HOME to /usr/lib/jvm/default-java
+    - update lintian override accordingly
+    (Closes: #683525)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 26 May 2013 00:52:37 +0200
+
 collectd (5.1.0-3) unstable; urgency=low
 
   * debian/patches/migrate-4-5-df.dpatch, debian/collectd-core.postinst:
