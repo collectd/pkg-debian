@@ -65,6 +65,9 @@ confflags += --disable-lpar
 # Solaris only (requires devinfo and kstat)
 confflags += --disable-tape
 
+# libmic is required for the mic plugin
+confflags += --disable-mic
+
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 
@@ -80,6 +83,9 @@ confflags += --disable-redis --disable-write_redis
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
+# libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
+confflags += --disable-sigrok
+
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
 
@@ -88,12 +94,6 @@ confflags += --disable-xmms
 
 # libkstat is required for the xfs_arc plugin.
 confflags += --disable-zfs-arc
-
-# The static library netstat cannot be linked into shared objects on some
-# architectures (see bugs #358637, #419684 and #524593 for more details).
-ifneq (,$(filter alpha amd64 hppa ia64 ppc64 mips mipsel, $(DEB_BUILD_ARCH)))
-	confflags += --disable-netlink
-endif
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -219,14 +219,6 @@ install-arch: build
 	rm -f debian/tmp/usr/lib/collectd/*.la
 	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
-	
-	# this was broken by passing INSTALL_BASE rather than PREFIX to
-	# Makefile.PL
-	install -d -m 755 debian/tmp/usr/share/man/man3
-	mv debian/tmp/usr/man/man3/Collectd::Unixsock.3pm \
-		debian/tmp/usr/share/man/man3/
-	install -d -m 755 debian/tmp/usr/share/
-	mv debian/tmp/usr/lib/perl5 debian/tmp/usr/share/
 	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
