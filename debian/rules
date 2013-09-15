@@ -65,6 +65,9 @@ confflags += --disable-lpar
 # Solaris only (requires devinfo and kstat)
 confflags += --disable-tape
 
+# libaquaero5 is required for the aquaero plugin
+confflags += --disable-aquaero
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 

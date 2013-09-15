@@ -20,6 +20,7 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
   * debian/control:
     - Depend on liblvm2-dev (required by the new LVM plugin).
   * debian/rules:
+    - Disable the aquaero plugin which requires libaquaero5.
     - Disable the MIC plugin which requires libmic.
     - Disable the sigrok plugin which requires libsigrok >= 0.2.0.
     - Removed the Perl INSTALL_BASE workaround introduced in 5.2.0-1.
