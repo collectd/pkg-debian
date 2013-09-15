@@ -5,11 +5,15 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
       database name to identify the read callback; thanks to Mathieu Parent
       for reporting this (Closes: #703446).
     New plugins:
-    - read statistics from Aquaero 5 devices: aquaero
-    - CPU accounting information provided by Linux cgroups: cgroups
-    - Logical Volume Manager usage: lvm
-    - Intel Many-Integrated-Core (MIC) statistics: mic
-    - sigrok statistics: sigrok
+    - read statistics from Aquaero 5 watercooling boards: aquaero (disabled in
+      Debian because of missing dependencies)
+    - CPU accounting information for Linux process groups: cgroups (disabled
+      on non-Linux systems)
+    - Logical Volume Manager usage: lvm (disabled on non-Linux systems)
+    - Intel Many-Integrated-Core (MIC) statistics: mic (disabled in Debian
+      because of missing dependencies)
+    - statistics of sigrok-supported devices: sigrok (disabled in Debian
+      because of missing dependencies)
     - aggregate values received with the StatsD protocol: statsd
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
