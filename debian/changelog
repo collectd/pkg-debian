@@ -28,6 +28,10 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - Disable the MIC plugin which requires libmic.
     - Disable the sigrok plugin which requires libsigrok >= 0.2.0.
     - Removed the Perl INSTALL_BASE workaround introduced in 5.2.0-1.
+  * debian/control:
+    - Removed build-dependency on libhal-dev; HAL is deprecated and will be
+      removed from Debian. It was optionally used by the uuid plugin.
+      (Closes: #615203)
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
 
