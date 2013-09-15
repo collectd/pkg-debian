@@ -1,10 +1,16 @@
-collectd (5.3.0-1) UNRELEASED; urgency=low
+collectd (5.4.0-1) UNRELEASED; urgency=low
 
   * New upstream release:
     - MySQL plugin now uses the name of the <Database> block rather than the
       database name to identify the read callback; thanks to Mathieu Parent
       for reporting this (Closes: #703446).
     New plugins:
+    - read statistics from Aquaero 5 devices: aquaero
+    - CPU accounting information provided by Linux cgroups: cgroups
+    - Logical Volume Manager usage: lvm
+    - Intel Many-Integrated-Core (MIC) statistics: mic
+    - sigrok statistics: sigrok
+    - aggregate values received with the StatsD protocol: statsd
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
 
