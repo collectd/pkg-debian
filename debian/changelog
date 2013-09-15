@@ -13,6 +13,16 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - aggregate values received with the StatsD protocol: statsd
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
+  * debian/control, debian/rules:
+    - Depend on libmnl-dev and enable the netlink plugin on all architectures
+      (upstream removed the dependency on the netlink library which is only
+      available as a static non-PIC library on Debian) (Closes: #531352).
+  * debian/control:
+    - Depend on liblvm2-dev (required by the new LVM plugin).
+  * debian/rules:
+    - Disable the MIC plugin which requires libmic.
+    - Disable the sigrok plugin which requires libsigrok >= 0.2.0.
+    - Removed the Perl INSTALL_BASE workaround introduced in 5.2.0-1.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
 
