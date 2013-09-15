@@ -101,6 +101,7 @@ confflags += --disable-zfs-arc
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-cgroups \
 		--disable-ethstat \
 		--disable-iptables \
 		--disable-ipvs \
