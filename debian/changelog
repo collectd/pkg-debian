@@ -17,8 +17,7 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - Depend on libmnl-dev and enable the netlink plugin on all architectures
       (upstream removed the dependency on the netlink library which is only
       available as a static non-PIC library on Debian) (Closes: #531352).
-  * debian/control:
-    - Depend on liblvm2-dev (required by the new LVM plugin).
+    - Depend on liblvm2-dev and enable the LVM plugin on Linux.
   * debian/rules:
     - Disable the aquaero plugin which requires libaquaero5.
     - Disable the cgroups plugin on non-Linux.

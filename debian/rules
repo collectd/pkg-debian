@@ -105,6 +105,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-ethstat \
 		--disable-iptables \
 		--disable-ipvs \
+		--disable-lvm \
 		--disable-madwifi \
 		--disable-md \
 		--disable-netlink \
