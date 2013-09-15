@@ -12,15 +12,20 @@ Upstream Authors:
 Copyright Holders (in alphabetical order):
 	Adrian Perez <aperez@igalia.com>
 	Alessandro Iurlano <alessandro.iurlano@gmail.com>
+	Alex Deymo
 	Alexander Wirt <formorer@formorer.de>
 	Américo Monteiro
 	Amit Gupta <amit.gupta221@gmail.com>
 	Andre M. Hedrick <andre@suse.com>
+	Andreas Henriksson <andreas@fatal.se>
 	Andrés J. Díaz <ajdiaz at connectical.com>
 	Anthony Dewhurst <dewhurst@gmail>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
+	Battelle Memorial Institute
+	Bert Vermeulen <bert@biot.com>
 	Bruno Prémont <bonbons@linux-vserver.org>
+	Chad Malfait <malfaitc@yahoo.com>
 	Clay Loveless <clay@killersoft.com>
 	Clément Stenac <clement.stenac@diwi.org>
 	Cosmin Ioiart <cioiart@gmail.com>
@@ -96,6 +101,7 @@ Copyright Holders (in alphabetical order):
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
 	Wouter Gadeyne
+	Xin Li <delphij@FreeBSD.org>
 	Yuri Kozlov <yuray@komyakino.ru>
 
 Licenses:
@@ -148,6 +154,7 @@ Licenses:
 	      src/zfs_arc.c
 	Copyright © 2009 Anthony Dewhurst <dewhurst@gmail>
 	Copyright © 2012 Aurelien Rougemont
+	Copyright © 2013 Xin Li <delphij@FreeBSD.org>
 	License: GNU General Public License
 
 	File contrib/network-proxy.py
@@ -177,6 +184,10 @@ Licenses:
 	Copyright © 2009 Amit Gupta <amit.gupta221@gmail.com>
 	License: GNU General Public License
 
+	File src/aquaero.c
+	Copyright © 2013 Alex Deymo
+	License: GNU General Public License
+
 	File src/apcups.c
 	Copyright © 2006-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2006 Anthony Gialluca <tonyabg@charter.net>
@@ -192,6 +203,11 @@ Licenses:
 	File src/bind.c
 	Copyright © 2009 Bruno Prémont <bonbons@linux-vserver.org>
 	Copyright © 2009,2010 Florian Forster <octo@verplant.org>
+	License: GNU General Public License
+
+	File src/cgroups.c
+	Copyright © 2011 Michael Stapelberg <michael@stapelberg.de>
+	Copyright © 2013 Florian Forster <octo@collectd.org>
 	License: GNU General Public License
 
 	Files src/collectd-perl.pod
@@ -247,7 +263,7 @@ Licenses:
 
 	Files src/csv.c
 	      src/curl_json.c
-	Copyright © 2006-2011 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2013 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
 	License: GNU General Public License
 
@@ -328,6 +344,10 @@ Licenses:
 	Copyright © 2006-2008 Red Hat Inc.
 	License: GNU General Public License
 
+	File src/lvm.c
+	Copyright © 2013 Chad Malfait <malfaitc@yahoo.com>
+	License: GNU General Public License
+
 	File src/madwifi.c
 	Copyright © 2009 Ondrej 'SanTiago' Zajicek <santiago@crfreenet.org>
 	License: GNU General Public License
@@ -361,6 +381,11 @@ Licenses:
 	Copyright © 2009 Manuel Sanmartin
 	License: GNU General Public License
 
+	File src/mic.c
+	Copyright © 2013 Battelle Memorial Institute
+	Author: Evan Felix <evan.felix@pnnl.gov>
+	License: GNU General Public License
+
 	File src/modbus.c
 	Copyright © 2010-2011 noris network AG
 	Author: Florian Forster <octo@noris.net>
@@ -372,6 +397,13 @@ Licenses:
 	Copyright © 2009 Doug MacEachern <dougm@hyperic.com>
 	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
 	Copyright © 2009 Rodolphe Quiédeville <rquiedeville@bearstech.com>
+	License: GNU General Public License
+
+	File src/netlink.c
+	Copyright © 2007-2010 Florian 'octo' Forster <octo@collectd.org>
+	Copyright © 2008-2012 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2013 Andreas Henriksson <andreas@fatal.se>
+	Copyright © 2013 Marc Fournier <marc.fournier@camptocamp.com>
 	License: GNU General Public License
 
 	File src/nfs.c
@@ -434,6 +466,10 @@ Licenses:
 
 	File src/serial.c
 	Copyright © 2005, 2006 David Bacher <drbacher@gmail.com>
+	License: GNU General Public License
+
+	File src/sigrok.c
+	Copyright © 2013 Bert Vermeulen <bert@biot.com>
 	License: GNU General Public License
 
 	File src/swap.c
@@ -542,9 +578,7 @@ Licenses:
 	Copyright © 2010 Akkarit Sangpetch
 	Copyright © 2012 Chris Lundquist
 
-	All other files (except libltdl/*, src/network.c, src/postgresql.c,
-		src/utils_dns.*, src/utils_random.*, src/write_riemann.c, and
-		contrib/SpamAssassin/*):
+	All other files (except otherwise listed):
 	Copyright © 2005-2013 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
@@ -592,7 +626,7 @@ text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 	3. This notice may not be removed or altered from any source distribution.
 
 	Files libltdl/* (except libltdl/m4/*)
-	Copyright © 1998-2010 Free Software Foundation, Inc.
+	Copyright © 1998-2011 Free Software Foundation, Inc.
 	License: GNU Lesser General Public License
 
 	File src/network.c
@@ -640,7 +674,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	DEALINGS IN THE SOFTWARE.
 
 	Files libltdl/m4/*
-	Copyright © 1996-2009 Free Software Foundation, Inc.
+	Copyright © 1996-2011 Free Software Foundation, Inc.
 
 	This file is free software; the Free Software Foundation gives
 	unlimited permission to copy and/or distribute it, with or without
@@ -770,6 +804,11 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	File src/pf.c
 	Copyright © 2010 Pierre-Yves Ritschard <pyr@openbsd.org>
 	Copyright © 2011 Stefan Rinkes <stefan.rinkes@gmail.org>
+
+	Files src/statsd.c
+	      src/utils_latency.c
+	      src/utils_latency.h
+	Copyright © 2013 Florian 'octo' Forster <octo@collectd.org>
 
 	File src/write_riemann.c
 	Copyright © 2012, 2013 Pierre-Yves Ritschard <pyr@spootnik.org>
