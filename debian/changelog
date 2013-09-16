@@ -17,6 +17,8 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - aggregate values received with the StatsD protocol: statsd
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
+  * debian/patches:
+    - Removed pod-perl-5.18.dpatch; applied upstream.
   * debian/control, debian/rules:
     - Depend on libmnl-dev and enable the netlink plugin on all architectures
       (upstream removed the dependency on the netlink library which is only
