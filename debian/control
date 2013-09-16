@@ -248,6 +248,8 @@ Package: libcollectdclient-dev
 Section: libdevel
 Architecture: any
 Depends: libcollectdclient1 (= ${binary:Version}), ${misc:Depends}
+Replaces: collectd-dev (<= 5.2.0-1)
+Breaks: collectd-dev (<= 5.2.0-1)
 Description: client library for collectd's control interface (development files)
  libcollectdclient provides an API to access the control interface provided by
  the unixsock plugin of collectd, a statistics collection and monitoring
