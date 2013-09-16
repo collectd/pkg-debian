@@ -32,6 +32,7 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - Removed build-dependency on libhal-dev; HAL is deprecated and will be
       removed from Debian. It was optionally used by the uuid plugin.
       (Closes: #615203)
+    - Build-conflict with libhal-dev to ensure consistent builds (cf. #615203).
     - Let libcollectdclient-dev replace/break collectd-dev (<= 5.2.0-1)
       because it ships files previously shipped by that package; thanks to
       Andreas Beckmann for reporting this (Closes: #717973).

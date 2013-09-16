@@ -45,7 +45,7 @@ Build-Depends: debhelper (>= 5), dpkg-dev (>= 1.14.10), po-debconf, dpatch,
  default-jdk [!hppa !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
  python-dev
-Build-Conflicts: libpthread-dev
+Build-Conflicts: libpthread-dev, libhal-dev
 Standards-Version: 3.9.4
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
