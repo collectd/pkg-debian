@@ -52,6 +52,10 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
       Torracca (Closes: #705869).
     - Updated Japanese debconf template translation; thanks to 'victory'
       (Closes: #715283).
+  * debian/collectd.conf:
+    - Recursively include all '*.conf' files in /etc/collectd/collectd.conf.d/
+      using the new 'Include' option's 'Filter' feature; thanks to Laurent
+      Bigonville for suggesting this change (Closes: #690668).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
 
