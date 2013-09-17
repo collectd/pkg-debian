@@ -30,11 +30,11 @@ msgstr "De lay-out van RRD-bestanden is gewijzigd."
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgstr ""
 "De lay-out van de RRD-bestanden, die zijn gemaakt door collectd, is sterk "
 "gewijzigd sinds versie 3.x. Om uw oude gegevens te behouden zult u deze "
-"moeten migreren. Dit kunt u doen door /usr/lib/collectd-core/utils/"
+"moeten migreren. Dit kunt u doen door /usr/lib/collectd/utils/"
 "migrate-3-4.px te gebruiken."
 
 #. Type: note
@@ -55,8 +55,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
-msgstr "Zie /usr/share/doc/collectd-core/NEWS.Debian voor meer informatie."
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
+msgstr "Zie /usr/share/doc/collectd-core/NEWS.Debian.gz voor meer informatie."
 
 #. Type: boolean
 #. Description
@@ -97,15 +97,15 @@ msgstr "De lay-out van RRD-bestanden is gewijzigd."
 #| msgid ""
 #| "The layout of the RRD files created by collectd has changed significantly "
 #| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+#| "This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
-"by using /usr/lib/collectd-core/utils/migrate-4-5.px."
+"by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
 "De lay-out van de RRD-bestanden, die zijn gemaakt door collectd, is sterk "
 "gewijzigd sinds versie 3.x. Om uw oude gegevens te behouden zult u deze "
-"moeten migreren. Dit kunt u doen door /usr/lib/collectd-core/utils/"
+"moeten migreren. Dit kunt u doen door /usr/lib/collectd/utils/"
 "migrate-3-4.px te gebruiken."
 
 #. Type: note
@@ -114,7 +114,7 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
+"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 

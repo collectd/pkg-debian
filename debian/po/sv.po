@@ -33,11 +33,11 @@ msgstr "Strukturen för RRD-filen har ändrats."
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgstr ""
 "Strukturen för RRD-filen som collectd skapar har ändrats mycket sedan "
 "version 3.x. För att behålla dina gamla data måste dessa migreras, detta kan "
-"göras genom att köra '/usr/lib/collectd-core/utils/migrate-3-4.px'."
+"göras genom att köra '/usr/lib/collectd/utils/migrate-3-4.px'."
 
 #. Type: note
 #. Description
@@ -56,9 +56,9 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
 msgstr ""
-"Läs även /usr/share/doc/collectd-core/NEWS.Debian för ytterligare "
+"Läs även /usr/share/doc/collectd-core/NEWS.Debian.gz för ytterligare "
 "information."
 
 #. Type: boolean
@@ -97,11 +97,11 @@ msgstr "Strukturen för RRD-filerna har ändrats i version 5.0"
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
-"by using /usr/lib/collectd-core/utils/migrate-4-5.px."
+"by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
 "Strukturen för RRD-filerna som collectd skapar har ändrats sedan version 4."
 "x. För att behålla dina gamla data måste dessa migreras, detta kan göras "
-"genom att köra /usr/lib/collectd-core/utils/migrate-4-5.px."
+"genom att köra /usr/lib/collectd/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -109,10 +109,10 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
+"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
-"För mer information läs /usr/share/doc/collectd-core/NEWS.Debian och "
+"För mer information läs /usr/share/doc/collectd-core/NEWS.Debian.gz och "
 "collectd-wikin på <http://collectd.org/wiki/index.php/"
 "V4_to_v5_migration_guide>."
 

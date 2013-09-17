@@ -32,11 +32,11 @@ msgstr "Изменилось расположение файлов RRD"
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgstr ""
 "Начиная с версий 3.x изменилось расположение файлов RRD, создаваемых "
 "collectd. Чтобы сохранить старые данные, вы должны их переместить. Это можно "
-"сделать с помощью /usr/lib/collectd-core/utils/migrate-3-4.px."
+"сделать с помощью /usr/lib/collectd/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -55,8 +55,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
-msgstr "Подробности см. в /usr/share/doc/collectd-core/NEWS.Debian."
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
+msgstr "Подробности см. в /usr/share/doc/collectd-core/NEWS.Debian.gz."
 
 #. Type: boolean
 #. Description
@@ -94,11 +94,11 @@ msgstr "В версии 5.0 изменилось расположение фай
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
-"by using /usr/lib/collectd-core/utils/migrate-4-5.px."
+"by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
 "Начиная с версий 4.x изменилось расположение файлов RRD, создаваемых "
 "collectd. Чтобы сохранить старые данные, вы должны их переместить. Это можно "
-"сделать с помощью /usr/lib/collectd-core/utils/migrate-4-5.px."
+"сделать с помощью /usr/lib/collectd/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -106,11 +106,11 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
+"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 "Дополнительную информацию можно найти в файле /usr/share/doc/collectd-core/"
-"NEWS.Debian и вики collectd wiki по адресу <http://collectd.org/wiki/index."
+"NEWS.Debian.gz и вики collectd wiki по адресу <http://collectd.org/wiki/index."
 "php/V4_to_v5_migration_guide>."
 
 #. Type: boolean

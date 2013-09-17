@@ -29,11 +29,11 @@ msgstr "Uspořádání souborů RRD se změnilo"
 msgid ""
 "The layout of the RRD files created by collectd has changed significantly "
 "since version 3.x. In order to keep your old data you have to migrate it. "
-"This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
+"This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgstr ""
 "Ve struktuře souborů RRD vytvořených collectd počínaje verzí 3.x došlo k "
 "výrazné změně. Pro uchování vašich dat je nutná jejich migrace. Tu můžete "
-"provést pomocí /usr/lib/collectd-core/utils/migrate-3-4.px."
+"provést pomocí /usr/lib/collectd/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -52,9 +52,9 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
 msgstr ""
-"Pro více informací se podívejte na /usr/share/doc/collectd-core/NEWS.Debian."
+"Pro více informací se podívejte na /usr/share/doc/collectd-core/NEWS.Debian.gz."
 
 #. Type: boolean
 #. Description
@@ -92,11 +92,11 @@ msgstr "Uspořádání souborů RRD se změnilo ve verzi 5.0"
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
-"by using /usr/lib/collectd-core/utils/migrate-4-5.px."
+"by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
 "Struktura některých souborů RRD vytvořených collectd počínaje verzí 4.x byla "
 "změněna. Pro uchování vašich dat je nutná jejich migrace. Tu můžete provést "
-"pomocí /usr/lib/collectd-core/utils/migrate-4-5.px."
+"pomocí /usr/lib/collectd/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -104,11 +104,11 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at "
+"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 "Pro více informací se podívejte do souboru /usr/share/doc/collectd-core/NEWS."
-"Debian a na wiki collectd na adrese <http://collectd.org/wiki/index.php/"
+"Debian.gz a na wiki collectd na adrese <http://collectd.org/wiki/index.php/"
 "V4_to_v5_migration_guide>."
 
 #. Type: boolean

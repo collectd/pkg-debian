@@ -44,6 +44,9 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - Do not use different PID files for collectd and collectdmon. Else, a
       process might be left-over after changing USE_COLLECTDMON and restarting
       collectd. Thanks to Dennis Hoppe for reporting this (Closes: #704048).
+  * debian/collectd-core.templates, debian/po/:
+    - Fixed path-names of NEWS.Debian.gz and the migrate scripts; thanks to
+      Uli Martens for reporting this (Closes: #719292).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
 

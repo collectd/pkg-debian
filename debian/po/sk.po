@@ -29,8 +29,8 @@ msgstr "Rozloženie súborov RRD sa zmenilo"
 #. Description
 #: ../collectd-core.templates:1001
 #: ../collectd-core.templates:2001
-msgid "The layout of the RRD files created by collectd has changed significantly since version 3.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd-core/utils/migrate-3-4.px."
-msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo od verzie 3.x. Ak si chcete zachovať vaše staré dára, musíte ich migrovať. To je možné pomocou /usr/lib/collectd-core/utils/migrate-3-4.px."
+msgid "The layout of the RRD files created by collectd has changed significantly since version 3.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
+msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo od verzie 3.x. Ak si chcete zachovať vaše staré dára, musíte ich migrovať. To je možné pomocou /usr/lib/collectd/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -47,8 +47,8 @@ msgstr "Tento krok vyžaduje, aby boli nainštalované balíky perl a rrdtool. M
 #. Description
 #: ../collectd-core.templates:1001
 #: ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian for details."
-msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian"
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
+msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian.gz"
 
 #. Type: boolean
 #. Description
@@ -80,8 +80,8 @@ msgstr "Rozloženie súborov RRD sa vo verzii 5.0 zmenilo"
 #. Description
 #: ../collectd-core.templates:3001
 #: ../collectd-core.templates:4001
-msgid "The layout of some RRD files created by collectd has changed since version 4.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd-core/utils/migrate-4-5.px."
-msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo od verzie 4.x. Ak si chcete zachovať vaše staré dára, musíte ich migrovať. To je možné pomocou /usr/lib/collectd-core/utils/migrate-4-5.px."
+msgid "The layout of some RRD files created by collectd has changed since version 4.x. In order to keep your old data you have to migrate it. This can be done by using /usr/lib/collectd/utils/migrate-4-5.px."
+msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo od verzie 4.x. Ak si chcete zachovať vaše staré dára, musíte ich migrovať. To je možné pomocou /usr/lib/collectd/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -89,8 +89,8 @@ msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo o
 #. Description
 #: ../collectd-core.templates:3001
 #: ../collectd-core.templates:4001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian and the collectd wiki at <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
-msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian a na wiki collectd na adrese <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>"
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
+msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian.gz a na wiki collectd na adrese <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>"
 
 #. Type: boolean
 #. Description
