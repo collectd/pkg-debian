@@ -50,6 +50,8 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
   * debian/po/:
     - Updated Italian debconf template translation; thanks to Beatrice
       Torracca (Closes: #705869).
+    - Updated Japanese debconf template translation; thanks to 'victory'
+      (Closes: #715283).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
 

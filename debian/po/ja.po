@@ -3,10 +3,10 @@
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: collectd 4.7.2-1\n"
+"Project-Id-Version: collectd 5.1.0-3.1\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2009-10-06 17:32+0900\n"
+"PO-Revision-Date: 2012-05-20 00:59+0900\n"
 "Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
@@ -81,29 +81,22 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "RRD ファイルの配置位置が変更されました"
+msgstr "バージョン 5.0 で RRD ファイルの配置位置が変更されました"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
-"collectd によって作成された RRD ファイルの配置位置はバージョン 3.x から大きく"
+"collectd によって作成されるいくつかの RRD ファイルの配置がバージョン 4.x から"
 "変わりました。移行を行うために古いデータを保存します。これは /usr/lib/"
-"collectd/utils/migrate-3-4.px を使って行われます。"
+"collectd/utils/migrate-4-5.px を使って行うことができます。"
 
 #. Type: note
 #. Description
@@ -114,12 +107,14 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"詳細については /usr/share/doc/collectd-core/NEWS.Debian.gz 及び collectd wiki "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> を見てください。"
 
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:5001
 msgid "Remove all collected data (e.g. RRD files)?"
-msgstr ""
+msgstr "収集したデータ (例えば RRD ファイル) を全て削除しますか?"
 
 #. Type: boolean
 #. Description
@@ -129,6 +124,9 @@ msgid ""
 "the collected statistics is about to be removed. For example, this directory "
 "includes (in the default configuration) all RRD files."
 msgstr ""
+"収集した統計の含まれるデータファイルが置かれている /var/lib/collectd/ ディレク"
+"トリが削除されます。このディレクトリには (デフォルト設定では) 例えば RRD ファ"
+"イルが全て置かれています。"
 
 #. Type: boolean
 #. Description
@@ -138,3 +136,6 @@ msgid ""
 "recent or custom version or if you want to keep the data for further "
 "analysis, the data should be kept."
 msgstr ""
+"もっと新しいまたは独自のバージョンに置き換える目的で collectd パッケージを完全"
+"削除する場合やデータを残しておいて詳細な分析を行いたい場合にはこのデータを残す"
+"ようにしてください。"
