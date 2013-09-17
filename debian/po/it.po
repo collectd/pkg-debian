@@ -1,13 +1,13 @@
 # Italian translation of collectd debconf messages.
 # Copyright (C) 2012, collectd package copyright holder.
 # This file is distributed under the same license as the collectd package.
-# Beatrice Torracca <beatricet@libero.it>, 2012.
+# Beatrice Torracca <beatricet@libero.it>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: collectd\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
 "POT-Creation-Date: 2012-05-19 17:59+0200\n"
-"PO-Revision-Date: 2012-05-21 19:00+0200\n"
+"PO-Revision-Date: 2013-04-21 14:16+0200\n"
 "Last-Translator: Beatrice Torracca <beatricet@libero.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Il formato dei file RRD creati da collectd è cambiato in modo significativo "
 "rispetto alla versione 3.x. Per poter mantenere i propri vecchi dati è "
-"necessario fare una migrazione. Ciò può essere fatto usando /usr/lib/"
-"collectd/utils/migrate-3-4.px."
+"necessario fare una migrazione. Ciò può essere fatto usando /usr/lib"
+"/collectd/utils/migrate-3-4.px."
 
 #. Type: note
 #. Description
@@ -84,30 +84,23 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../collectd-core.templates:3001
-#, fuzzy
-#| msgid "Layout of RRD files has changed"
 msgid "Layout of RRD files has changed in version 5.0"
-msgstr "Il formato dei file RRD è cambiato"
+msgstr "Il formato dei file RRD è cambiato nella versione 5.0"
 
 #. Type: note
 #. Description
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
-#, fuzzy
-#| msgid ""
-#| "The layout of the RRD files created by collectd has changed significantly "
-#| "since version 3.x. In order to keep your old data you have to migrate it. "
-#| "This can be done by using /usr/lib/collectd/utils/migrate-3-4.px."
 msgid ""
 "The layout of some RRD files created by collectd has changed since version 4."
 "x. In order to keep your old data you have to migrate it. This can be done "
 "by using /usr/lib/collectd/utils/migrate-4-5.px."
 msgstr ""
-"Il formato dei file RRD creati da collectd è cambiato in modo significativo "
-"rispetto alla versione 3.x. Per poter mantenere i propri vecchi dati è "
-"necessario fare una migrazione. Ciò può essere fatto usando /usr/lib/"
-"collectd/utils/migrate-3-4.px."
+"Il formato di alcuni file RRD creati da collectd è cambiato rispetto alla "
+"versione 4.x. Per poter mantenere i propri vecchi dati è necessario fare una "
+"migrazione. Ciò può essere fatto usando /usr/lib/collectd"
+"/utils/migrate-4-5.px."
 
 #. Type: note
 #. Description
@@ -118,6 +111,9 @@ msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
 "<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
+"Per i dettagli vedere /usr/share/doc/collectd-core/NEWS.Debian.gz e il wiki di "
+"collectd all'indirizzo "
+"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>."
 
 #. Type: boolean
 #. Description
