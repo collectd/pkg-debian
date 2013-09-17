@@ -37,7 +37,6 @@ PIDFILE=/var/run/collectd.pid
 
 USE_COLLECTDMON=1
 COLLECTDMON_DAEMON=/usr/sbin/collectdmon
-COLLECTDMON_PIDFILE=/var/run/collectdmon.pid
 
 MAXWAIT=30
 
@@ -50,12 +49,6 @@ fi
 
 if test "$ENABLE_COREFILES" == 1; then
 	ulimit -c unlimited
-fi
-
-if test "$USE_COLLECTDMON" == 1; then
-	_PIDFILE="$COLLECTDMON_PIDFILE"
-else
-	_PIDFILE="$PIDFILE"
 fi
 
 # return:
@@ -98,12 +91,12 @@ d_start() {
 	fi
 
 	if test "$USE_COLLECTDMON" == 1; then
-		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
-			--exec $COLLECTDMON_DAEMON -- -P "$_PIDFILE" -- -C "$CONFIGFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$PIDFILE" \
+			--exec $COLLECTDMON_DAEMON -- -P "$PIDFILE" -- -C "$CONFIGFILE" \
 			|| return 2
 	else
-		start-stop-daemon --start --quiet --oknodo --pidfile "$_PIDFILE" \
-			--exec $DAEMON -- -C "$CONFIGFILE" -P "$_PIDFILE" \
+		start-stop-daemon --start --quiet --oknodo --pidfile "$PIDFILE" \
+			--exec $DAEMON -- -C "$CONFIGFILE" -P "$PIDFILE" \
 			|| return 2
 	fi
 	return 0
@@ -119,9 +112,9 @@ the disk. You can adjust the waiting time in /etc/default/collectd."
 #   1 if the daemon was already stopped
 #   2 if daemon could not be stopped
 d_stop() {
-	PID=$( cat "$_PIDFILE" 2> /dev/null ) || true
+	PID=$( cat "$PIDFILE" 2> /dev/null ) || true
 
-	start-stop-daemon --stop --quiet --oknodo --pidfile "$_PIDFILE"
+	start-stop-daemon --stop --quiet --oknodo --pidfile "$PIDFILE"
 	rc="$?"
 
 	if test "$rc" -eq 2; then
@@ -167,7 +160,7 @@ case "$1" in
 		esac
 		;;
 	status)
-		status_of_proc -p "$_PIDFILE" "$DAEMON" "$NAME" && exit 0 || exit $?
+		status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME" && exit 0 || exit $?
 		;;
 	restart|force-reload)
 		log_daemon_msg "Restarting $DESC" "$NAME"
