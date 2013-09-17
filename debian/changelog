@@ -4,6 +4,8 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - MySQL plugin now uses the name of the <Database> block rather than the
       database name to identify the read callback; thanks to Mathieu Parent
       for reporting this (Closes: #703446).
+    - Fixed a segfault in the ethstat plugin; thanks to Maximilian Engelhardt
+      for reporting this (Closes: #698584).
     New plugins:
     - read statistics from Aquaero 5 watercooling boards: aquaero (disabled in
       Debian because of missing dependencies)
