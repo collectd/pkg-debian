@@ -6,6 +6,8 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
       for reporting this (Closes: #703446).
     - Fixed a segfault in the ethstat plugin; thanks to Maximilian Engelhardt
       for reporting this (Closes: #698584).
+    - The swap plugin now reports NaN rather than failing if no swap space is
+      available; thanks to Simon Richter for reporting this (Closes: #679163).
     New plugins:
     - read statistics from Aquaero 5 watercooling boards: aquaero (disabled in
       Debian because of missing dependencies)
