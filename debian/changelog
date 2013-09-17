@@ -43,7 +43,8 @@ collectd (5.4.0-1) unstable; urgency=low
     - Let libcollectdclient-dev replace/break collectd-dev (<< 5.2.0-1)
       because it ships files previously shipped by that package; thanks to
       Andreas Beckmann for reporting this (Closes: #717973).
-    - Let collectd-core / collectd suggest / recommend default-jre-headless.
+    - Let collectd-core / collectd suggest / recommend default-jre-headless
+      (cf. #683525).
   * debian/collectd-core.collectd.init.d:
     - Do not use different PID files for collectd and collectdmon. Else, a
       process might be left-over after changing USE_COLLECTDMON and restarting
