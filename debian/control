@@ -63,7 +63,7 @@ Suggests: collectd-dev,
  apache2, apcupsd, bind9, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
  memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
  pdns-server, postgresql, time-daemon,
- ${shlibs:Suggests}
+ ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
  collectd is a small daemon which collects system information periodically and
@@ -180,7 +180,7 @@ Description: statistics collection and monitoring daemon (core system)
 Package: collectd
 Architecture: any
 Depends: collectd-core, ${shlibs:Depends}, ${misc:Depends}
-Recommends: ${shlibs:Recommends}
+Recommends: ${shlibs:Recommends}, default-jre-headless
 Description: statistics collection and monitoring daemon
  collectd is a small daemon which collects system information periodically and
  provides mechanisms to monitor and store the values in a variety of ways.
