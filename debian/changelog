@@ -1,4 +1,4 @@
-collectd (5.4.0-1) UNRELEASED; urgency=low
+collectd (5.4.0-1) unstable; urgency=low
 
   * New upstream release:
     - MySQL plugin now uses the name of the <Database> block rather than the
@@ -21,6 +21,7 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
     - aggregate values received with the StatsD protocol: statsd
     - incremental parsing of CSV files: tail_csv
     - send collected values to Riemann: write_riemann
+  * Uploading to unstable; Wheezy has long been released.
   * debian/patches:
     - Removed pod-perl-5.18.dpatch; applied upstream.
   * debian/control, debian/rules:
@@ -59,7 +60,7 @@ collectd (5.4.0-1) UNRELEASED; urgency=low
       using the new 'Include' option's 'Filter' feature; thanks to Laurent
       Bigonville for suggesting this change (Closes: #690668).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 02 May 2013 21:22:46 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 17 Sep 2013 09:01:51 +0200
 
 collectd (5.2.1-1) experimental; urgency=low
 
