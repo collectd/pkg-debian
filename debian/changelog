@@ -1,6 +1,6 @@
 collectd (5.4.0-1) unstable; urgency=low
 
-  * New upstream release:
+  * New upstream release (Closes: #723187):
     - MySQL plugin now uses the name of the <Database> block rather than the
       database name to identify the read callback; thanks to Mathieu Parent
       for reporting this (Closes: #703446).
@@ -62,7 +62,7 @@ collectd (5.4.0-1) unstable; urgency=low
       using the new 'Include' option's 'Filter' feature; thanks to Laurent
       Bigonville for suggesting this change (Closes: #690668).
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 17 Sep 2013 09:01:51 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 18 Sep 2013 13:26:58 +0200
 
 collectd (5.2.1-1) experimental; urgency=low
 
