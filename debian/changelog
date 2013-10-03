@@ -1,3 +1,12 @@
+collectd (5.4.0-2) unstable; urgency=low
+
+  * debian/control:
+    - Limit build-dependency on libmnl-dev to linux-any. debian/rules already
+      did the right thing and excluded the 'netlink' plugin on kfreebsd.
+      Thanks to Ivo De Decker for reporting this (Closes: #724911).
+
+ -- Sebastian Harl <tokkee@debian.org>  Thu, 03 Oct 2013 12:23:18 +0200
+
 collectd (5.4.0-1) unstable; urgency=low
 
   * New upstream release (Closes: #723187):
