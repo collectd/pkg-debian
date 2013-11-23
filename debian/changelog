@@ -4,6 +4,10 @@ collectd (5.4.0-3) unstable; urgency=low
     - Removed build-dep on iproute-dev which is about to be removed and has
       been superseded by libmnl-dev in collectd. Thanks to Laurent Bigonville
       and Andreas Henriksson for reporting this (Closes: #726921).
+  * debian/collectd.conf:
+    - Removed sample configuration for the write_mongodb plugin; the plugin is
+      not available on Debian; thanks to Bryan Fullerton for reporting this
+      (cf. LP:#1206813, Closes: #724699).
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Nov 2013 11:51:43 +0100
 
