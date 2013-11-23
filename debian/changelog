@@ -8,8 +8,10 @@ collectd (5.4.0-3) unstable; urgency=low
     - Removed sample configuration for the write_mongodb plugin; the plugin is
       not available on Debian; thanks to Bryan Fullerton for reporting this
       (cf. LP:#1206813, Closes: #724699).
+  * debian/patches:
+    - Added amqp_0_4.dpatch: Added support for rabbitmq-c 0.4.x.
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Nov 2013 11:51:43 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Nov 2013 16:08:05 +0100
 
 collectd (5.4.0-2) unstable; urgency=low
 
