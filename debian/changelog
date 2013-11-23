@@ -1,3 +1,12 @@
+collectd (5.4.0-3) unstable; urgency=low
+
+  * debian/control:
+    - Removed build-dep on iproute-dev which is about to be removed and has
+      been superseded by libmnl-dev in collectd. Thanks to Laurent Bigonville
+      and Andreas Henriksson for reporting this (Closes: #726921).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 23 Nov 2013 11:51:43 +0100
+
 collectd (5.4.0-2) unstable; urgency=low
 
   * debian/control:
