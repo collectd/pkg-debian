@@ -1,3 +1,12 @@
+collectd (5.4.0-4) UNRELEASED; urgency=medium
+
+  * debian/control:
+    - Added libupsclient-dev as primary alternate build-dep to
+      libupsclient1-dev; thanks to Laurent Bigonville for reporting this and
+      Marc Fournier for sending a patch (Closes: #730397).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 12 Jan 2014 17:41:45 +0100
+
 collectd (5.4.0-3) unstable; urgency=low
 
   * debian/control:
