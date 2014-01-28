@@ -9,6 +9,9 @@ collectd (5.4.1-1) unstable; urgency=medium
     - Removed amqp_0_4.dpatch; merged upstream.
   * debian/control:
     - Updated standards-version to 3.9.5; no changes.
+  * debian/rules:
+    - Use -Wno-error=deprecated-declarations to suppress libdbi deprecation
+      warnings for now; they would else cause build failures due to -Werror.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jan 2014 21:47:00 +0100
 
