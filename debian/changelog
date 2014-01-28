@@ -1,4 +1,4 @@
-collectd (5.4.0-4) UNRELEASED; urgency=medium
+collectd (5.4.1-2) UNRELEASED; urgency=medium
 
   * debian/control:
     - Added libupsclient-dev as primary alternate build-dep to
@@ -6,6 +6,23 @@ collectd (5.4.0-4) UNRELEASED; urgency=medium
       Marc Fournier for sending a patch (Closes: #730397).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 12 Jan 2014 17:41:45 +0100
+
+collectd (5.4.1-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Fixed a segfault when using <Match> without an Instance; thanks to
+      Alexander Golovko for reporting this (Closes: #732701).
+    - Fixed gcrypt initialization issues (partly fixed in 5.1.1 already);
+      thanks to Pieter Lexis for reporting this (Closes: #735173).
+  * debian/patches:
+    - Removed amqp_0_4.dpatch; merged upstream.
+  * debian/control:
+    - Updated standards-version to 3.9.5; no changes.
+  * debian/rules:
+    - Use -Wno-error=deprecated-declarations to suppress libdbi deprecation
+      warnings for now; they would else cause build failures due to -Werror.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jan 2014 21:47:00 +0100
 
 collectd (5.4.0-3) unstable; urgency=low
 
