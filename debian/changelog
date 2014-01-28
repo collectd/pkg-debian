@@ -1,4 +1,4 @@
-collectd (5.4.1-1) UNRELEASED; urgency=medium
+collectd (5.4.1-1) unstable; urgency=medium
 
   * New upstream release:
     - Fixed a segfault when using <Match> without an Instance; thanks to
@@ -10,7 +10,7 @@ collectd (5.4.1-1) UNRELEASED; urgency=medium
   * debian/control:
     - Updated standards-version to 3.9.5; no changes.
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jan 2014 21:19:23 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jan 2014 21:47:00 +0100
 
 collectd (5.4.0-3) unstable; urgency=low
 
