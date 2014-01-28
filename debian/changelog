@@ -3,6 +3,8 @@ collectd (5.4.1-1) UNRELEASED; urgency=medium
   * New upstream release:
     - Fixed a segfault when using <Match> without an Instance; thanks to
       Alexander Golovko for reporting this (Closes: #732701).
+    - Fixed gcrypt initialization issues (partly fixed in 5.1.1 already);
+      thanks to Pieter Lexis for reporting this (Closes: #735173).
   * debian/patches:
     - Removed amqp_0_4.dpatch; merged upstream.
 
