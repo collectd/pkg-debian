@@ -1,6 +1,8 @@
 collectd (5.4.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches:
+    - Removed amqp_0_4.dpatch; merged upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 28 Jan 2014 21:19:23 +0100
 
