@@ -89,6 +89,10 @@ confflags += --disable-routeros
 # libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
 confflags += --disable-sigrok
 
+# varnish does not currently work with varnish4
+# (c.f. https://bugs.debian.org/745902)
+confflags += --disable-varnish
+
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
 
