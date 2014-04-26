@@ -51,7 +51,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
 			--localstatedir=/var --sysconfdir=/etc \
-			--with-perl-bindings="INSTALLDIRS=vendor" \
+			--with-perl-bindings="INSTALLDIRS=vendor INSTALL_BASE=" \
 			--without-libstatgrab \
 			--without-included-ltdl \
 			--disable-static \
@@ -74,9 +74,6 @@ confflags += --disable-mic
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 
-# libowcapi is required for the onewire plugin.
-confflags += --disable-onewire
-
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
@@ -88,6 +85,10 @@ confflags += --disable-routeros
 
 # libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
 confflags += --disable-sigrok
+
+# varnish does not currently work with varnish4
+# (c.f. https://bugs.debian.org/745902)
+confflags += --disable-varnish
 
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
@@ -212,6 +213,12 @@ install-indep:
 	dh_clean -k
 	dh_installdirs -i
 	dh_install -i
+	
+	# update include path for collectd header files
+	sed -r -i -e 's/include "(.*)"/include "collectd\/core\/\1"/' \
+		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
+	sed -r -i -e 's/"collectd\/core\/(liboconfig\/.*)"/"collectd\/\1"/' \
+		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
 
 install-arch: build
 	dh_testdir

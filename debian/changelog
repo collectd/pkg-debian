@@ -1,4 +1,4 @@
-collectd (5.4.1-2) UNRELEASED; urgency=medium
+collectd (5.4.1-3) UNRELEASED; urgency=medium
 
   * debian/control:
     - Added libupsclient-dev as primary alternate build-dep to
@@ -6,6 +6,27 @@ collectd (5.4.1-2) UNRELEASED; urgency=medium
       Marc Fournier for sending a patch (Closes: #730397).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 12 Jan 2014 17:41:45 +0100
+
+collectd (5.4.1-2) unstable; urgency=medium
+
+  * debian/rules, debian/control:
+    - Disable varnish for now; it does not work with varnish 4;
+      c.f. https://bugs.debian.org/745902 (Closes: #745894).
+    - Drop build dependency on libvarnishapi-dev.
+    - Build-depend on libow-dev and re-enable the onewire plugin; thanks to
+      Adam Smutnicki for pointing this out (Closes: #744956).
+  * debian/rules:
+    - Added INSTALL_BASE= to perl options; else, modules are installed
+      into $HOME.
+    - Prepend collectd/core to collectd's header files; thanks to Sergio
+      Jimenez for reporting this (Closes: #739516).
+  * debian/patches:
+    - Added collection.cgi.dpatch fixing apache data-sources; thanks to
+      Fabiano Pires for reporting this and providing a patch
+      (Closes: #743881).
+    - Added myplugin_api.dpatch updating myplugin.c to the latest API.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 26 Apr 2014 16:54:19 +0200
 
 collectd (5.4.1-1) unstable; urgency=medium
 
