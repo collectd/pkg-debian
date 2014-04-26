@@ -216,6 +216,12 @@ install-indep:
 	dh_clean -k
 	dh_installdirs -i
 	dh_install -i
+	
+	# update include path for collectd header files
+	sed -r -i -e 's/include "(.*)"/include "collectd\/core\/\1"/' \
+		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
+	sed -r -i -e 's/"collectd\/core\/(liboconfig\/.*)"/"collectd\/\1"/' \
+		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
 
 install-arch: build
 	dh_testdir

@@ -5,6 +5,8 @@ collectd (5.4.1-2) UNRELEASED; urgency=medium
       c.f. https://bugs.debian.org/745902 (Closes: #745894).
     - Added INSTALL_BASE= to perl options; else, modules are installed
       into $HOME.
+    - Prepend collectd/core to collectd's header files; thanks to Sergio
+      Jimenez for reporting this (Closes: #739516).
   * debian/control:
     - Drop build dependency on libvarnishapi-dev.
   * debian/patches:
