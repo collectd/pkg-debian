@@ -74,9 +74,6 @@ confflags += --disable-mic
 # libnetapp is required for the netapp plugin.
 confflags += --disable-netapp
 
-# libowcapi is required for the onewire plugin.
-confflags += --disable-onewire
-
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
