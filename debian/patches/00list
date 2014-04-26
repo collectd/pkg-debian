@@ -2,4 +2,5 @@ rrd_filter_path.dpatch
 collection_conf_path.dpatch
 collection.cgi.dpatch
 myplugin_includes.dpatch
+myplugin_api.dpatch
 bts559801_plugin_find_fix.dpatch
