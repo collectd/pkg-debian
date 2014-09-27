@@ -160,8 +160,9 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 endif
 
 # The hppa buildds currently do not keep up with Java related stuff, thus
-# prevending testing transitions.
-ifneq (,$(filter hppa, $(DEB_BUILD_ARCH)))
+# prevending testing transitions. sparc is also having trouble building the
+# java plugin.
+ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 

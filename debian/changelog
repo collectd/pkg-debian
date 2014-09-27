@@ -4,6 +4,8 @@ collectd (5.4.1-4) UNRELEASED; urgency=medium
     - Disable preprocessor warnings on kfreebsd to work around an error
       resulting from a redefined macro in PostgreSQL's pg_config_manual.h;
       thanks to Ivo De Decker for reporting this (Closes: #760719).
+  * debian/control, debian/rules:
+    - Disable the 'java' plugin on sparc for now. It fails to build.
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 27 Sep 2014 19:51:49 +0000
 
