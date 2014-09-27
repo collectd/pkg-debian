@@ -30,6 +30,12 @@ CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
 CPPFLAGS += -UCONFIGFILE
 CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
+# A PostgreSQL header redefines CACHE_LINE_SIZE on FreeBSD.
+# Cf. https://bugs.debian.org/760719 and https://bugs.debian.org/763098
+ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	CPPFLAGS += -Wp,-w
+endif
+
 LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
 
 # The archdir map has been copied from openjdk-6's debian/rules.

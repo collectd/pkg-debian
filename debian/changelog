@@ -1,3 +1,12 @@
+collectd (5.4.1-4) UNRELEASED; urgency=medium
+
+  * debian/rules:
+    - Disable preprocessor warnings on kfreebsd to work around an error
+      resulting from a redefined macro in PostgreSQL's pg_config_manual.h;
+      thanks to Ivo De Decker for reporting this (Closes: #760719).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 27 Sep 2014 19:51:49 +0000
+
 collectd (5.4.1-3) unstable; urgency=medium
 
   * debian/control:
