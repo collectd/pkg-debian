@@ -32,7 +32,7 @@ CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
 # A PostgreSQL header redefines CACHE_LINE_SIZE on FreeBSD.
 # Cf. https://bugs.debian.org/760719 and https://bugs.debian.org/763098
-ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	CPPFLAGS += -Wp,-w
 endif
 

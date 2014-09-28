@@ -1,3 +1,11 @@
+collectd (5.4.1-5) unstable; urgency=medium
+
+  * debian/rules:
+    - Fixed a typo preventing the fix for #760719 to be active
+      (Closes: #760719).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 28 Sep 2014 17:13:07 +0000
+
 collectd (5.4.1-4) unstable; urgency=medium
 
   * debian/rules:
