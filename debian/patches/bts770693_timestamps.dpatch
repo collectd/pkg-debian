@@ -1,0 +1,124 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## bts770693_timestamps.dpatch
+##
+## DP: Fixed handling of timestamps in notifications.
+## DP:
+## DP: Starting with collectd 5, timestamps use nano-second resolution rather
+## DP: than seconds. Notitications did not handle that correctly, leading to
+## DP: invalid time-stamps and potentially invalid memory access.
+## DP:
+## DP: Upstream commits:
+## DP: https://github.com/collectd/collectd/commit/...
+## DP:   d571f4645593c16a26a98aa635b1952286089266 by Justin Burnham <jburnham@mediatemple.net>
+## DP:   43fcfd6a48b506b03114dd9637caf8fc211b47db by Adrian Miron <adrian.miron.v2@gmail.com>
+## DP:   ac78faa99d4b34c78a7bca741430c06c56e6f32c by Manuel Luis Sanmartín Rozada <manuel.luis@gmail.com>
+## DP:   f5c294b7355cee34df44b1c5b8ac3ef7b85664cd by Manuel Luis Sanmartín Rozada <manuel.luis@gmail.com>
+## DP:   7d1d59fb064f2a9adfba50d3ea5c39ebc6bebd3c by Manuel Luis Sanmartín Rozada <manuel.luis@gmail.com>
+## DP:   07e4683f7f985668641d79137b64d148bc18ba8a by Manuel Luis Sanmartín Rozada <manuel.luis@gmail.com>
+## DP:   524b85687dbbd4cc2bbb650caf300162dcd16e96 by Marc Fournier <marc.fournier@camptocamp.com>
+
+@DPATCH@
+
+diff a/src/exec.c b/src/exec.c
+--- a/src/exec.c
++++ b/src/exec.c
+@@ -744,8 +744,8 @@ static void *exec_notification_one (void *arg) /* {{{ */
+ 
+   fprintf (fh,
+       "Severity: %s\n"
+-      "Time: %.3f\n",
+-      severity, CDTIME_T_TO_DOUBLE (n->time));
++      "Time: %u\n",
++      severity, (unsigned int)CDTIME_T_TO_TIME_T(n->time));
+ 
+   /* Print the optional fields */
+   if (strlen (n->host) > 0)
+diff a/src/java.c b/src/java.c
+--- a/src/java.c
++++ b/src/java.c
+@@ -906,7 +906,7 @@ static jobject ctoj_notification (JNIEnv *jvm_env, /* {{{ */
+ #undef SET_STRING
+ 
+   /* Set the `time' member. Java stores time in milliseconds. */
+-  status = ctoj_long (jvm_env, ((jlong) n->time) * ((jlong) 1000),
++  status = ctoj_long (jvm_env, (jlong) CDTIME_T_TO_MS (n->time),
+       c_notification, o_notification, "setTime");
+   if (status != 0)
+   {
+@@ -1306,7 +1306,7 @@ static int jtoc_notification (JNIEnv *jvm_env, notification_t *n, /* {{{ */
+     return (-1);
+   }
+   /* Java measures time in milliseconds. */
+-  n->time = (time_t) (tmp_long / ((jlong) 1000));
++  n->time = MS_TO_CDTIME_T(tmp_long);
+
+   status = jtoc_int (jvm_env, &tmp_int,
+       class_ptr, object_ptr, "getSeverity");
+ 
+diff a/src/pyvalues.c b/src/pyvalues.c
+--- a/src/pyvalues.c
++++ b/src/pyvalues.c
+@@ -767,7 +771,7 @@ static void Values_dealloc(PyObject *self) {
+ }
+ 
+ static PyMemberDef Values_members[] = {
+-	{"interval", T_INT, offsetof(Values, interval), 0, interval_doc},
++	{"interval", T_DOUBLE, offsetof(Values, interval), 0, interval_doc},
+ 	{"values", T_OBJECT_EX, offsetof(Values, values), 0, values_doc},
+ 	{"meta", T_OBJECT_EX, offsetof(Values, meta), 0, meta_doc},
+ 	{NULL}
+diff a/src/threshold.c b/src/threshold.c
+--- a/src/threshold.c
++++ b/src/threshold.c
+@@ -942,6 +942,7 @@ static int ut_missing (const value_list_t *vl,
+   cdtime_t missing_time;
+   char identifier[6 * DATA_MAX_NAME_LEN];
+   notification_t n;
++  cdtime_t now;
+ 
+   if (threshold_tree == NULL)
+     return (0);
+@@ -951,13 +952,15 @@ static int ut_missing (const value_list_t *vl,
+   if ((th == NULL) || ((th->flags & UT_FLAG_INTERESTING) == 0))
+     return (0);
+ 
+-  missing_time = cdtime () - vl->time;
++  now = cdtime ();
++  missing_time = now - vl->time;
+   FORMAT_VL (identifier, sizeof (identifier), vl);
+ 
+   NOTIFICATION_INIT_VL (&n, vl);
+   ssnprintf (n.message, sizeof (n.message),
+       "%s has not been updated for %.3f seconds.",
+       identifier, CDTIME_T_TO_DOUBLE (missing_time));
++  n.time = now;
+ 
+   plugin_dispatch_notification (&n);
+ 
+diff a/src/utils_cmd_putnotif.c b/src/utils_cmd_putnotif.c
+--- a/src/utils_cmd_putnotif.c
++++ b/src/utils_cmd_putnotif.c
+@@ -49,13 +49,18 @@ static int set_option_severity (notification_t *n, const char *value)
+ 
+ static int set_option_time (notification_t *n, const char *value)
+ {
+-  time_t tmp;
+-  
+-  tmp = (time_t) atoi (value);
+-  if (tmp <= 0)
++  char *endptr = NULL;
++  double tmp;
++
++  errno = 0;
++  tmp = strtod (value, &endptr);
++  if ((errno != 0)         /* Overflow */
++      || (endptr == value) /* Invalid string */
++      || (endptr == NULL)  /* This should not happen */
++      || (*endptr != 0))   /* Trailing chars */
+     return (-1);
+ 
+-  n->time = tmp;
++  n->time = DOUBLE_TO_CDTIME_T (tmp);
+ 
+   return (0);
+ } /* int set_option_time */
