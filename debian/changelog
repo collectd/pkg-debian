@@ -7,6 +7,9 @@ collectd (5.4.1-6) UNRELEASED; urgency=medium
     - Added bts747093_lvm_segfault: upstream fix for a segfault in the LVM
       plugin; thanks to Bernd Zeimetz and Marc Fournier for reporting this
       (Closes: #747093).
+    - Added bts770683_curl_init: upstream fix for a segfault in plugins using
+      libcurl caused by concurrent memory access; thanks to Marc Fournier for
+      reporting this (Closes: #770683, cf. #735173).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 23 Nov 2014 13:04:03 +0100
 
