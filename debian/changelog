@@ -1,3 +1,12 @@
+collectd (5.4.1-6) UNRELEASED; urgency=medium
+
+  * debian/patches:
+    - Added bts770681_riemann_ack: upstream fix for the write_riemann plugin
+      to avoid locking up a remote Riemann instance; thanks to Marc Fournier
+      for reporting this (Closes: #770681).
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 23 Nov 2014 13:04:03 +0100
+
 collectd (5.4.1-5) unstable; urgency=medium
 
   * debian/rules:

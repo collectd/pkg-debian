@@ -4,3 +4,4 @@ collection.cgi.dpatch
 myplugin_includes.dpatch
 myplugin_api.dpatch
 bts559801_plugin_find_fix.dpatch
+bts770681_riemann_ack.dpatch
