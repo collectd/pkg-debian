@@ -8,3 +8,4 @@ bts770681_riemann_ack.dpatch
 bts747093_lvm_segfault.dpatch
 bts770683_curl_init.dpatch
 bts750440_config_segfault.dpatch
+bts770688_snmp_memleak.dpatch
