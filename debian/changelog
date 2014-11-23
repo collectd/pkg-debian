@@ -23,7 +23,7 @@ collectd (5.4.1-6) UNRELEASED; urgency=medium
       timestamps; thanks to Marc Fournier for reporting this (Closes: #770693)
     - Added bts770694_loglevel: upstream fix to correct logging behavior when
       using an invalid log level; thanks to Marc Fournier for reporting this
-      (Closes: #770694).
+      (Closes: #770694, #687067).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 23 Nov 2014 13:04:03 +0100
 
