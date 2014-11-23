@@ -9,6 +9,9 @@
 ## DP:
 ## DP: Upstream bug report:
 ## DP: https://github.com/collectd/collectd/pull/425
+## DP:
+## DP: Upstream commit:
+## DP: https://github.com/spotify/collectd/commit/78c0678
 
 @DPATCH@
 

@@ -10,6 +10,10 @@
 ## DP:
 ## DP: Upstream bug report:
 ## DP: https://github.com/collectd/collectd/issues/526
+## DP:
+## DP: Upstream commits:
+## DP: https://github.com/katzj/collectd/commit/401fa6e
+## DP: https://github.com/katzj/collectd/commit/50dbebf
 
 @DPATCH@
 

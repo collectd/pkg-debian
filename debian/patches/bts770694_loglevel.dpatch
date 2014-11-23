@@ -9,6 +9,10 @@
 ## DP:
 ## DP: Upstream bug report:
 ## DP: https://github.com/collectd/collectd/issues/636
+## DP:
+## DP: Upstream commits:
+## DP: https://github.com/dothebart/collectd/commit/84c3805
+## DP: https://github.com/collectd/collectd/commit/cb4ea71
 
 @DPATCH@
 

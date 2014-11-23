@@ -7,6 +7,9 @@
 ## DP:
 ## DP: Upstream bug report:
 ## DP: https://github.com/collectd/collectd/issues/638
+## DP:
+## DP: Upstream commit:
+## DP: https://github.com/dothebart/collectd/commit/2923883
 
 @DPATCH@
 

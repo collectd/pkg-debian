@@ -2,20 +2,20 @@
 ## bts770688_snmp_memleak.dpatch by Pierre-Yves Ritschard <pyr@spootnik.org>
 ## and Marc Fournier <marc.fournier@camptocamp.com>
 ##
-## DP:  Let snmp_synch_response deal with PDU freeing
-## DP: 
+## DP: Let snmp_synch_response deal with PDU freeing
+## DP:
 ## DP: When reading from tables, upon errors the PDUs sent are already
 ## DP: freed by snmp_synch_response since they are right after
 ## DP: snmp_send is called.
-## DP: 
+## DP:
 ## DP: This commit syncs collectd's approach with other occurences of
 ## DP: snmp_synch_response calls.
-## DP: 
+## DP:
 ## DP: There might be a few corner cases where we leak PDUs, but it
 ## DP: is unclear how to check for those since we would need to
 ## DP: have an indication that snmp_send was never called, which
 ## DP: as far as I can tell is not possible.
-## DP: 
+## DP:
 ## DP: The potential for failure in snmp_send is rather low and will
 ## DP: be easily spotted though, since when crafting invalid PDUs
 ## DP: snmp send will constantly fail and since valid configurations

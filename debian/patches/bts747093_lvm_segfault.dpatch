@@ -5,7 +5,10 @@
 ## DP: lvm: Fix segfault when there are no logical volumes.
 ## DP:
 ## DP: Upstream bug report:
-## DP: https://github.com/collectd/collectd/pull/425
+## DP: https://github.com/collectd/collectd/issues/558
+## DP:
+## DP: Upstream commit:
+## DP: https://github.com/jktjkt/collectd/commit/40dde67
 
 @DPATCH@
 
