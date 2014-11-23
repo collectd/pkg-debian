@@ -16,6 +16,9 @@ collectd (5.4.1-6) UNRELEASED; urgency=medium
     - Added bts770688_snmp_memleak: upstream fix for a memory leak in the
       SNMP plugin; thanks to Marc Fournier for reporting this
       (Closes: #770688).
+    - Added bts770690_java_jni_thread_detach: upstream fix for locking up the
+      Java plugin by not properly detaching from the JVM in error conditions;
+      thanks to Marc Fournier for reporting this (Closes: #770690).
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 23 Nov 2014 13:04:03 +0100
 

@@ -9,3 +9,4 @@ bts747093_lvm_segfault.dpatch
 bts770683_curl_init.dpatch
 bts750440_config_segfault.dpatch
 bts770688_snmp_memleak.dpatch
+bts770690_java_jni_thread_detach.dpatch
