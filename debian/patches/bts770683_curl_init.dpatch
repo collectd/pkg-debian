@@ -16,7 +16,7 @@
 diff a/src/apache.c b/src/apache.c
 --- a/src/apache.c
 +++ b/src/apache.c
-@@ -702,9 +702,18 @@ static int apache_read_host (user_data_t *user_data) /* {{{ */
+@@ -671,9 +671,18 @@ static int apache_read_host (user_data_t *user_data) /* {{{ */
  	return (0);
  } /* }}} int apache_read_host */
  
@@ -38,7 +38,7 @@ diff a/src/apache.c b/src/apache.c
 diff a/src/curl.c b/src/curl.c
 --- a/src/curl.c
 +++ b/src/curl.c
-@@ -566,6 +566,7 @@ static int cc_init (void) /* {{{ */
+@@ -569,6 +569,7 @@ static int cc_init (void) /* {{{ */
      INFO ("curl plugin: No pages have been defined.");
      return (-1);
    }
@@ -46,12 +46,11 @@ diff a/src/curl.c b/src/curl.c
    return (0);
  } /* }}} int cc_init */
  
-diff --git a/src/curl_json.c b/src/curl_json.c
-index 24e1df1..0948962 100644
+diff a/src/curl_json.c b/src/curl_json.c
 --- a/src/curl_json.c
 +++ b/src/curl_json.c
-@@ -882,9 +882,18 @@ static int cj_read (user_data_t *ud) /* {{{ */
-   return cj_curl_perform (db, db->curl);
+@@ -957,9 +957,18 @@ static int cj_read (user_data_t *ud) /* {{{ */
+   return cj_perform (db);
  } /* }}} int cj_read */
  
 +static int cj_init (void) /* {{{ */
@@ -69,11 +68,10 @@ index 24e1df1..0948962 100644
  } /* void module_register */
  
  /* vim: set sw=2 sts=2 et fdm=marker : */
-diff --git a/src/curl_xml.c b/src/curl_xml.c
-index b941f02..e31e73d 100644
+diff a/src/curl_xml.c b/src/curl_xml.c
 --- a/src/curl_xml.c
 +++ b/src/curl_xml.c
-@@ -926,9 +926,18 @@ static int cx_config (oconfig_item_t *ci) /* {{{ */
+@@ -1033,9 +1033,18 @@ static int cx_config (oconfig_item_t *ci) /* {{{ */
    return (0);
  } /* }}} int cx_config */
  
@@ -92,11 +90,10 @@ index b941f02..e31e73d 100644
  } /* void module_register */
  
  /* vim: set sw=2 sts=2 et fdm=marker : */
-diff --git a/src/write_http.c b/src/write_http.c
-index 62c73b0..04c637b 100644
+diff a/src/write_http.c b/src/write_http.c
 --- a/src/write_http.c
 +++ b/src/write_http.c
-@@ -656,9 +656,18 @@ static int wh_config (oconfig_item_t *ci) /* {{{ */
+@@ -590,9 +590,18 @@ static int wh_config (oconfig_item_t *ci) /* {{{ */
          return (0);
  } /* }}} int wh_config */
  
