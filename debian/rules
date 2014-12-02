@@ -41,6 +41,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--without-included-ltdl \
 			--disable-static \
 			--disable-silent-rules \
+			--enable-debug \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
@@ -53,6 +54,9 @@ confflags += --disable-tape
 
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
+
+# protobuf-compiler >= 3.0.0 is required for the grpc plugin.
+confflags += --disable-grpc
 
 # libmic is required for the mic plugin
 confflags += --disable-mic
@@ -69,8 +73,14 @@ confflags += --disable-routeros
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
 
+# libriemann-client0 is required for the write_riemann plugin.
+confflags += --disable-write_riemann
+
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
+
+# Solaris only (requires zone.h)
+confflags += --disable-zone
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -260,12 +270,9 @@ binary-arch: build install-arch
 		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
 		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
-	dh_systemd_enable -pcollectd-core --name=collectd
 	dh_installinit -pcollectd-core --name=collectd -- defaults 95
-	dh_systemd_start -pcollectd-core
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
-	dh_strip_nondeterminism -pcollectd-core
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_makeshlibs -a
