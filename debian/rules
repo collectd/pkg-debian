@@ -41,6 +41,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--without-included-ltdl \
 			--disable-static \
 			--disable-silent-rules \
+			--enable-debug \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
@@ -53,6 +54,19 @@ confflags += --disable-tape
 
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
+
+# jevents.h is required for the intel_pmu plugin
+confflags += --disable-intel_pmu
+
+# intel-cmt-cat is required for the intel_rdt plugin
+confflags += --disable-intel_rdt
+
+# libdpdk is required for the dpdk* plugins
+confflags += --disable-dpdkevents
+confflags += --disable-dpdkstat
+
+# protobuf-compiler >= 3.0.0 is required for the grpc plugin.
+confflags += --disable-grpc
 
 # libmic is required for the mic plugin
 confflags += --disable-mic
@@ -71,6 +85,9 @@ confflags += --disable-write_mongodb
 
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
+
+# Solaris only (requires zone.h)
+confflags += --disable-zone
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -226,7 +243,7 @@ binary-indep: install-indep
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -i ChangeLog
-	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -i debian/README.Debian AUTHORS README
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
 	dh_compress -i -Xexamples/
@@ -240,7 +257,7 @@ binary-arch: build install-arch
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
-	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -a debian/README.Debian AUTHORS README
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
