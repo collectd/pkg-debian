@@ -41,6 +41,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--without-included-ltdl \
 			--disable-static \
 			--disable-silent-rules \
+			--enable-debug \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
