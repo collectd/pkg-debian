@@ -4,6 +4,11 @@ collectd (5.5.0-3ubuntu0~ppa12.04.1) precise; urgency=medium
   * debian/rules, debian/control:
     - remove references to systemd and strip-nondeterminism, which aren't
       available in precise.
+    - disable building lvm, sigrok, turbostat and write_kafka plugins, as the
+      required build-dependencies aren't available in precise.
+    - build uuid plugin against libhal, as this lib is still available on
+      precise.
+    - adjust libprotobuf and libvarnish build-dependency name.
 
  -- Marc Fournier <marc@bl.uem.li>  Fri, 09 Oct 2015 23:35:23 +0200
 

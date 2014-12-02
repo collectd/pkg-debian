@@ -73,6 +73,9 @@ confflags += --disable-tape
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
 
+# liblvm2 >= 2.02.75 is required for the lvm plugin
+confflags += --disable-lvm
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 
@@ -85,8 +88,17 @@ confflags += --disable-oracle
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
+# libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
+confflags += --disable-sigrok
+
+# linux-libc-dev >= 3.13 is required for the turbostat plugin.
+confflags += --disable-turbostat
+
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
+
+# librdkafka is required for the write_kafka plugin.
+confflags += --disable-write_kafka
 
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
