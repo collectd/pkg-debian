@@ -51,8 +51,6 @@ JAR = $(JAVA_HOME)/bin/jar
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
 JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
-include /usr/share/dpatch/dpatch.make
-
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
@@ -61,6 +59,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--without-libstatgrab \
 			--without-included-ltdl \
 			--disable-static \
+			--enable-debug \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
@@ -91,10 +90,6 @@ confflags += --disable-routeros
 
 # libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
 confflags += --disable-sigrok
-
-# varnish does not currently work with varnish4
-# (c.f. https://bugs.debian.org/745902)
-confflags += --disable-varnish
 
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
@@ -166,14 +161,8 @@ ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 
-config.status: configure $(DPATCH_STAMPFN)
+config.status: configure
 	dh_testdir
-	
-	( cd debian/patches/; for patch in *; do \
-		if test "$$patch" != "00list"; then \
-			grep "$$patch" 00list > /dev/null \
-				|| ( echo "$$patch not enabled\!"; exit 1 ); \
-		fi; done )
 	
 	# This is a work-around for #474087 (broken openipmi .pc files).
 	mkdir debian/pkgconfig
@@ -199,7 +188,7 @@ build-stamp: config.status
 	
 	touch build-stamp
 
-clean: unpatch
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
@@ -238,6 +227,8 @@ install-arch: build
 	rm -f debian/tmp/usr/lib/collectd/*.la
 	rm -f debian/tmp/usr/lib/libcollectdclient.la
 	rm -f debian/tmp/etc/collectd.conf
+
+	rm -f debian/tmp/usr/bin/utils_vl_lookup_test
 	
 	dh_install -a --sourcedir=$(CURDIR)/debian/tmp --fail-missing
 	
