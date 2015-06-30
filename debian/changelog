@@ -1,6 +1,6 @@
 collectd (5.5.0-1) UNRELEASED; urgency=medium
 
-  * New upstream release.
+  * New upstream release (Closes: #630337, #632713, #758481).
   * debian/patches:
     - Removed bts559801_plugin_find_fix.dpatch; merged upstream.
     - Removed bts747093_lvm_segfault.dpatch; merged upstream.
