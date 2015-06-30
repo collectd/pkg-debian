@@ -14,6 +14,14 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Removed myplugin_api.dpatch; merged upstream.
   * debian/collectd-dev.install, myplugin_includes.dpatch:
     - Update path to header files moved to daemon/ subdirectory upstream.
+  * debian/rules, debian/control:
+    - Enable redis, write_redis plugins and add Build-depend on
+      libhiredis-dev (previous versions depended on credis which wasn't
+      packaged in Debian).
+    - Enable sigrok and uncomment Build-depend on libsigrok-dev.
+    - Re-enable varnish and uncomment Build-depend on libvarnishapi-dev
+      (support for varnish 4.x was added upstream).
+    - Enable zfs_arc (support for ZFS on linux was added upstream).
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 

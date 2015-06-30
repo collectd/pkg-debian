@@ -83,27 +83,14 @@ confflags += --disable-netapp
 # libclntsh is required for the oracle plugin.
 confflags += --disable-oracle
 
-# libcredis is required for the *redis plugins.
-confflags += --disable-redis --disable-write_redis
-
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
-
-# libsigrok >= 0.2.0 is required for the sigrok plugin, should arrive in unstable soon
-confflags += --disable-sigrok
-
-# varnish does not currently work with varnish4
-# (c.f. https://bugs.debian.org/745902)
-confflags += --disable-varnish
 
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
 
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
-
-# libkstat is required for the xfs_arc plugin.
-confflags += --disable-zfs-arc
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
