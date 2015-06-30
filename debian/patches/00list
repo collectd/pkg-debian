@@ -2,13 +2,3 @@ rrd_filter_path.dpatch
 collection_conf_path.dpatch
 collection.cgi.dpatch
 myplugin_includes.dpatch
-myplugin_api.dpatch
-bts559801_plugin_find_fix.dpatch
-bts770681_riemann_ack.dpatch
-bts747093_lvm_segfault.dpatch
-bts770683_curl_init.dpatch
-bts750440_config_segfault.dpatch
-bts770688_snmp_memleak.dpatch
-bts770690_java_jni_thread_detach.dpatch
-bts770693_timestamps.dpatch
-bts770694_loglevel.dpatch
