@@ -16,9 +16,9 @@ diff a/contrib/examples/myplugin.c b/contrib/examples/myplugin.c
 -#include <collectd/collectd.h>
 -#include <collectd/common.h>
 -#include <collectd/plugin.h>
-+#include <collectd/core/collectd.h>
-+#include <collectd/core/common.h>
-+#include <collectd/core/plugin.h>
++#include <collectd/core/daemon/collectd.h>
++#include <collectd/core/daemon/common.h>
++#include <collectd/core/daemon/plugin.h>
  
  /*
   * data source definition:
