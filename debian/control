@@ -67,9 +67,9 @@ Suggests: collectd-dev,
  librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
- apache2, apcupsd, bind9, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
+ apache2, apcupsd, bind9, ceph, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
  memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
- pdns-server, postgresql, time-daemon,
+ pdns-server, postgresql, redis-server, slapd, time-daemon, varnish, zookeeper,
  ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
