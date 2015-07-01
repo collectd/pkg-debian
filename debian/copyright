@@ -339,7 +339,7 @@ Licenses:
 	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
-	Files src/libvirt.c
+	Files src/virt.c
 	      src/uuid.c
 	Copyright © 2006-2008 Red Hat Inc.
 	License: GNU General Public License

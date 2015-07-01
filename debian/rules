@@ -141,7 +141,7 @@ endif
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-gmond \
-		--disable-libvirt \
+		--disable-virt \
 		--disable-tokyotyrant \
 		--disable-java
 endif
