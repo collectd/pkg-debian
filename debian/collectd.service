@@ -1,0 +1,17 @@
+[Unit]
+Description=Statistics collection and monitoring daemon
+After=local-fs.target network.target
+Requires=local-fs.target network.target
+Documentation=man:collectd(1)
+Documentation=man:collectd.conf(5)
+Documentation=https://collectd.org
+
+[Service]
+Type=notify
+NotifyAccess=main
+ExecStart=/usr/sbin/collectd
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

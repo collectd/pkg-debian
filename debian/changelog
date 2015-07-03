@@ -34,6 +34,8 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
       plugin).
     - Add Build-depend on libudev-dev (used by disk plugin to enable
       udev-based device renaming on Linux) (Closes: #588153, #632936).
+  * debian/control, debian/rules, debian/collectd.service:
+    - Add systemd service file (Closes: #762586)
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 
