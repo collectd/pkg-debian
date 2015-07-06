@@ -209,10 +209,15 @@ install-indep:
 	dh_install -i
 	
 	# update include path for collectd header files
-	sed -r -i -e 's/include "(.*)"/include "collectd\/core\/\1"/' \
-		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
-	sed -r -i -e 's/"collectd\/core\/(liboconfig\/.*)"/"collectd\/\1"/' \
-		$(CURDIR)/debian/collectd-dev/usr/include/collectd/core/*
+	(	set -e; \
+		cd $(CURDIR)/debian/collectd-dev/usr/include/collectd/; \
+		for lib in $$(find . -type f -name '*.h'); do \
+			libname=$$(basename $$lib); \
+			fullpath=$$(echo $$lib | sed -r -e 's,^\./,collectd/,'); \
+			for dir in $$(find . -mindepth 1 -type d); do \
+				sed -r -i -e "s,(include\s+)\".*$$libname\",\1\"$$fullpath\"," $$dir/*.h; \
+			done; \
+		done )
 
 install-arch: build
 	dh_testdir

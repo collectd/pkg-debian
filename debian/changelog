@@ -13,7 +13,7 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Removed bts770694_loglevel.dpatch; merged upstream.
     - Removed collection.cgi.dpatch; merged upstream.
     - Removed myplugin_api.dpatch; merged upstream.
-  * debian/collectd-dev.install, myplugin_includes.dpatch:
+  * debian/rules, debian/collectd-dev.install, myplugin_includes.dpatch:
     - Update path to header files moved to daemon/ subdirectory upstream.
   * debian/rules, debian/control:
     - Enable redis, write_redis plugins and add Build-depend on
