@@ -9,6 +9,7 @@ Documentation=https://collectd.org
 [Service]
 Type=notify
 NotifyAccess=main
+EnvironmentFile=-/etc/default/collectd
 ExecStart=/usr/sbin/collectd
 Restart=always
 RestartSec=10
