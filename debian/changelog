@@ -14,6 +14,8 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Fixed an off-by-one error in the AVL tree implementation that broke
       setups using only one threshold definition; thanks to Alexander Golovko
       for reporting this (Closes: #754230).
+    - The disk plugin now (optionally) supports instance names based on a udev
+      attribute; thanks to Trent W. Buck for reporting this (Closes: #632936).
   * debian/patches:
     - Removed bts559801_plugin_find_fix.dpatch; merged upstream.
     - Removed bts747093_lvm_segfault.dpatch; merged upstream.
