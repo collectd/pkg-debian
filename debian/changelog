@@ -8,6 +8,11 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
       Crompton for reporting this (Closes: #632713).
     - Fixed a FTBFS using clang; thanks to Arthur Marble for reporting this
       and providing a patch (Closes: #758481).
+    - collection.cgi now supports the df_complex types; thanks to Joel Franco
+      Guzmán for reporting this (Closes: #739625).
+    - Fixed an off-by-one error in the AVL tree implementation that broke
+      setups using only one threshold definition; thanks to Alexander Golovko
+      for reporting this (Closes: #754230).
   * debian/patches:
     - Removed bts559801_plugin_find_fix.dpatch; merged upstream.
     - Removed bts747093_lvm_segfault.dpatch; merged upstream.
