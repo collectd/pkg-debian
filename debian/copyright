@@ -18,8 +18,8 @@ Copyright Holders (in alphabetical order):
 	Amit Gupta <amit.gupta221@gmail.com>
 	Andre M. Hedrick <andre@suse.com>
 	Andreas Henriksson <andreas@fatal.se>
-	Andrés J. Díaz <ajdiaz at connectical.com>
-	Andy Parkins <andyp at fussylogic.co.uk>
+	Andrés J. Díaz <ajdiaz@connectical.com>
+	Andy Parkins <andyp@fussylogic.co.uk>
 	Anthony Dewhurst <dewhurst@gmail>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
@@ -39,7 +39,7 @@ Copyright Holders (in alphabetical order):
 	Eric Reed <ericr@reedhome.net>
 	Eric Spreen <erispre@gmail.com>
 	Fabian Schuh <mail@xeroc.org>
-	Fabrice A. Marie <fabrice at kibinlabs.com>
+	Fabrice A. Marie <fabrice@kibinlabs.com>
 	Flavio Stanchina <flavio@stanchina.net>
 	Florent Monbillard <eppo@darox.net>
 	Florent Usseil <swiip81@free.fr>
@@ -54,7 +54,7 @@ Copyright Holders (in alphabetical order):
 	Jason Pepas <cell@ices.utexas.edu>
 	Jeff Green <jeff@kikisoso.org>
 	Jérôme Renard <jerome.renard@gmail.com>
-	Jiri Tyr <jiri.tyr at gmail.com>
+	Jiri Tyr <jiri.tyr@gmail.com>
 	Joe Dalton <joedalton2@yahoo.dk>
 	Jonathan Kolb <jon@b0g.us>
 	Jorge Barreiro <yortx.barry@gmail.com>
@@ -64,7 +64,7 @@ Copyright Holders (in alphabetical order):
 	Justo Alonso Achaques <justo.alonso@gmail.com>
 	Kai Wasserbäch <debian@carbon-project.org>
 	Kern Sibbald
-	Kimo Rosenbaum <kimor79 at yahoo.com>
+	Kimo Rosenbaum <kimor79@yahoo.com>
 	Kris Nielander <nielander@fox-it.com>
 	Laird Shaw
 	Limelight Networks, Inc.
@@ -76,7 +76,7 @@ Copyright Holders (in alphabetical order):
 	Mariusz Gronczewski <xani666@gmail.com>
 	Martin Bagge <brother@bsnet.se>
 	Martin Sin <martin.sin@zshk.cz>
-	Max Henkel <henkel at gmx.at>
+	Max Henkel <henkel@gmx.at>
 	Michael Hanselmann
 	Michael Stapelberg <michael+git@stapelberg.de>
 	Michał Mirosław <mirq-linux@rere.qmqm.pl>
@@ -99,7 +99,7 @@ Copyright Holders (in alphabetical order):
 	Red Hat Inc.
 	Rodolphe Quiédeville <rquiedeville@bearstech.com>
 	Scott Garrett <sgarrett@technomancer.com>
-	Scott Sanders <scott at jssjr.com>
+	Scott Sanders <scott@jssjr.com>
 	Sebastian Harl <sh@tokkee.org>
 	Sebastien Pahl <sebastien.pahl@dotcloud.com>
 	Simon Kuhnle <simon@blarzwurst.de>
@@ -110,13 +110,13 @@ Copyright Holders (in alphabetical order):
 	Steven Clarke <steven@monmouth.demon.co.uk>
 	Sven Trenkel <collectd@semidefinite.de>
 	The Regents of the University of California
-	Tim Laszlo <tim.laszlo at gmail.com>
+	Tim Laszlo <tim.laszlo@gmail.com>
 	Tomasz Pala <gotar@pld-linux.org>
-	Vedran Bartonicek <vbartoni at gmail.com>
-	Vincent Bernat <vincent at bernat.im>
+	Vedran Bartonicek <vbartoni@gmail.com>
+	Vincent Bernat <vincent@bernat.im>
 	Vincent Stehlé <vincent.stehle@free.fr>
 	Wensong Zhang <wensong@linuxvirtualserver.org>
-	Wilfried Goesgens <dothebart at citadel.org>
+	Wilfried Goesgens <dothebart@citadel.org>
 	Wouter Gadeyne
 	Xin Li <delphij@FreeBSD.org>
 	Yuri Kozlov <yuray@komyakino.ru>
@@ -155,6 +155,8 @@ Licenses:
 	Copyright © 2009 Anthony Dewhurst <dewhurst@gmail>
 	Copyright © 2012 Aurelien Rougemont
 	Copyright © 2013 Xin Li <delphij@FreeBSD.org>
+	Copyright © 2014 Marc Fournier
+	Copyright © 2014 Wilfried Goesgens
 	License: GNU General Public License
 
 	File contrib/network-proxy.py
@@ -274,6 +276,7 @@ Licenses:
 	      src/load.c
 	Copyright © 2005-2012 Florian Forster <octo@verplant.org>
 	Copyright © 2009 Manuel Sanmartin
+	Copyright © 2013 Vedran Bartonicek
 	License: GNU General Public License
 
 	File src/dns.c
@@ -417,6 +420,10 @@ Licenses:
 	File src/notify_email.c
 	Copyright © 2008 Oleg King <king2@kaluga.ru>
 	Copyright © 2010 Florian Forster
+	License: GNU General Public License
+
+	File src/onewire.c
+	Copyright © 2008 noris network AG
 	License: GNU General Public License
 
 	File src/openvpn.c
@@ -572,6 +579,14 @@ Licenses:
 	Copyright © 2010-2013 Florian Forster
 	Copyright © 2010 Akkarit Sangpetch
 	Copyright © 2012 Chris Lundquist
+	License: GNU General Public License
+
+	File src/write_riemann_threshold.c
+	Copyright © 2007-2010 Florian Forster
+	Copyright © 2008-2009 Sebastian Harl
+	Copyright © 2009 Andrés J. Díaz
+	Copyright © 2014 Pierre-Yves Ritschard
+	License: GNU General Public License
 
 	File src/write_tsdb.c
 	Copyright © 2009 Paul Sadauskas
@@ -607,7 +622,7 @@ text of the latest version can be found in `/usr/share/common-licenses/GPL'.
 	Copyrigh © 2009 Novell Inc.
 	Author: Duncan Mac-Vicar P. <dmacvicar@suse.de>
 	Based on Python version:
-	Copyright (C) 2008 Clay Loveless <clay@killersoft.com>
+	Copyright © 2008 Clay Loveless <clay@killersoft.com>
 
 	This software is provided 'as-is', without any express or implied
 	warranty. In no event will the author be held liable for any damages
@@ -693,7 +708,8 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2002-2005 Sam Leffler, Errno Consulting
 	License: BSD License
 
-	File src/utils_dns.c
+	Files src/utils_dns.c
+	      src/utils_dns.h
 	Copyright © 2002 The Measurement Factory, Inc.
 	Copyright © 2006 Florian Forster <octo@verplant.org>
 	License: BSD License
@@ -755,6 +771,23 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGE.
 
+	Files bindings/perl/lib/Collectd.pm
+	      contrib/examples/MyPlugin.pm
+	      contrib/examples/myplugin.c
+	      contrib/cussh.pl
+	      src/types.db.pod
+	      src/utils_cmd_flush.h
+	      src/daemon/utils_subst.c
+	      src/daemon/utils_subst.h
+	Copyright © 2006-2009 Sebastian Harl <sh@tokkee.org>
+	License: MIT License
+
+	File contrib/collection.cgi
+	Copyright © 2006-2010 Florian Forster <octo@collectd.org>
+	2006-2008 Sebastian Harl <sh@tokkee.org>
+	2008 Mirko Buffoni <briareos@eswat.org>
+	License: MIT License
+
 	File src/amqp.c
 	Copyright © 2009 Sebastien Pahl <sebastien.pahl@dotcloud.com>
 	Copyright © 2010-2012 Florian Forster <octo@verplant.org>
@@ -768,8 +801,6 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	      src/utils_cmd_flush.c
 	      src/daemon/utils_complain.c
 	      src/daemon/utils_complain.h
-	      src/daemon/utils_tail_match.c
-	      src/daemon/utils_tail_match.h
 	      src/vserver.c
 	Copyright © 2006-2013 Florian Forster
 	Copyright © 2006-2009 Sebastian Harl
@@ -784,7 +815,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT License
 
 	File src/drbd.c
-	Copyright © 2014 Tim Laszlo <tim.laszlo at gmail.com>
+	Copyright © 2014 Tim Laszlo <tim.laszlo@gmail.com>
 	License: MIT License
 
 	Files src/collectdmon.c
@@ -797,7 +828,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT License
 
 	File src/fhcount.c
-	Copyright © 2015 Jiri Tyr <jiri.tyr at gmail.com>
+	Copyright © 2015 Jiri Tyr <jiri.tyr@gmail.com>
 	License: MIT License
 
 	File src/log_logstash.c
@@ -809,22 +840,18 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2009 Sebastian Harl <sh@tokkee.org>
 	License: MIT License
 
-	Files bindings/perl/lib/Collectd.pm
-	      contrib/examples/MyPlugin.pm
-	      contrib/examples/myplugin.c
-	      contrib/cussh.pl
-	      src/types.db.pod
-	      src/utils_cmd_flush.h
-	      src/daemon/utils_subst.c
-	      src/daemon/utils_subst.h
-	Copyright © 2006-2009 Sebastian Harl <sh@tokkee.org>
+	File src/libcollectdclient/network.c
+	Copyright © 2005-2015  Florian Forster
+	Copyright © 2010 Max Henkel
 	License: MIT License
 
 	Other files in src/libcollectdclient/ and src/daemon/utils_random.*
 	Copyright © 2005-2013 Florian octo Forster <octo@verplant.org>
 	License: MIT License
 
-	File src/daemon/utils_tail.c
+	Files src/daemon/utils_tail.c
+	      src/daemon/utils_tail_match.c
+	      src/daemon/utils_tail_match.h
 	Copyright © 2007-2008 C-Ware, Inc.
 	Copyright © 2008 Florian Forster
 	License: MIT License
@@ -833,11 +860,9 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2007-2008 C-Ware, Inc.
 	License: MIT License
 
-	File src/daemon/utils_threshold.c
-	Copyright © 2007-2009 Florian Forster <octo@verplant.org>
-	Copyright © 2008-2009 Sebastian Harl <sh@tokkee.org>
-	Copyright © 2009 Andrés J. Díaz <ajdiaz@connectical.com>
-	Copyright © 2014 Pierre-Yves Ritschard <pyr at spootnik.org>
+	Files src/daemon/utils_threshold.c
+	      src/daemon/utils_threshold.h
+	Copyright © 2014 Pierre-Yves Ritschard <pyr@spootnik.org>
 	License: MIT License
 
 	File src/netapp.c
@@ -846,8 +871,8 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT License
 
 	File src/openldap.c
-	Copyright © 2011 Kimo Rosenbaum <kimor79 at yahoo.com>
-	Copyright © 2014 Marc Fournier <marc.fournier at camptocamp.com>
+	Copyright © 2011 Kimo Rosenbaum <kimor79@yahoo.com>
+	Copyright © 2014 Marc Fournier <marc.fournier@camptocamp.com>
 	License: MIT License
 
 	File src/postgresql.c
@@ -856,7 +881,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT Licence
 
 	File src/smart.c
-	Copyright © 2014 Vincent Bernat <vbe at exoscale.ch>
+	Copyright © 2014 Vincent Bernat <vbe@exoscale.ch>
 	License: MIT License
 
 	Files src/statsd.c
@@ -879,7 +904,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT License
 
 	File src/write_sensu.c
-	Copyright © 2015 Fabrice A. Marie <fabrice at kibinlabs.com>
+	Copyright © 2015 Fabrice A. Marie <fabrice@kibinlabs.com>
 	License: MIT License
 
 	File src/zookeeper.c
@@ -937,6 +962,11 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	b) the GPL (http://www.gnu.org/copyleft/gpl.html)
 
 	Use whatever you like more.
+
+	File src/utils_crc32.c
+	Copyright © 1986 Gary S. Brown
+	You may use this program, or code or tables extracted from it, as desired
+	without restriction.
 
 The Debian packaging is © 2006-2012, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above. The debconf template translations are
