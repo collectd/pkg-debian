@@ -1,6 +1,13 @@
 collectd (5.5.0-1) UNRELEASED; urgency=medium
 
-  * New upstream release (Closes: #630337, #632713, #758481).
+  * New upstream release:
+    - Battery plugin now prefers sysfs over (the deprecated) procfs for
+      reading values; thanks to Witold Baryluk for reporting this
+      (Closes: #630337).
+    - The configuration supports unquoted IPv6 addresses now; thanks to Geoff
+      Crompton for reporting this (Closes: #632713).
+    - Fixed a FTBFS using clang; thanks to Arthur Marble for reporting this
+      and providing a patch (Closes: #758481).
   * debian/patches:
     - Removed bts559801_plugin_find_fix.dpatch; merged upstream.
     - Removed bts747093_lvm_segfault.dpatch; merged upstream.
