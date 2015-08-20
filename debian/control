@@ -68,7 +68,7 @@ Suggests: collectd-dev,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
  apache2, apcupsd, bind9, ceph, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
- memcached, mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
+ memcached, mysql-server | virtual-mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
  pdns-server, postgresql, redis-server, slapd, time-daemon, varnish, zookeeper,
  ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)

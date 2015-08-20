@@ -1,5 +1,6 @@
 collectd (5.5.0-1) UNRELEASED; urgency=medium
 
+  [ Marc Fournier ]
   * New upstream release:
     - Battery plugin now prefers sysfs over (the deprecated) procfs for
       reading values; thanks to Witold Baryluk for reporting this
@@ -50,6 +51,11 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Add systemd service file (Closes: #762586)
   * debian/libcollectdclient1.symbols
     - Updated for 5.5.
+
+  [ Sebastian Harl ]
+  * debian/control:
+    - Add virtual-mysql-server as an alternative to the mysql-server suggests;
+      thanks to Otto Kekäläinen for reporting this (Closes: 781980).
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 
