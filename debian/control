@@ -119,7 +119,7 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
-   * Receive and interpret Ganglia multicast traffic: gmond
+   * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * network traffic: interface
    * IPC statistics: ipc
@@ -134,7 +134,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Logical Volume Manager usage: lvm
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
-   * Query and parse data from a memcache daemon: memcachec
+   * query and parse data from a memcache daemon: memcachec
    * statistics of the memcached distributed caching system: memcached
    * memory usage: memory
    * read values from Modbus/TCP enabled devices: modbus
@@ -179,7 +179,7 @@ Description: statistics collection and monitoring daemon (core system)
    * TeamSpeak2 server statistics: teamspeak2
    * power consumption measurements from "The Energy Detective" (TED): ted
    * Linux ACPI thermal zone information: thermal
-   * Check thresholds and for missing values: threshold
+   * check thresholds and for missing values: threshold
    * statistics from Intel turbo-capable processors: turbostat
    * Tokyo Tyrant server statistics: tokyotyrant
    * external runtime interface: unixsock
