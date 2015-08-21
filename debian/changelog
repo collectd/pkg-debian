@@ -69,6 +69,8 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Renamed patch files from *.dpatch to *.patch and drop the dpatch header.
     - Changed debian/patches/00list to debian/patches/series.
     - Drop all patch operations from debian/rules.
+  * debian/collectd-core.overrides:
+    - Update the JRE path for the rpath override.
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 
