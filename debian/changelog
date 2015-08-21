@@ -63,6 +63,12 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
   * debian/po:
     - Update Dutch debconf template translation; thanks to Frans Spiesschaert
       (Closes: #763783).
+  * Convert the package to "3.0 (quilt)" format; thanks to YunQiang Su for an
+    initial patch (Closes: #688719):
+    - Build-depend on debhelper (>= 7.0.50~) and drop dpatch.
+    - Renamed patch files from *.dpatch to *.patch and drop the dpatch header.
+    - Changed debian/patches/00list to debian/patches/series.
+    - Drop all patch operations from debian/rules.
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 

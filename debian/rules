@@ -51,8 +51,6 @@ JAR = $(JAVA_HOME)/bin/jar
 JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
 JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
-include /usr/share/dpatch/dpatch.make
-
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 			--mandir=\$${prefix}/share/man \
@@ -153,14 +151,8 @@ ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 
-config.status: configure $(DPATCH_STAMPFN)
+config.status: configure
 	dh_testdir
-	
-	( cd debian/patches/; for patch in *; do \
-		if test "$$patch" != "00list"; then \
-			grep "$$patch" 00list > /dev/null \
-				|| ( echo "$$patch not enabled\!"; exit 1 ); \
-		fi; done )
 	
 	# This is a work-around for #474087 (broken openipmi .pc files).
 	mkdir debian/pkgconfig
@@ -186,7 +178,7 @@ build-stamp: config.status
 	
 	touch build-stamp
 
-clean: unpatch
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
