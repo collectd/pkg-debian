@@ -59,6 +59,7 @@ collectd (5.5.0-1) UNRELEASED; urgency=medium
     - Add virtual-mysql-server as an alternative to the mysql-server suggests;
       thanks to Otto Kekäläinen for reporting this (Closes: 781980).
     - Add Marc to uploaders.
+    - Update standards-version to 3.9.6 (no changes).
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 30 Jun 2015 07:08:39 +0200
 
