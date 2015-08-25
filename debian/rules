@@ -151,6 +151,11 @@ ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 		--disable-turbostat
 endif
 
+# libatasmart isn't available on these platforms.
+ifneq (,$(filter hurd-i386 kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	confflags += --disable-smart
+endif
+
 # The hppa buildds currently do not keep up with Java related stuff, thus
 # prevending testing transitions. sparc is also having trouble building the
 # java plugin.
