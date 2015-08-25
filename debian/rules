@@ -208,7 +208,7 @@ clean:
 install-indep:
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs -i
 	dh_install -i
 	
@@ -226,7 +226,7 @@ install-indep:
 install-arch: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs -a
 	
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
