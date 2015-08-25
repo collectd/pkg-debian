@@ -283,7 +283,7 @@ binary-arch: build install-arch
 	dh_installdebconf -a
 	dh_systemd_enable -pcollectd-core --name=collectd collectd.service
 	dh_installinit -pcollectd-core --name=collectd -- defaults 95
-	dh_systemd_start
+	dh_systemd_start -pcollectd-core
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
 	dh_strip_nondeterminism -pcollectd-core
