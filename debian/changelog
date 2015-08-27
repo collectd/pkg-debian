@@ -1,3 +1,16 @@
+collectd (5.5.0-3) UNRELEASED; urgency=medium
+
+  * debian/rules, debian/control:
+    - Avoid hiding compiler options, allowing the buildd log scanner to do
+      it's job.
+    - Disable smart plugin on non-linux platforms, due to missing
+      libatasmart-dev build-dependency.
+    - Strip out non-deterministic bits out of generated jar files.
+  * debian/collectd-core.overrides:
+    - Update 'capitalization-error-in-description' lintian override.
+
+ -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 25 Aug 2015 06:55:52 +0200
+
 collectd (5.5.0-2) unstable; urgency=low
 
   * debian/rules:
