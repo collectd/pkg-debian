@@ -1,8 +1,8 @@
 collectd (5.5.0-3) UNRELEASED; urgency=medium
 
   * debian/rules, debian/control:
-    - Avoid hiding compiler options, allowing the buildd log scanner to do
-      it's job.
+    - Avoid hiding compiler options at build time, allowing the buildd log
+      scanner to do it's job.
     - Disable smart plugin on non-linux platforms, due to missing
       libatasmart-dev build-dependency.
     - Strip out non-deterministic bits out of generated jar files.
