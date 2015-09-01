@@ -11,6 +11,7 @@ Documentation=https://collectd.org
 Type=notify
 NotifyAccess=main
 EnvironmentFile=-/etc/default/collectd
+ExecStartPre=/usr/sbin/collectd -t
 ExecStart=/usr/sbin/collectd
 Restart=always
 RestartSec=10
