@@ -8,6 +8,9 @@ collectd (5.5.0-3) UNRELEASED; urgency=medium
     - Strip out non-deterministic bits out of generated jar files.
   * debian/collectd-core.overrides:
     - Update 'capitalization-error-in-description' lintian override.
+  * debian/rules, debian/collectd-core.collectd.service:
+    - Rename systemd service file to collectd-core.collectd.service, to honour
+      debhelper's naming convention.
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 25 Aug 2015 06:55:52 +0200
 
