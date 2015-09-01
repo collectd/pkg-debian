@@ -2,6 +2,7 @@
 Description=Statistics collection and monitoring daemon
 After=local-fs.target network.target
 Requires=local-fs.target network.target
+ConditionPathExists=/etc/collectd/collectd.conf
 Documentation=man:collectd(1)
 Documentation=man:collectd.conf(5)
 Documentation=https://collectd.org
