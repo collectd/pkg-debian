@@ -4,6 +4,7 @@ collectd-core [!alpha !amd64 !hppa !ia64 !ppc64 !mips !mipsel]: shlib-with-non-p
 # All plugin names are spelled in lower-case.
 collectd-core: capitalization-error-in-description apache Apache
 collectd-core: capitalization-error-in-description mysql MySQL
+collectd-core: capitalization-error-in-description openldap OpenLDAP
 collectd-core: capitalization-error-in-description postgresql PostgreSQL
 collectd-core: capitalization-error-in-description python Python
 

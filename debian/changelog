@@ -1,9 +1,30 @@
-collectd (5.5.0-2~bpo8+1) jessie-backports; urgency=medium
+collectd (5.5.0-3~bpo8+1~conova) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.
   * Set jessie-backports as gbp branch.
 
- -- Bernd Zeimetz <bzed@debian.org>  Tue, 25 Aug 2015 13:36:43 +0200
+ -- Bernd Zeimetz <bzed@debian.org>  Thu, 10 Sep 2015 14:55:09 +0200
+
+collectd (5.5.0-3) UNRELEASED; urgency=medium
+
+  * debian/rules, debian/control:
+    - Avoid hiding compiler options at build time, allowing the buildd log
+      scanner to do it's job.
+    - Disable smart plugin on non-linux platforms, due to missing
+      libatasmart-dev build-dependency.
+    - Strip out non-deterministic bits out of generated jar files.
+  * debian/collectd-core.overrides:
+    - Update 'capitalization-error-in-description' lintian override.
+  * debian/rules, debian/collectd-core.collectd.service:
+    - Rename systemd service file to collectd-core.collectd.service, to honour
+      debhelper's naming convention.
+  * debian/collectd-core.collectd.service:
+    - Check for configuration file presence before starting the daemon.
+    - Check for configuration file validity before starting the daemon.
+  * debian/control, debian/changelog:
+    - Update my email address to match identity of current GPG key.
+
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 25 Aug 2015 06:55:52 +0200
 
 collectd (5.5.0-2) unstable; urgency=low
 

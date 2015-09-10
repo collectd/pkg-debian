@@ -59,6 +59,7 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--without-libstatgrab \
 			--without-included-ltdl \
 			--disable-static \
+			--disable-silent-rules \
 			--enable-all-plugins
 
 # These plugins do not provide any functionality under Linux.
@@ -150,6 +151,11 @@ ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 		--disable-turbostat
 endif
 
+# libatasmart isn't available on these platforms.
+ifneq (,$(filter hurd-i386 kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+	confflags += --disable-smart
+endif
+
 # The hppa buildds currently do not keep up with Java related stuff, thus
 # prevending testing transitions. sparc is also having trouble building the
 # java plugin.
@@ -202,7 +208,7 @@ clean:
 install-indep:
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs -i
 	dh_install -i
 	
@@ -220,7 +226,7 @@ install-indep:
 install-arch: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs -a
 	
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
@@ -275,11 +281,12 @@ binary-arch: build install-arch
 		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
 		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
-	dh_systemd_enable -pcollectd-core --name=collectd collectd.service
+	dh_systemd_enable -pcollectd-core --name=collectd
 	dh_installinit -pcollectd-core --name=collectd -- defaults 95
-	dh_systemd_start
+	dh_systemd_start -pcollectd-core
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
+	dh_strip_nondeterminism -pcollectd-core
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_makeshlibs -a
