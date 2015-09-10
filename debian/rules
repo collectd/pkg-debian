@@ -281,7 +281,7 @@ binary-arch: build install-arch
 		&& rm -f lib/Collectd/Graph/File.pm lib/Collectd/Graph/Filter.pm \
 		&& rm -f lib/Collectd/Graph/MetaData.pm )
 	dh_installdebconf -a
-	dh_systemd_enable -pcollectd-core --name=collectd collectd.service
+	dh_systemd_enable -pcollectd-core --name=collectd
 	dh_installinit -pcollectd-core --name=collectd -- defaults 95
 	dh_systemd_start -pcollectd-core
 	dh_link -a
