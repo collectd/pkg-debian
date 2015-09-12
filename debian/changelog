@@ -1,15 +1,23 @@
 collectd (5.5.0-3) UNRELEASED; urgency=medium
 
   * debian/rules, debian/control:
-    - Avoid hiding compiler options, allowing the buildd log scanner to do
-      it's job.
+    - Avoid hiding compiler options at build time, allowing the buildd log
+      scanner to do it's job.
     - Disable smart plugin on non-linux platforms, due to missing
       libatasmart-dev build-dependency.
     - Strip out non-deterministic bits out of generated jar files.
   * debian/collectd-core.overrides:
     - Update 'capitalization-error-in-description' lintian override.
+  * debian/rules, debian/collectd-core.collectd.service:
+    - Rename systemd service file to collectd-core.collectd.service, to honour
+      debhelper's naming convention.
+  * debian/collectd-core.collectd.service:
+    - Check for configuration file presence before starting the daemon.
+    - Check for configuration file validity before starting the daemon.
+  * debian/control, debian/changelog:
+    - Update my email address to match identity of current GPG key.
 
- -- Marc Fournier <marc.fournier@camptocamp.com>  Tue, 25 Aug 2015 06:55:52 +0200
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 25 Aug 2015 06:55:52 +0200
 
 collectd (5.5.0-2) unstable; urgency=low
 
