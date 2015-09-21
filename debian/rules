@@ -286,7 +286,8 @@ binary-arch: build install-arch
 	dh_systemd_start -pcollectd-core
 	dh_link -a
 	dh_strip -a --dbg-package=collectd-dbg
-	dh_strip_nondeterminism -pcollectd-core
+	# dh_strip_nondeterminism is broken atm
+	#dh_strip_nondeterminism -pcollectd-core
 	dh_compress -a -Xexamples/
 	dh_fixperms -a
 	dh_makeshlibs -a

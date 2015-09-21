@@ -5,7 +5,6 @@ collectd (5.5.0-3) unstable; urgency=medium
       scanner to do it's job.
     - Disable smart plugin on non-linux platforms, due to missing
       libatasmart-dev build-dependency.
-    - Strip out non-deterministic bits out of generated jar files.
   * debian/collectd-core.overrides:
     - Update 'capitalization-error-in-description' lintian override.
   * debian/rules, debian/collectd-core.collectd.service:
