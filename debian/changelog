@@ -2,6 +2,8 @@ collectd (5.5.0-4) UNRELEASED; urgency=medium
 
   * debian/collectd-core.overrides:
     - Update 'binary-or-shlib-defines-rpath' lintian override.
+  * debian/rules:
+    - Strip out non-deterministic bits out of generated jar files.
 
  -- Marc Fournier <marc@bl.uem.li>  Tue, 06 Oct 2015 21:27:57 +0200
 
