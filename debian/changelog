@@ -1,6 +1,9 @@
 collectd (5.5.0-3ubuntu0~ppa12.04.1) precise; urgency=medium
 
   * Rebuild for precise PPA.
+  * debian/rules, debian/control:
+    - remove references to systemd and strip-nondeterminism, which aren't
+      available in precise.
 
  -- Marc Fournier <marc@bl.uem.li>  Fri, 09 Oct 2015 23:35:23 +0200
 
