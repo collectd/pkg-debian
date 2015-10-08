@@ -1,6 +1,9 @@
 collectd (5.5.0-3~bpo7+1) wheezy-backports-sloppy; urgency=medium
 
   * Rebuild for wheezy-backports-sloppy.
+  * debian/rules, debian/control:
+    - remove references to systemd and strip-nondeterminism, which were
+      introduced in jessie.
 
  -- Marc Fournier <marc@bl.uem.li>  Thu, 08 Oct 2015 08:26:10 +0200
 
