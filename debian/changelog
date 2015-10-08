@@ -4,6 +4,11 @@ collectd (5.5.0-3~bpo7+1) wheezy-backports-sloppy; urgency=medium
   * debian/rules, debian/control:
     - remove references to systemd and strip-nondeterminism, which were
       introduced in jessie.
+    - disable building sigrok, turbostat and write_kafka plugins, as the
+      required build-dependencies aren't available in wheezy.
+    - build uuid plugin against libhal, as this lib is still available on
+      wheezy.
+    - adjust libprotobuf build-dependency name.
 
  -- Marc Fournier <marc@bl.uem.li>  Thu, 08 Oct 2015 08:26:10 +0200
 
