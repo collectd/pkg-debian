@@ -1,3 +1,9 @@
+collectd (5.5.0-3~bpo7+1) wheezy-backports-sloppy; urgency=medium
+
+  * Rebuild for wheezy-backports-sloppy.
+
+ -- Marc Fournier <marc@bl.uem.li>  Thu, 08 Oct 2015 08:26:10 +0200
+
 collectd (5.5.0-3) unstable; urgency=medium
 
   * debian/rules, debian/control:
