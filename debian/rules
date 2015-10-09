@@ -19,12 +19,6 @@ CPPFLAGS += -I$(CURDIR)/debian/include
 CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall -Wno-error=deprecated-declarations
 
-# There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
-# however required by the perl plugin (which would otherwise be unable to find
-# symbols defined in libperl when loading perl modules that require such
-# symbols). This is a workaround for this issue.
-CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
-
 # Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
 # /etc/collectd would be wrong though.
 CPPFLAGS += -UCONFIGFILE
@@ -37,19 +31,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 endif
 
 LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
-
-# The archdir map has been copied from openjdk-6's debian/rules.
-JAVA_ARCHDIR = $(shell /usr/share/javahelper/java-arch.sh $(DEB_BUILD_ARCH))
-ifeq (,$(JAVA_ARCHDIR))
-	JAVA_ARCHDIR = $(DEB_BUILD_ARCH)
-endif
-JAVA_HOME = /usr/lib/jvm/default-java
-JAVA_LIBDIR = $(JAVA_HOME)/jre/lib/$(JAVA_ARCHDIR)/server
-
-JAVAC = $(JAVA_HOME)/bin/javac
-JAR = $(JAVA_HOME)/bin/jar
-JAVA_CPPFLAGS = -I$(JAVA_HOME)/include
-JAVA_LDFLAGS = -L$(JAVA_LIBDIR) -Wl,-rpath -Wl,$(JAVA_LIBDIR)
 
 confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
@@ -174,8 +155,6 @@ config.status: configure
 	
 	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
-		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
-		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
 build: build-arch build-indep
