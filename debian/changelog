@@ -1,3 +1,9 @@
+collectd (5.5.0-3ubuntu0~ppa14.04.1) trusty; urgency=medium
+
+  * Rebuild for trusty PPA.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 09 Oct 2015 22:33:04 +0200
+
 collectd (5.5.0-3) unstable; urgency=medium
 
   * debian/rules, debian/control:
