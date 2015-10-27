@@ -5,6 +5,8 @@ collectd (5.5.0-4) UNRELEASED; urgency=medium
   * debian/rules:
     - Strip out non-deterministic bits out of generated jar files.
     - Remove RTLD_GLOBAL workaround, which was fixed upstream.
+  * debian/patches:
+    - Add bts802249_varnish_41.patch (Closes: #802249)
 
  -- Marc Fournier <marc@bl.uem.li>  Tue, 06 Oct 2015 21:27:57 +0200
 
