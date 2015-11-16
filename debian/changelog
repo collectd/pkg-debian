@@ -1,4 +1,4 @@
-collectd (5.5.0-4) UNRELEASED; urgency=medium
+collectd (5.5.0-4) unstable; urgency=medium
 
   * debian/collectd-core.overrides:
     - Update 'binary-or-shlib-defines-rpath' lintian override.
@@ -8,7 +8,7 @@ collectd (5.5.0-4) UNRELEASED; urgency=medium
   * debian/patches:
     - Add bts802249_varnish_41.patch (Closes: #802249)
 
- -- Marc Fournier <marc@bl.uem.li>  Tue, 06 Oct 2015 21:27:57 +0200
+ -- Marc Fournier <marc@bl.uem.li>  Mon, 16 Nov 2015 21:03:31 +0100
 
 collectd (5.5.0-3) unstable; urgency=medium
 
