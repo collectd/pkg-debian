@@ -1,8 +1,9 @@
 collectd (5.5.1-1) UNRELEASED; urgency=medium
 
   * New upstream release:
-    - The "LC_NUMERIC" locale is now forced to "C". Thanks to Hubert Jarosz
-      for reporting this (Closes: #799289).
+    - The "LC_NUMERIC" locale is now forced to "C", preventing problems on
+      environments where the locale uses a comma as decimal separator. Thanks
+      to Hubert Jarosz for reporting this (Closes: #799289).
     - Fixed FTBFS with GCC 6.0; thanks to Martin Michlmayr for reporting this
       (Closes: #811580).
   * debian/patches:
