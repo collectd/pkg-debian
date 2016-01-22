@@ -1,4 +1,4 @@
-collectd (5.5.1-1) UNRELEASED; urgency=medium
+collectd (5.5.1-1) unstable; urgency=medium
 
   * New upstream release:
     - The "LC_NUMERIC" locale is now forced to "C", preventing problems on
@@ -11,7 +11,7 @@ collectd (5.5.1-1) UNRELEASED; urgency=medium
   * debian/collectd.conf:
     - Sync with upstream changes since 5.5.0.
 
- -- Marc Fournier <marc@bl.uem.li>  Fri, 22 Jan 2016 12:04:24 +0100
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 22 Jan 2016 16:53:49 +0100
 
 collectd (5.5.0-4) unstable; urgency=medium
 
