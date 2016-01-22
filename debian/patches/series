@@ -1,4 +1,3 @@
 rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
-bts802249_varnish_41.patch
