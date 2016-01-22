@@ -5,6 +5,8 @@ collectd (5.5.1-1) UNRELEASED; urgency=medium
       for reporting this (Closes: #799289).
     - Fixed FTBFS with GCC 6.0; thanks to Martin Michlmayr for reporting this
       (Closes: #811580).
+  * debian/patches:
+    - Removed bts802249_varnish_41.patch; implemented upstream.
 
  -- Marc Fournier <marc@bl.uem.li>  Fri, 22 Jan 2016 12:04:24 +0100
 
