@@ -19,12 +19,6 @@ CPPFLAGS += -I$(CURDIR)/debian/include
 CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall -Wno-error=deprecated-declarations
 
-# There is no way to tell lt_dlopen() to use the RTLD_GLOBAL flag which is
-# however required by the perl plugin (which would otherwise be unable to find
-# symbols defined in libperl when loading perl modules that require such
-# symbols). This is a workaround for this issue.
-CPPFLAGS += -DLT_LAZY_OR_NOW='RTLD_LAZY|RTLD_GLOBAL'
-
 # Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
 # /etc/collectd would be wrong though.
 CPPFLAGS += -UCONFIGFILE
