@@ -1,3 +1,9 @@
+collectd (5.5.1-1ubuntu0~ppa12.04.1) precise; urgency=medium
+
+  * Rebuild for precise PPA.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 29 Jan 2016 14:54:42 +0100
+
 collectd (5.5.1-1) unstable; urgency=medium
 
   * New upstream release:
