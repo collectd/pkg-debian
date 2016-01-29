@@ -1,3 +1,9 @@
+collectd (5.5.1-1~bpo7+1) wheezy-backports-sloppy; urgency=medium
+
+  * Rebuild for wheezy-backports-sloppy.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 29 Jan 2016 14:18:24 +0100
+
 collectd (5.5.1-1) unstable; urgency=medium
 
   * New upstream release:
