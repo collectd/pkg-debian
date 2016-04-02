@@ -3,8 +3,9 @@ collectd (5.5.1-2) unstable; urgency=medium
   * Disable the gmond plugin for now. Ganglia is not available in testing
     (cf. #812462). Thanks to Santiago Vila for reporting this
     (Closes: #819241).
+  * Update standards-version to 3.9.7 (no changes).
 
- -- Sebastian Harl <tokkee@debian.org>  Sat, 02 Apr 2016 10:41:27 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 02 Apr 2016 11:02:49 +0200
 
 collectd (5.5.1-1) unstable; urgency=medium
 
