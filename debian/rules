@@ -67,6 +67,10 @@ confflags += --disable-tape
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
 
+# Ganglia is not available in testing atm and hasn't been touched in a long
+# time, http://bugs.debian.org/812462
+confflags += --disable-gmond
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 
