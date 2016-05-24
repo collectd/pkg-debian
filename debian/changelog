@@ -1,7 +1,10 @@
 collectd (5.5.1-3) UNRELEASED; urgency=medium
 
   * Re-enable gmond plugin. Thanks to Michael Tautschnig and Jean-Michel
-    Nirgal Vourgère for fixing #812462.
+    Vourgère for fixing #812462.
+  * debian/patches:
+    - Add bts823012_librrd8.patch. Properly detect thread safety with librrd8.
+      Thanks to Jean-Michel Vourgère for the patch (Closes: #823012).
 
  -- Marc Fournier <marc@bl.uem.li>  Tue, 24 May 2016 08:10:45 +0200
 

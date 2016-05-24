@@ -159,6 +159,7 @@ endif
 
 config.status: configure
 	dh_testdir
+	dh_autoreconf
 	
 	# This is a work-around for #474087 (broken openipmi .pc files).
 	mkdir debian/pkgconfig
@@ -196,6 +197,7 @@ clean:
 	
 	rm -rf debian/pkgconfig
 	
+	dh_autoreconf_clean
 	dh_clean
 	debconf-updatepo
 
