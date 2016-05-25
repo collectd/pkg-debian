@@ -1,4 +1,4 @@
-collectd (5.5.1-3) UNRELEASED; urgency=medium
+collectd (5.5.1-3) unstable; urgency=medium
 
   * Re-enable gmond plugin. Thanks to Michael Tautschnig and Jean-Michel
     Vourgère for fixing #812462.
@@ -8,7 +8,7 @@ collectd (5.5.1-3) UNRELEASED; urgency=medium
   * debian/collectd.conf:
     - Add missing example blocks in main configuration file (Closes: #806196).
 
- -- Marc Fournier <marc@bl.uem.li>  Tue, 24 May 2016 08:10:45 +0200
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 25 May 2016 23:14:14 +0200
 
 collectd (5.5.1-2) unstable; urgency=medium
 
