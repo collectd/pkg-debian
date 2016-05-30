@@ -2,6 +2,7 @@ collectd (5.5.1-4) UNRELEASED; urgency=medium
 
   * debian/control:
     - Add dh-autoreconf to Build-Depends.
+    - Update standards-version to 3.9.8 (no changes).
 
  -- Marc Fournier <marc@bl.uem.li>  Mon, 30 May 2016 13:22:44 +0200
 
