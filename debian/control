@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Uploaders: Marc Fournier <marc@bl.uem.li>
-Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism,
+Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
@@ -54,7 +54,7 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
  protobuf-c-compiler,
  python-dev
 Build-Conflicts: libpthread-dev, libhal-dev
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: http://collectd.org/
 Vcs-Git: git://git.tokkee.org/pkg-collectd.git
 Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
