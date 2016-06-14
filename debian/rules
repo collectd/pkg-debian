@@ -85,9 +85,6 @@ confflags += --disable-write_mongodb
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
-# protobuf-compiler >= 3.0.0 is required for the grpc plugin.
-confflags += --disable-grpc
-
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
