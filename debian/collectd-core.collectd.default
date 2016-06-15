@@ -12,6 +12,10 @@ USE_COLLECTDMON=1
 # default: 30
 MAXWAIT=30
 
+# try a terminal kill -9 if the process refuses to shut down
+# default: 0
+declare -i USE_SIGKILL=1
+
 # 0: do not enable core-files, 1: enable core-files ... if collectd crashes
 # default: 0
 ENABLE_COREFILES=0

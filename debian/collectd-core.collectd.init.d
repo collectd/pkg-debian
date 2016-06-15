@@ -39,6 +39,7 @@ USE_COLLECTDMON=1
 COLLECTDMON_DAEMON=/usr/sbin/collectdmon
 
 MAXWAIT=30
+declare -i USE_SIGKILL=0
 
 # Gracefully exit if the package has been removed.
 test -x $DAEMON || exit 0
@@ -124,19 +125,23 @@ d_stop() {
 	sleep 1
 	if test -n "$PID" && kill -0 $PID 2> /dev/null; then
 		i=0
+		step=2
 		while kill -0 $PID 2> /dev/null; do
-			i=$(( $i + 2 ))
+			i=$(( $i + $step ))
 			echo -n " ."
 
-			if test $i -gt $MAXWAIT; then
+			if (( $i > $MAXWAIT )); then
 				log_progress_msg "$still_running_warning"
 				return 2
+			elif (( $USE_SIGKILL == 1 && $i > $MAXWAIT - $step )); then
+				echo -e "\n * (USE_SIGKILL=1) forcing a kill on process group $PID"
+				pkill -9 -g $PID 2> /dev/null
 			fi
 
 			sleep 2
 		done
-		return "$rc"
 	fi
+	rm -f "$PIDFILE"
 	return "$rc"
 }
 
