@@ -99,6 +99,10 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
+	# libsigrok >= 0.2.0 is required for the sigrok plugin,
+	# only available on Linux.
+	confflags += \
+		--disable-sigrok
 endif
 
 # This plugin is FreeBSD-specific.
