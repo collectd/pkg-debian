@@ -8,6 +8,9 @@ collectd (5.5.1-5) UNRELEASED; urgency=medium
     - Fix failure to build twice in a row introduced by dh_autoreconf_clean;
       drop the separate config.status target and, hence, a dependency on the
       configure script.
+  * debian/patches/:
+    - Added gcc6.patch: Fix FTBFS with GCC 6; thanks to Lucas Nussbaum for
+      reporting this (Closes: #831194).
 
  -- Sebastian Harl <tokkee@debian.org>  Tue, 05 Jul 2016 13:58:29 +0200
 
