@@ -1,4 +1,4 @@
-collectd (5.5.1-5) UNRELEASED; urgency=medium
+collectd (5.5.1-5) unstable; urgency=medium
 
   * debian/control, debian/rules:
     - Disable the sigrok plugin on non-Linux; restrict build dependency to
@@ -12,7 +12,7 @@ collectd (5.5.1-5) UNRELEASED; urgency=medium
     - Added gcc6.patch: Fix FTBFS with GCC 6; thanks to Lucas Nussbaum for
       reporting this (Closes: #831194).
 
- -- Sebastian Harl <tokkee@debian.org>  Tue, 05 Jul 2016 13:58:29 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 17 Jul 2016 20:47:03 +0200
 
 collectd (5.5.1-4) unstable; urgency=medium
 
