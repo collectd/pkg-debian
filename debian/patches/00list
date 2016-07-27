@@ -1,3 +1,4 @@
+CVE-2016-6254.dpatch
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
 bts559801_plugin_find_fix.dpatch
