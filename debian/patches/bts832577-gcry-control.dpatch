@@ -1,0 +1,45 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## bts832577-gcry-control.dpatch by Florian Forster <octo@collectd.org>
+## Backported to 5.1.0 by Sebastian Harl <tokkee@debian.org>
+##
+## DP: network plugin, libcollectdclient: Check return value of gcry_control().
+##
+## Upstream commit:
+## https://github.com/collectd/collectd/commit/8b4fed99
+## Upstream report:
+## https://github.com/collectd/collectd/issues/1665
+
+@DPATCH@
+
+diff a/src/network.c b/src/network.c
+--- a/src/network.c
++++ b/src/network.c
+@@ -3342,6 +3342,7 @@
+ static int network_init (void)
+ {
+ 	static _Bool have_init = 0;
++	gcry_error_t err;
+ 
+ 	/* Check if we were already initialized. If so, just return - there's
+ 	 * nothing more to do (for now, that is). */
+@@ -3350,8 +3351,18 @@
+ 	have_init = 1;
+ 
+ #if HAVE_LIBGCRYPT
+-	gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
+-	gcry_control (GCRYCTL_INIT_SECMEM, 32768, 0);
++	err = gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
++	if (err)
++	{
++		ERROR ("network plugin: gcry_control (GCRYCTL_SET_THREAD_CBS) failed: %s", gcry_strerror (err));
++		return (-1);
++	}
++	err = gcry_control (GCRYCTL_INIT_SECMEM, 32768, 0);
++	if (err)
++	{
++		ERROR ("network plugin: gcry_control (GCRYCTL_INIT_SECMEM) failed: %s", gcry_strerror (err));
++		return (-1);
++	}
+ 	gcry_control (GCRYCTL_INITIALIZATION_FINISHED, 0);
+ #endif
+ 

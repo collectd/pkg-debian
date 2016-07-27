@@ -5,6 +5,12 @@ collectd (5.1.0-3+deb7u1) UNRELEASED; urgency=high
     the function used by the network plugin to parse incoming network packets.
     Thanks to Florian Forster for reporting the bug in Debian.
     (Closes: #832507, CVE-2016-6254)
+  * debian/patches/bts832577-gcry-control.dpatch: Fix improper usage of
+    gcry_control. A team of security researchers at Columbia University and
+    the University of Virginia discovered that GCrypt's gcry_control is
+    sometimes called without checking its return value for an error. This may
+    cause the program to be initialized without the desired, secure settings.
+    (Closes: #832577)
 
  -- Sebastian Harl <tokkee@debian.org>  Wed, 27 Jul 2016 10:14:42 +0200
 
