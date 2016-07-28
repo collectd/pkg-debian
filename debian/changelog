@@ -15,6 +15,9 @@ collectd (5.5.2-1) UNRELEASED; urgency=medium
       upstream release, except for: Don't abort() if gcrypt initialization
       failed.
     - Drop bts823012_librrd8.patch; merged upstream.
+  * Rebuild with linux-libc-dev >= 4.6 (now in testing and unstable) to
+    accommodate a change to rtnl_link_stats64. Thanks to Gábor Gombás for
+    reporting this (Closes: #829634).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 28 Jul 2016 22:56:36 +0200
 
