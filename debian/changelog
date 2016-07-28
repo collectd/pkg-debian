@@ -10,6 +10,10 @@ collectd (5.5.2-1) UNRELEASED; urgency=medium
       GCrypt's gcry_control is sometimes called without checking its return
       value for an error. This may cause the program to be initialized without
       the desired, secure settings. (Closes: #832577)
+  * debian/patches:
+    - bts832577-gcry-control.patch: Update for 5.5.2. Mostly part of the new
+      upstream release, except for: Don't abort() if gcrypt initialization
+      failed.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 28 Jul 2016 22:56:36 +0200
 
