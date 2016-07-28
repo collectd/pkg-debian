@@ -1,4 +1,4 @@
-collectd (5.5.2-1) UNRELEASED; urgency=medium
+collectd (5.5.2-1) unstable; urgency=high
 
   * New upstream release.
     - Fix heap overflow in the network plugin. Emilien Gaspar has identified a
@@ -19,7 +19,7 @@ collectd (5.5.2-1) UNRELEASED; urgency=medium
     accommodate a change to rtnl_link_stats64. Thanks to Gábor Gombás for
     reporting this (Closes: #829634).
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 28 Jul 2016 22:56:36 +0200
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 29 Jul 2016 00:02:11 +0200
 
 collectd (5.5.1-5) unstable; urgency=low
 
