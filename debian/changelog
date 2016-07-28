@@ -14,6 +14,7 @@ collectd (5.5.2-1) UNRELEASED; urgency=medium
     - bts832577-gcry-control.patch: Update for 5.5.2. Mostly part of the new
       upstream release, except for: Don't abort() if gcrypt initialization
       failed.
+    - Drop bts823012_librrd8.patch; merged upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 28 Jul 2016 22:56:36 +0200
 

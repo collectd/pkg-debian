@@ -1,5 +1,4 @@
 rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
-bts823012_librrd8.patch
 gcc6.patch
