@@ -193,7 +193,7 @@ collectd (5.5.0-1) unstable; urgency=medium
 
  -- Marc Fournier <marc.fournier@camptocamp.com>  Fri, 21 Aug 2015 13:29:17 +0200
 
-collectd (5.4.1-6+deb8u1) jessie-security; urgency=medium
+collectd (5.4.1-6+deb8u1) jessie-security; urgency=high
 
   * debian/patches/CVE-2016-6254.dpatch: Fix heap overflow in the network
     plugin. Emilien Gaspar has identified a heap overflow in parse_packet(),
