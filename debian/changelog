@@ -1,3 +1,9 @@
+collectd (5.5.2-1~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 30 Jul 2016 12:15:04 +0200
+
 collectd (5.5.2-1) unstable; urgency=high
 
   * New upstream release.
