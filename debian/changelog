@@ -1,3 +1,9 @@
+collectd (5.5.2-1~bpo7+1) wheezy-backports-sloppy; urgency=high
+
+  * Rebuild for wheezy-backports-sloopy.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 30 Jul 2016 12:10:15 +0200
+
 collectd (5.5.2-1) unstable; urgency=high
 
   * New upstream release.
