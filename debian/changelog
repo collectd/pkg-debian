@@ -1,3 +1,14 @@
+collectd (5.1.0-3+deb7u2) wheezy-security; urgency=high
+
+  * debian/patches/bts833013-gcry-init.dpatch: Fix initialization of
+    libgcrypt: Initialize the library before using any other functions to
+    ensure that thread-safety is set up appropriately. This fixes potential
+    crashes of the network plugin and a regression introduced in
+    5.1.0-3+deb7u1 which ultimately surfaced the issue. Thanks to Antoine
+    Sirinelli for reporting this. (Closes: #833013)
+
+ -- Sebastian Harl <tokkee@debian.org>  Wed, 03 Aug 2016 22:59:23 +0200
+
 collectd (5.1.0-3+deb7u1) wheezy-security; urgency=high
 
   * debian/patches/CVE-2016-6254.dpatch: Fix heap overflow in the network

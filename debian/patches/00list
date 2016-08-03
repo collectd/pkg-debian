@@ -1,5 +1,6 @@
 CVE-2016-6254.dpatch
 bts832577-gcry-control.dpatch
+bts833013-gcry-init.dpatch
 rrd_filter_path.dpatch
 collection_conf_path.dpatch
 bts559801_plugin_find_fix.dpatch
