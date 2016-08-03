@@ -9,8 +9,9 @@
 ## DP: configuration phase, but the library is only initialized later during
 ## DP: the initialization phase.
 ## DP:
-## DP: Upstream commit:
+## DP: Upstream commits:
 ## DP: https://github.com/collectd/collectd/commit/0ec776a
+## DP: https://github.com/collectd/collectd/commit/a3000cbe
 ## DP: Upstream report:
 ## DP: https://github.com/collectd/collectd/issues/273
 
@@ -19,16 +20,16 @@
 diff a/src/network.c b/src/network.c
 --- a/src/network.c
 +++ b/src/network.c
-@@ -476,6 +476,28 @@
+@@ -476,6 +476,29 @@
  } /* }}} int network_dispatch_notification */
  
  #if HAVE_LIBGCRYPT
-+static void network_init_gcrypt (void) /* {{{ */
++static int network_init_gcrypt (void) /* {{{ */
 +{
 +	gcry_error_t err;
 +
 +	if (gcry_control (GCRYCTL_ANY_INITIALIZATION_P))
-+		return;
++		return (0);
 +
 +	err = gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
 +	if (err)
@@ -43,30 +44,41 @@ diff a/src/network.c b/src/network.c
 +		return (-1);
 +	}
 +	gcry_control (GCRYCTL_INITIALIZATION_FINISHED, 0);
++	return (0);
 +} /* }}} void network_init_gcrypt */
 +
  static gcry_cipher_hd_t network_get_aes256_cypher (sockent_t *se, /* {{{ */
      const void *iv, size_t iv_size, const char *username)
  {
-@@ -2011,6 +2033,8 @@
+@@ -2011,6 +2034,13 @@
  	{
  		if (se->data.client.security_level > SECURITY_LEVEL_NONE)
  		{
-+			network_init_gcrypt ();
++			if (network_init_gcrypt () < 0)
++			{
++				ERROR ("network plugin: Cannot configure client socket with "
++						"security: Failed to initialize crypto library.");
++				return (-1);
++			}
 +
  			if ((se->data.client.username == NULL)
  					|| (se->data.client.password == NULL))
  			{
-@@ -2029,6 +2053,8 @@
+@@ -2029,6 +2059,13 @@
  	{
  		if (se->data.server.security_level > SECURITY_LEVEL_NONE)
  		{
-+			network_init_gcrypt ();
++			if (network_init_gcrypt () < 0)
++			{
++				ERROR ("network plugin: Cannot configure server socket with "
++						"security: Failed to initialize crypto library.");
++				return (-1);
++			}
 +
  			if (se->data.server.auth_file == NULL)
  			{
  				ERROR ("network plugin: Server socket with "
-@@ -3345,7 +3371,6 @@
+@@ -3345,7 +3382,6 @@
  static int network_init (void)
  {
  	static _Bool have_init = 0;
@@ -74,7 +86,7 @@ diff a/src/network.c b/src/network.c
  
  	/* Check if we were already initialized. If so, just return - there's
  	 * nothing more to do (for now, that is). */
-@@ -3354,19 +3379,7 @@
+@@ -3354,19 +3390,11 @@
  	have_init = 1;
  
  #if HAVE_LIBGCRYPT
@@ -91,7 +103,11 @@ diff a/src/network.c b/src/network.c
 -		return (-1);
 -	}
 -	gcry_control (GCRYCTL_INITIALIZATION_FINISHED, 0);
-+	network_init_gcrypt ();
++	if (network_init_gcrypt () < 0)
++	{
++		ERROR ("network plugin: Failed to initialize crypto library.");
++		return (-1);
++	}
  #endif
  
  	if (network_config_stats != 0)
