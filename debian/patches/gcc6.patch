@@ -1,0 +1,13 @@
+Author: Sebastian Harl <tokkee@debian.org>
+Description: Fix GCC 6 issues.
+--- a/src/write_kafka.c
++++ b/src/write_kafka.c
+@@ -472,7 +472,7 @@
+ 	}
+     if (conf != NULL)
+         rd_kafka_conf_destroy(conf);
+-	return (0);
++    return (0);
+  errout:
+     if (conf != NULL)
+         rd_kafka_conf_destroy(conf);
