@@ -99,6 +99,10 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
+	# libsigrok >= 0.2.0 is required for the sigrok plugin,
+	# only available on Linux.
+	confflags += \
+		--disable-sigrok
 endif
 
 # This plugin is FreeBSD-specific.
@@ -157,8 +161,14 @@ ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 
-config.status: configure
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+
+build-stamp:
 	dh_testdir
+	
+	dh_autoreconf
 	
 	# This is a work-around for #474087 (broken openipmi .pc files).
 	mkdir debian/pkgconfig
@@ -172,13 +182,6 @@ config.status: configure
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
 		|| ( status=$$?; cat config.log; exit $$status )
 
-build: build-arch build-indep
-build-arch: build-stamp
-build-indep: build-stamp
-
-build-stamp: config.status
-	dh_testdir
-	
 	$(MAKE)
 	perl ./debian/bin/check_plugins.pl
 	
@@ -196,6 +199,7 @@ clean:
 	
 	rm -rf debian/pkgconfig
 	
+	dh_autoreconf_clean
 	dh_clean
 	debconf-updatepo
 
