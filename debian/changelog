@@ -1,3 +1,9 @@
+collectd (5.5.2-1ubuntu0~ppa14.04.1) trusty; urgency=high
+
+  * Rebuild for trusty PPA.
+
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 09 Aug 2016 23:07:39 +0200
+
 collectd (5.5.2-1) unstable; urgency=high
 
   * New upstream release.
