@@ -1,6 +1,8 @@
 collectd (5.5.2-2) UNRELEASED; urgency=low
   * debian/changelog:
     - Set urgency back to low.
+  * debian/control:
+    - Update GCrypt's package name to libgcrypt20-dev.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Sep 2016 13:45:32 +0200
 
