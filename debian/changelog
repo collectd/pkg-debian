@@ -3,6 +3,9 @@ collectd (5.5.2-2) UNRELEASED; urgency=low
     - Set urgency back to low.
   * debian/control:
     - Update GCrypt's package name to libgcrypt20-dev.
+  * debian/patches:
+    - Added configure_find_lc_all.patch: forcing locale in configure script
+      will hopefully fix build reproducibility on non-amd64 plafroms.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Sep 2016 13:45:32 +0200
 

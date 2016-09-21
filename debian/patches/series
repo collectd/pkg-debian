@@ -1,4 +1,5 @@
 bts832577-gcry-control.patch
+configure_find_lc_all.patch
 rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
