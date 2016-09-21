@@ -1,3 +1,9 @@
+collectd (5.5.2-2) UNRELEASED; urgency=low
+  * debian/changelog:
+    - Set urgency back to low.
+
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Sep 2016 13:45:32 +0200
+
 collectd (5.5.2-1) unstable; urgency=high
 
   * New upstream release.
