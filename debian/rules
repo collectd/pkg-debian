@@ -91,9 +91,13 @@ confflags += --disable-grpc
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-barometer \
 		--disable-cgroups \
 		--disable-cpusleep \
+		--disable-drbd \
 		--disable-ethstat \
+		--disable-fhcount \
+		--disable-ipc \
 		--disable-iptables \
 		--disable-ipvs \
 		--disable-lvm \

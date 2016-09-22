@@ -5,6 +5,9 @@ collectd (5.6.1-1) UNRELEASED; urgency=medium
       Shish for reporting this (Closes: #839771).
     - rrdcached plugin now reconnects to daemon. Thanks to Matthias Urlichs
       for reporting this (Closes: #657877).
+  * debian/rules:
+    - Disable building the barometer, drbd, fhcount and ipc plugins on
+      kfreebsd architectures, as they are Linux-only.
 
  -- Marc Fournier <marc@bl.uem.li>  Sun, 09 Oct 2016 20:41:36 +0200
 
