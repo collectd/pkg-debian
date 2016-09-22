@@ -106,10 +106,12 @@ Description: statistics collection and monitoring daemon (core system)
    * bind9 name-server and zone statistics: bind
    * Ceph distributed storage system statitics: ceph
    * CGroups resource usage: cgroups
+   * Chrony daemon statistics: Local clock drift, offset to peers: chrony
    * connection tracking table size: conntrack
    * number of context switches done by the operating system: contextswitch
    * CPU utilization: cpu
    * CPU frequency: cpufreq
+   * CPU sleep: Time spent in suspend : cpusleep
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
    * parse JSON files: curl_json
@@ -125,6 +127,7 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of open file handles: fhcount
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
+   * Monitor gps related data through gpsd: gps
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
@@ -138,6 +141,7 @@ Description: statistics collection and monitoring daemon (core system)
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
    * logging in logstash's JSON event format: log_logstash
+   * embedded Lua interpreter: lua
    * Logical Volume Manager usage: lvm
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
@@ -146,6 +150,7 @@ Description: statistics collection and monitoring daemon (core system)
    * memory usage: memory
    * read values from Modbus/TCP enabled devices: modbus
    * statistics from mon.itor.us: Monitorus (Perl based plugin)
+   * Publishes and subscribes to MQTT topics: mqtt
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
    * detailed Linux network interface and routing statistics: netlink
@@ -154,6 +159,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
    * send desktop notifications to a notification daemon: notify_desktop
    * send notification E-mails: notify_email
+   * send notifications to nagios: notify_nagios
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
    * Optimized Link State Routing daemon statistics: olsrd
@@ -206,6 +212,7 @@ Description: statistics collection and monitoring daemon (core system)
    * send collected values to a Riemann server: write_riemann
    * send collected values to a Sensu client: write_sensu
    * send collected values to an OpenTSDB server: write_tsdb
+   * XEN Hypervisor CPU stats: xencpu
    * ZFS's Adaptive Replacement Cache statistics: zfs_arc
    * data from Zookeeper's MNTR command: zookeeper
 
