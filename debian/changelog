@@ -18,6 +18,8 @@ collectd (5.6.0-1) UNRELEASED; urgency=medium
     - Disable cpusleep plugin on non-Linux.
     - Disable xencpu plugin except on amd64, arm64, armhf, and i386.
     - Disable the zone plugin.
+    - Do not cripple include files in collectd-dev when patching them; thanks
+      to Scott Talbert for reporting this (Closes: #827759).
   * debian/control:
     - Build-depend on libgps-dev: Needed by the new gps plugin.
     - Build-depend on liblua5.3-dev: Needed by the new lua plugin.

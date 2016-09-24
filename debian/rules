@@ -230,7 +230,7 @@ install-indep:
 			libname=$$(basename $$lib); \
 			fullpath=$$(echo $$lib | sed -r -e 's,^\./,collectd/,'); \
 			for dir in $$(find . -mindepth 1 -type d); do \
-				sed -r -i -e "s,(include\s+)\".*$$libname\",\1\"$$fullpath\"," $$dir/*.h; \
+				sed -r -i -e "s,(include\s+)\".*\<$$libname\",\1\"$$fullpath\"," $$dir/*.h; \
 			done; \
 		done )
 
