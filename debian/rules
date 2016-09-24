@@ -122,7 +122,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-conntrack \
 		--disable-contextswitch \
 		--disable-cpufreq \
-		--disable-disk \
 		--disable-entropy \
 		--disable-fscache \
 		--disable-irq \
