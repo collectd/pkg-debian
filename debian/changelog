@@ -2,6 +2,8 @@ collectd (5.6.0-1) unstable; urgency=medium
 
   * New upstream release.
     - The disk plugin now supports FreeBSD; enable it in debian/rules.
+    - Suppress spammy debug messages; thanks to Antonio Russo for reporting
+      this (Closes: #797687).
     New plugins:
     - Chrony daemon statistics: chrony
     - CPU sleep: Time spent in suspend: cpusleep (Linux-specific)
