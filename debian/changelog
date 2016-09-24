@@ -2,6 +2,29 @@ collectd (5.6.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - The disk plugin now supports FreeBSD; enable it in debian/rules.
+    New plugins:
+    - Chrony daemon statistics: chrony
+    - CPU sleep: Time spent in suspend: cpusleep (Linux-specific)
+    - Monitor gps related data through gpsd: gps
+    - Send or receive values over the network using the gRPC framework: grpc
+      (disabled in Debian because of missing dependencies)
+    - Lua interpreter embedded into collectd: lua
+    - Publishes and subscribes to MQTT topics: mqtt
+    - Submit notifications as passive check results to a local nagios
+      instance: notify_nagios
+    - XEN Hypervisor CPU stats: xencpu
+    - Solaris zone metrics: zone (disabled in Debian; Solaris specific)
+  * debian/rules:
+    - Disable cpusleep plugin on non-Linux.
+    - Disable xencpu plugin except on amd64, arm64, armhf, and i386.
+    - Disable the zone plugin.
+  * debian/control:
+    - Build-depend on libgps-dev: Needed by the new gps plugin.
+    - Build-depend on liblua5.3-dev: Needed by the new lua plugin.
+    - Build-depend on libmosquitto-dev: Needed by the new mqtt plugin.
+    - Build-depend on libxen-dev [amd64 arm64 armhf i386]: Needed by the new
+      xencpu plugin.
+    - Build-depend on riemann-c-client: Now needed by the riemann plugin.
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 24 Sep 2016 11:59:37 +0200
 

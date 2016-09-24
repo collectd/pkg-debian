@@ -85,13 +85,14 @@ confflags += --disable-write_mongodb
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
-# protobuf-compiler >= 3.0.0 is required for the grpc plugin.
+# protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
 confflags += --disable-grpc
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-cgroups \
+		--disable-cpusleep \
 		--disable-ethstat \
 		--disable-iptables \
 		--disable-ipvs \
@@ -113,6 +114,10 @@ ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-pf
 endif
+
+# This plugin is Solaris-specific.
+confflags += \
+		--disable-zone
 
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -149,6 +154,12 @@ endif
 ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 	confflags += \
 		--disable-turbostat
+endif
+
+# This plugin is x86 and arm specific.
+ifeq (,$(filter amd64 arm64 armhf i386, $(DEB_BUILD_ARCH)))
+	confflags += \
+		--disable-xencpu
 endif
 
 # libatasmart isn't available on these platforms.
