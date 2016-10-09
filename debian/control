@@ -286,6 +286,7 @@ Description: statistics collection and monitoring daemon (development files)
 Package: libcollectdclient-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: libcollectdclient1 (= ${binary:Version}), ${misc:Depends}
 Replaces: collectd-dev (<< 5.2.0-1)
 Breaks: collectd-dev (<< 5.2.0-1)
