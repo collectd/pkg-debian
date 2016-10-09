@@ -1,4 +1,4 @@
-collectd (5.6.1-1) UNRELEASED; urgency=medium
+collectd (5.6.1-1) unstable; urgency=medium
 
   * New upstream release.
     - write_graphite plugin is no longer linked against libyajl. Thanks to
@@ -16,7 +16,7 @@ collectd (5.6.1-1) UNRELEASED; urgency=medium
       kfreebsd architectures, as they are Linux-only.
     - Run the test suite using dh_auto_test.
 
- -- Marc Fournier <marc@bl.uem.li>  Sun, 09 Oct 2016 20:41:36 +0200
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 09 Oct 2016 21:42:29 +0200
 
 collectd (5.6.0-1) unstable; urgency=medium
 
