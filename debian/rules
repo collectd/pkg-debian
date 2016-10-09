@@ -200,6 +200,7 @@ build-stamp:
 		|| ( status=$$?; cat config.log; exit $$status )
 
 	$(MAKE)
+	dh_auto_test
 	perl ./debian/bin/check_plugins.pl
 	
 	touch build-stamp
