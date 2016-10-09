@@ -1,3 +1,13 @@
+collectd (5.6.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+    - write_graphite plugin is no longer linked against libyajl. Thanks to
+      Shish for reporting this (Closes: #839771).
+    - rrdcached plugin now reconnects to daemon. Thanks to Matthias Urlichs
+      for reporting this (Closes: #657877).
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 09 Oct 2016 20:41:36 +0200
+
 collectd (5.6.0-1) unstable; urgency=medium
 
   * New upstream release.
