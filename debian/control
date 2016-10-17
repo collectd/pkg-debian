@@ -5,6 +5,7 @@ Maintainer: Sebastian Harl <tokkee@debian.org>
 Uploaders: Marc Fournier <marc@bl.uem.li>
 Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ default-libmysqlclient-dev,
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
  kfreebsd-kernel-headers [kfreebsd-any],
@@ -29,7 +30,6 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
  libmodbus-dev,
  libmosquitto-dev,
  libmnl-dev [linux-any],
- libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
  liboping-dev (>= 0.3.3),
@@ -76,9 +76,10 @@ Suggests: collectd-dev,
  librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
- apache2, apcupsd, bind9, ceph, chrony, gpsd, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
- memcached, mysql-server | virtual-mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
- pdns-server, postgresql, redis-server, slapd, time-daemon, varnish, zookeeper,
+ apache2, apcupsd, bind9, ceph, chrony, default-mysql-server, gpsd, hddtemp,
+ iptables, ipvsadm, lm-sensors, mbmon, memcached, nginx, notification-daemon,
+ nut, openvpn, olsrd, pdns-server, postgresql, redis-server, slapd,
+ time-daemon, varnish, zookeeper,
  ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
