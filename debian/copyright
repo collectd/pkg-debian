@@ -638,7 +638,7 @@ Licenses:
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 	USA.
 
-	Some files are licensed under version 2 only, while any others allow to
+	Some files are licensed under version 2 only, while any others allow one to
 	use version 2 or (at your option) any later version.
 
 On Debian systems, the complete text of the GNU General Public License,
@@ -1012,7 +1012,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2006 Alexander Wirt <formorer@formorer.de>
 
 	This program is free software; you can redistribute it and/or modify it
-	under the the terms of either:
+	under the terms of either:
 
 	a) the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 

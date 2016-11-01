@@ -3,17 +3,20 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Uploaders: Marc Fournier <marc@bl.uem.li>
-Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
+Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ default-libmysqlclient-dev,
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
  kfreebsd-kernel-headers [kfreebsd-any],
  libatasmart-dev [linux-any],
  libcap-dev [linux-any],
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
+ libdevstat-dev [kfreebsd-any],
  libdbi0-dev,
  libesmtp-dev,
  libganglia1-dev (>= 3) [linux-any],
+ libgeom-dev [kfreebsd-any],
  libgcrypt20-dev,
  libglib2.0-dev,
  libgps-dev,
@@ -27,7 +30,6 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
  libmodbus-dev,
  libmosquitto-dev,
  libmnl-dev [linux-any],
- libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
  liboping-dev (>= 0.3.3),
@@ -62,21 +64,22 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
 Build-Conflicts: libpthread-dev, libhal-dev
 Standards-Version: 3.9.8
 Homepage: http://collectd.org/
-Vcs-Git: git://git.tokkee.org/pkg-collectd.git
-Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
+Vcs-Git: https://github.com/collectd/pkg-debian.git
+Vcs-Browser: https://github.com/collectd/pkg-debian.git
 
 Package: collectd-core
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base
 Recommends: perl, rrdtool
 Suggests: collectd-dev,
 # collection.cgi / collection3 dependencies
  librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
- apache2, apcupsd, bind9, ceph, chrony, gpsd, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
- memcached, mysql-server | virtual-mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
- pdns-server, postgresql, redis-server, slapd, time-daemon, varnish, zookeeper,
+ apache2, apcupsd, bind9, ceph, chrony, default-mysql-server, gpsd, hddtemp,
+ iptables, ipvsadm, lm-sensors, mbmon, memcached, nginx, notification-daemon,
+ nut, openvpn, olsrd, pdns-server, postgresql, redis-server, slapd,
+ time-daemon, varnish, zookeeper,
  ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
@@ -286,7 +289,6 @@ Description: statistics collection and monitoring daemon (development files)
 Package: libcollectdclient-dev
 Section: libdevel
 Architecture: any
-Multi-Arch: same
 Depends: libcollectdclient1 (= ${binary:Version}), ${misc:Depends}
 Replaces: collectd-dev (<< 5.2.0-1)
 Breaks: collectd-dev (<< 5.2.0-1)

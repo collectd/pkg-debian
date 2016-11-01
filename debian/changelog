@@ -1,3 +1,21 @@
+collectd (5.6.1-2) unstable; urgency=medium
+
+  * debian/control:
+    - Add libdevstat-dev and libgeom-dev to kfreebsd build-deps, as they're
+      needed by the disk plugin. Thanks to Florian Forster for pointing this
+      out.
+    - Update "Vcs-Git" and "Vcs-Browser" fields to point to GitHub repo.
+    - Changed build-dependency libmysqlclient-dev to
+      default-libmysqlclient-dev, and mysql-server to default-mysql-server.
+    - collectd-core.deb: Add "Depends" on lsb-base, as /etc/init.d/collectd
+      requires /lib/lsb/init-functions.
+    - Remove "Multi-Arch: same" from libcollectdclient-dev, until the package
+      gets reworked to really be multi-arch ready.
+  * debian/control, debian/compat:
+    - Bump debhelper compat version to 9.
+
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 01 Nov 2016 07:32:47 +0100
+
 collectd (5.6.1-1) unstable; urgency=medium
 
   * New upstream release.
