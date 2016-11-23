@@ -25,7 +25,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libi2c-dev,
  libkvm-dev [kfreebsd-any],
  libldap2-dev,
- liblua5.3-dev,
+ liblua5.2-dev,
  liblvm2-dev [linux-any],
  libmemcached-dev,
  libmicrohttpd-dev,
