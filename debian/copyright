@@ -23,11 +23,13 @@ Copyright Holders (in alphabetical order):
 	Anthony Dewhurst <dewhurst@gmail>
 	Anthony Gialluca <tonyabg@charter.net>
 	Antony Dovgal <tony@daylessday.org>
+	Aurelien beorn Rougemont <beorn@gandi.net>
 	Battelle Memorial Institute
 	Bert Vermeulen <bert@biot.com>
 	Bruno Prémont <bonbons@linux-vserver.org>
 	Carnegie Mellon University
 	Chad Malfait <malfaitc@yahoo.com>
+	Claudius M Zingerli, ZSeng
 	Clay Loveless <clay@killersoft.com>
 	Clément Stenac <clement.stenac@diwi.org>
 	Cosmin Ioiart <cioiart@gmail.com>
@@ -46,6 +48,7 @@ Copyright Holders (in alphabetical order):
 	Florian Forster <octo@verplant.org>
 	Franck Lombardi
 	Free Software Foundation, Inc.
+	Gergely Nagy <algernon@madhouse-project.org>
 	Google, Inc.
 	Hideki Yamane <henrich@debian.or.jp>
 	Intel Corporation.
@@ -60,6 +63,7 @@ Copyright Holders (in alphabetical order):
 	Jorge Barreiro <yortx.barry@gmail.com>
 	joseph werle <joseph.werle@gmail.com>
 	Juan Jose Ciarlante <jjciarla@raiz.uncu.edu.ar>
+	Julien Ammous
 	Julian Anastasov <ja@ssi.bg>
 	Justo Alonso Achaques <justo.alonso@gmail.com>
 	Kai Wasserbäch <debian@carbon-project.org>
@@ -71,11 +75,13 @@ Copyright Holders (in alphabetical order):
 	Lubos Stanek <lubek@users.sourceforge.net>
 	Lyonel Vincent <lyonel@ezix.org>
 	Manuel Sanmartin
+	Marc Falzon <marc@baha.mu>
 	Marc Fournier <marc.fournier@camptocamp.com>
 	Marco Chiappero <marco@absence.it>
 	Mariusz Gronczewski <xani666@gmail.com>
 	Martin Bagge <brother@bsnet.se>
 	Martin Sin <martin.sin@zshk.cz>
+	Mathijs Mohlmann
 	Max Henkel <henkel@gmx.at>
 	Michael Hanselmann
 	Michael Stapelberg <michael+git@stapelberg.de>
@@ -83,6 +89,7 @@ Copyright Holders (in alphabetical order):
 	Mirko Buffoni <briareos@eswat.org>
 	Netfilter Core Team
 	New Dream Network
+	Nicolas JOURDEN <nicolas.jourden@laposte.net>
 	Nicolas Szalay
 	Niki W. Waibel <niki.waibel@newlogic.com>
 	noris network AG
@@ -91,13 +98,16 @@ Copyright Holders (in alphabetical order):
 	Ondrej 'SanTiago' Zajicek <santiago@crfreenet.org>
 	Patrik Weiskircher <weiskircher@inqnet.at>
 	Paul Sadauskas <psadauskas@gmail.com>
+	Pavel Rochnyak <pavel2000@ngs.ru>
 	Pavel Shramov <shramov@mexmat.net>
 	Peter Holik <peter@holik.at>
 	Peter Kese <peter.kese@ijs.si>
 	Phoenix Kayo <kayo.k11.4@gmail.com>
 	Pierre-Yves Ritschard <pyr@openbsd.org>
 	Red Hat Inc.
+	rinigus <http://github.com/rinigus>
 	Rodolphe Quiédeville <rquiedeville@bearstech.com>
+	Ruben Kerkhof <ruben@rubenkerkhof.com>
 	Scott Garrett <sgarrett@technomancer.com>
 	Scott Sanders <scott@jssjr.com>
 	Sebastian Harl <sh@tokkee.org>
@@ -191,7 +201,7 @@ Licenses:
 	License: GNU General Public License
 
 	File src/apcups.c
-	Copyright © 2006-2012 Florian Forster <octo@verplant.org>
+	Copyright © 2006-2015 Florian Forster <octo@verplant.org>
 	Copyright © 2006 Anthony Gialluca <tonyabg@charter.net>
 	Copyright © 2000-2004 Kern Sibbald
 	Copyright © 1996-1999 Andre M. Hedrick <andre@suse.com>
@@ -218,6 +228,11 @@ Licenses:
 	File src/cgroups.c
 	Copyright © 2011 Michael Stapelberg <michael@stapelberg.de>
 	Copyright © 2013 Florian Forster <octo@collectd.org>
+	License: GNU General Public License
+
+	File src/chrony.c
+	Copyright © 2015-2016 Claudius M Zingerli, ZSeng
+	Partially based on Chrony's candm.h
 	License: GNU General Public License
 
 	File src/collectd-python.pod
@@ -344,8 +359,7 @@ Licenses:
 	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: GNU General Public License
 
-	Files src/virt.c
-	      src/uuid.c
+	File src/virt.c
 	Copyright © 2006-2008 Red Hat Inc.
 	License: GNU General Public License
 
@@ -555,6 +569,11 @@ Licenses:
 	Copyright © 2005, 2006 Niki W. Waibel <niki.waibel@gmx.net>
 	License: GNU General Public License
 
+	File src/uuid.c
+	Copyright © 2007 Red Hat Inc.
+	Copyright © 2015 Ruben Kerkhof
+	License: GNU General Public License
+
 	File src/varnish.c
 	Copyright © 2010 Jérôme Renard
 	Copyright © 2010 Marc Fournier
@@ -597,6 +616,14 @@ Licenses:
 	Copyright © 2013-2014 Limelight Networks, Inc.
 	License: GNU General Public License
 
+	File src/xencpu.c
+	Copyright © 2016 Pavel Rochnyak <pavel2000@ngs.ru>
+	License: GNU General Public License
+
+	File src/zone.c
+	Copyright © 2011 Mathijs Mohlmann
+	License: GNU General Public License
+
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
 	the Free Software Foundation.
@@ -611,7 +638,7 @@ Licenses:
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
 	USA.
 
-	Some files are licensed under version 2 only, while any others allow to
+	Some files are licensed under version 2 only, while any others allow one to
 	use version 2 or (at your option) any later version.
 
 On Debian systems, the complete text of the GNU General Public License,
@@ -775,8 +802,13 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	      contrib/examples/MyPlugin.pm
 	      contrib/examples/myplugin.c
 	      contrib/cussh.pl
+	      proto/collectd.proto
+	      proto/types.proto
+	      src/grpc.cc
 	      src/types.db.pod
 	      src/utils_cmd_flush.h
+	      src/utils_curl_stats.c
+	      src/utils_curl_stats.h
 	      src/daemon/utils_subst.c
 	      src/daemon/utils_subst.h
 	Copyright © 2006-2009 Sebastian Harl <sh@tokkee.org>
@@ -814,8 +846,8 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2009-2010 Sven Trenkel <collectd@semidefinite.de>
 	License: MIT License
 
-	File src/drbd.c
-	Copyright © 2014 Tim Laszlo <tim.laszlo@gmail.com>
+	File src/cpusleep.c
+	Copyright © 2016 rinigus
 	License: MIT License
 
 	Files src/collectdmon.c
@@ -827,8 +859,16 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2006-2009 Sebastian Harl <sh@tokkee.org>
 	License: MIT License
 
+	File src/drbd.c
+	Copyright © 2014 Tim Laszlo <tim.laszlo@gmail.com>
+	License: MIT License
+
 	File src/fhcount.c
 	Copyright © 2015 Jiri Tyr <jiri.tyr@gmail.com>
+	License: MIT License
+
+	File src/gps.c
+	Copyright © 2015 Nicolas JOURDEN <nicolas.jourden@laposte.net>
 	License: MIT License
 
 	File src/log_logstash.c
@@ -843,6 +883,12 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	File src/libcollectdclient/network.c
 	Copyright © 2005-2015  Florian Forster
 	Copyright © 2010 Max Henkel
+	License: MIT License
+
+	File src/lua.c
+	Copyright © 2010 Julien Ammous
+	Copyright © 2010 Florian Forster <octo@collectd.org>
+	Copyright © 2016 Ruben Kerkhof <ruben@rubenkerkhof.com>
 	License: MIT License
 
 	Other files in src/libcollectdclient/ and src/daemon/utils_random.*
@@ -865,6 +911,11 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2014 Pierre-Yves Ritschard <pyr@spootnik.org>
 	License: MIT License
 
+	File src/mqtt.c
+	Copyright © 2014 Marc Falzon <marc@baha.mu>
+	Copyright © 2014-2015 Florian octo Forster
+	License: MIT License
+
 	File src/netapp.c
 	Copyright © 2009-2010 Sven Trenkel <collectd@semidefinite.de>
 	Copyright © 2012-2013 teamix GmbH
@@ -872,11 +923,13 @@ can be found in `/usr/share/common-licenses/LGPL'.
 
 	File src/openldap.c
 	Copyright © 2011 Kimo Rosenbaum <kimor79@yahoo.com>
-	Copyright © 2014 Marc Fournier <marc.fournier@camptocamp.com>
+	Copyright © 2014-215 Marc Fournier <marc.fournier@camptocamp.com>
 	License: MIT License
 
-	File src/postgresql.c
-	Copyright © 2008-2012 Sebastian Harl <sh@tokkee.org>
+	Files src/postgresql.c
+	      src/utils_cache.c
+	      src/utils_cache.h
+	Copyright © 2008-2016 Sebastian Harl <sh@tokkee.org>
 	Copyright © 2009 Florian Forster <octo@verplant.org>
 	License: MIT Licence
 
@@ -890,6 +943,11 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2013 Florian 'octo' Forster <octo@collectd.org>
 	License: MIT License
 
+	Files src/utils_format_kairosdb.c
+	      src/utils_format_kairosdb.h
+	Copyright © 2016 Aurelien beorn Rougemont <beorn@gandi.net>
+	License: MIT License
+
 	File src/write_kafka.c
 	Copyright © 2014 Pierre-Yves Ritschard <pyr@spootnik.org>
 	License: MIT License
@@ -901,6 +959,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	File src/write_riemann.c
 	Copyright © 2012, 2013 Pierre-Yves Ritschard <pyr@spootnik.org>
 	Copyright © 2013 Florian octo Forster <octo@collectd.org>
+	Copyright © 2015-2016 Gergely Nagy <algernon@madhouse-project.org>
 	License: MIT License
 
 	File src/write_sensu.c
@@ -912,7 +971,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	License: MIT License
 
 	All other files (except otherwise listed):
-	Copyright © 2005-2015 Florian Forster <octo@verplant.org>
+	Copyright © 2005-2016 Florian Forster <octo@verplant.org>
 	License: MIT License
 
 	Permission is hereby granted, free of charge, to any person obtaining a
@@ -953,7 +1012,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2006 Alexander Wirt <formorer@formorer.de>
 
 	This program is free software; you can redistribute it and/or modify it
-	under the the terms of either:
+	under the terms of either:
 
 	a) the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 

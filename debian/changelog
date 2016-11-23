@@ -1,3 +1,91 @@
+collectd (5.6.1-2) unstable; urgency=medium
+
+  * debian/control:
+    - Add libdevstat-dev and libgeom-dev to kfreebsd build-deps, as they're
+      needed by the disk plugin. Thanks to Florian Forster for pointing this
+      out.
+    - Update "Vcs-Git" and "Vcs-Browser" fields to point to GitHub repo.
+    - Changed build-dependency libmysqlclient-dev to
+      default-libmysqlclient-dev, and mysql-server to default-mysql-server.
+    - collectd-core.deb: Add "Depends" on lsb-base, as /etc/init.d/collectd
+      requires /lib/lsb/init-functions.
+    - Remove "Multi-Arch: same" from libcollectdclient-dev, until the package
+      gets reworked to really be multi-arch ready.
+  * debian/control, debian/compat:
+    - Bump debhelper compat version to 9.
+
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 01 Nov 2016 07:32:47 +0100
+
+collectd (5.6.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - write_graphite plugin is no longer linked against libyajl. Thanks to
+      Shish for reporting this (Closes: #839771).
+    - rrdcached plugin now reconnects to daemon. Thanks to Matthias Urlichs
+      for reporting this (Closes: #657877).
+  * debian/control:
+    - Add "Multi-Arch: same" to libcollectdclient-dev, as suggested by the
+      Multiarch hinter.
+  * debian/patches:
+    - Update configure_find_lc_all.patch to reliably pick the same JVM for
+      each build, making the process reproducible.
+  * debian/rules:
+    - Disable building the barometer, drbd, fhcount and ipc plugins on
+      kfreebsd architectures, as they are Linux-only.
+    - Run the test suite using dh_auto_test.
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 09 Oct 2016 21:42:29 +0200
+
+collectd (5.6.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    - The disk plugin now supports FreeBSD; enable it in debian/rules.
+    - Suppress spammy debug messages; thanks to Antonio Russo for reporting
+      this (Closes: #797687).
+    New plugins:
+    - Chrony daemon statistics: chrony
+    - CPU sleep: Time spent in suspend: cpusleep (Linux-specific)
+    - Monitor gps related data through gpsd: gps
+    - Send or receive values over the network using the gRPC framework: grpc
+      (disabled in Debian because of missing dependencies)
+    - Lua interpreter embedded into collectd: lua
+    - Publishes and subscribes to MQTT topics: mqtt
+    - Submit notifications as passive check results to a local nagios
+      instance: notify_nagios
+    - XEN Hypervisor CPU stats: xencpu
+    - Solaris zone metrics: zone (disabled in Debian; Solaris specific)
+  * debian/rules:
+    - Disable cpusleep plugin on non-Linux.
+    - Disable xencpu plugin except on amd64, arm64, armhf, and i386.
+    - Disable the zone plugin.
+    - Do not cripple include files in collectd-dev when patching them; thanks
+      to Scott Talbert for reporting this (Closes: #827759).
+  * debian/control:
+    - Build-depend on libgps-dev: Needed by the new gps plugin.
+    - Build-depend on liblua5.3-dev: Needed by the new lua plugin.
+    - Build-depend on libmosquitto-dev: Needed by the new mqtt plugin.
+    - Build-depend on libxen-dev [amd64 arm64 armhf i386]: Needed by the new
+      xencpu plugin.
+    - Build-depend on libriemann-client-dev, riemann-c-client: Now needed by
+      the riemann plugin.
+  * debian/patches:
+    - Removed bts832577-gcry-control.patch; included upstream.
+    - Removed gcc6.patch; included upstream.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sat, 24 Sep 2016 15:19:10 +0200
+
+collectd (5.5.2-2) unstable; urgency=low
+
+  * debian/changelog:
+    - Set urgency back to low.
+  * debian/control:
+    - Update GCrypt's package name to libgcrypt20-dev.
+  * debian/patches:
+    - Added configure_find_lc_all.patch: forcing locale in configure script
+      will hopefully fix build reproducibility on non-amd64 plafroms.
+
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Sep 2016 14:01:55 +0200
+
 collectd (5.5.2-1~bpo8+1) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.

@@ -3,28 +3,33 @@ Section: utils
 Priority: optional
 Maintainer: Sebastian Harl <tokkee@debian.org>
 Uploaders: Marc Fournier <marc@bl.uem.li>
-Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
+Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh-systemd (>= 1.5), dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
+ default-libmysqlclient-dev,
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
  kfreebsd-kernel-headers [kfreebsd-any],
  libatasmart-dev [linux-any],
  libcap-dev [linux-any],
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
+ libdevstat-dev [kfreebsd-any],
  libdbi0-dev,
  libesmtp-dev,
  libganglia1-dev (>= 3) [linux-any],
- libgcrypt11-dev,
+ libgeom-dev [kfreebsd-any],
+ libgcrypt20-dev,
  libglib2.0-dev,
+ libgps-dev,
  libhiredis-dev,
  libi2c-dev,
  libkvm-dev [kfreebsd-any],
  libldap2-dev,
+ liblua5.3-dev,
  liblvm2-dev [linux-any],
  libmemcached-dev,
  libmodbus-dev,
+ libmosquitto-dev,
  libmnl-dev [linux-any],
- libmysqlclient-dev,
  libnotify-dev,
  libopenipmi-dev,
  liboping-dev (>= 0.3.3),
@@ -33,8 +38,9 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
  libperl-dev,
  libpq-dev,
  libprotobuf-c-dev,
- librdkafka-dev,
  librabbitmq-dev,
+ librdkafka-dev,
+ libriemann-client-dev,
  librrd-dev (>= 1.4~),
  libsensors4-dev [linux-any],
  libsigrok-dev (>= 0.2~) [linux-any],
@@ -47,30 +53,33 @@ Build-Depends: debhelper (>= 7.0.50~), dpkg-dev (>= 1.14.10), po-debconf, dh-sys
  libupsclient-dev | libupsclient1-dev,
  libvarnishapi-dev,
  libvirt-dev (>= 0.4.0-6) [linux-any],
+ libxen-dev [amd64 arm64 armhf i386],
  libxml2-dev,
  libyajl-dev,
  linux-libc-dev (>= 2.6.25-4) [linux-any] | linux-libc-dev (<< 2.6.25-1) [linux-any],
  default-jdk [!hppa !sparc !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
- python-dev
+ python-dev,
+ riemann-c-client
 Build-Conflicts: libpthread-dev, libhal-dev
 Standards-Version: 3.9.8
 Homepage: http://collectd.org/
-Vcs-Git: git://git.tokkee.org/pkg-collectd.git
-Vcs-Browser: http://git.tokkee.org/?p=pkg-collectd.git
+Vcs-Git: https://github.com/collectd/pkg-debian.git
+Vcs-Browser: https://github.com/collectd/pkg-debian.git
 
 Package: collectd-core
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base
 Recommends: perl, rrdtool
 Suggests: collectd-dev,
 # collection.cgi / collection3 dependencies
  librrds-perl, liburi-perl, libhtml-parser-perl, libregexp-common-perl,
  libconfig-general-perl, httpd-cgi,
 # services providing data that may be collected by collectd
- apache2, apcupsd, bind9, ceph, hddtemp, iptables, ipvsadm, lm-sensors, mbmon,
- memcached, mysql-server | virtual-mysql-server, nginx, notification-daemon, nut, openvpn, olsrd,
- pdns-server, postgresql, redis-server, slapd, time-daemon, varnish, zookeeper,
+ apache2, apcupsd, bind9, ceph, chrony, default-mysql-server, gpsd, hddtemp,
+ iptables, ipvsadm, lm-sensors, mbmon, memcached, nginx, notification-daemon,
+ nut, openvpn, olsrd, pdns-server, postgresql, redis-server, slapd,
+ time-daemon, varnish, zookeeper,
  ${shlibs:Suggests}, default-jre-headless
 Replaces: collectd (<< 4.8.2-1~)
 Description: statistics collection and monitoring daemon (core system)
@@ -100,10 +109,12 @@ Description: statistics collection and monitoring daemon (core system)
    * bind9 name-server and zone statistics: bind
    * Ceph distributed storage system statitics: ceph
    * CGroups resource usage: cgroups
+   * Chrony daemon statistics: Local clock drift, offset to peers: chrony
    * connection tracking table size: conntrack
    * number of context switches done by the operating system: contextswitch
    * CPU utilization: cpu
    * CPU frequency: cpufreq
+   * CPU sleep: Time spent in suspend : cpusleep
    * output to comma separated values (CSV) files: csv
    * parse statistics from websites: curl
    * parse JSON files: curl_json
@@ -119,6 +130,7 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of open file handles: fhcount
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
+   * Monitor gps related data through gpsd: gps
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
@@ -132,6 +144,7 @@ Description: statistics collection and monitoring daemon (core system)
    * system load averages: load
    * logging to files, STDOUT and STDERR: logfile
    * logging in logstash's JSON event format: log_logstash
+   * embedded Lua interpreter: lua
    * Logical Volume Manager usage: lvm
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
@@ -140,6 +153,7 @@ Description: statistics collection and monitoring daemon (core system)
    * memory usage: memory
    * read values from Modbus/TCP enabled devices: modbus
    * statistics from mon.itor.us: Monitorus (Perl based plugin)
+   * Publishes and subscribes to MQTT topics: mqtt
    * multimeter statistics: multimeter
    * MySQL statistics provided by MySQL's "show status" command: mysql
    * detailed Linux network interface and routing statistics: netlink
@@ -148,6 +162,7 @@ Description: statistics collection and monitoring daemon (core system)
    * Nginx (a HTTP and E-Mail server/proxy) statistics: nginx
    * send desktop notifications to a notification daemon: notify_desktop
    * send notification E-mails: notify_email
+   * send notifications to nagios: notify_nagios
    * NTP daemon's local clock drift, offset to peers, etc.: ntpd
    * UPS information: nut
    * Optimized Link State Routing daemon statistics: olsrd
@@ -200,6 +215,7 @@ Description: statistics collection and monitoring daemon (core system)
    * send collected values to a Riemann server: write_riemann
    * send collected values to a Sensu client: write_sensu
    * send collected values to an OpenTSDB server: write_tsdb
+   * XEN Hypervisor CPU stats: xencpu
    * ZFS's Adaptive Replacement Cache statistics: zfs_arc
    * data from Zookeeper's MNTR command: zookeeper
 
@@ -258,7 +274,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd-core (>= ${source:Version}), collectd-core (<< 5.6~),
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 5.7~),
  ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and

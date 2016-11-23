@@ -3,14 +3,15 @@ Description: Let the example plugin include the core headers from
 /usr/include/collectd/core.
 --- a/contrib/examples/myplugin.c
 +++ b/contrib/examples/myplugin.c
-@@ -38,9 +38,9 @@
+@@ -38,10 +38,10 @@
  
  #endif /* ! HAVE_CONFIG */
  
 -#include <collectd/collectd.h>
++#include <collectd/core/daemon/collectd.h>
+ 
 -#include <collectd/common.h>
 -#include <collectd/plugin.h>
-+#include <collectd/core/daemon/collectd.h>
 +#include <collectd/core/daemon/common.h>
 +#include <collectd/core/daemon/plugin.h>
  
