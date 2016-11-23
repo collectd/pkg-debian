@@ -4,6 +4,7 @@ collectd (5.6.1-2~bpo8+1) UNRELEASED; urgency=medium
   * debian/control:
     - Revert mysql-related package names back to libmysqlclient-dev and
       mysql-server.
+    - Set lua plugin build-dependency to version available in jessie.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Nov 2016 22:33:13 +0100
 
