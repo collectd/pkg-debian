@@ -1,3 +1,9 @@
+collectd (5.7.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Marc Fournier <marc@bl.uem.li>  Tue, 13 Dec 2016 21:27:06 +0100
+
 collectd (5.6.1-2) unstable; urgency=medium
 
   * debian/control:
