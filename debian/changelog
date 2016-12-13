@@ -1,6 +1,19 @@
 collectd (5.7.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+    New plugins:
+    - DPDK interface statistics: dpdkstat
+    - Report the number of used and free hugepages: hugepages (Linux-specific)
+    - Intel Resource Director Technology statistics: intel_rdt (disabled in
+      Debian because of missing dependencies)
+    - Publish values in a Prometheus-compatible format: write_prometheus
+  * debian/rules:
+    - Disable hugepages plugin on non-Linux.
+    - Disable the intel_rdt plugin.
+  * debian/control:
+    - Build-depend on libdpdk-dev: Needed by the new dpdkstat plugin.
+    - Build-depend on libmicrohttpd-dev: Needed by the new write_prometheus
+      plugin.
 
  -- Marc Fournier <marc@bl.uem.li>  Tue, 13 Dec 2016 21:27:06 +0100
 

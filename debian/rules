@@ -88,6 +88,9 @@ confflags += --disable-xmms
 # protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
 confflags += --disable-grpc
 
+# libqpos is required for the intel_rdt plugin.
+confflags += --disable-intel_rdt
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
@@ -97,6 +100,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-drbd \
 		--disable-ethstat \
 		--disable-fhcount \
+		--disable-hugepages \
 		--disable-ipc \
 		--disable-iptables \
 		--disable-ipvs \
