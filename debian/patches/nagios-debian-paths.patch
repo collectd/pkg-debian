@@ -1,0 +1,24 @@
+Description: Use paths for nagios-nrpe-server & monitoring-plugins Debian packages.
+Author: Bas Couwenberg <sebastic@debian.org>
+
+--- a/contrib/exec-nagios.conf
++++ b/contrib/exec-nagios.conf
+@@ -1,15 +1,15 @@
+ # Run `perldoc exec-nagios.px' for details on this config file.
+ 
+-NRPEConfig /etc/nrpe.cfg
++NRPEConfig /etc/nagios/nrpe.cfg
+ 
+ Interval 300
+ 
+-<Script /usr/lib/nagios/check_tcp>
++<Script /usr/lib/nagios/plugins/check_tcp>
+ 	Arguments -H alice -p 22
+ 	Type delay
+ </Script>
+ 
+-<Script /usr/lib/nagios/check_dns>
++<Script /usr/lib/nagios/plugins/check_dns>
+ 	Arguments -H alice
+ 	Type delay
+ </Script>

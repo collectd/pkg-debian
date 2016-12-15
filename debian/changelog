@@ -15,7 +15,9 @@ collectd (5.7.0-1) UNRELEASED; urgency=medium
     - Build-depend on libmicrohttpd-dev: Needed by the new write_prometheus
       plugin.
   * debian/patches:
-    Removed configure_find_lc_all.patch; included upstream.
+    - Removed configure_find_lc_all.patch; included upstream.
+    - Added nagios-debian-paths.patch, to use nagios-nrpe-server &
+      monitoring-plugin paths for Debian. Thanks to Bas Couwenberg.
 
  -- Marc Fournier <marc@bl.uem.li>  Tue, 13 Dec 2016 21:27:06 +0100
 
