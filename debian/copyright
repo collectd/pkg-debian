@@ -323,6 +323,7 @@ Licenses:
 	Copyright © 2005-2006 Vincent Stehlé <vincent.stehle@free.fr>
 	Copyright © 2006-2007 Florian Forster <octo@verplant.org>
 	Copyright © 2008 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2014 Carnegie Mellon University
 	License: GNU General Public License
 
 	File src/ipc.c
@@ -804,15 +805,18 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	      contrib/cussh.pl
 	      proto/collectd.proto
 	      proto/types.proto
-	      src/grpc.cc
 	      src/types.db.pod
 	      src/utils_cmd_flush.h
 	      src/utils_curl_stats.c
 	      src/utils_curl_stats.h
 	      src/daemon/utils_subst.c
 	      src/daemon/utils_subst.h
-	Copyright © 2006-2009 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2006-2016 Sebastian Harl <sh@tokkee.org>
 	License: MIT License
+
+	File src/grpc.cc
+	Copyright © 2015-2016 Sebastian Harl <sh@tokkee.org>
+	Copyright © 2016 Florian Forster <octo@verplant.org>
 
 	File contrib/collection.cgi
 	Copyright © 2006-2010 Florian Forster <octo@collectd.org>
@@ -825,17 +829,23 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2010-2012 Florian Forster <octo@verplant.org>
 	License: MIT License
 
+	File src/battery_statefs.c
+	Copyright © 2016 rinigus
+	License: MIT License
+
 	Files src/collectd-perl.pod
 	      src/logfile.c
 	      src/match_regex.c
 	      src/nginx.c
 	      src/scanner.l
 	      src/utils_cmd_flush.c
+	      src/utils_cmds.c
+	      src/utils_cmds.h
 	      src/daemon/utils_complain.c
 	      src/daemon/utils_complain.h
 	      src/vserver.c
 	Copyright © 2006-2013 Florian Forster
-	Copyright © 2006-2009 Sebastian Harl
+	Copyright © 2006-2016 Sebastian Harl
 	License: MIT License
 
 	Files src/collectd-python.pod
@@ -863,12 +873,24 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2014 Tim Laszlo <tim.laszlo@gmail.com>
 	License: MIT License
 
+	File src/dpdkstat.c
+	Copyright © 2016 Intel Corporation
+	License: MIT License
+
 	File src/fhcount.c
 	Copyright © 2015 Jiri Tyr <jiri.tyr@gmail.com>
 	License: MIT License
 
 	File src/gps.c
 	Copyright © 2015 Nicolas JOURDEN <nicolas.jourden@laposte.net>
+	License: MIT License
+
+	File src/hugepages.c
+	Copyright © 2016 Intel Corporation
+	License: MIT License
+
+	File src/intel_rdt.c
+	Copyright © 2016 Intel Corporation
 	License: MIT License
 
 	File src/log_logstash.c
@@ -895,9 +917,9 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 2005-2013 Florian octo Forster <octo@verplant.org>
 	License: MIT License
 
-	Files src/daemon/utils_tail.c
-	      src/daemon/utils_tail_match.c
-	      src/daemon/utils_tail_match.h
+	Files src/utils_tail.c
+	      src/utils_tail_match.c
+	      src/utils_tail_match.h
 	Copyright © 2007-2008 C-Ware, Inc.
 	Copyright © 2008 Florian Forster
 	License: MIT License
@@ -941,6 +963,12 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	      src/utils_latency.c
 	      src/utils_latency.h
 	Copyright © 2013 Florian 'octo' Forster <octo@collectd.org>
+	License: MIT License
+
+	Files src/utils_latency_config.c
+	      src/utils_latency_config.h
+	Copyright © 2013-2016 Florian 'octo' Forster <octo@collectd.org>
+	Copyright © 2016 Pavel Rochnyak <pavel2000@ngs.ru>
 	License: MIT License
 
 	Files src/utils_format_kairosdb.c
