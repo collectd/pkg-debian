@@ -14,6 +14,8 @@ collectd (5.7.0-1) UNRELEASED; urgency=medium
     - Build-depend on libdpdk-dev: Needed by the new dpdkstat plugin.
     - Build-depend on libmicrohttpd-dev: Needed by the new write_prometheus
       plugin.
+    - Suggests icinga instead of nagios packages (nagios3 removed from
+      Debian. Closes: #846859). Thanks to Bas Couwenberg.
   * debian/patches:
     - Removed configure_find_lc_all.patch; included upstream.
     - Added nagios-debian-paths.patch, to use nagios-nrpe-server &

@@ -244,7 +244,7 @@ Package: collectd-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: collectd
-Suggests: nagios3 | nagios2
+Suggests: icinga
 Replaces: collectd (<< 4.6.1-1~)
 Description: statistics collection and monitoring daemon (utilities)
  collectd is a small daemon which collects system information periodically and
