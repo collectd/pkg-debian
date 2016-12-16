@@ -125,6 +125,7 @@ Description: statistics collection and monitoring daemon (core system)
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
+   * DPDK interface statistics: dpdkstat
    * Distributed Replicated Block Device status: drbd
    * E-Mail statistics (count, traffic, spam scores and checks): email
    * amount of available entropy: entropy
@@ -136,6 +137,7 @@ Description: statistics collection and monitoring daemon (core system)
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
+   * Report the number of used and free hugepages: hugepages
    * network traffic: interface
    * IPC statistics: ipc
    * IPMI sensors information: ipmi
@@ -213,6 +215,7 @@ Description: statistics collection and monitoring daemon (core system)
    * send collected values to a web-server: write_http
    * send collected values to an Apache Kafka message broker: write_kafka
    * send collected values to the logging subsystem: write_log
+   * publish collected values as a Prometheus exporter: write_prometheus
    * send collected values to a Redis server: write_redis
    * send collected values to a Riemann server: write_riemann
    * send collected values to a Sensu client: write_sensu
