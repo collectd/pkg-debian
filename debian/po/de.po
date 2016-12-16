@@ -109,10 +109,10 @@ msgstr ""
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
 "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
-"<http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
+"<https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 "Siehe »/usr/share/doc/collectd-core/NEWS.Debian.gz« und das collectd Wiki "
-"unter <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
+"unter <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
 "für Details."
 
 #. Type: boolean
