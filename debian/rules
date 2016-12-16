@@ -267,7 +267,7 @@ binary-indep: install-indep
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -i ChangeLog
-	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -i debian/README.Debian AUTHORS README
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
 	dh_compress -i -Xexamples/
@@ -281,7 +281,7 @@ binary-arch: build install-arch
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
-	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -a debian/README.Debian AUTHORS README
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
