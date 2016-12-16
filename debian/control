@@ -14,6 +14,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libcurl4-gnutls-dev (>= 7.18.2-5) | libcurl4-gnutls-dev (<= 7.18.2-1) | libcurl3-gnutls-dev,
  libdevstat-dev [kfreebsd-any],
  libdbi0-dev,
+ libdpdk-dev,
  libesmtp-dev,
  libganglia1-dev (>= 3) [linux-any],
  libgeom-dev [kfreebsd-any],
@@ -27,6 +28,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  liblua5.3-dev,
  liblvm2-dev [linux-any],
  libmemcached-dev,
+ libmicrohttpd-dev,
  libmodbus-dev,
  libmosquitto-dev,
  libmnl-dev [linux-any],
@@ -63,7 +65,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  riemann-c-client
 Build-Conflicts: libpthread-dev, libhal-dev
 Standards-Version: 3.9.8
-Homepage: http://collectd.org/
+Homepage: https://collectd.org/
 Vcs-Git: https://github.com/collectd/pkg-debian.git
 Vcs-Browser: https://github.com/collectd/pkg-debian.git
 
@@ -123,6 +125,7 @@ Description: statistics collection and monitoring daemon (core system)
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
+   * DPDK interface statistics: dpdkstat
    * Distributed Replicated Block Device status: drbd
    * E-Mail statistics (count, traffic, spam scores and checks): email
    * amount of available entropy: entropy
@@ -134,6 +137,7 @@ Description: statistics collection and monitoring daemon (core system)
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
+   * Report the number of used and free hugepages: hugepages
    * network traffic: interface
    * IPC statistics: ipc
    * IPMI sensors information: ipmi
@@ -211,6 +215,7 @@ Description: statistics collection and monitoring daemon (core system)
    * send collected values to a web-server: write_http
    * send collected values to an Apache Kafka message broker: write_kafka
    * send collected values to the logging subsystem: write_log
+   * publish collected values as a Prometheus exporter: write_prometheus
    * send collected values to a Redis server: write_redis
    * send collected values to a Riemann server: write_riemann
    * send collected values to a Sensu client: write_sensu
@@ -242,7 +247,7 @@ Package: collectd-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: collectd
-Suggests: nagios3 | nagios2
+Suggests: icinga
 Replaces: collectd (<< 4.6.1-1~)
 Description: statistics collection and monitoring daemon (utilities)
  collectd is a small daemon which collects system information periodically and
@@ -274,7 +279,7 @@ Description: statistics collection and monitoring daemon (debugging symbols)
 
 Package: collectd-dev
 Architecture: all
-Depends: collectd-core (>= ${source:Version}), collectd-core (<< 5.7~),
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 5.8~),
  ${misc:Depends}
 Description: statistics collection and monitoring daemon (development files)
  collectd is a small daemon which collects system information periodically and

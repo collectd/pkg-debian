@@ -2,7 +2,7 @@ collectd (5.1.0-1) unstable; urgency=low
 
   Version 5 of collectd introduced a couple of backward-incompatible changes.
   The full list of changes is documented in the collectd wiki found at
-  <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>.
+  <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide>.
 
   In a client / server setups it's generally advised to upgrade the server
   first. By using the v5_upgrade target plugin, the v5 server will be able to
@@ -81,7 +81,7 @@ collectd (4.0.2-1) experimental; urgency=low
   required information are automatically loaded by collectd. You only need to
   load plugins which are supposed to collect data locally.
 
-  See also: http://collectd.org/migrate-v3-v4.shtml
+  See also: https://collectd.org/migrate-v3-v4.shtml
 
  -- Sebastian Harl <sh@tokkee.org>  Thu,  7 Jun 2007 17:36:58 +0200
 

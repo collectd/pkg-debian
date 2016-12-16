@@ -89,8 +89,8 @@ msgstr "Rozloženie súborov RRD, ktoré vytvára collectd sa výrazne zmenilo o
 #. Description
 #: ../collectd-core.templates:3001
 #: ../collectd-core.templates:4001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
-msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian.gz a na wiki collectd na adrese <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide>"
+msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
+msgstr "Pozri podrobnosti v /usr/share/doc/collectd-core/NEWS.Debian.gz a na wiki collectd na adrese <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide>"
 
 #. Type: boolean
 #. Description

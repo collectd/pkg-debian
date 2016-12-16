@@ -1,7 +1,7 @@
 #! /bin/bash
 #
 # collectd - start and stop the statistics collection daemon
-# http://collectd.org/
+# https://collectd.org/
 #
 # Copyright (C) 2005-2006 Florian Forster <octo@verplant.org>
 # Copyright (C) 2006-2009 Sebastian Harl <tokkee@debian.org>
