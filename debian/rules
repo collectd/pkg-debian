@@ -158,9 +158,10 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-java
 endif
 
-# This plugin is Intel-hardware specific.
+# These plugins are Intel-hardware specific.
 ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-dpdkstat \
 		--disable-turbostat
 endif
 
