@@ -1,3 +1,10 @@
+collectd (5.7.0-3) unstable; urgency=medium
+
+  * debian/control: Skip libdpdk-dev build dependency on non-Intel
+    architectures.
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 18 Dec 2016 22:08:27 +0100
+
 collectd (5.7.0-2) unstable; urgency=medium
 
   * debian/patches: add dpdkstat-portable-format-string.patch, fixing the
