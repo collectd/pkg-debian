@@ -1,3 +1,11 @@
+collectd (5.7.0-2) unstable; urgency=medium
+
+  * debian/patches: add dpdkstat-portable-format-string.patch, fixing the
+    build on i386.
+  * debian/rules: Disable dpdkstat plugin on non-Intel architectures.
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 18 Dec 2016 17:05:10 +0100
+
 collectd (5.7.0-1) unstable; urgency=medium
 
   * New upstream release.
