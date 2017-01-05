@@ -94,11 +94,23 @@ confflags += --disable-write_kafka
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
+# protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
+confflags += --disable-grpc
+
+# libqpos is required for the intel_rdt plugin.
+confflags += --disable-intel_rdt
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-barometer \
 		--disable-cgroups \
+		--disable-cpusleep \
+		--disable-drbd \
 		--disable-ethstat \
+		--disable-fhcount \
+		--disable-hugepages \
+		--disable-ipc \
 		--disable-iptables \
 		--disable-ipvs \
 		--disable-lvm \
@@ -120,6 +132,10 @@ ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-pf
 endif
 
+# This plugin is Solaris-specific.
+confflags += \
+		--disable-zone
+
 # These plugins have not been ported to FreeBSD yet.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	# Work-around an incomplete check for kvm functionality
@@ -131,7 +147,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-conntrack \
 		--disable-contextswitch \
 		--disable-cpufreq \
-		--disable-disk \
 		--disable-entropy \
 		--disable-fscache \
 		--disable-irq \
@@ -152,10 +167,17 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-java
 endif
 
-# This plugin is Intel-hardware specific.
+# These plugins are Intel-hardware specific.
 ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-dpdkstat \
 		--disable-turbostat
+endif
+
+# This plugin is x86 and arm specific.
+ifeq (,$(filter amd64 arm64 armhf i386, $(DEB_BUILD_ARCH)))
+	confflags += \
+		--disable-xencpu
 endif
 
 # libatasmart isn't available on these platforms.
@@ -192,6 +214,7 @@ build-stamp:
 		|| ( status=$$?; cat config.log; exit $$status )
 
 	$(MAKE)
+	dh_auto_test
 	perl ./debian/bin/check_plugins.pl
 	
 	touch build-stamp
@@ -226,7 +249,7 @@ install-indep:
 			libname=$$(basename $$lib); \
 			fullpath=$$(echo $$lib | sed -r -e 's,^\./,collectd/,'); \
 			for dir in $$(find . -mindepth 1 -type d); do \
-				sed -r -i -e "s,(include\s+)\".*$$libname\",\1\"$$fullpath\"," $$dir/*.h; \
+				sed -r -i -e "s,(include\s+)\".*\<$$libname\",\1\"$$fullpath\"," $$dir/*.h; \
 			done; \
 		done )
 
@@ -254,7 +277,7 @@ binary-indep: install-indep
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -i ChangeLog
-	dh_installdocs -A -i debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -i debian/README.Debian AUTHORS README
 	dh_installexamples -i contrib/examples/myplugin.c \
 		contrib/examples/MyPlugin.pm
 	dh_compress -i -Xexamples/
@@ -268,7 +291,7 @@ binary-arch: build install-arch
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
-	dh_installdocs -A -a debian/README.Debian AUTHORS README TODO
+	dh_installdocs -A -a debian/README.Debian AUTHORS README
 	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
