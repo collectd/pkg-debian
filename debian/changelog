@@ -1,3 +1,9 @@
+collectd (5.7.0-3~bpo8+1) UNRELEASED; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Marc Fournier <marc@bl.uem.li>  Thu, 05 Jan 2017 21:46:24 +0100
+
 collectd (5.7.0-3) unstable; urgency=medium
 
   * debian/control: Skip libdpdk-dev build dependency on non-Intel
