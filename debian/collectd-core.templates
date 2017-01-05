@@ -35,7 +35,7 @@ _Description: Layout of RRD files has changed in version 5.0
  which is currently not the case. You need to perform the migration manually.
  .
  See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at
- <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
+ <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
 
 Template: collectd/auto-migrate-4-5
 Type: boolean
@@ -50,7 +50,7 @@ _Description: Automatically try to migrate your RRD files?
  experimental, though. Do not expect it to work in all cases.
  .
  See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at
- <http://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
+ <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
 
 Template: collectd/postrm_purge_data
 Type: boolean

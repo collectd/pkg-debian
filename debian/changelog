@@ -1,3 +1,43 @@
+collectd (5.7.0-3) unstable; urgency=medium
+
+  * debian/control: Skip libdpdk-dev build dependency on non-Intel
+    architectures.
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 18 Dec 2016 22:08:27 +0100
+
+collectd (5.7.0-2) unstable; urgency=medium
+
+  * debian/patches: add dpdkstat-portable-format-string.patch, fixing the
+    build on i386.
+  * debian/rules: Disable dpdkstat plugin on non-Intel architectures.
+
+ -- Marc Fournier <marc@bl.uem.li>  Sun, 18 Dec 2016 17:05:10 +0100
+
+collectd (5.7.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    New plugins:
+    - DPDK interface statistics: dpdkstat
+    - Report the number of used and free hugepages: hugepages (Linux-specific)
+    - Intel Resource Director Technology statistics: intel_rdt (disabled in
+      Debian because of missing dependencies)
+    - Publish values in a Prometheus-compatible format: write_prometheus
+  * debian/rules:
+    - Disable hugepages plugin on non-Linux.
+    - Disable the intel_rdt plugin.
+  * debian/control:
+    - Build-depend on libdpdk-dev: Needed by the new dpdkstat plugin.
+    - Build-depend on libmicrohttpd-dev: Needed by the new write_prometheus
+      plugin.
+    - Suggests icinga instead of nagios packages (nagios3 removed from
+      Debian. Closes: #846859). Thanks to Bas Couwenberg.
+  * debian/patches:
+    - Removed configure_find_lc_all.patch; included upstream.
+    - Added nagios-debian-paths.patch, to use nagios-nrpe-server &
+      monitoring-plugin paths for Debian. Thanks to Bas Couwenberg.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 16 Dec 2016 22:11:21 +0100
+
 collectd (5.6.1-2~bpo8+1) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.

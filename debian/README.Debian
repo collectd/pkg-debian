@@ -113,7 +113,7 @@ Building your own plugins:
   appropriate collectd-<extension>(5) manual page for details.
 
 - If you want to contribute plugins to the official distribution you should
-  read http://collectd.org/dev-info.shtml.
+  read https://collectd.org/dev-info.shtml.
 
 - If you want to build C plugins for your personal use only simply install the
   collectd-dev package and use /usr/share/doc/collectd-dev/examples/myplugin.c
