@@ -7,6 +7,8 @@ collectd (5.7.0-3~bpo7+1) UNRELEASED; urgency=high
     - Set lua plugin build-dependency to version available in wheezy.
     - Disable dpdkstat plugin, which build dependencies aren't available in
       wheezy.
+    - Revert GCrypt's package name to version available in wheezy
+      (libgcrypt11-dev).
 
  -- Marc Fournier <marc@bl.uem.li>  Thu, 05 Jan 2017 22:24:38 +0100
 
