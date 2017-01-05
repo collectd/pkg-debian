@@ -226,7 +226,8 @@ Description: statistics collection and monitoring daemon (core system)
 
 Package: collectd
 Architecture: any
-Depends: collectd-core, ${shlibs:Depends}, ${misc:Depends}
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 6~),
+ ${shlibs:Depends}, ${misc:Depends}
 Recommends: ${shlibs:Recommends}, default-jre-headless
 Description: statistics collection and monitoring daemon
  collectd is a small daemon which collects system information periodically and
