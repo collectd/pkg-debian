@@ -67,6 +67,9 @@ confflags += --disable-tape
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
 
+# CLOCK_BOOTTIME from libc post-2.13 is required for the cpusleep plugin
+confflags += --disable-cpusleep
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 

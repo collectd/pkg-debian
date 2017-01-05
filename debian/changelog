@@ -14,6 +14,9 @@ collectd (5.7.0-3~bpo7+1) UNRELEASED; urgency=high
       wheezy.
     - Disable write_riemann plugin, which build dependencies aren't available
       in wheezy.
+  * debian/rules:
+    - Disable cpusleep plugin, which depends on a more recent libc version
+      than the one available in wheezy.
 
  -- Marc Fournier <marc@bl.uem.li>  Thu, 05 Jan 2017 22:24:38 +0100
 
