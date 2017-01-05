@@ -1,11 +1,11 @@
-collectd (5.7.0-3~bpo8+1) UNRELEASED; urgency=medium
+collectd (5.7.0-3~bpo8+1) jessie-backports; urgency=medium
 
   * Rebuild for jessie-backports.
   * debian/control, debian/rules:
     - Disable dpdkstat plugin, which build dependencies aren't available in
       jessie.
 
- -- Marc Fournier <marc@bl.uem.li>  Thu, 05 Jan 2017 21:46:24 +0100
+ -- Marc Fournier <marc@bl.uem.li>  Thu, 05 Jan 2017 22:04:48 +0100
 
 collectd (5.7.0-3) unstable; urgency=medium
 
