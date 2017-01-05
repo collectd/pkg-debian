@@ -88,6 +88,9 @@ confflags += --disable-turbostat
 # libmongoc is required for the write_mongodb plugin.
 confflags += --disable-write_mongodb
 
+# libriemann-client0 is required for the write_riemann plugin.
+confflags += --disable-write_riemann
+
 # librdkafka is required for the write_kafka plugin.
 confflags += --disable-write_kafka
 
