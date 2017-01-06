@@ -67,6 +67,14 @@ Standards-Version: 3.9.8
 Homepage: https://collectd.org/
 Vcs-Git: https://github.com/collectd/pkg-debian.git
 Vcs-Browser: https://github.com/collectd/pkg-debian.git
+Package-List:
+ collectd deb utils optional arch=any
+ collectd-core deb utils optional arch=any
+ collectd-dbg deb debug extra arch=any
+ collectd-dev deb utils optional arch=all
+ collectd-utils deb utils optional arch=any
+ libcollectdclient-dev deb libdevel optional arch=any
+ libcollectdclient1 deb libs optional arch=any
 
 Package: collectd-core
 Architecture: any
