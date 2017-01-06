@@ -1,3 +1,10 @@
+collectd (5.7.0-3~bpo7+2) wheezy-backports-sloppy; urgency=high
+
+  * debian/control: Add a Package-List entry, required for source-only
+    uploads to wheezy.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 06 Jan 2017 09:06:42 +0100
+
 collectd (5.7.0-3~bpo7+1) wheezy-backports-sloppy; urgency=high
 
   * Rebuild for wheezy-backports-sloopy.
