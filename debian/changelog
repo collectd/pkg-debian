@@ -1,3 +1,16 @@
+collectd (5.7.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches:
+    - drop dpdkstat-portable-format-string.patch, included upstream.
+    - add mqtt_resource_leak.patch, fixing a connection leak.
+    - add mqtt_invalid_symbols.patch, stripping out invalid characters from
+      MQTT topic names.
+    - add dpdkstat_goto_label.patch, fixing a small mistake which prevented
+      the dpdkstat from building.
+
+ -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 20:45:34 +0100
+
 collectd (5.7.0-3) unstable; urgency=medium
 
   * debian/control: Skip libdpdk-dev build dependency on non-Intel

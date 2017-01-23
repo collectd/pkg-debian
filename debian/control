@@ -42,7 +42,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libprotobuf-c-dev,
  librabbitmq-dev,
  librdkafka-dev,
- libriemann-client-dev,
+ libriemann-client-dev (>= 1.6.0),
  librrd-dev (>= 1.4~),
  libsensors4-dev [linux-any],
  libsigrok-dev (>= 0.2~) [linux-any],
@@ -226,7 +226,8 @@ Description: statistics collection and monitoring daemon (core system)
 
 Package: collectd
 Architecture: any
-Depends: collectd-core, ${shlibs:Depends}, ${misc:Depends}
+Depends: collectd-core (>= ${source:Version}), collectd-core (<< 6~),
+ ${shlibs:Depends}, ${misc:Depends}
 Recommends: ${shlibs:Recommends}, default-jre-headless
 Description: statistics collection and monitoring daemon
  collectd is a small daemon which collects system information periodically and
