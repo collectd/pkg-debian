@@ -4,3 +4,4 @@ myplugin_includes.patch
 nagios-debian-paths.patch
 mqtt_resource_leak.patch
 mqtt_invalid_symbols.patch
+dpdkstat_goto_label.patch

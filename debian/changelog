@@ -6,6 +6,8 @@ collectd (5.7.1-1) UNRELEASED; urgency=medium
     - add mqtt_resource_leak.patch, fixing a connection leak.
     - add mqtt_invalid_symbols.patch, stripping out invalid characters from
       MQTT topic names.
+    - add dpdkstat_goto_label.patch, fixing a small mistake which prevented
+      the dpdkstat from building.
 
  -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 09:23:07 +0100
 
