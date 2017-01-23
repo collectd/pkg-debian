@@ -1,3 +1,9 @@
+collectd (5.7.1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 09:23:07 +0100
+
 collectd (5.7.0-3) unstable; urgency=medium
 
   * debian/control: Skip libdpdk-dev build dependency on non-Intel
