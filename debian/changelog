@@ -1,8 +1,9 @@
 collectd (5.7.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
-  * debian/patches: drop dpdkstat-portable-format-string.patch, included
-    upstream.
+  * debian/patches:
+    - drop dpdkstat-portable-format-string.patch, included upstream.
+    - add mqtt_resource_leak.patch, fixing a connection leak.
 
  -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 09:23:07 +0100
 
