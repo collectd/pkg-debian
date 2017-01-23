@@ -1,4 +1,4 @@
-collectd (5.7.1-1) UNRELEASED; urgency=medium
+collectd (5.7.1-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/patches:
@@ -9,7 +9,7 @@ collectd (5.7.1-1) UNRELEASED; urgency=medium
     - add dpdkstat_goto_label.patch, fixing a small mistake which prevented
       the dpdkstat from building.
 
- -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 09:23:07 +0100
+ -- Marc Fournier <marc@bl.uem.li>  Mon, 23 Jan 2017 20:45:34 +0100
 
 collectd (5.7.0-3) unstable; urgency=medium
 
