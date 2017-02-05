@@ -1,3 +1,11 @@
+collectd (5.7.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop -ssl -lcrypto from linking (openssl's functionality is not used by
+    collectd). Add drop_lssl_lcrypto_from_linking.patch (Closes: #852924).
+
+ -- Sebastian Andrzej Siewior <sebastian@breakpoint.cc>  Sun, 05 Feb 2017 20:40:33 +0100
+
 collectd (5.7.1-1) unstable; urgency=medium
 
   * New upstream release.
