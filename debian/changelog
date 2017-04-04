@@ -1,3 +1,12 @@
+collectd (5.1.0-3+deb7u3) wheezy-security; urgency=high
+
+  * CVE-2017-7401: Fix an endless loop DoS vulnerability in parse_packet().
+    When a correct "Signature part" is received by a Collectd instance
+    configured without the AuthFile option, an endless loop occurs due to a
+    missing pointer increment to the next unprocessed part. (Closes: #859494)
+
+ -- Chris Lamb <lamby@debian.org>  Tue, 04 Apr 2017 16:45:15 +0200
+
 collectd (5.1.0-3+deb7u2) wheezy-security; urgency=high
 
   * debian/patches/bts833013-gcry-init.dpatch: Fix initialization of
