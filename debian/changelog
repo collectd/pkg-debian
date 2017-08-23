@@ -11,6 +11,8 @@ collectd (5.7.2-1) UNRELEASED; urgency=medium
     - drop mqtt_resource_leak.patch; included upstream.
     - add libcollectdclient_error_buffer.patch, fixing a build error with
       GCC 7 (Closes: #871062). Thanks to Steve Langasek and Ruben Kerkhof.
+    - add local-msr-index-h.patch, bundling a header file removed from 4.12+
+      kernels (Closes: #872276). Thanks to Steve Langasek.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Aug 2017 15:58:47 +0200
 
