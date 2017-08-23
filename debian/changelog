@@ -1,6 +1,11 @@
 collectd (5.7.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches:
+    - drop dpdkstat_goto_label.patch; included upstream.
+    - drop drop_lssl_lcrypto_from_linking.patch; included upstream.
+    - drop mqtt_invalid_symbols.patch; included upstream.
+    - drop mqtt_resource_leak.patch; included upstream.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Aug 2017 15:58:47 +0200
 
