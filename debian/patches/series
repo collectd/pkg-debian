@@ -2,6 +2,5 @@ rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
 nagios-debian-paths.patch
-mqtt_resource_leak.patch
-mqtt_invalid_symbols.patch
-dpdkstat_goto_label.patch
+libcollectdclient_error_buffer.patch
+local-msr-index-h.patch

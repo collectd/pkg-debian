@@ -1,3 +1,29 @@
+collectd (5.7.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fix potential endless-loop in the network plugin, which can be triggered
+      remotely by sending a crafted UDP packet (Closes: #859494,
+      CVE-2017-7401).
+  * debian/patches:
+    - drop dpdkstat_goto_label.patch; included upstream.
+    - drop drop_lssl_lcrypto_from_linking.patch; included upstream.
+    - drop mqtt_invalid_symbols.patch; included upstream.
+    - drop mqtt_resource_leak.patch; included upstream.
+    - add libcollectdclient_error_buffer.patch, fixing a build error with
+      GCC 7 (Closes: #871062). Thanks to Steve Langasek and Ruben Kerkhof.
+    - add local-msr-index-h.patch, bundling a header file removed from 4.12+
+      kernels (Closes: #872276). Thanks to Steve Langasek.
+
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Aug 2017 18:10:47 +0200
+
+collectd (5.7.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop -ssl -lcrypto from linking (openssl's functionality is not used by
+    collectd). Add drop_lssl_lcrypto_from_linking.patch (Closes: #852924).
+
+ -- Sebastian Andrzej Siewior <sebastian@breakpoint.cc>  Sun, 05 Feb 2017 20:40:33 +0100
+
 collectd (5.7.1-1) unstable; urgency=medium
 
   * New upstream release.
