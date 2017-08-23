@@ -1,4 +1,4 @@
-collectd (5.7.2-1) UNRELEASED; urgency=medium
+collectd (5.7.2-1) unstable; urgency=medium
 
   * New upstream release.
     - Fix potential endless-loop in the network plugin, which can be triggered
@@ -14,7 +14,7 @@ collectd (5.7.2-1) UNRELEASED; urgency=medium
     - add local-msr-index-h.patch, bundling a header file removed from 4.12+
       kernels (Closes: #872276). Thanks to Steve Langasek.
 
- -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Aug 2017 15:58:47 +0200
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 23 Aug 2017 18:10:47 +0200
 
 collectd (5.7.1-1.1) unstable; urgency=medium
 
