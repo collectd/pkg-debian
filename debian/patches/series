@@ -2,3 +2,4 @@ rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
 nagios-debian-paths.patch
+libcollectdclient_error_buffer.patch
