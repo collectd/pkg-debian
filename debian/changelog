@@ -1,6 +1,9 @@
 collectd (5.7.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+    - Fix potential endless-loop in the network plugin, which can be triggered
+      remotely by sending a crafted UDP packet (Closes: #859494,
+      CVE-2017-7401).
   * debian/patches:
     - drop dpdkstat_goto_label.patch; included upstream.
     - drop drop_lssl_lcrypto_from_linking.patch; included upstream.
