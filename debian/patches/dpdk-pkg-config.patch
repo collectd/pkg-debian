@@ -1,0 +1,116 @@
+Description: configure.ac: dpdk: use pkg-config
+ To detect cflags and libs use the sometimes provided pkg-config for
+ libdpdk. That avoids build errors on systems where special flags are
+ needed and provided by dpdk via pkg-config, but not yet considered by
+ the collectd build system.
+Author: Christian Ehrhardt <christian.ehrhardt@canonical.com>
+Forwarded: https://github.com/collectd/collectd/pull/2400
+Reviewed-by: Luca Boccassi <bluca@debian.org>
+--- a/configure.ac
++++ b/configure.ac
+@@ -2607,34 +2607,69 @@ fi
+ 
+ # --with-libdpdk {{{
+ AC_ARG_VAR([LIBDPDK_CPPFLAGS], [Preprocessor flags for libdpdk])
++AC_ARG_VAR([LIBDPDK_CFLAGS], [Compiler flags for libdpdk])
+ AC_ARG_VAR([LIBDPDK_LDFLAGS], [Linker flags for libdpdk])
++AC_ARG_VAR([LIBDPDK_LIBS], [Libraries to link for libdpdk])
+ 
+-AC_ARG_WITH([libdpdk], [AS_HELP_STRING([--without-libdpdk], [Disable libdpdk.])])
++AC_ARG_WITH([libdpdk],
++  [AS_HELP_STRING([--without-libdpdk], [Disable libdpdk.])],
++  [with_libdpdk="$withval"],
++  [with_libdpdk="yes"]
++)
+ 
+-if test "x$with_libdpdk" != "xno"
+-then
+-	if test "x$LIBDPDK_CPPFLAGS" = "x"
+-	then
+-		LIBDPDK_CPPFLAGS="-I/usr/include/dpdk"
+-	fi
+-	SAVE_CPPFLAGS="$CPPFLAGS"
+-	CPPFLAGS="$LIBDPDK_CPPFLAGS $CPPFLAGS"
+-	AC_CHECK_HEADERS([rte_config.h],
+-		[with_libdpdk="yes"],
+-		[with_libdpdk="no (rte_config.h not found)"]
+-	)
+-	CPPFLAGS="$SAVE_CPPFLAGS"
++if test "x$with_libdpdk" != "xno"; then
++  PKG_CHECK_MODULES([DPDK], [libdpdk], [],
++		    [AC_MSG_NOTICE([no DPDK pkg-config, using defaults])])
++  if test "x$LIBDPDK_CPPFLAGS" = "x"; then
++    LIBDPDK_CPPFLAGS="-I/usr/include/dpdk"
++  fi
++  if test "x$LIBDPDK_CFLAGS" = "x"; then
++      LIBDPDK_CFLAGS="$DPDK_CFLAGS"
++      LIBDPDK_CPPFLAGS="$LIBDPDK_CPPFLAGS $DPDK_CFLAGS"
++  fi
++  if test "x$LIBDPDK_LIBS" = "x"; then
++      if test "x$DPDK_LIBS" != "x"; then
++          LIBDPDK_LIBS="$DPDK_LIBS"
++      else
++          LIBDPDK_LIBS="-ldpdk"
++      fi
++  fi
++  SAVE_CPPFLAGS="$CPPFLAGS"
++  CPPFLAGS="$LIBDPDK_CPPFLAGS $CPPFLAGS"
++  SAVE_CFLAGS="$CFLAGS"
++  CFLAGS="$LIBDPDK_CFLAGS $CFLAGS"
++  AC_CHECK_HEADERS([rte_config.h],
++    [
++      with_libdpdk="yes"
++      AC_PREPROC_IFELSE(
++        [
++          AC_LANG_SOURCE(
++            [[
++              #include <rte_version.h>
++              #if RTE_VERSION < RTE_VERSION_NUM(16,7,0,0)
++              #error "required DPDK >= 16.07"
++              #endif
++            ]]
++          )
++        ],
++        [dpdk_keepalive="yes"],
++        [dpdk_keepalive="no (DPDK version < 16.07)"]
++      )
++    ],
++    [with_libdpdk="no (rte_config.h not found)"]
++  )
++  CPPFLAGS="$SAVE_CPPFLAGS"
++  CFLAGS="$SAVE_CFLAGS"
+ fi
+ 
+-if test "x$with_libdpdk" = "xyes"
+-then
+-	SAVE_LDFLAGS="$LDFLAGS"
+-	LDFLAGS="$LIBDPDK_LDFLAGS $LDFLAGS"
+-	AC_CHECK_LIB([dpdk], [rte_eal_init],
+-		[with_libdpdk="yes"],
+-		[with_libdpdk="no (symbol 'rte_eal_init' not found)"]
+-	)
+-	LDFLAGS="$SAVE_LDFLAGS"
++if test "x$with_libdpdk" = "xyes"; then
++  SAVE_LDFLAGS="$LDFLAGS"
++  LDFLAGS="$LIBDPDK_LDFLAGS $LDFLAGS"
++  AC_CHECK_LIB([dpdk], [rte_eal_init],
++    [with_libdpdk="yes"],
++    [with_libdpdk="no (symbol 'rte_eal_init' not found)"]
++  )
++  LDFLAGS="$SAVE_LDFLAGS"
+ fi
+ 
+ # }}}
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -420,8 +420,9 @@ if BUILD_PLUGIN_DPDKSTAT
+ pkglib_LTLIBRARIES += dpdkstat.la
+ dpdkstat_la_SOURCES = dpdkstat.c
+ dpdkstat_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBDPDK_CPPFLAGS)
++dpdkstat_la_CFLAGS = $(AM_CFLAGS) $(LIBDPDK_CFLAGS)
+ dpdkstat_la_LDFLAGS = $(PLUGIN_LDFLAGS) $(LIBDPDK_LDFLAGS)
+-dpdkstat_la_LIBADD = -ldpdk
++dpdkstat_la_LIBADD = $(LIBDPDK_LIBS)
+ endif
+ 
+ if BUILD_PLUGIN_DRBD
