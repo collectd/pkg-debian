@@ -1,5 +1,13 @@
 collectd (5.7.2-2) UNRELEASED; urgency=medium
 
+  [ Luca Boccassi ]
+  * debian/patches:
+    - Add dpdk-pkg-config.patch: Backport upstream patch to build DPDK with
+      pkg-config. This allows DPDK in Debian to fix an upstream multi-arch
+      issue, where arch-dependents headers are installed in /usr/include
+      breaking multi-arch co-installability of libdpdk-dev. (Closes: #872482)
+
+  [ Sebastian Harl ]
   * Disable the sigrok plugin for now; it's not compatible with libsigrok4;
     thanks to Adrian Bunk for reporting this (Closes: #878348).
 
