@@ -5,3 +5,4 @@ nagios-debian-paths.patch
 libcollectdclient_error_buffer.patch
 local-msr-index-h.patch
 dpdk-pkg-config.patch
+write_mongodb.patch
