@@ -265,7 +265,7 @@ Description: statistics collection and monitoring daemon (utilities)
 Package: collectd-dbg
 Section: debug
 Architecture: any
-Priority: extra
+Priority: optional
 Depends: collectd-core (= ${binary:Version}), ${misc:Depends}
 Recommends: collectd-utils (= ${binary:Version}),
  libcollectdclient1 (= ${binary:Version})
