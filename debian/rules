@@ -79,9 +79,6 @@ confflags += --disable-oracle
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
-# libmongoc is required for the write_mongodb plugin.
-confflags += --disable-write_mongodb
-
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 

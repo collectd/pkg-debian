@@ -30,6 +30,7 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libmemcached-dev,
  libmicrohttpd-dev,
  libmodbus-dev,
+ libmongoc-dev,
  libmosquitto-dev,
  libmnl-dev [linux-any],
  libnotify-dev,
@@ -213,6 +214,7 @@ Description: statistics collection and monitoring daemon (core system)
    * send collected values to a web-server: write_http
    * send collected values to an Apache Kafka message broker: write_kafka
    * send collected values to the logging subsystem: write_log
+   * send collected values to MongoDB, a NoSQL database: write_mongodb
    * publish collected values as a Prometheus exporter: write_prometheus
    * send collected values to a Redis server: write_redis
    * send collected values to a Riemann server: write_riemann

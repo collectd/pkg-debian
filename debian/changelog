@@ -10,6 +10,8 @@ collectd (5.7.2-2) UNRELEASED; urgency=medium
   [ Sebastian Harl ]
   * Disable the sigrok plugin for now; it's not compatible with libsigrok4;
     thanks to Adrian Bunk for reporting this (Closes: #878348).
+  * Enable the write_mongodb plugin, libmongoc is now available. Thanks to
+    Saikrishna Arcot for reporting this (Closes: #858315).
 
  -- Sebastian Harl <tokkee@debian.org>  Sat, 21 Oct 2017 13:18:27 +0200
 
