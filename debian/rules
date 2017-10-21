@@ -92,6 +92,10 @@ confflags += --disable-intel_rdt
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
 
+# libvarnishapi 5.2 is not yet supported by collectd
+# Cf. https://github.com/collectd/collectd/issues/2498
+confflags += --disable-varnish
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
