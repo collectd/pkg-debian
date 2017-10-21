@@ -8,7 +8,7 @@ Forwarded: https://github.com/collectd/collectd/pull/2400
 Reviewed-by: Luca Boccassi <bluca@debian.org>
 --- a/configure.ac
 +++ b/configure.ac
-@@ -2607,34 +2607,69 @@ fi
+@@ -2676,34 +2676,69 @@
  
  # --with-libdpdk {{{
  AC_ARG_VAR([LIBDPDK_CPPFLAGS], [Preprocessor flags for libdpdk])
@@ -103,7 +103,7 @@ Reviewed-by: Luca Boccassi <bluca@debian.org>
  # }}}
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
-@@ -420,8 +420,9 @@ if BUILD_PLUGIN_DPDKSTAT
+@@ -420,8 +420,9 @@
  pkglib_LTLIBRARIES += dpdkstat.la
  dpdkstat_la_SOURCES = dpdkstat.c
  dpdkstat_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBDPDK_CPPFLAGS)
