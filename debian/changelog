@@ -19,7 +19,7 @@ collectd (5.7.2-2) unstable; urgency=medium
     - Build depend on debhelper (>= 9.20160709~) instead of dh-systemd.
     - Use priority "optional" instead of deprecated priority "extra".
   * Disable the varnish plugin for now. collectd FTBFS against varnish 5.2.
-    Cf. https://github.com/collectd/collectd/issues/2498
+    Cf. https://github.com/collectd/collectd/issues/2498 and #879471.
 
  -- Sebastian Harl <tokkee@debian.org>  Sun, 22 Oct 2017 00:37:19 +0200
 
