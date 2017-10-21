@@ -45,7 +45,6 @@ Build-Depends: debhelper (>= 9.20120909~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libriemann-client-dev (>= 1.6.0),
  librrd-dev (>= 1.4~),
  libsensors4-dev [linux-any],
- libsigrok-dev (>= 0.2~) [linux-any],
 # libsnmp-dev (>= 5.4.2.1~dfsg-4~) | (libsnmp-dev & perl (<< 5.10.1~rc2-1~))
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | libsnmp-dev | libsnmp9-dev,
  libsnmp-dev (>= 5.4.2.1~dfsg-4~) | perl (<< 5.10.1~rc2-1~),
@@ -188,7 +187,6 @@ Description: statistics collection and monitoring daemon (core system)
    * serial port traffic: serial
    * values from SNMP enabled network devices: snmp
    * aggregate values received with the StatsD protocol: statsd
-   * sigrok-supported device measurements: sigrok
    * SMART statistics: smart
    * swap usage: swap
    * logging to syslog: syslog

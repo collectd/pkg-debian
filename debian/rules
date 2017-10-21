@@ -91,6 +91,10 @@ confflags += --disable-grpc
 # libqpos is required for the intel_rdt plugin.
 confflags += --disable-intel_rdt
 
+# libsigrok4 incompatible with the plugin.
+# Cf. https://github.com/collectd/collectd/issues/1574
+confflags += --disable-sigrok
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
@@ -111,10 +115,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
-	# libsigrok >= 0.2.0 is required for the sigrok plugin,
-	# only available on Linux.
-	confflags += \
-		--disable-sigrok
 endif
 
 # This plugin is FreeBSD-specific.
