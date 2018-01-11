@@ -19,6 +19,10 @@ CPPFLAGS += -I$(CURDIR)/debian/include
 CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall -Wno-error=deprecated-declarations
 
+# liblvm2app is deprecated which will throw a #warning being handled as error
+# (LP 1742690 / Debian 881641 / Upstream 2647)
+CFLAGS += -Wno-cpp
+
 # Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
 # /etc/collectd would be wrong though.
 CPPFLAGS += -UCONFIGFILE
@@ -55,6 +59,10 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-static \
 			--disable-silent-rules \
 			--enable-all-plugins
+
+# Since libi2c-dev 4.0 detection is broken, which breaks dependent modules
+# (LP 1742691 / Debian 886920 / 2646)
+confflags += --disable-barometer
 
 # These plugins do not provide any functionality under Linux.
 # MacOS only (requires IO Kit):

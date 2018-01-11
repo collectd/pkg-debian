@@ -6,3 +6,4 @@ libcollectdclient_error_buffer.patch
 local-msr-index-h.patch
 dpdk-pkg-config.patch
 write_mongodb.patch
+CVE-2017-16820-snmp-plugin-Fix-double-free-of-request-PDU.patch
