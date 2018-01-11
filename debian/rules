@@ -60,6 +60,10 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--disable-silent-rules \
 			--enable-all-plugins
 
+# Since libi2c-dev 4.0 detection is broken, which breaks dependent modules
+# (LP 1742691 / Debian 886920 / 2646)
+confflags += --disable-barometer
+
 # These plugins do not provide any functionality under Linux.
 # MacOS only (requires IO Kit):
 confflags += --disable-apple_sensors
