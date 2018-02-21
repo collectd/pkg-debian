@@ -5,6 +5,8 @@ collectd (5.8.0-1) UNRELEASED; urgency=medium
   * Enable the intel_rdt plugin, libpqos is now available.
   * Re-enable the varnish plugin, support for varnish 5.2 now implemented.
   * debian/patches:
+    - Added rd_kafka_last_error.patch; needed to build against
+      librdkafka-0.11.0.
     - Removed dpdk-pkg-config.patch; included upstream.
     - Removed libcollectdclient_error_buffer.patch; inclued upstream.
     - Removed local-msr-index-h.patch; included upstream.
