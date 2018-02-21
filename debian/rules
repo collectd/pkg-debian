@@ -86,6 +86,10 @@ confflags += --disable-xmms
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
 
+# liblvm2app is deprecated.
+# https://github.com/collectd/collectd/issues/2647
+confflags += --disable-lvm
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
@@ -99,7 +103,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-ipc \
 		--disable-iptables \
 		--disable-ipvs \
-		--disable-lvm \
 		--disable-madwifi \
 		--disable-md \
 		--disable-netlink \
