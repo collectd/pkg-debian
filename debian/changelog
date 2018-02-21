@@ -1,6 +1,7 @@
 collectd (5.8.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Enable the grpc plugin, libgrpc++ is now available.
   * Enable the intel_rdt plugin, libpqos is now available.
   * Re-enable the varnish plugin, support for varnish 5.2 now implemented.
 

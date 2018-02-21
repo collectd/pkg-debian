@@ -21,6 +21,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libgeom-dev [kfreebsd-any],
  libgcrypt20-dev,
  libglib2.0-dev,
+ libgrpc++-dev,
  libgps-dev,
  libhiredis-dev,
  libi2c-dev,
@@ -62,6 +63,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  linux-libc-dev (>= 2.6.25-4) [linux-any] | linux-libc-dev (<< 2.6.25-1) [linux-any],
  default-jdk [!hppa !sparc !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
+ protobuf-compiler (>= 3.0.0),
  python-dev,
  riemann-c-client
 Build-Conflicts: libpthread-dev, libhal-dev
@@ -135,6 +137,7 @@ Description: statistics collection and monitoring daemon (core system)
    * count the number of files in directories: filecount
    * Linux file-system based caching framework statistics: fscache
    * Monitor gps related data through gpsd: gps
+   * Send or receive values over the network using the gRPC framework: grpc
    * query data from Java processes using JMX: GenericJMX (Java based plugin)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp

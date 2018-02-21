@@ -82,9 +82,6 @@ confflags += --disable-routeros
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
-# protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
-confflags += --disable-grpc
-
 # libsigrok4 incompatible with the plugin.
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
