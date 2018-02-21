@@ -85,9 +85,6 @@ confflags += --disable-xmms
 # protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
 confflags += --disable-grpc
 
-# libqpos is required for the intel_rdt plugin.
-confflags += --disable-intel_rdt
-
 # libsigrok4 incompatible with the plugin.
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok

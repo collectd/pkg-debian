@@ -1,6 +1,7 @@
 collectd (5.8.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Enable the intel_rdt plugin, libpqos is now available.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Feb 2018 07:02:01 +0100
 

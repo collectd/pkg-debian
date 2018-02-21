@@ -6,6 +6,7 @@ Uploaders: Marc Fournier <marc@bl.uem.li>
 Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
  default-libmysqlclient-dev,
+ intel-cmt-cat,
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
  kfreebsd-kernel-headers [kfreebsd-any],
@@ -137,6 +138,7 @@ Description: statistics collection and monitoring daemon (core system)
    * receive and interpret Ganglia multicast traffic: gmond
    * harddisk temperature: hddtemp
    * Report the number of used and free hugepages: hugepages
+   * Intel Resource Director Technology statistics: intel_rdt
    * network traffic: interface
    * IPC statistics: ipc
    * IPMI sensors information: ipmi
