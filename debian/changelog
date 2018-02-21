@@ -4,6 +4,8 @@ collectd (5.8.0-1) UNRELEASED; urgency=medium
   * Enable the grpc plugin, libgrpc++ is now available.
   * Enable the intel_rdt plugin, libpqos is now available.
   * Re-enable the varnish plugin, support for varnish 5.2 now implemented.
+  * debian/patches:
+    - Removed write_mongodb.patch; included upstream.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Feb 2018 07:02:01 +0100
 
