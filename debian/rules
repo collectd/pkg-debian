@@ -67,6 +67,9 @@ confflags += --disable-tape
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
 
+# libjevents is required for the intel_pmu plugin
+confflags += --disable-intel_pmu
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 
