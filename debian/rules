@@ -158,7 +158,12 @@ endif
 # These plugins are Intel-hardware specific.
 ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-dpdkevents \
 		--disable-dpdkstat \
+		--disable-intel_pmu \
+		--disable-intel_rdt \
+		--disable-mcelog \
+		--disable-mic \
 		--disable-turbostat
 endif
 
