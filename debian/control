@@ -129,6 +129,7 @@ Description: statistics collection and monitoring daemon (core system)
    * disk space usage: df
    * disk and partition throughput: disk
    * DNS traffic information: dns
+   * DPDK link status and keep alive events: dpdkevents
    * DPDK interface statistics: dpdkstat
    * Distributed Replicated Block Device status: drbd
    * E-Mail statistics (count, traffic, spam scores and checks): email
@@ -155,6 +156,7 @@ Description: statistics collection and monitoring daemon (core system)
    * logging to files, STDOUT and STDERR: logfile
    * logging in logstash's JSON event format: log_logstash
    * embedded Lua interpreter: lua
+   * Machine Check Exceptions notifications: mcelog
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
    * query and parse data from a memcache daemon: memcachec
@@ -178,6 +180,8 @@ Description: statistics collection and monitoring daemon (core system)
    * OpenLDAP's cn=Monitor statistics: openldap
    * OpenVPN traffic and compression statistics: openvpn
    * OpenVZ statistics: OpenVZ (Perl based plugin)
+   * Open vSwitch link state events: ovs_events
+   * Open vSwitch bridge / interface statistics: ovs_stats
    * embedded Perl interpreter: perl
    * timing values from Pinba: pinba
    * network latency statistics: ping
@@ -192,9 +196,11 @@ Description: statistics collection and monitoring daemon (core system)
    * lm_sensors information (e.g. CPU temperature, fan speeds): sensors
    * serial port traffic: serial
    * values from SNMP enabled network devices: snmp
+   * receive and handle queries from SNMP master agent: snmp_agent
    * aggregate values received with the StatsD protocol: statsd
    * SMART statistics: smart
    * swap usage: swap
+   * Linux synproxy statistics: synproxy
    * logging to syslog: syslog
    * parse table-like structured files: table
    * incremental parsing of logfiles: tail
