@@ -28,7 +28,7 @@ use strict;
 use warnings;
 
 my $srcdir = 'src/';
-my $libdir = 'src/.libs';
+my $libdir = '.libs';
 
 my $plugins = {};
 

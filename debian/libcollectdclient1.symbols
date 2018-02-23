@@ -5,6 +5,7 @@ libcollectdclient.so.1 libcollectdclient1 #MINVER#
  lcc_getval@Base 4.6.0
  lcc_identifier_compare@Base 5.2.0
  lcc_identifier_to_string@Base 4.6.0
+ lcc_listen_and_write@Base 5.8.0
  lcc_listval@Base 4.6.0
  lcc_network_buffer_add_value@Base 5.2.0
  lcc_network_buffer_create@Base 5.2.0
@@ -15,6 +16,7 @@ libcollectdclient.so.1 libcollectdclient1 #MINVER#
  lcc_network_buffer_set_security_level@Base 5.2.0
  lcc_network_create@Base 5.2.0
  lcc_network_destroy@Base 5.2.0
+ lcc_network_parse@Base 5.8.0
  lcc_network_values_send@Base 5.2.0
  lcc_putval@Base 4.6.0
  lcc_server_create@Base 5.2.0

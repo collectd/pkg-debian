@@ -67,6 +67,9 @@ confflags += --disable-tape
 # libaquaero5 is required for the aquaero plugin
 confflags += --disable-aquaero
 
+# libjevents is required for the intel_pmu plugin
+confflags += --disable-intel_pmu
+
 # libmic is required for the mic plugin
 confflags += --disable-mic
 
@@ -79,17 +82,12 @@ confflags += --disable-oracle
 # librouteros is required for the routeros plugin.
 confflags += --disable-routeros
 
-# libmongoc is required for the write_mongodb plugin.
-confflags += --disable-write_mongodb
-
 # xmms1 is required for the xmms plugin.
 confflags += --disable-xmms
 
-# protobuf-compiler >= 3.0.0 and libgrpc++ are required for the grpc plugin.
-confflags += --disable-grpc
-
-# libqpos is required for the intel_rdt plugin.
-confflags += --disable-intel_rdt
+# libsigrok4 incompatible with the plugin.
+# Cf. https://github.com/collectd/collectd/issues/1574
+confflags += --disable-sigrok
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -111,10 +109,6 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-numa \
 		--disable-sensors \
 		--disable-vserver
-	# libsigrok >= 0.2.0 is required for the sigrok plugin,
-	# only available on Linux.
-	confflags += \
-		--disable-sigrok
 endif
 
 # This plugin is FreeBSD-specific.
@@ -144,6 +138,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 		--disable-nfs \
 		--disable-protocols \
 		--disable-serial \
+		--disable-synproxy \
 		--disable-thermal \
 		--disable-vmem \
 		--disable-wireless
@@ -161,7 +156,12 @@ endif
 # These plugins are Intel-hardware specific.
 ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 	confflags += \
+		--disable-dpdkevents \
 		--disable-dpdkstat \
+		--disable-intel_pmu \
+		--disable-intel_rdt \
+		--disable-mcelog \
+		--disable-mic \
 		--disable-turbostat
 endif
 

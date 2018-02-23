@@ -2,5 +2,6 @@ rrd_filter_path.patch
 collection_conf_path.patch
 myplugin_includes.patch
 nagios-debian-paths.patch
-libcollectdclient_error_buffer.patch
-local-msr-index-h.patch
+rd_kafka_last_error.patch
+i2c_detection.patch
+liblvm2app_depreciation_warning.patch

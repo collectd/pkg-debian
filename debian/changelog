@@ -1,3 +1,72 @@
+collectd (5.8.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #887093, #881757, CVE-2017-16820)
+  * New plugins:
+    - DPDK link status and keep alive events: dpdkevents
+    - Intel performance counters: intel_pmu (disabled in Debian because of
+      missing dependencies)
+    - Machine Check Exceptions notifications: mcelog
+    - Open vSwitch link state events: ovs_events
+    - Open vSwitch bridge / interface statistics: ovs_stats
+    - receive and handle queries from SNMP master agent: snmp_agent
+    - synproxy statistics: synproxy (Linux-specific)
+  * Enable the grpc plugin, libgrpc++ is now available.
+  * Enable the intel_rdt plugin, libpqos is now available.
+  * Re-enable the varnish plugin, support for varnish 5.2 now implemented.
+  * debian/control:
+    - Build-depend on libgrpc++-dev, libprotobuf-dev, protobuf-compiler,
+      protobuf-compiler-grpc: Needed by the grpc plugin.
+    - Build-depend on intel-cmt-cat: Needed by the intel_rdt plugin.
+  * debian/rules:
+    - Disable the intel_pmu plugin.
+    - Disable the synproxy plugin on non-Linux architectures.
+    - Disable the dpdkevents, intel_pmu, intel_rdt, mcelog and mic plugins on
+      non-Intel architectures.
+  * debian/patches:
+    - Added i2c_detection.patch; needed to build against libi2c-4.0. Thanks to
+      Christian Ehrhardt fo reporting this problem and Andreas Hasenack for
+      providing a patch. (Closes: #886920)
+    - Added liblvm2app_depreciation_warning.patch; allows the the plugin to
+      build despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
+      suggesting this workaround. (Closes: #881641)
+    - Added rd_kafka_last_error.patch; needed to build against
+      librdkafka-0.11.0. Thanks to Pavel Rochnyack for providing a patch.
+    - Removed dpdk-pkg-config.patch; included upstream.
+    - Removed libcollectdclient_error_buffer.patch; inclued upstream.
+    - Removed local-msr-index-h.patch; included upstream.
+    - Removed write_mongodb.patch; included upstream.
+  * debian/libcollectdclient-dev.install:
+    - Install new server and parsing header files.
+  * debian/libcollectdclient1.symbols
+    - Updated for 5.8.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 23 Feb 2018 12:15:39 +0100
+
+collectd (5.7.2-2) unstable; urgency=medium
+
+  [ Luca Boccassi ]
+  * debian/patches:
+    - Add dpdk-pkg-config.patch: Backport upstream patch to build DPDK with
+      pkg-config. This allows DPDK in Debian to fix an upstream multi-arch
+      issue, where arch-dependents headers are installed in /usr/include
+      breaking multi-arch co-installability of libdpdk-dev. (Closes: #872482)
+
+  [ Sebastian Harl ]
+  * Disable the sigrok plugin for now; it's not compatible with libsigrok4;
+    thanks to Adrian Bunk for reporting this (Closes: #878348).
+  * Enable the write_mongodb plugin, libmongoc is now available. Thanks to
+    Saikrishna Arcot for reporting this (Closes: #858315).
+    - Add write_mongodb.patch to update the plugin to the most recent upstream
+      version to bring it up to date with Debian's libmongoc and fix some
+      other issues.
+  * Update to standards-version 4.1.1:
+    - Build depend on debhelper (>= 9.20160709~) instead of dh-systemd.
+    - Use priority "optional" instead of deprecated priority "extra".
+  * Disable the varnish plugin for now. collectd FTBFS against varnish 5.2.
+    Cf. https://github.com/collectd/collectd/issues/2498 and #879471.
+
+ -- Sebastian Harl <tokkee@debian.org>  Sun, 22 Oct 2017 00:37:19 +0200
+
 collectd (5.7.2-1) unstable; urgency=medium
 
   * New upstream release.
