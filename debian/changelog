@@ -27,6 +27,8 @@ collectd (5.8.0-1) UNRELEASED; urgency=medium
     - Removed write_mongodb.patch; included upstream.
   * debian/libcollectdclient-dev.install:
     - Install new server and parsing header files.
+  * debian/libcollectdclient1.symbols
+    - Updated for 5.8.
 
  -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Feb 2018 07:02:01 +0100
 
