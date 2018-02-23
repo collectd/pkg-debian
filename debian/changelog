@@ -13,6 +13,15 @@ collectd (5.8.0-1) UNRELEASED; urgency=medium
   * Enable the grpc plugin, libgrpc++ is now available.
   * Enable the intel_rdt plugin, libpqos is now available.
   * Re-enable the varnish plugin, support for varnish 5.2 now implemented.
+  * debian/control:
+    - Build-depend on libgrpc++-dev, libprotobuf-dev, protobuf-compiler,
+      protobuf-compiler-grpc: Needed by the grpc plugin.
+    - Build-depend on intel-cmt-cat: Needed by the intel_rdt plugin.
+  * debian/rules:
+    - Disable the intel_pmu plugin.
+    - Disable the synproxy plugin on non-Linux architectures.
+    - Disable the dpdkevents, intel_pmu, intel_rdt, mcelog and mic plugins on
+      non-Intel architectures.
   * debian/patches:
     - Added i2c_detection.patch; needed to build against libi2c-4.0. Thanks to
       Christian Ehrhardt fo reporting this problem and Andreas Hasenack for
