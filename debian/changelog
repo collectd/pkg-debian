@@ -1,4 +1,4 @@
-collectd (5.8.0-1) UNRELEASED; urgency=medium
+collectd (5.8.0-1) unstable; urgency=medium
 
   * New upstream release. (Closes: #887093, #881757, CVE-2017-16820)
   * New plugins:
@@ -40,7 +40,7 @@ collectd (5.8.0-1) UNRELEASED; urgency=medium
   * debian/libcollectdclient1.symbols
     - Updated for 5.8.
 
- -- Marc Fournier <marc@bl.uem.li>  Wed, 21 Feb 2018 07:02:01 +0100
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 23 Feb 2018 12:15:39 +0100
 
 collectd (5.7.2-2) unstable; urgency=medium
 
