@@ -28,6 +28,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libkvm-dev [kfreebsd-any],
  libldap2-dev,
  liblua5.3-dev,
+ liblvm2-dev [linux-any],
  libmemcached-dev,
  libmicrohttpd-dev,
  libmodbus-dev,
@@ -156,6 +157,7 @@ Description: statistics collection and monitoring daemon (core system)
    * logging to files, STDOUT and STDERR: logfile
    * logging in logstash's JSON event format: log_logstash
    * embedded Lua interpreter: lua
+   * Logical Volume Manager usage: lvm
    * Machine Check Exceptions notifications: mcelog
    * Atheros wireless LAN chipset statistics: madwifi
    * motherboard monitor: mbmon
