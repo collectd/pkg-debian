@@ -24,7 +24,7 @@ collectd (5.8.0-1) unstable; urgency=medium
       non-Intel architectures.
   * debian/patches:
     - Added i2c_detection.patch; needed to build against libi2c-4.0. Thanks to
-      Christian Ehrhardt fo reporting this problem and Andreas Hasenack for
+      Christian Ehrhardt for reporting this problem and Andreas Hasenack for
       providing a patch. (Closes: #886920)
     - Added liblvm2app_depreciation_warning.patch; allows the the plugin to
       build despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
