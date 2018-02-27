@@ -27,13 +27,13 @@ collectd (5.8.0-1) unstable; urgency=medium
     - Added i2c_detection.patch; needed to build against libi2c-4.0. Thanks to
       Christian Ehrhardt for reporting this problem and Andreas Hasenack for
       providing a patch. (Closes: #886920)
-    - Added liblvm2app_depreciation_warning.patch; allows the the plugin to
-      build despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
+    - Added liblvm2app_depreciation_warning.patch; allows the plugin to build
+      despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
       suggesting this workaround. (Closes: #881641)
     - Added rd_kafka_last_error.patch; needed to build against
       librdkafka-0.11.0. Thanks to Pavel Rochnyack for providing a patch.
     - Removed dpdk-pkg-config.patch; included upstream.
-    - Removed libcollectdclient_error_buffer.patch; inclued upstream.
+    - Removed libcollectdclient_error_buffer.patch; included upstream.
     - Removed local-msr-index-h.patch; included upstream.
     - Removed write_mongodb.patch; included upstream.
   * debian/libcollectdclient-dev.install:
