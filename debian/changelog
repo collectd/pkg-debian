@@ -47,7 +47,7 @@ collectd (5.8.0-1) unstable; urgency=medium
       patch which breaks the build with earlier versions. Both changes can
       easily be reverted, e.g. for backporting.
 
- -- Marc Fournier <marc@bl.uem.li>  Fri, 23 Feb 2018 12:15:39 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 27 Feb 2018 20:44:03 +0100
 
 collectd (5.7.2-2) unstable; urgency=medium
 
