@@ -1,5 +1,6 @@
 collectd (5.8.0-1) unstable; urgency=medium
 
+  [ Marc Fournier ]
   * New upstream release. (Closes: #887093, #881757, CVE-2017-16820)
   * New plugins:
     - DPDK link status and keep alive events: dpdkevents
@@ -39,6 +40,12 @@ collectd (5.8.0-1) unstable; urgency=medium
     - Install new server and parsing header files.
   * debian/libcollectdclient1.symbols
     - Updated for 5.8.
+
+  [ Sebastian Harl ]
+  * debian/control:
+    - Depend on libi2c-dev (>= 4.0~); that's required for the i2c detection
+      patch which breaks the build with earlier versions. Both changes can
+      easily be reverted, e.g. for backporting.
 
  -- Marc Fournier <marc@bl.uem.li>  Fri, 23 Feb 2018 12:15:39 +0100
 
