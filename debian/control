@@ -21,7 +21,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libgeom-dev [kfreebsd-any],
  libgcrypt20-dev,
  libglib2.0-dev,
- libgrpc++-dev,
+ libgrpc++-dev [amd64 arm64 armel armhf i386 ppc64el powerpc],
  libgps-dev,
  libhiredis-dev,
  libi2c-dev (>= 4.0~),
@@ -65,7 +65,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  default-jdk [!hppa !sparc !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
  protobuf-compiler (>= 3.0.0),
- protobuf-compiler-grpc,
+ protobuf-compiler-grpc [amd64 arm64 armel armhf i386 ppc64el powerpc],
  python-dev,
  riemann-c-client
 Build-Conflicts: libpthread-dev, libhal-dev
