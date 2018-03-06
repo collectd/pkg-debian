@@ -183,7 +183,8 @@ ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
 endif
 
-ifneq (,$(filter amd64 arm64 armel armhf i386 ppc64el powerpc, $(DEB_BUILD_ARCH)))
+# gRPC is only available on x86, arm, ppc.
+ifeq (,$(filter amd64 arm64 armel armhf i386 ppc64el powerpc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-grpc
 endif
 

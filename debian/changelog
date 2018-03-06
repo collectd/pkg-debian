@@ -1,3 +1,12 @@
+collectd (5.8.0-4) unstable; urgency=medium
+
+  * debian/rules:
+    - Fix the arch selection for enabling the gRPC plugin. By accident, we
+      disabled it for exactly the wrong archs. Thanks to Adrian Bunk for
+      reporting this! (Closes: #892166)
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 06 Mar 2018 22:19:38 +0100
+
 collectd (5.8.0-3) unstable; urgency=medium
 
   * debian/control:
