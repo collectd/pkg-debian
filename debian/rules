@@ -51,7 +51,6 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor INSTALL_BASE=" \
 			--without-libstatgrab \
-			--without-included-ltdl \
 			--disable-static \
 			--disable-silent-rules \
 			--enable-all-plugins
