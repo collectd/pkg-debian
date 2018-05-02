@@ -3,6 +3,7 @@ collectd (5.8.0-5) UNRELEASED; urgency=medium
   * debian/rules:
     - remove legacy libtool1 build option, as support got dropped in collectd
       5.8.
+    - disable varnish plugin until #879471 gets fixed.
   * debian/control:
     - Bump Standards-Version to 4.1.4.
 

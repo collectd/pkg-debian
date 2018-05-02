@@ -88,6 +88,10 @@ confflags += --disable-xmms
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
 
+# temporarily disable varnish plugin, as #879471 blocks collectd from
+# migrationg to testing.
+confflags += --disable-varnish
+
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 	confflags += \
