@@ -1,5 +1,42 @@
+collectd (5.8.0-5) unstable; urgency=medium
+
+  * debian/rules:
+    - remove legacy libtool1 build option, as support got dropped in collectd
+      5.8.
+    - disable varnish plugin until #879471 gets fixed.
+  * debian/control:
+    - Bump Standards-Version to 4.1.4.
+
+ -- Marc Fournier <marc@bl.uem.li>  Fri, 04 May 2018 16:52:07 +0200
+
+collectd (5.8.0-4) unstable; urgency=medium
+
+  * debian/rules:
+    - Fix the arch selection for enabling the gRPC plugin. By accident, we
+      disabled it for exactly the wrong archs. Thanks to Adrian Bunk for
+      reporting this! (Closes: #892166)
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 06 Mar 2018 22:19:38 +0100
+
+collectd (5.8.0-3) unstable; urgency=medium
+
+  * debian/control:
+    - Limit libgrpc++-dev and protobuf-compiler-grpc Build-depend to supported
+      platforms.
+    - Bump Standards-Version to 4.1.3.
+
+ -- Marc Fournier <marc@bl.uem.li>  Mon, 05 Mar 2018 22:48:34 +0100
+
+collectd (5.8.0-2) unstable; urgency=medium
+
+  * debian/control: Limit intel-cmt-cat Build-depend to intel architectures;
+    thanks to Adrian Bunk for reporting this. (Closes: #891673)
+
+ -- Marc Fournier <marc@bl.uem.li>  Wed, 28 Feb 2018 10:06:58 +0100
+
 collectd (5.8.0-1) unstable; urgency=medium
 
+  [ Marc Fournier ]
   * New upstream release. (Closes: #887093, #881757, CVE-2017-16820)
   * New plugins:
     - DPDK link status and keep alive events: dpdkevents
@@ -24,15 +61,15 @@ collectd (5.8.0-1) unstable; urgency=medium
       non-Intel architectures.
   * debian/patches:
     - Added i2c_detection.patch; needed to build against libi2c-4.0. Thanks to
-      Christian Ehrhardt fo reporting this problem and Andreas Hasenack for
+      Christian Ehrhardt for reporting this problem and Andreas Hasenack for
       providing a patch. (Closes: #886920)
-    - Added liblvm2app_depreciation_warning.patch; allows the the plugin to
-      build despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
+    - Added liblvm2app_depreciation_warning.patch; allows the plugin to build
+      despite liblvm2app depreciation. Thanks to Christian Ehrhardt for
       suggesting this workaround. (Closes: #881641)
     - Added rd_kafka_last_error.patch; needed to build against
       librdkafka-0.11.0. Thanks to Pavel Rochnyack for providing a patch.
     - Removed dpdk-pkg-config.patch; included upstream.
-    - Removed libcollectdclient_error_buffer.patch; inclued upstream.
+    - Removed libcollectdclient_error_buffer.patch; included upstream.
     - Removed local-msr-index-h.patch; included upstream.
     - Removed write_mongodb.patch; included upstream.
   * debian/libcollectdclient-dev.install:
@@ -40,7 +77,13 @@ collectd (5.8.0-1) unstable; urgency=medium
   * debian/libcollectdclient1.symbols
     - Updated for 5.8.
 
- -- Marc Fournier <marc@bl.uem.li>  Fri, 23 Feb 2018 12:15:39 +0100
+  [ Sebastian Harl ]
+  * debian/control:
+    - Depend on libi2c-dev (>= 4.0~); that's required for the i2c detection
+      patch which breaks the build with earlier versions. Both changes can
+      easily be reverted, e.g. for backporting.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 27 Feb 2018 20:44:03 +0100
 
 collectd (5.7.2-2) unstable; urgency=medium
 

@@ -6,7 +6,7 @@ Uploaders: Marc Fournier <marc@bl.uem.li>
 Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh-strip-nondeterminism, dh-autoreconf,
  bison, flex, autotools-dev, libltdl-dev, pkg-config,
  default-libmysqlclient-dev,
- intel-cmt-cat,
+ intel-cmt-cat [amd64 i386],
  iptables-dev (>= 1.4.3.2-2) [linux-any],
  javahelper,
  kfreebsd-kernel-headers [kfreebsd-any],
@@ -21,10 +21,10 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libgeom-dev [kfreebsd-any],
  libgcrypt20-dev,
  libglib2.0-dev,
- libgrpc++-dev,
+ libgrpc++-dev [amd64 arm64 armel armhf i386 ppc64el powerpc],
  libgps-dev,
  libhiredis-dev,
- libi2c-dev,
+ libi2c-dev (>= 4.0~),
  libkvm-dev [kfreebsd-any],
  libldap2-dev,
  liblua5.3-dev,
@@ -56,7 +56,7 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  libtokyotyrant-dev [linux-any],
  libudev-dev [linux-any],
  libupsclient-dev | libupsclient1-dev,
- libvarnishapi-dev,
+# libvarnishapi-dev,
  libvirt-dev (>= 0.4.0-6) [linux-any],
  libxen-dev [amd64 arm64 armhf i386],
  libxml2-dev,
@@ -65,11 +65,11 @@ Build-Depends: debhelper (>= 9.20160709~), dpkg-dev (>= 1.14.10), po-debconf, dh
  default-jdk [!hppa !sparc !kfreebsd-i386 !kfreebsd-amd64],
  protobuf-c-compiler,
  protobuf-compiler (>= 3.0.0),
- protobuf-compiler-grpc,
+ protobuf-compiler-grpc [amd64 arm64 armel armhf i386 ppc64el powerpc],
  python-dev,
  riemann-c-client
 Build-Conflicts: libpthread-dev, libhal-dev
-Standards-Version: 4.1.1
+Standards-Version: 4.1.4
 Homepage: https://collectd.org/
 Vcs-Git: https://github.com/collectd/pkg-debian.git
 Vcs-Browser: https://github.com/collectd/pkg-debian.git

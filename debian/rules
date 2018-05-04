@@ -51,7 +51,6 @@ confflags = --host=$(DEB_HOST_GNU_TYPE) \
 			--localstatedir=/var --sysconfdir=/etc \
 			--with-perl-bindings="INSTALLDIRS=vendor INSTALL_BASE=" \
 			--without-libstatgrab \
-			--without-included-ltdl \
 			--disable-static \
 			--disable-silent-rules \
 			--enable-all-plugins
@@ -88,6 +87,10 @@ confflags += --disable-xmms
 # libsigrok4 incompatible with the plugin.
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
+
+# temporarily disable varnish plugin, as #879471 blocks collectd from
+# migrationg to testing.
+confflags += --disable-varnish
 
 # These plugins are Linux-specific.
 ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
@@ -181,6 +184,11 @@ endif
 # java plugin.
 ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
 	confflags += --disable-java
+endif
+
+# gRPC is only available on x86, arm, ppc.
+ifeq (,$(filter amd64 arm64 armel armhf i386 ppc64el powerpc, $(DEB_BUILD_ARCH)))
+	confflags += --disable-grpc
 endif
 
 build: build-arch build-indep
