@@ -1,3 +1,14 @@
+collectd (5.8.0-5.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "FTBFS: sed: can't read /usr/lib/pkgconfig/OpenIPMIpthread.pc:
+    No such file or directory":
+    Drop hack for broken OpenIPMIpthread.pc from debian/rules; apparently the
+    problem in #474087 was fixed in 2010.
+    (Closes: #900232)
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 29 Jun 2018 19:42:43 +0200
+
 collectd (5.8.0-5) unstable; urgency=medium
 
   * debian/rules:

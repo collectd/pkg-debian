@@ -200,13 +200,6 @@ build-stamp:
 	
 	dh_autoreconf
 	
-	# This is a work-around for #474087 (broken openipmi .pc files).
-	mkdir debian/pkgconfig
-	sed -re 's/^(Requires:.*) pthread(.*)$$/\1\2/' \
-		/usr/lib/pkgconfig/OpenIPMIpthread.pc \
-		> debian/pkgconfig/OpenIPMIpthread.pc
-	
-	PKG_CONFIG_PATH="$(CURDIR)/debian/pkgconfig:$$PKG_CONFIG_PATH" \
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
 		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
