@@ -8,9 +8,7 @@
 
 # These are used for cross-compiling and for saving the configure script
 # from having to guess our platform (since we know it already)
-DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_ARCH      ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
-DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+include /usr/share/dpkg/architecture.mk
 
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
@@ -28,7 +26,7 @@ CPPFLAGS += -DCONFIGFILE='\"/etc/collectd/collectd.conf\"'
 
 # A PostgreSQL header redefines CACHE_LINE_SIZE on FreeBSD.
 # Cf. https://bugs.debian.org/760719 and https://bugs.debian.org/763098
-ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	CPPFLAGS += -Wp,-w
 endif
 
@@ -95,7 +93,7 @@ confflags += --disable-sigrok
 confflags += --disable-varnish
 
 # These plugins are Linux-specific.
-ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	confflags += \
 		--disable-barometer \
 		--disable-cgroups \
@@ -117,7 +115,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 endif
 
 # This plugin is FreeBSD-specific.
-ifeq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifneq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	confflags += \
 		--disable-pf
 endif
@@ -127,7 +125,7 @@ confflags += \
 		--disable-zone
 
 # These plugins have not been ported to FreeBSD yet.
-ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	# Work-around an incomplete check for kvm functionality
 	CPPFLAGS  += -DHAVE_STRUCT_KINFO_PROC_FREEBSD
 	confflags += --enable-processes=force
@@ -150,7 +148,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 endif
 
 # Build-dependencies of these plugins are (not yet) available for kfreebsd.
-ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	confflags += \
 		--disable-gmond \
 		--disable-virt \
@@ -159,7 +157,7 @@ ifneq (,$(filter kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
 endif
 
 # These plugins are Intel-hardware specific.
-ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
+ifeq (,$(filter amd64 i386, $(DEB_HOST_ARCH)))
 	confflags += \
 		--disable-dpdkevents \
 		--disable-dpdkstat \
@@ -171,25 +169,25 @@ ifeq (,$(filter amd64 i386, $(DEB_BUILD_ARCH)))
 endif
 
 # This plugin is x86 and arm specific.
-ifeq (,$(filter amd64 arm64 armhf i386, $(DEB_BUILD_ARCH)))
+ifeq (,$(filter amd64 arm64 armhf i386, $(DEB_HOST_ARCH)))
 	confflags += \
 		--disable-xencpu
 endif
 
 # libatasmart isn't available on these platforms.
-ifneq (,$(filter hurd-i386 kfreebsd-i386 kfreebsd-amd64, $(DEB_BUILD_ARCH)))
+ifneq (,$(filter hurd kfreebsd,$(DEB_HOST_ARCH_OS)))
 	confflags += --disable-smart
 endif
 
 # The hppa buildds currently do not keep up with Java related stuff, thus
 # prevending testing transitions. sparc is also having trouble building the
 # java plugin.
-ifneq (,$(filter hppa sparc, $(DEB_BUILD_ARCH)))
+ifneq (,$(filter hppa sparc, $(DEB_HOST_ARCH)))
 	confflags += --disable-java
 endif
 
 # gRPC is only available on x86, arm, ppc.
-ifeq (,$(filter amd64 arm64 armel armhf i386 ppc64el powerpc, $(DEB_BUILD_ARCH)))
+ifeq (,$(filter amd64 arm64 armel armhf i386 ppc64el powerpc, $(DEB_HOST_ARCH)))
 	confflags += --disable-grpc
 endif
 
