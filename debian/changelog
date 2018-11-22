@@ -8,6 +8,7 @@ collectd (5.8.1-1) UNRELEASED; urgency=medium
   * debian/rules:
     - Fix cross building: de-confuse build/host; thanks to Helmut Grohne for
       reporting this and providing a patch (Closes: #913668).
+    - Disable mqtt plugin until #911265, #911266 get fixed.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 22 Nov 2018 22:56:32 +0100
 
