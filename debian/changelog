@@ -1,6 +1,8 @@
 collectd (5.8.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches:
+    - Remove rd_kafka_last_error.patch; applied upstream.
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 22 Nov 2018 22:56:32 +0100
 
