@@ -1,4 +1,4 @@
-collectd (5.8.1-1) UNRELEASED; urgency=medium
+collectd (5.8.1-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/patches:
@@ -10,7 +10,7 @@ collectd (5.8.1-1) UNRELEASED; urgency=medium
       reporting this and providing a patch (Closes: #913668).
     - Disable mqtt plugin until #911265, #911266 get fixed.
 
- -- Sebastian Harl <tokkee@debian.org>  Thu, 22 Nov 2018 22:56:32 +0100
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 23 Nov 2018 00:01:43 +0100
 
 collectd (5.8.0-5.2) unstable; urgency=medium
 
