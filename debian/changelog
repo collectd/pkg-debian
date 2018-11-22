@@ -5,6 +5,9 @@ collectd (5.8.1-1) UNRELEASED; urgency=medium
     - Remove rd_kafka_last_error.patch; applied upstream.
   * debian/control:
     - Bump standards version to 4.2.1; no changes.
+  * debian/rules:
+    - Fix cross building: de-confuse build/host; thanks to Helmut Grohne for
+      reporting this and providing a patch (Closes: #913668).
 
  -- Sebastian Harl <tokkee@debian.org>  Thu, 22 Nov 2018 22:56:32 +0100
 
