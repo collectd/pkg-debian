@@ -828,6 +828,7 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	File src/grpc.cc
 	Copyright © 2015-2016 Sebastian Harl <sh@tokkee.org>
 	Copyright © 2016 Florian Forster <octo@verplant.org>
+	License: MIT License
 
 	File contrib/collection.cgi
 	Copyright © 2006-2010 Florian Forster <octo@collectd.org>
@@ -893,11 +894,14 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	      src/ovs_events.c
 	      src/ovs_stats.c
 	      src/snmp_agent.c
+	      src/utils_config_cores.c
+	      src/utils_config_cores.h
+	      src/utils_config_cores_test.c
 	      src/utils_dpdk.c
 	      src/utils_dpdk.h
 	      src/utils_ovs.c
 	      src/utils_ovs.h
-	Copyright © 2016-2017 Intel Corporation
+	Copyright © 2016-2018 Intel Corporation
 	License: MIT License
 
 	File src/fhcount.c
@@ -1071,6 +1075,9 @@ can be found in `/usr/share/common-licenses/LGPL'.
 	Copyright © 1986 Gary S. Brown
 	You may use this program, or code or tables extracted from it, as desired
 	without restriction.
+
+	File src/libcollectdclient/collectd/stdendian.h
+	Public Domain.
 
 The Debian packaging is © 2006-2012, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above. The debconf template translations are
