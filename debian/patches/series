@@ -4,3 +4,4 @@ myplugin_includes.patch
 nagios-debian-paths.patch
 i2c_detection.patch
 liblvm2app_depreciation_warning.patch
+dpdk_configure_check.patch

@@ -1,3 +1,12 @@
+collectd (5.8.1-1.1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Backport patch to fix build with DPDK 18.11:
+    debian/patches/dpdk_configure_check.patch
+    (Closes: #915419)
+
+ -- Luca Boccassi <bluca@debian.org>  Thu, 06 Dec 2018 18:04:30 +0000
+
 collectd (5.8.1-1) unstable; urgency=medium
 
   * New upstream release.
