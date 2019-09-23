@@ -1,3 +1,14 @@
+collectd (5.9.1-1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "GCC 8.3/4 Tool Chain Issue":
+    debian/rules: removes build with -Wno-error=format-truncation as a temporary
+    workaround for the build failure with gcc-8 caused by a compiler warning.
+  * debian/patches:
+    - Remove liblvm2app_depreciation_warning.patch i2c_detection.patch ; upstream
+
+ -- zebity spring <zebity@yahoo.com>  Sun, 22 Sep 2019 21:55:00 +1000
+
 collectd (5.8.1-1) unstable; urgency=medium
 
   * New upstream release.
