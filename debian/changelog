@@ -6,6 +6,8 @@ collectd (5.9.2-1) unstable; urgency=medium
     workaround for the build failure with gcc-8 caused by a compiler warning.
   * debian/patches:
     - Remove liblvm2app_depreciation_warning.patch i2c_detection.patch ; upstream
+  * debian/control
+    - Add re-enable varnish plugin ; upstream
 
  -- zebity spring <zebity@yahoo.com>  Sun, 22 Sep 2019 21:55:00 +1000
 
