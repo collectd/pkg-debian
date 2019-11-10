@@ -17,6 +17,11 @@ CPPFLAGS += -I$(CURDIR)/debian/include
 CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall -Wno-error=deprecated-declarations
 
+TEST_GCC_VER_9 := $(shell expr `$(CC) -dumpversion | cut -f1 -d.` \>= 9)
+ifeq ($(TEST_GCC_VER_9),1)
+  CFLAGS += -Wno-error=address-of-packed-member -Wno-stringop-truncation
+endif
+
 # Upstream defaults to ${sysconfdir}/collectd.conf. Setting ${sysconfdir} to
 # /etc/collectd would be wrong though.
 CPPFLAGS += -UCONFIGFILE
