@@ -8,7 +8,7 @@ _Description: Layout of RRD files has changed
  This step requires both the perl and the rrdtool packages to be installed,
  which is currently not the case. You need to perform the migration manually.
  .
- See /usr/share/doc/collectd-core/NEWS.Debian.gz for details.
+ See /usr/share/doc/collectd-core/NEWS.gz for details.
 
 Template: collectd/auto-migrate-3-4
 Type: boolean
@@ -22,7 +22,7 @@ _Description: Automatically try to migrate your RRD files?
  /var/lib/collectd/ is made in /var/backups/. This script is still
  experimental, though. Do not expect it to work in all cases.
  .
- See /usr/share/doc/collectd-core/NEWS.Debian.gz for details.
+ See /usr/share/doc/collectd-core/NEWS.gz for details.
 
 Template: collectd/migration-4-5
 Type: note
@@ -34,7 +34,7 @@ _Description: Layout of RRD files has changed in version 5.0
  This step requires both the perl and the rrdtool packages to be installed,
  which is currently not the case. You need to perform the migration manually.
  .
- See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at
+ See /usr/share/doc/collectd-core/NEWS.gz and the collectd wiki at
  <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
 
 Template: collectd/auto-migrate-4-5
@@ -49,7 +49,7 @@ _Description: Automatically try to migrate your RRD files?
  /var/lib/collectd/ is made in /var/backups/. This script is still
  experimental, though. Do not expect it to work in all cases.
  .
- See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at
+ See /usr/share/doc/collectd-core/NEWS.gz and the collectd wiki at
  <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details.
 
 Template: collectd/postrm_purge_data

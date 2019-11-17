@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the collectd package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collectd\n"
 "Report-Msgid-Bugs-To: collectd@packages.debian.org\n"
-"POT-Creation-Date: 2012-05-19 17:59+0200\n"
+"POT-Creation-Date: 2019-11-16 22:06+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
+msgid "See /usr/share/doc/collectd-core/NEWS.gz for details."
 msgstr ""
 
 #. Type: boolean
@@ -94,8 +94,8 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
-"<https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
+"See /usr/share/doc/collectd-core/NEWS.gz and the collectd wiki at <https://"
+"collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
 
 #. Type: boolean

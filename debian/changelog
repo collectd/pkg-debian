@@ -1,3 +1,21 @@
+collectd (5.9.2-1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/rules:
+    - Fix "GCC 8.3/4 Tool Chain Issue": removes build with -Wno-error=format-truncation as a temporary
+      workaround for the build failure with gcc-8 caused by a compiler warning.
+    - Fix "GCC 9.X Tool Chain Issues": add test for GCC 9 and build with -Wno-error=address-of-packed-member -Wno-stringop-truncation
+    - Align with Debian Updates: @bzed https://salsa.debian.org/debian/pkg-collectd
+  * debian/patches:
+    - Remove liblvm2app_depreciation_warning.patch i2c_detection.patch ; upstream
+  * debian/control
+    - Add re-enable varnish plugin ; upstream
+    - Remove lvm (deprecated); upstream
+    - Update to phython3 (consistent with Debian updates @bzed https://salsa.debian.org/debian/pkg-collectd
+    - Add libqpid-proton11-dev, libmosquitto-dev (modules) (consistent with Debian updates)
+
+ -- zebity spring <zebity@yahoo.com>  Sun, 22 Sep 2019 21:55:00 +1000
+
 collectd (5.8.1-1) unstable; urgency=medium
 
   * New upstream release.
