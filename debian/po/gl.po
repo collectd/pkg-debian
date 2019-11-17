@@ -56,8 +56,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../collectd-core.templates:1001 ../collectd-core.templates:2001
-msgid "See /usr/share/doc/collectd-core/NEWS.Debian.gz for details."
-msgstr "Consulte /usr/share/doc/collectd-core/NEWS.Debian.gz para máis detalles."
+msgid "See /usr/share/doc/collectd-core/NEWS.gz for details."
+msgstr "Consulte /usr/share/doc/collectd-core/NEWS.gz para máis detalles."
 
 #. Type: boolean
 #. Description
@@ -107,10 +107,10 @@ msgstr ""
 #. Description
 #: ../collectd-core.templates:3001 ../collectd-core.templates:4001
 msgid ""
-"See /usr/share/doc/collectd-core/NEWS.Debian.gz and the collectd wiki at "
+"See /usr/share/doc/collectd-core/NEWS.gz and the collectd wiki at "
 "<https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> for details."
 msgstr ""
-"Consulte o ficheiro /usr/share/doc/collectd-core/NEWS.Debian.gz e a wiki de "
+"Consulte o ficheiro /usr/share/doc/collectd-core/NEWS.gz e a wiki de "
 "collectd en <https://collectd.org/wiki/index.php/V4_to_v5_migration_guide> "
 "para obter máis detalles."
 

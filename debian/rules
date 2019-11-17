@@ -16,6 +16,8 @@ CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 CPPFLAGS += -I$(CURDIR)/debian/include
 CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS += -Wall -Wno-error=deprecated-declarations
+CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
+CXXFLAGS += -Wall -Wno-error=deprecated-declarations
 
 TEST_GCC_VER_9 := $(shell expr `$(CC) -dumpversion | cut -f1 -d.` \>= 9)
 ifeq ($(TEST_GCC_VER_9),1)
@@ -91,13 +93,18 @@ confflags += --disable-xmms
 # Cf. https://github.com/collectd/collectd/issues/1574
 confflags += --disable-sigrok
 
+# libnvidia-ml is non-free
+confflags += --disable-gpu_nvidia
+
 # temporarily disable varnish plugin, as #879471 blocks collectd from
 # migrating to testing.
-confflags += --disable-varnish
+# re-enable varnish
+#confflags += --disable-varnish
 
 # temporarily disable mqtt plugin, as #911265, #911266 blocks collectd from
 # migrating to testing.
-confflags += --disable-mqtt
+# enable mqtt
+#confflags += --disable-mqtt
 
 # These plugins are Linux-specific.
 ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
@@ -112,7 +119,6 @@ ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 		--disable-ipc \
 		--disable-iptables \
 		--disable-ipvs \
-		--disable-lvm \
 		--disable-madwifi \
 		--disable-md \
 		--disable-netlink \
@@ -175,6 +181,12 @@ ifeq (,$(filter amd64 i386, $(DEB_HOST_ARCH)))
 		--disable-turbostat
 endif
 
+# the pcie_errors plugin does not work on all kinds of hardware
+ifeq (,$(filter amd64 arm64 armel armhf i386 mips64el mipsel ppc64el, $(DEB_HOST_ARCH)))
+        confflags += \
+                --disable-pcie_errors
+endif
+
 # This plugin is x86 and arm specific.
 ifeq (,$(filter amd64 arm64 armhf i386, $(DEB_HOST_ARCH)))
 	confflags += \
@@ -210,7 +222,7 @@ build-stamp:
 	./configure $(confflags) CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
 		JAVAC="$(JAVAC)" JAR="$(JAR)" JAVA_CPPFLAGS="$(JAVA_CPPFLAGS)" \
 		JAVA_LDFLAGS="$(JAVA_LDFLAGS)" \
-		|| ( echo "configure exit status: $$?" ; cat config.log )
+		|| ( status=$$?; cat config.log; exit $$status )
 
 	$(MAKE)
 	dh_auto_test
@@ -291,7 +303,7 @@ binary-arch: build install-arch
 	dh_testroot
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -A -a debian/README.Debian AUTHORS README
-	dh_installdocs -a debian/NEWS.Debian debian/README.Debian.plugins
+	dh_installdocs -a debian/NEWS debian/README.Debian.plugins
 	dh_installexamples -a contrib/collectd2html.pl contrib/collection.cgi \
 		contrib/collection3/ contrib/php-collection/ \
 		contrib/exec-munin.conf contrib/exec-munin.px contrib/exec-smartctl \
