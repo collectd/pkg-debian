@@ -10,6 +10,7 @@ collectd (5.9.2-1) unstable; urgency=medium
     - Remove liblvm2app_depreciation_warning.patch i2c_detection.patch ; upstream
   * debian/control
     - Add re-enable varnish plugin ; upstream
+    - Remove lvm (deprecated); upstream
     - Update to phython3 (consistent with Debian updates @bzed https://salsa.debian.org/debian/pkg-collectd
     - Add libqpid-proton11-dev, libmosquitto-dev (modules) (consistent with Debian updates)
 
